@@ -35,8 +35,7 @@ distance<-function(x1, y1, x2, y2) {
   return(sqrt((x1 - x2)^2+(y1 - y2)^2))
 } 
 
-# use expand.grid to get combinations, then left join coordinates. estimate distances, then pivot wider to get lake distances into columns
-
+# use expand.grid to get all combinations of anglerID and lakeID, then left join coordinates and estimate distances
 all.comb<-expand_grid(anglerLoc$anglerID, lakeLoc$lakeID)%>%
   rename("anglerID"=`anglerLoc$anglerID`,
          "lakeID"=`lakeLoc$lakeID`)%>%
@@ -46,14 +45,20 @@ all.comb<-expand_grid(anglerLoc$anglerID, lakeLoc$lakeID)%>%
          anglerID=as.character(anglerID),
          lakeID=as.character(lakeID))
 
-# pivoting wider did something weird. I'll keep it as-is for now. 
+# pivoting wider did something weird. I'll keep it long for now. 
 
-lakeFish<-data.frame(lakeID=seq(1:10),
-                     catch.param=sample(c(1,2,3,4), size=nrow(lakeFish), replace=T ),
-                     nFish.t0=rep(100))
+lakeFish.0<-data.frame(lakeID=seq(1:10),
+                     catch.param=sample(c(1,2,3,4), size=max(lakeID), replace=T ),
+                     nFish=rep(100),
+                     t=rep(0),
+                     harvest=rep(0))
+
+catchRecord<-lakeFish.0
 
 anglers<-data.frame(anglerID=seq(1:50),
-                    lakeChoice=rep(NA))
+                    lakeChoice=rep(NA),
+                    t=rep(NA),
+                    harvest=rep(NA))
 
 # start initial funciton-writing. Simulation will repeat over 30 time steps for now. Next steps will be making these functions modular. 
 
@@ -62,23 +67,35 @@ anglers<-data.frame(anglerID=seq(1:50),
 for(i in 1:max(anglers$anglerID)){
   
   indiv<-all.comb[all.comb$anglerID==i,]
-  
+  # decision rule
   anglers[i,"lakeChoice"]<-indiv[which.min(indiv$distance),]$lakeID
 }
 
 
+
 # harvest--just a poisson draw. but let's have different parameters by lake. I need that link to lakeIDs for future iterations
 
-
 for(i in 1:max(anglers$anglerID)){
-  anglers$harvest[i]<-rpois(1, lakeFish[lakeFish$lakeID==anglers$lakeChoice[i],]$catch.param)
+  anglers$harvest[i]<-rpois(1, lakeFish.0[lakeFish.0$lakeID==anglers$lakeChoice[i],]$catch.param)
 }
 
 # replace 1 with t for time step once I make that loop
-anglers$tStep=rep(1)
+anglers$t=rep(1)
+
+harvest<-rep(NA, length(lakeFish.0$lakeID))
 
 # trackign nFish in lakes
-for(i in 1:max(lakeFish$lakeID)){
-  nHarvested<-sum(anglers[anglers$lakeChoice==i,]$harvest)
+for(i in 1:max(lakeFish.0$lakeID)){
+  harvest[i]<-sum(anglers[anglers$lakeChoice==i,]$harvest)
 }
-lakeFish<-
+
+lakeFish.app<-lakeFish.0
+
+lakeFish.app$harvest<-harvest
+lakeFish.app$nFish=lakeFish.app$nFish-lakeFish.app$harvest
+# replace 1 with t for time loop
+lakeFish.app$t<-rep(1)
+
+lakeFish.app$catch.param<-ifelse(lakeFish.app$nFish==0, 0, lakeFish.app$catch.param)
+
+
