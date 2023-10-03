@@ -1,7 +1,10 @@
 # this holds the directories of all the functions for the ABM
 # Set working directory, import packages, source functions
+library(tidyverse)
 
 setwd(paste0(base.directory, "/source/"))
-source(paste(get.wd(), "/lake.location.R"))
-source(paste(get.wd(), "/parameters.R"))
-source(paste(get.wd(), "/angler.location.R"))
+source(paste0(getwd(), "/lake.location.R"))
+source(paste0(getwd(), "/parameters.R"))
+source(paste0(getwd(), "/angler.location.R"))
+source(paste0(getwd(),"/lake.distance.R"))
+source(paste0(getwd(),"/lake.lambda.R"))
