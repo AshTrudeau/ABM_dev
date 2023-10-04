@@ -18,22 +18,31 @@ set.seed(992)
 lakeLocation<-lake.location(parameters)
 
 # place anglers on a grid
-anglerLocation<-angler.location(parameters)
+anglerCharacteristics<-angler.characteristics(parameters)
 
 # find distances between anglers and lakes
-lakeDistance<-lake.distance(lakeLocation, anglerLocation)
+lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
 
-# important lake characteristics. This is a placeholder until I set up fish population models
+# important lake characteristics. This is a placeholder until I set up fish population models.
+# lambda is the Poisson coefficient for drawing catch (harvest and catch are identical for now)
 lakeCharacteristics<-lake.lambda(parameters)
+
+anglerDecisions<-create.blank.angler.decisions(parameters)
+
 
 # working list that will go into the loop. Each iteration it will be updated 
 #with the current fish populations, etc
-fishery<-list(lakeLocation, anglerLocation, lakeDistance, lakeCharacteristics)
+fishery<-list(lakeLocation=lakeLocation, 
+              anglerCharacteristics=anglerCharacteristics, 
+              lakeDistance=lakeDistance, 
+              lakeCharacteristics=lakeCharacteristics,
+              anglerDecisions=anglerDecisions)
 # list that will hold important output from each loop
 output<-list()
 
 
 for(t in 1:parameters[["nDays"]]){
-  fishery<-lake.decisions(fishery) # each angler chooses a lake
+  fishery<-angler.decisions(fishery) # each angler chooses a lake. These decisions are added to the anglerLocation df
   
+  fishery<-fishing(fishery, parameters)
 }

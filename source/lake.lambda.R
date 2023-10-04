@@ -8,5 +8,5 @@ lake.lambda<-function(parameters){
   
   catchParam<-sample(c(1,2,3,4), size=nLakes, replace=T)
   
-  lakeCharacteristics<-cbind(lakeID, catchParam)
+  lakeCharacteristics<-data.frame(cbind(lakeID, catchParam))
 }

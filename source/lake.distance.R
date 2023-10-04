@@ -1,5 +1,6 @@
 # lake.distance()
-# straight-line distance from each lake to each angler
+# straight-line distance from each lake to each angler. Other lake characteristics must
+# be put in the lakeCharacteristics element of the list.
 
 lake.distance<-function(lakeLocation, anglerLocation){
   anglerID<-anglerLocation$anglerID
