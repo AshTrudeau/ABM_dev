@@ -1,19 +1,28 @@
 # this script produces the catch and harvest for each fishing trip.
-fishing<-function(fishery, parameters){
+fishing<-function(fishery, parameters, t){
   # this df has the catch coefficients
   lakeCharacteristics<-fishery[["lakeCharacteristics"]]
+  # if this is the first iteration (t=1 and, once year loop is added, y=1), make a new column: fishPop, and copy fishPop0 into it
+  
+  if(t==1){fishPop<-lakeCharacteristics$fishPop0} else
+  {fishPop<-lakeCharacteristics$fishPop}
+  
+  
   # this df has the lake choice for each angler
   anglerDecisions<-fishery[["anglerDecisions"]]
   nAnglers<-parameters[["nAnglers"]]
   
   anglerDecisions<-anglerDecisions%>%
-    dplyr::left_join(lakeCharacteristics, by="lakeID")%>%
+    # joining lakeCharacteristics, but without fishPop0 (column 3)
+    dplyr::left_join(lakeCharacteristics[,-3], by="lakeID")%>%
     dplyr::mutate(catch=rpois(nAnglers, catchParam),
            harvest=catch)
   
   lakeHarvest<-anglerDecisions%>%
     dplyr::group_by(lakeID)%>%
     dplyr::summarize(nHarvested=sum(harvest))
+  
+  lakeCharacteristics$fishPop<-fishPop
   
   lakeCharacteristics<-lakeCharacteristics%>%
     left_join(lakeHarvest, by="lakeID")%>%
