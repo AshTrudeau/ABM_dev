@@ -1,5 +1,5 @@
 # this script produces the catch and harvest for each fishing trip.
-fishing<-function(fishery, parameters, t){
+fishing<-function(fishery, t, parameters){
   # this df has the catch coefficients
   lakeCharacteristics<-fishery[["lakeCharacteristics"]]
   # if this is the first iteration (t=1 and, once year loop is added, y=1), make a new column: fishPop, and copy fishPop0 into it

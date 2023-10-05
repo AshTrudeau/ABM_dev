@@ -48,7 +48,7 @@ for(t in 1:parameters[["nDays"]]){
   fishery<-angler.decisions(fishery) # each angler chooses a lake. These decisions are added to the anglerLocation df
   
   # replace 1 with t for loop
-  fishery<-fishing(fishery, parameters, 1) # anglers catch fish and lake populations are updated
+  fishery<-fishing(fishery, 1, parameters) # anglers catch fish and lake populations are updated
   
   # replace 1 with t for loop
   output<-output.script(fishery, 1, output, parameters)
