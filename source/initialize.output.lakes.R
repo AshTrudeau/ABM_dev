@@ -1,5 +1,5 @@
 # start output table
-initialize.output<-function(parameters, lakeCharacteristics){
+initialize.output.lakes<-function(parameters, lakeCharacteristics){
   nLakes<-parameters[["nLakes"]]
   
   lakeID<-lakeCharacteristics$lakeID
@@ -7,7 +7,8 @@ initialize.output<-function(parameters, lakeCharacteristics){
   # add year 0 once I'm adding  year loop
   fishPop<-lakeCharacteristics$fishPop0
   nHarvested<-rep(0, nLakes)
+  nAnglers<-rep(0, nLakes)
   
-  lakeStatus<-cbind.data.frame(lakeID, day, fishPop, nHarvested)
+  lakeStatus<-cbind.data.frame(lakeID, day, fishPop, nHarvested, nAnglers)
   return(lakeStatus)
 }

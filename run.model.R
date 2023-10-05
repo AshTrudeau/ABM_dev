@@ -40,8 +40,8 @@ fishery<-list(lakeLocation=lakeLocation,
               anglerDecisions=anglerDecisions)
 
 # list that will hold important output from each loop
-lakeStatus<-initialize.output(parameters, lakeCharacteristics)
-output<-list(lakeStatus)
+lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
+output<-list(lakeStatus=lakeStatus)
 
 
 for(t in 1:parameters[["nDays"]]){
@@ -50,6 +50,11 @@ for(t in 1:parameters[["nDays"]]){
   # replace 1 with t for loop
   fishery<-fishing(fishery, parameters, 1) # anglers catch fish and lake populations are updated
   
-  output<-outputScript(fishery, t, output)
+  # replace 1 with t for loop
+  output<-output.script(fishery, 1, output, parameters)
   
 }
+
+# add annual loop that changes fish population
+
+# add final output and plotting step
