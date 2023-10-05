@@ -59,3 +59,9 @@ for(t in 1:parameters[["nDays"]]){
 # add annual loop that changes fish population
 
 # add final output and plotting step
+
+lakeStatus<-output[["lakeStatus"]]
+
+ggplot(data=lakeStatus)+
+  geom_line(aes(x=day, y=fishPop, color=as.factor(lakeID)))
+

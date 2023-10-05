@@ -8,7 +8,7 @@ nLakes          <-10 # 10 default lakes
 edgeLength      <-50 # length of one side of landscape grid. default 50
 nAnglers        <-50 # number of anglers to simulate. Default 50
 nDays           <-100 # number of days (iterations) to simulate. Default 100
-nFish0_min      <-100 # minimum number of fish in a lake in the first time step
+nFish0_min      <-1000 # minimum number of fish in a lake in the first time step
 nDays           <-365 # days per annual loop
 nYears          <-10  # number of years to simulate
 
