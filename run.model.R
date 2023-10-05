@@ -27,6 +27,7 @@ lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
 # lambda is the Poisson coefficient for drawing catch (harvest and catch are identical for now)
 lakeCharacteristics<-lake.lambda(parameters)
 
+# at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
 anglerDecisions<-create.blank.angler.decisions(parameters)
 
 
@@ -44,5 +45,8 @@ output<-list()
 for(t in 1:parameters[["nDays"]]){
   fishery<-angler.decisions(fishery) # each angler chooses a lake. These decisions are added to the anglerLocation df
   
-  fishery<-fishing(fishery, parameters)
+  fishery<-fishing(fishery, parameters) # anglers catch fish and lake populations are updated
+  
+  output<-outputScript(fishery, t, output)
+  
 }

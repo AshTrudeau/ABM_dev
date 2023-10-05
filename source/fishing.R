@@ -8,10 +8,21 @@ fishing<-function(fishery, parameters){
   
   anglerDecisions<-anglerDecisions%>%
     dplyr::left_join(lakeCharacteristics, by="lakeID")%>%
-    mutate(catch=rpois(nAnglers, catchParam),
+    dplyr::mutate(catch=rpois(nAnglers, catchParam),
            harvest=catch)
   
+  lakeHarvest<-anglerDecisions%>%
+    dplyr::group_by(lakeID)%>%
+    dplyr::summarize(nHarvested=sum(harvest))
+  
+  lakeCharacteristics<-lakeCharacteristics%>%
+    left_join(lakeHarvest, by="lakeID")%>%
+    # not every lake is visited each loop; fil in NA values with 0
+    mutate(nHarvested=ifelse(is.na(nHarvested), 0, nHarvested),
+          fishPop=fishPop-nHarvested)
+  
   fishery[["anglerDecisions"]]<-anglerDecisions
+  fishery[["lakeCharacteristics"]]<-lakeCharacteristics
   return(fishery)
   
 
