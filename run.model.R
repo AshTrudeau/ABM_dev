@@ -38,8 +38,10 @@ fishery<-list(lakeLocation=lakeLocation,
               lakeDistance=lakeDistance, 
               lakeCharacteristics=lakeCharacteristics,
               anglerDecisions=anglerDecisions)
+
 # list that will hold important output from each loop
-output<-list()
+lakeStatus<-initialize.output(parameters, lakeCharacteristics)
+output<-list(lakeStatus)
 
 
 for(t in 1:parameters[["nDays"]]){

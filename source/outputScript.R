@@ -1,4 +1,7 @@
-outputScript<-function(fishery, output, t){
+outputScript<-function(fishery, t, output){
   lakeCharacteristics<-fishery[["lakeCharacteristics"]]
   
+  lakeID<-lakeCharacteristics$lakeID
+  nHarvested<-lakeCharacteristics$nHarvested
+  fishPop
 }
