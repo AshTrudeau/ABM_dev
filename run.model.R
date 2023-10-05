@@ -24,7 +24,7 @@ anglerCharacteristics<-angler.characteristics(parameters)
 lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
 
 # important lake characteristics. This is a placeholder until I set up fish population models.
-# lambda is the Poisson coefficient for drawing catch (harvest and catch are identical for now)
+# Population is drawn from Poisson distribution with lambda=1000, catch is determined by catch equation. Currently no annual reproduction
 lakeCharacteristics<-lake.characteristics(parameters)
 
 # at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
@@ -41,8 +41,12 @@ fishery<-list(lakeLocation=lakeLocation,
 
 # list that will hold important output from each loop
 lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
+
 output<-list(lakeStatus=lakeStatus)
 
+# adding outer year loop--will add natural fish population changes (M, r)
+
+for(y in 1:parameters[["nYears"]]){
 
 for(t in 1:parameters[["nDays"]]){
   
@@ -52,11 +56,12 @@ for(t in 1:parameters[["nDays"]]){
   fishery<-fishing(fishery, parameters) # anglers catch fish and lake populations are updated
   
   # replace 1 with t for loop
-  output<-output.script(fishery, t, output, parameters)
+  output<-output.script(fishery, t, y, output, parameters)
   
 }
-
-# add annual loop that changes fish population
+  # this is where the fish population will be updated annually
+  
+}
 
 # add final output and plotting step
 
