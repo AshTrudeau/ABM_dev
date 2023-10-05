@@ -25,7 +25,7 @@ lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
 
 # important lake characteristics. This is a placeholder until I set up fish population models.
 # lambda is the Poisson coefficient for drawing catch (harvest and catch are identical for now)
-lakeCharacteristics<-lake.lambda(parameters)
+lakeCharacteristics<-lake.characteristics(parameters)
 
 # at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
 anglerDecisions<-create.blank.angler.decisions(parameters)
