@@ -11,6 +11,8 @@ nDays           <-100 # number of days (iterations) to simulate. Default 100
 nFish0_min      <-1000 # minimum number of fish in a lake in the first time step
 nDays           <-365 # days per annual loop
 nYears          <-10  # number of years to simulate
+beta            <-0.5 # hyperstability parameter
+q               <-0.001
 
 
 # add parameters to list=========================================================
@@ -21,3 +23,5 @@ parameters[["nDays"]]         <-nDays
 parameters[["nFish0_min"]]    <-nFish0_min
 parameters[["nDays"]]         <-nDays
 parameters[["nYears"]]        <-nYears
+parameters[["beta"]]          <-beta
+parameters[["q"]]             <-q

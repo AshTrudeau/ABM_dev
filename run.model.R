@@ -65,3 +65,4 @@ lakeStatus<-output[["lakeStatus"]]
 ggplot(data=lakeStatus)+
   geom_line(aes(x=day, y=fishPop, color=as.factor(lakeID)))
 
+

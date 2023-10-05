@@ -9,11 +9,15 @@ fishing<-function(fishery, parameters){
   anglerDecisions<-fishery[["anglerDecisions"]]
   nAnglers<-parameters[["nAnglers"]]
   
+  beta<-parameters[["beta"]]
+  q<-parameters[["q"]]
+  
   anglerDecisions<-anglerDecisions%>%
     # joining lakeCharacteristics, but without fishPop0 (column 3)
     dplyr::left_join(lakeCharacteristics[,-3], by="lakeID")
   
-  anglerDecisions$catch<-rpois(nAnglers, as.numeric(anglerDecisions$catchParam))
+ # anglerDecisions$catch<-rpois(nAnglers, as.numeric(anglerDecisions$catchParam))
+  anglerDecisions$catch<-q*anglerDecisions$fishPop^beta
   anglerDecisions$harvest<-anglerDecisions$catch
   
   lakeHarvest<-anglerDecisions%>%
