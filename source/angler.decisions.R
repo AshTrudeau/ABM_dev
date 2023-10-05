@@ -7,6 +7,12 @@ angler.decisions<-function(fishery){
   anglerCharacteristics<-fishery[["anglerCharacteristics"]]
   anglerDecisions<-fishery[["anglerDecisions"]]
   
+  # remove old outputs
+  anglerDecisions<-anglerDecisions[,c(1:4)]
+  anglerDecisions$lakeID<-rep(NA)
+  anglerDecisions$catch<-rep(NA)
+  anglerDecisions$harvest<-rep(NA)
+  
   nAnglers<-parameters[["nAnglers"]]
   
   #anglerLocation$lakeChoice<-rep(NA)

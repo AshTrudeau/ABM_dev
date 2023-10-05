@@ -45,13 +45,14 @@ output<-list(lakeStatus=lakeStatus)
 
 
 for(t in 1:parameters[["nDays"]]){
+  
   fishery<-angler.decisions(fishery) # each angler chooses a lake. These decisions are added to the anglerLocation df
   
-  # replace 1 with t for loop
-  fishery<-fishing(fishery, 1, parameters) # anglers catch fish and lake populations are updated
+  # problem with this function. runs only for the first loop. 
+  fishery<-fishing(fishery, parameters) # anglers catch fish and lake populations are updated
   
   # replace 1 with t for loop
-  output<-output.script(fishery, 1, output, parameters)
+  output<-output.script(fishery, t, output, parameters)
   
 }
 

@@ -23,7 +23,10 @@ output.script<-function(fishery, t, output, parameters){
     # fill in 0 values
     dplyr::mutate(nAnglers=ifelse(is.na(nAnglers), 0, nAnglers))
   
-  lakeStatus<-rbind.data.frame(lakeStatus, update)
+  #place update into lakeStatus where t = day
+  
+  lakeStatus[lakeStatus$day==t,]<-update
+  
   output[["lakeStatus"]]<-lakeStatus
   return(output)
   

@@ -12,7 +12,8 @@ lake.lambda<-function(parameters){
   # currently starting with fish populations that scale directly to catchParam. This is temporary
   # and will be replaced by fish population model and explicit catch equation with a hyperstability parameter
   fishPop0<-catchParam*nFish0_min
+  fishPop<-fishPop0
   
-  lakeCharacteristics<-data.frame(cbind(lakeID, catchParam, fishPop0))
+  lakeCharacteristics<-data.frame(cbind(lakeID, catchParam, fishPop0, fishPop))
   
 }
