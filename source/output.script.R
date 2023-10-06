@@ -20,7 +20,7 @@ output.script<-function(fishery, t, y, output, parameters){
     ungroup()
   
   update<-cbind.data.frame(lakeID, day, year, fishPop, nHarvested)%>%
-    dplyr::left_join(nAnglers.sum, by="lakeID")%>%
+    dplyr::left_join(nAnglers.sum, by=c("lakeID"))%>%
     # fill in 0 values
     dplyr::mutate(nAnglers=ifelse(is.na(nAnglers), 0, nAnglers))
   

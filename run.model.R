@@ -67,6 +67,25 @@ for(t in 1:parameters[["nDays"]]){
 
 lakeStatus<-output[["lakeStatus"]]
 
+plots<-plotting.lake.status(lakeStatus, fishery)
+
+# aggregate by year, then make this into another function
+
+agg.year<-lakeStatus%>%
+  group_by(year, lakeID)%>%
+  summarize(totalHarvest=sum(nHarvested),
+            totalEffort=sum(nAnglers),
+            fishPop=min(fishPop))%>%
+  ungroup()
+
+# somthing is wrong with the fishing effort count
+
+ggplot(agg.year)+
+  geom_line(aes(x=year, y=fishPop, color=as.factor(lakeID)))
+
+ggplot(agg.year)+
+  geom_line(aes(x=year, y=nAnglers, color=as.factor(lakeID)))
+
 ggplot(data=lakeStatus)+
   geom_line(aes(x=day, y=fishPop, color=as.factor(lakeID)))
 
