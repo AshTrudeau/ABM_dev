@@ -27,7 +27,7 @@ plotting.lake.status<-function(output, fishery, parameters, lakeLocation, angler
     scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
     xlab("Year of simulation")+
     ylab("Fishing effort (angler visits per year)")+
-    guides(color=guide_legend(title="LakeID"))+
+    guides(color="none")+
     theme_bw()
   
   harvest<-ggplot(annualOutcomes)+
@@ -43,7 +43,7 @@ plotting.lake.status<-function(output, fishery, parameters, lakeLocation, angler
     scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
     xlab("Year of simulation")+
     ylab("End of year population (N)")+
-    guides(color=guide_legend(title="LakeID"))+
+    guides(color="none")+
     theme_bw()
   
   hotspots<-ggplot()+

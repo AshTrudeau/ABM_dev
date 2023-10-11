@@ -13,7 +13,8 @@ source(paste0(base.directory, "/source/function.sourcer.R"))
 data.frame(unlist(parameters))
 
 #=======================================================================
-set.seed(992)
+#set.seed(992)
+set.seed(73)
 # generate lakes randomly placed on a grid.
 lakeLocation<-lake.location(parameters)
 
@@ -67,6 +68,9 @@ for(t in 1:parameters[["nDays"]]){
 
 
 plots<-plotting.lake.status(output, fishery, parameters, lakeLocation, anglerCharacteristics)
+
+plots
+ggsave(paste0(wd, "/output", "/sim.v1.figure.png"))
 
 
 
