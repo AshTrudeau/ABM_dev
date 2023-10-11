@@ -1,6 +1,8 @@
 # this holds the directories of all the functions for the ABM
 # Set working directory, import packages, source functions
 library(tidyverse)
+library(RColorBrewer)
+library(cowplot)
 
 setwd(paste0(base.directory, "/source/"))
 source(paste0(getwd(), "/lake.location.R"))

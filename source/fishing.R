@@ -2,7 +2,7 @@
 fishing<-function(fishery, parameters){
   # this df has the catch coefficients
   lakeCharacteristics<-fishery[["lakeCharacteristics"]]
-  # if this is the first iteration (t=1 and, once year loop is added, y=1), make a new column: fishPop, and copy fishPop0 into it
+
   lakeCharacteristics<-lakeCharacteristics[,c(1:3)]
 
   # this df has the lake choice for each angler

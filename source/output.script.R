@@ -1,8 +1,7 @@
 output.script<-function(fishery, t, y, output, parameters){
-  # update lake status
   lakeCharacteristics<-fishery[["lakeCharacteristics"]]
   anglerDecisions<-fishery[["anglerDecisions"]]
-    
+  
   lakeStatus<-output[["lakeStatus"]]
   
   nLakes<-parameters[["nLakes"]]
@@ -30,6 +29,4 @@ output.script<-function(fishery, t, y, output, parameters){
   
   output[["lakeStatus"]]<-lakeStatus
   return(output)
-  
-  # update fishing effort
-}
+  }

@@ -30,6 +30,7 @@ lakeCharacteristics<-lake.characteristics(parameters)
 # at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
 anglerDecisions<-create.blank.angler.decisions(parameters)
 
+# make an output object that records how many trips have occurred to each lake annually. Add distribution of travel time? 
 
 # working list that will go into the loop. Each iteration it will be updated 
 #with the current fish populations, etc
@@ -52,41 +53,20 @@ for(t in 1:parameters[["nDays"]]){
   
   fishery<-angler.decisions(fishery) # each angler chooses a lake. These decisions are added to the anglerLocation df
   
-  # problem with this function. runs only for the first loop. 
   fishery<-fishing(fishery, parameters) # anglers catch fish and lake populations are updated
   
-  # replace 1 with t for loop
+
   output<-output.script(fishery, t, y, output, parameters)
   
 }
-  # this is where the fish population will be updated annually
+  # this is where the fish population will be updated annually with recruitment
   
 }
 
 # add final output and plotting step
 
-lakeStatus<-output[["lakeStatus"]]
 
-plots<-plotting.lake.status(lakeStatus, fishery)
+plots<-plotting.lake.status(output, fishery, parameters, lakeLocation, anglerCharacteristics)
 
-# aggregate by year, then make this into another function
-
-agg.year<-lakeStatus%>%
-  group_by(year, lakeID)%>%
-  summarize(totalHarvest=sum(nHarvested),
-            totalEffort=sum(nAnglers),
-            fishPop=min(fishPop))%>%
-  ungroup()
-
-# somthing is wrong with the fishing effort count
-
-ggplot(agg.year)+
-  geom_line(aes(x=year, y=fishPop, color=as.factor(lakeID)))
-
-ggplot(agg.year)+
-  geom_line(aes(x=year, y=nAnglers, color=as.factor(lakeID)))
-
-ggplot(data=lakeStatus)+
-  geom_line(aes(x=day, y=fishPop, color=as.factor(lakeID)))
 
 

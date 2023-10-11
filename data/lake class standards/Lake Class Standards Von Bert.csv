@@ -1,0 +1,2377 @@
+"LakeClass","Species","vb_param","Percentile","value"
+"Complex Cool Clear","Black Crappie","Linf","0_percentile",317.853762
+"Complex Cool Clear","Black Crappie","K","0_percentile",0.095387692
+"Complex Cool Clear","Black Crappie","t0","0_percentile",-1.496586168
+"Complex Cool Dark","Black Crappie","Linf","0_percentile",322.9812982
+"Complex Cool Dark","Black Crappie","K","0_percentile",0.108224227
+"Complex Cool Dark","Black Crappie","t0","0_percentile",-1.695036458
+"Complex Riverine","Black Crappie","Linf","0_percentile",313.7152407
+"Complex Riverine","Black Crappie","K","0_percentile",0.176929035
+"Complex Riverine","Black Crappie","t0","0_percentile",-0.963230344
+"Complex Two Story","Black Crappie","Linf","0_percentile",263.9511882
+"Complex Two Story","Black Crappie","K","0_percentile",0.027174214
+"Complex Two Story","Black Crappie","t0","0_percentile",-2.891628958
+"Complex Warm Clear","Black Crappie","Linf","0_percentile",261.2970649
+"Complex Warm Clear","Black Crappie","K","0_percentile",0.053425653
+"Complex Warm Clear","Black Crappie","t0","0_percentile",-2.657766317
+"Complex Warm Dark","Black Crappie","Linf","0_percentile",306.4422367
+"Complex Warm Dark","Black Crappie","K","0_percentile",0.131043895
+"Complex Warm Dark","Black Crappie","t0","0_percentile",-1.153227342
+"Simple Cool Dark","Black Crappie","Linf","0_percentile",282.2991776
+"Simple Cool Dark","Black Crappie","K","0_percentile",0.017674792
+"Simple Cool Dark","Black Crappie","t0","0_percentile",-3.214767318
+"Simple Riverine","Black Crappie","Linf","0_percentile",280.1146901
+"Simple Riverine","Black Crappie","K","0_percentile",0.039429314
+"Simple Riverine","Black Crappie","t0","0_percentile",-2.44436772
+"Simple Warm Clear","Black Crappie","Linf","0_percentile",261.1651739
+"Simple Warm Clear","Black Crappie","K","0_percentile",0.018455723
+"Simple Warm Clear","Black Crappie","t0","0_percentile",-3.263778528
+"Simple Warm Dark","Black Crappie","Linf","0_percentile",244.5414815
+"Simple Warm Dark","Black Crappie","K","0_percentile",0.054452248
+"Simple Warm Dark","Black Crappie","t0","0_percentile",-3.783456179
+"Complex Cool Clear","Bluegill","Linf","0_percentile",274.3005129
+"Complex Cool Clear","Bluegill","K","0_percentile",0.012750954
+"Complex Cool Clear","Bluegill","t0","0_percentile",-3.396572293
+"Complex Cool Dark","Bluegill","Linf","0_percentile",242.4048187
+"Complex Cool Dark","Bluegill","K","0_percentile",0.059602231
+"Complex Cool Dark","Bluegill","t0","0_percentile",-2.57434998
+"Complex Riverine","Bluegill","Linf","0_percentile",233.1968841
+"Complex Riverine","Bluegill","K","0_percentile",0.117822078
+"Complex Riverine","Bluegill","t0","0_percentile",-1.430955425
+"Complex Two Story","Bluegill","Linf","0_percentile",254.904304
+"Complex Two Story","Bluegill","K","0_percentile",0.014422982
+"Complex Two Story","Bluegill","t0","0_percentile",-2.541093878
+"Complex Warm Clear","Bluegill","Linf","0_percentile",263.0318899
+"Complex Warm Clear","Bluegill","K","0_percentile",0.017786345
+"Complex Warm Clear","Bluegill","t0","0_percentile",-2.341276399
+"Complex Warm Dark","Bluegill","Linf","0_percentile",258.0894534
+"Complex Warm Dark","Bluegill","K","0_percentile",0.070110221
+"Complex Warm Dark","Bluegill","t0","0_percentile",-2.107865326
+"Simple Cool Clear","Bluegill","Linf","0_percentile",201.3347476
+"Simple Cool Clear","Bluegill","K","0_percentile",0.017003476
+"Simple Cool Clear","Bluegill","t0","0_percentile",-2.599373889
+"Simple Cool Dark","Bluegill","Linf","0_percentile",241.8524799
+"Simple Cool Dark","Bluegill","K","0_percentile",0.014897193
+"Simple Cool Dark","Bluegill","t0","0_percentile",-3.256159237
+"Simple Riverine","Bluegill","Linf","0_percentile",220.1306085
+"Simple Riverine","Bluegill","K","0_percentile",0.094963891
+"Simple Riverine","Bluegill","t0","0_percentile",-1.552312335
+"Simple Two Story","Bluegill","Linf","0_percentile",184.6463329
+"Simple Two Story","Bluegill","K","0_percentile",0.011335957
+"Simple Two Story","Bluegill","t0","0_percentile",-6.098797435
+"Simple Warm Clear","Bluegill","Linf","0_percentile",239.2291993
+"Simple Warm Clear","Bluegill","K","0_percentile",0.015020055
+"Simple Warm Clear","Bluegill","t0","0_percentile",-2.995235
+"Simple Warm Dark","Bluegill","Linf","0_percentile",232.5737218
+"Simple Warm Dark","Bluegill","K","0_percentile",0.056258773
+"Simple Warm Dark","Bluegill","t0","0_percentile",-2.095238684
+"Complex Cool Clear","Largemouth Bass","Linf","0_percentile",488.4791385
+"Complex Cool Clear","Largemouth Bass","K","0_percentile",0.127672944
+"Complex Cool Clear","Largemouth Bass","t0","0_percentile",-0.966196787
+"Complex Cool Dark","Largemouth Bass","Linf","0_percentile",515.7266392
+"Complex Cool Dark","Largemouth Bass","K","0_percentile",0.117187495
+"Complex Cool Dark","Largemouth Bass","t0","0_percentile",-1.170697116
+"Complex Riverine","Largemouth Bass","Linf","0_percentile",514.2835679
+"Complex Riverine","Largemouth Bass","K","0_percentile",0.120943746
+"Complex Riverine","Largemouth Bass","t0","0_percentile",-1.209668153
+"Complex Two Story","Largemouth Bass","Linf","0_percentile",475.8676564
+"Complex Two Story","Largemouth Bass","K","0_percentile",0.142156026
+"Complex Two Story","Largemouth Bass","t0","0_percentile",-0.905336837
+"Complex Warm Clear","Largemouth Bass","Linf","0_percentile",499.825777
+"Complex Warm Clear","Largemouth Bass","K","0_percentile",0.123487069
+"Complex Warm Clear","Largemouth Bass","t0","0_percentile",-0.943287118
+"Complex Warm Dark","Largemouth Bass","Linf","0_percentile",513.281808
+"Complex Warm Dark","Largemouth Bass","K","0_percentile",0.147512042
+"Complex Warm Dark","Largemouth Bass","t0","0_percentile",-0.991323008
+"Simple Cool Clear","Largemouth Bass","Linf","0_percentile",456.6437831
+"Simple Cool Clear","Largemouth Bass","K","0_percentile",0.10042989
+"Simple Cool Clear","Largemouth Bass","t0","0_percentile",-0.933164622
+"Simple Cool Dark","Largemouth Bass","Linf","0_percentile",483.3346111
+"Simple Cool Dark","Largemouth Bass","K","0_percentile",0.102998337
+"Simple Cool Dark","Largemouth Bass","t0","0_percentile",-1.350099394
+"Simple Riverine","Largemouth Bass","Linf","0_percentile",514.6970517
+"Simple Riverine","Largemouth Bass","K","0_percentile",0.097576556
+"Simple Riverine","Largemouth Bass","t0","0_percentile",-1.065610945
+"Simple Two Story","Largemouth Bass","Linf","0_percentile",420.7168643
+"Simple Two Story","Largemouth Bass","K","0_percentile",0.042659589
+"Simple Two Story","Largemouth Bass","t0","0_percentile",-3.035892859
+"Simple Warm Clear","Largemouth Bass","Linf","0_percentile",509.484717
+"Simple Warm Clear","Largemouth Bass","K","0_percentile",0.11419627
+"Simple Warm Clear","Largemouth Bass","t0","0_percentile",-1.146925309
+"Simple Warm Dark","Largemouth Bass","Linf","0_percentile",476.7470848
+"Simple Warm Dark","Largemouth Bass","K","0_percentile",0.155163055
+"Simple Warm Dark","Largemouth Bass","t0","0_percentile",-0.826097553
+"Complex Cool Clear","Muskellunge","Linf","0_percentile",1031.88084
+"Complex Cool Clear","Muskellunge","K","0_percentile",0.140962155
+"Complex Cool Clear","Muskellunge","t0","0_percentile",-1.347776083
+"Complex Cool Dark","Muskellunge","Linf","0_percentile",1192.196376
+"Complex Cool Dark","Muskellunge","K","0_percentile",0.123682015
+"Complex Cool Dark","Muskellunge","t0","0_percentile",-1.404969688
+"Complex Riverine","Muskellunge","Linf","0_percentile",1117.692463
+"Complex Riverine","Muskellunge","K","0_percentile",0.118146292
+"Complex Riverine","Muskellunge","t0","0_percentile",-1.553513768
+"Complex Two Story","Muskellunge","Linf","0_percentile",1153.152098
+"Complex Two Story","Muskellunge","K","0_percentile",0.150423678
+"Complex Two Story","Muskellunge","t0","0_percentile",-1.030447811
+"Complex Warm Dark","Muskellunge","Linf","0_percentile",1119.359438
+"Complex Warm Dark","Muskellunge","K","0_percentile",0.12674324
+"Complex Warm Dark","Muskellunge","t0","0_percentile",-2.422353359
+"Complex Cool Clear","Northern Pike","Linf","0_percentile",755.2728794
+"Complex Cool Clear","Northern Pike","K","0_percentile",0.022762679
+"Complex Cool Clear","Northern Pike","t0","0_percentile",-3.660938136
+"Complex Cool Dark","Northern Pike","Linf","0_percentile",956.6203808
+"Complex Cool Dark","Northern Pike","K","0_percentile",0.013642303
+"Complex Cool Dark","Northern Pike","t0","0_percentile",-4.346859497
+"Complex Riverine","Northern Pike","Linf","0_percentile",1154.135849
+"Complex Riverine","Northern Pike","K","0_percentile",0.012924581
+"Complex Riverine","Northern Pike","t0","0_percentile",-4.0839468
+"Complex Two Story","Northern Pike","Linf","0_percentile",1005.419251
+"Complex Two Story","Northern Pike","K","0_percentile",0.015599807
+"Complex Two Story","Northern Pike","t0","0_percentile",-3.986425123
+"Complex Warm Clear","Northern Pike","Linf","0_percentile",945.3763397
+"Complex Warm Clear","Northern Pike","K","0_percentile",0.01209209
+"Complex Warm Clear","Northern Pike","t0","0_percentile",-4.207847706
+"Complex Warm Dark","Northern Pike","Linf","0_percentile",988.8795772
+"Complex Warm Dark","Northern Pike","K","0_percentile",0.067921606
+"Complex Warm Dark","Northern Pike","t0","0_percentile",-2.572348136
+"Simple Riverine","Northern Pike","Linf","0_percentile",889.3248075
+"Simple Riverine","Northern Pike","K","0_percentile",0.015196681
+"Simple Riverine","Northern Pike","t0","0_percentile",-3.923838004
+"Simple Warm Clear","Northern Pike","Linf","0_percentile",668.4917232
+"Simple Warm Clear","Northern Pike","K","0_percentile",0.010231625
+"Simple Warm Clear","Northern Pike","t0","0_percentile",-4.970697933
+"Simple Warm Dark","Northern Pike","Linf","0_percentile",678.086894
+"Simple Warm Dark","Northern Pike","K","0_percentile",0.016556785
+"Simple Warm Dark","Northern Pike","t0","0_percentile",-5.75709273
+"Complex Cool Dark","Pumpkinseed","Linf","0_percentile",186.590906
+"Complex Cool Dark","Pumpkinseed","K","0_percentile",0.046728018
+"Complex Cool Dark","Pumpkinseed","t0","0_percentile",-3.054371376
+"Complex Riverine","Pumpkinseed","Linf","0_percentile",198.867722
+"Complex Riverine","Pumpkinseed","K","0_percentile",0.024081508
+"Complex Riverine","Pumpkinseed","t0","0_percentile",-3.630698289
+"Complex Warm Clear","Pumpkinseed","Linf","0_percentile",170.9022063
+"Complex Warm Clear","Pumpkinseed","K","0_percentile",0.028676808
+"Complex Warm Clear","Pumpkinseed","t0","0_percentile",-2.819613132
+"Complex Warm Dark","Pumpkinseed","Linf","0_percentile",192.1430265
+"Complex Warm Dark","Pumpkinseed","K","0_percentile",0.03070056
+"Complex Warm Dark","Pumpkinseed","t0","0_percentile",-2.858303831
+"Simple Cool Dark","Pumpkinseed","Linf","0_percentile",172.1885978
+"Simple Cool Dark","Pumpkinseed","K","0_percentile",0.013416246
+"Simple Cool Dark","Pumpkinseed","t0","0_percentile",-5.047494022
+"Simple Warm Clear","Pumpkinseed","Linf","0_percentile",168.1493947
+"Simple Warm Clear","Pumpkinseed","K","0_percentile",0.010700193
+"Simple Warm Clear","Pumpkinseed","t0","0_percentile",-4.078982399
+"Complex Cool Dark","Rock Bass","Linf","0_percentile",256.3633582
+"Complex Cool Dark","Rock Bass","K","0_percentile",0.03147931
+"Complex Cool Dark","Rock Bass","t0","0_percentile",-2.775829093
+"Complex Two Story","Rock Bass","Linf","0_percentile",184.1942816
+"Complex Two Story","Rock Bass","K","0_percentile",0.015518437
+"Complex Two Story","Rock Bass","t0","0_percentile",-4.016852959
+"Complex Cool Clear","Smallmouth Bass","Linf","0_percentile",461.3314092
+"Complex Cool Clear","Smallmouth Bass","K","0_percentile",0.11662699
+"Complex Cool Clear","Smallmouth Bass","t0","0_percentile",-0.779775869
+"Complex Cool Dark","Smallmouth Bass","Linf","0_percentile",486.2592229
+"Complex Cool Dark","Smallmouth Bass","K","0_percentile",0.158372634
+"Complex Cool Dark","Smallmouth Bass","t0","0_percentile",-0.503180755
+"Complex Riverine","Smallmouth Bass","Linf","0_percentile",495.8411857
+"Complex Riverine","Smallmouth Bass","K","0_percentile",0.125400237
+"Complex Riverine","Smallmouth Bass","t0","0_percentile",-1.148862947
+"Complex Two Story","Smallmouth Bass","Linf","0_percentile",501.6557297
+"Complex Two Story","Smallmouth Bass","K","0_percentile",0.165094992
+"Complex Two Story","Smallmouth Bass","t0","0_percentile",-0.618486621
+"Complex Warm Dark","Smallmouth Bass","Linf","0_percentile",431.1214117
+"Complex Warm Dark","Smallmouth Bass","K","0_percentile",0.052010323
+"Complex Warm Dark","Smallmouth Bass","t0","0_percentile",-2.248741726
+"Complex Cool Clear","Walleye","Linf","0_percentile",686.4566673
+"Complex Cool Clear","Walleye","K","0_percentile",0.104179777
+"Complex Cool Clear","Walleye","t0","0_percentile",-2.086981226
+"Complex Cool Dark","Walleye","Linf","0_percentile",719.1697087
+"Complex Cool Dark","Walleye","K","0_percentile",0.098173038
+"Complex Cool Dark","Walleye","t0","0_percentile",-1.963038866
+"Complex Riverine","Walleye","Linf","0_percentile",803.856956
+"Complex Riverine","Walleye","K","0_percentile",0.061301375
+"Complex Riverine","Walleye","t0","0_percentile",-2.751542012
+"Complex Two Story","Walleye","Linf","0_percentile",734.5018562
+"Complex Two Story","Walleye","K","0_percentile",0.102504125
+"Complex Two Story","Walleye","t0","0_percentile",-1.958605092
+"Complex Warm Clear","Walleye","Linf","0_percentile",611.8081303
+"Complex Warm Clear","Walleye","K","0_percentile",0.131015071
+"Complex Warm Clear","Walleye","t0","0_percentile",-2.096135293
+"Complex Warm Dark","Walleye","Linf","0_percentile",661.5836001
+"Complex Warm Dark","Walleye","K","0_percentile",0.137856511
+"Complex Warm Dark","Walleye","t0","0_percentile",-1.891554829
+"Complex Cool Clear","YellowPerch","Linf","0_percentile",250.0672858
+"Complex Cool Clear","YellowPerch","K","0_percentile",0.015711804
+"Complex Cool Clear","YellowPerch","t0","0_percentile",-4.381750119
+"Complex Cool Dark","YellowPerch","Linf","0_percentile",270.6393689
+"Complex Cool Dark","YellowPerch","K","0_percentile",0.015664828
+"Complex Cool Dark","YellowPerch","t0","0_percentile",-4.638223102
+"Complex Riverine","YellowPerch","Linf","0_percentile",272.7031957
+"Complex Riverine","YellowPerch","K","0_percentile",0.090242578
+"Complex Riverine","YellowPerch","t0","0_percentile",-2.245628683
+"Complex Two Story","YellowPerch","Linf","0_percentile",205.9703796
+"Complex Two Story","YellowPerch","K","0_percentile",0.031691965
+"Complex Two Story","YellowPerch","t0","0_percentile",-4.518918099
+"Complex Warm Dark","YellowPerch","Linf","0_percentile",312.3391587
+"Complex Warm Dark","YellowPerch","K","0_percentile",0.010311302
+"Complex Warm Dark","YellowPerch","t0","0_percentile",-3.577195352
+"Complex Cool Clear","Black Crappie","Linf","0.01_percentile",324.5999616
+"Complex Cool Clear","Black Crappie","K","0.01_percentile",0.121375619
+"Complex Cool Clear","Black Crappie","t0","0.01_percentile",-1.221019512
+"Complex Cool Dark","Black Crappie","Linf","0.01_percentile",334.5050103
+"Complex Cool Dark","Black Crappie","K","0.01_percentile",0.134761084
+"Complex Cool Dark","Black Crappie","t0","0.01_percentile",-1.395818173
+"Complex Riverine","Black Crappie","Linf","0.01_percentile",319.1363555
+"Complex Riverine","Black Crappie","K","0.01_percentile",0.188346054
+"Complex Riverine","Black Crappie","t0","0.01_percentile",-0.845585365
+"Complex Two Story","Black Crappie","Linf","0.01_percentile",275.7238802
+"Complex Two Story","Black Crappie","K","0.01_percentile",0.052812116
+"Complex Two Story","Black Crappie","t0","0.01_percentile",-2.171087642
+"Complex Warm Clear","Black Crappie","Linf","0.01_percentile",267.6272016
+"Complex Warm Clear","Black Crappie","K","0.01_percentile",0.119440362
+"Complex Warm Clear","Black Crappie","t0","0.01_percentile",-1.702707103
+"Complex Warm Dark","Black Crappie","Linf","0.01_percentile",316.6346193
+"Complex Warm Dark","Black Crappie","K","0.01_percentile",0.14985758
+"Complex Warm Dark","Black Crappie","t0","0.01_percentile",-1.01369527
+"Simple Cool Dark","Black Crappie","Linf","0.01_percentile",289.3134757
+"Simple Cool Dark","Black Crappie","K","0.01_percentile",0.055411592
+"Simple Cool Dark","Black Crappie","t0","0.01_percentile",-2.243687437
+"Simple Riverine","Black Crappie","Linf","0.01_percentile",287.4337046
+"Simple Riverine","Black Crappie","K","0.01_percentile",0.091830092
+"Simple Riverine","Black Crappie","t0","0.01_percentile",-1.55801531
+"Simple Warm Clear","Black Crappie","Linf","0.01_percentile",275.2943286
+"Simple Warm Clear","Black Crappie","K","0.01_percentile",0.036383807
+"Simple Warm Clear","Black Crappie","t0","0.01_percentile",-2.592165672
+"Simple Warm Dark","Black Crappie","Linf","0.01_percentile",251.1623572
+"Simple Warm Dark","Black Crappie","K","0.01_percentile",0.12298387
+"Simple Warm Dark","Black Crappie","t0","0.01_percentile",-1.815419254
+"Complex Cool Clear","Bluegill","Linf","0.01_percentile",287.1087024
+"Complex Cool Clear","Bluegill","K","0.01_percentile",0.016926002
+"Complex Cool Clear","Bluegill","t0","0.01_percentile",-2.930244889
+"Complex Cool Dark","Bluegill","Linf","0.01_percentile",249.2279295
+"Complex Cool Dark","Bluegill","K","0.01_percentile",0.077184606
+"Complex Cool Dark","Bluegill","t0","0.01_percentile",-2.059244095
+"Complex Riverine","Bluegill","Linf","0.01_percentile",242.5164891
+"Complex Riverine","Bluegill","K","0.01_percentile",0.132602426
+"Complex Riverine","Bluegill","t0","0.01_percentile",-1.2895709
+"Complex Two Story","Bluegill","Linf","0.01_percentile",270.4829965
+"Complex Two Story","Bluegill","K","0.01_percentile",0.020893105
+"Complex Two Story","Bluegill","t0","0.01_percentile",-2.315173691
+"Complex Warm Clear","Bluegill","Linf","0.01_percentile",288.3043249
+"Complex Warm Clear","Bluegill","K","0.01_percentile",0.035207359
+"Complex Warm Clear","Bluegill","t0","0.01_percentile",-1.86844735
+"Complex Warm Dark","Bluegill","Linf","0.01_percentile",266.7837488
+"Complex Warm Dark","Bluegill","K","0.01_percentile",0.080193038
+"Complex Warm Dark","Bluegill","t0","0.01_percentile",-1.864653044
+"Simple Cool Clear","Bluegill","Linf","0.01_percentile",214.2280019
+"Simple Cool Clear","Bluegill","K","0.01_percentile",0.030655405
+"Simple Cool Clear","Bluegill","t0","0.01_percentile",-2.183060673
+"Simple Cool Dark","Bluegill","Linf","0.01_percentile",256.3319366
+"Simple Cool Dark","Bluegill","K","0.01_percentile",0.047424458
+"Simple Cool Dark","Bluegill","t0","0.01_percentile",-2.421968159
+"Simple Riverine","Bluegill","Linf","0.01_percentile",228.6684357
+"Simple Riverine","Bluegill","K","0.01_percentile",0.119582984
+"Simple Riverine","Bluegill","t0","0.01_percentile",-1.329553179
+"Simple Two Story","Bluegill","Linf","0.01_percentile",200.642149
+"Simple Two Story","Bluegill","K","0.01_percentile",0.013441454
+"Simple Two Story","Bluegill","t0","0.01_percentile",-4.336718405
+"Simple Warm Clear","Bluegill","Linf","0.01_percentile",253.9566309
+"Simple Warm Clear","Bluegill","K","0.01_percentile",0.041868621
+"Simple Warm Clear","Bluegill","t0","0.01_percentile",-2.501876904
+"Simple Warm Dark","Bluegill","Linf","0.01_percentile",238.3037921
+"Simple Warm Dark","Bluegill","K","0.01_percentile",0.079947135
+"Simple Warm Dark","Bluegill","t0","0.01_percentile",-1.581306506
+"Complex Cool Clear","Largemouth Bass","Linf","0.01_percentile",496.5241961
+"Complex Cool Clear","Largemouth Bass","K","0.01_percentile",0.135141917
+"Complex Cool Clear","Largemouth Bass","t0","0.01_percentile",-0.846140758
+"Complex Cool Dark","Largemouth Bass","Linf","0.01_percentile",530.140409
+"Complex Cool Dark","Largemouth Bass","K","0.01_percentile",0.124100316
+"Complex Cool Dark","Largemouth Bass","t0","0.01_percentile",-0.982070748
+"Complex Riverine","Largemouth Bass","Linf","0.01_percentile",524.5581969
+"Complex Riverine","Largemouth Bass","K","0.01_percentile",0.135520495
+"Complex Riverine","Largemouth Bass","t0","0.01_percentile",-1.054460685
+"Complex Two Story","Largemouth Bass","Linf","0.01_percentile",488.099306
+"Complex Two Story","Largemouth Bass","K","0.01_percentile",0.15623681
+"Complex Two Story","Largemouth Bass","t0","0.01_percentile",-0.698263491
+"Complex Warm Clear","Largemouth Bass","Linf","0.01_percentile",505.7670899
+"Complex Warm Clear","Largemouth Bass","K","0.01_percentile",0.131172373
+"Complex Warm Clear","Largemouth Bass","t0","0.01_percentile",-0.807000577
+"Complex Warm Dark","Largemouth Bass","Linf","0.01_percentile",525.4492358
+"Complex Warm Dark","Largemouth Bass","K","0.01_percentile",0.151454469
+"Complex Warm Dark","Largemouth Bass","t0","0.01_percentile",-0.890920873
+"Simple Cool Clear","Largemouth Bass","Linf","0.01_percentile",470.7900204
+"Simple Cool Clear","Largemouth Bass","K","0.01_percentile",0.118242513
+"Simple Cool Clear","Largemouth Bass","t0","0.01_percentile",-0.748843167
+"Simple Cool Dark","Largemouth Bass","Linf","0.01_percentile",502.0490763
+"Simple Cool Dark","Largemouth Bass","K","0.01_percentile",0.116713265
+"Simple Cool Dark","Largemouth Bass","t0","0.01_percentile",-0.980221563
+"Simple Riverine","Largemouth Bass","Linf","0.01_percentile",529.2697101
+"Simple Riverine","Largemouth Bass","K","0.01_percentile",0.122757049
+"Simple Riverine","Largemouth Bass","t0","0.01_percentile",-0.812738096
+"Simple Two Story","Largemouth Bass","Linf","0.01_percentile",437.9314804
+"Simple Two Story","Largemouth Bass","K","0.01_percentile",0.058567467
+"Simple Two Story","Largemouth Bass","t0","0.01_percentile",-2.4056179
+"Simple Warm Clear","Largemouth Bass","Linf","0.01_percentile",516.0709315
+"Simple Warm Clear","Largemouth Bass","K","0.01_percentile",0.132415011
+"Simple Warm Clear","Largemouth Bass","t0","0.01_percentile",-0.868458341
+"Simple Warm Dark","Largemouth Bass","Linf","0.01_percentile",483.7556285
+"Simple Warm Dark","Largemouth Bass","K","0.01_percentile",0.1591071
+"Simple Warm Dark","Largemouth Bass","t0","0.01_percentile",-0.725138487
+"Complex Cool Clear","Muskellunge","Linf","0.01_percentile",1061.485033
+"Complex Cool Clear","Muskellunge","K","0.01_percentile",0.153838532
+"Complex Cool Clear","Muskellunge","t0","0.01_percentile",-1.098546891
+"Complex Cool Dark","Muskellunge","Linf","0.01_percentile",1212.855718
+"Complex Cool Dark","Muskellunge","K","0.01_percentile",0.129835503
+"Complex Cool Dark","Muskellunge","t0","0.01_percentile",-1.253256572
+"Complex Riverine","Muskellunge","Linf","0.01_percentile",1164.329428
+"Complex Riverine","Muskellunge","K","0.01_percentile",0.132852994
+"Complex Riverine","Muskellunge","t0","0.01_percentile",-1.381866608
+"Complex Two Story","Muskellunge","Linf","0.01_percentile",1169.677751
+"Complex Two Story","Muskellunge","K","0.01_percentile",0.156046236
+"Complex Two Story","Muskellunge","t0","0.01_percentile",-0.903415371
+"Complex Warm Dark","Muskellunge","Linf","0.01_percentile",1141.178229
+"Complex Warm Dark","Muskellunge","K","0.01_percentile",0.151255822
+"Complex Warm Dark","Muskellunge","t0","0.01_percentile",-1.989361355
+"Complex Cool Clear","Northern Pike","Linf","0.01_percentile",795.7077573
+"Complex Cool Clear","Northern Pike","K","0.01_percentile",0.057324996
+"Complex Cool Clear","Northern Pike","t0","0.01_percentile",-2.51971468
+"Complex Cool Dark","Northern Pike","Linf","0.01_percentile",997.7168205
+"Complex Cool Dark","Northern Pike","K","0.01_percentile",0.041423473
+"Complex Cool Dark","Northern Pike","t0","0.01_percentile",-3.561088491
+"Complex Riverine","Northern Pike","Linf","0.01_percentile",1334.548869
+"Complex Riverine","Northern Pike","K","0.01_percentile",0.015461485
+"Complex Riverine","Northern Pike","t0","0.01_percentile",-3.671145964
+"Complex Two Story","Northern Pike","Linf","0.01_percentile",1084.354329
+"Complex Two Story","Northern Pike","K","0.01_percentile",0.028308697
+"Complex Two Story","Northern Pike","t0","0.01_percentile",-3.269226147
+"Complex Warm Clear","Northern Pike","Linf","0.01_percentile",1003.459553
+"Complex Warm Clear","Northern Pike","K","0.01_percentile",0.017048726
+"Complex Warm Clear","Northern Pike","t0","0.01_percentile",-3.734251581
+"Complex Warm Dark","Northern Pike","Linf","0.01_percentile",1025.600257
+"Complex Warm Dark","Northern Pike","K","0.01_percentile",0.077226392
+"Complex Warm Dark","Northern Pike","t0","0.01_percentile",-2.420601633
+"Simple Riverine","Northern Pike","Linf","0.01_percentile",945.6133352
+"Simple Riverine","Northern Pike","K","0.01_percentile",0.033936033
+"Simple Riverine","Northern Pike","t0","0.01_percentile",-3.338664698
+"Simple Warm Clear","Northern Pike","Linf","0.01_percentile",733.2715639
+"Simple Warm Clear","Northern Pike","K","0.01_percentile",0.018687577
+"Simple Warm Clear","Northern Pike","t0","0.01_percentile",-4.448574448
+"Simple Warm Dark","Northern Pike","Linf","0.01_percentile",707.753332
+"Simple Warm Dark","Northern Pike","K","0.01_percentile",0.036727787
+"Simple Warm Dark","Northern Pike","t0","0.01_percentile",-4.787906226
+"Complex Cool Dark","Pumpkinseed","Linf","0.01_percentile",197.8594122
+"Complex Cool Dark","Pumpkinseed","K","0.01_percentile",0.093005319
+"Complex Cool Dark","Pumpkinseed","t0","0.01_percentile",-1.937783233
+"Complex Riverine","Pumpkinseed","Linf","0.01_percentile",206.9913938
+"Complex Riverine","Pumpkinseed","K","0.01_percentile",0.037717112
+"Complex Riverine","Pumpkinseed","t0","0.01_percentile",-2.895772202
+"Complex Warm Clear","Pumpkinseed","Linf","0.01_percentile",184.8336148
+"Complex Warm Clear","Pumpkinseed","K","0.01_percentile",0.046982759
+"Complex Warm Clear","Pumpkinseed","t0","0.01_percentile",-2.175773614
+"Complex Warm Dark","Pumpkinseed","Linf","0.01_percentile",203.0880846
+"Complex Warm Dark","Pumpkinseed","K","0.01_percentile",0.038229256
+"Complex Warm Dark","Pumpkinseed","t0","0.01_percentile",-2.180647449
+"Simple Cool Dark","Pumpkinseed","Linf","0.01_percentile",179.6557791
+"Simple Cool Dark","Pumpkinseed","K","0.01_percentile",0.03064544
+"Simple Cool Dark","Pumpkinseed","t0","0.01_percentile",-3.850423177
+"Simple Warm Clear","Pumpkinseed","Linf","0.01_percentile",180.7097118
+"Simple Warm Clear","Pumpkinseed","K","0.01_percentile",0.017039515
+"Simple Warm Clear","Pumpkinseed","t0","0.01_percentile",-3.200755078
+"Complex Cool Dark","Rock Bass","Linf","0.01_percentile",274.1366351
+"Complex Cool Dark","Rock Bass","K","0.01_percentile",0.062861618
+"Complex Cool Dark","Rock Bass","t0","0.01_percentile",-2.011235113
+"Complex Two Story","Rock Bass","Linf","0.01_percentile",186.2433038
+"Complex Two Story","Rock Bass","K","0.01_percentile",0.03266259
+"Complex Two Story","Rock Bass","t0","0.01_percentile",-2.241422234
+"Complex Cool Clear","Smallmouth Bass","Linf","0.01_percentile",483.2156368
+"Complex Cool Clear","Smallmouth Bass","K","0.01_percentile",0.134422393
+"Complex Cool Clear","Smallmouth Bass","t0","0.01_percentile",-0.652895298
+"Complex Cool Dark","Smallmouth Bass","Linf","0.01_percentile",504.9362535
+"Complex Cool Dark","Smallmouth Bass","K","0.01_percentile",0.171875798
+"Complex Cool Dark","Smallmouth Bass","t0","0.01_percentile",-0.41181823
+"Complex Riverine","Smallmouth Bass","Linf","0.01_percentile",507.9212243
+"Complex Riverine","Smallmouth Bass","K","0.01_percentile",0.137875015
+"Complex Riverine","Smallmouth Bass","t0","0.01_percentile",-1.034267476
+"Complex Two Story","Smallmouth Bass","Linf","0.01_percentile",509.8207173
+"Complex Two Story","Smallmouth Bass","K","0.01_percentile",0.178730572
+"Complex Two Story","Smallmouth Bass","t0","0.01_percentile",-0.526576537
+"Complex Warm Dark","Smallmouth Bass","Linf","0.01_percentile",443.7233488
+"Complex Warm Dark","Smallmouth Bass","K","0.01_percentile",0.098497925
+"Complex Warm Dark","Smallmouth Bass","t0","0.01_percentile",-1.622349215
+"Complex Cool Clear","Walleye","Linf","0.01_percentile",693.1455557
+"Complex Cool Clear","Walleye","K","0.01_percentile",0.108384998
+"Complex Cool Clear","Walleye","t0","0.01_percentile",-1.939397689
+"Complex Cool Dark","Walleye","Linf","0.01_percentile",727.6879004
+"Complex Cool Dark","Walleye","K","0.01_percentile",0.104244882
+"Complex Cool Dark","Walleye","t0","0.01_percentile",-1.861582149
+"Complex Riverine","Walleye","Linf","0.01_percentile",816.6112917
+"Complex Riverine","Walleye","K","0.01_percentile",0.067348971
+"Complex Riverine","Walleye","t0","0.01_percentile",-2.572416555
+"Complex Two Story","Walleye","Linf","0.01_percentile",741.3938127
+"Complex Two Story","Walleye","K","0.01_percentile",0.10701421
+"Complex Two Story","Walleye","t0","0.01_percentile",-1.778003862
+"Complex Warm Clear","Walleye","Linf","0.01_percentile",617.9116802
+"Complex Warm Clear","Walleye","K","0.01_percentile",0.150901749
+"Complex Warm Clear","Walleye","t0","0.01_percentile",-1.777424617
+"Complex Warm Dark","Walleye","Linf","0.01_percentile",669.649916
+"Complex Warm Dark","Walleye","K","0.01_percentile",0.145207368
+"Complex Warm Dark","Walleye","t0","0.01_percentile",-1.692012673
+"Complex Cool Clear","YellowPerch","Linf","0.01_percentile",271.2154171
+"Complex Cool Clear","YellowPerch","K","0.01_percentile",0.020972098
+"Complex Cool Clear","YellowPerch","t0","0.01_percentile",-3.803695312
+"Complex Cool Dark","YellowPerch","Linf","0.01_percentile",284.8219196
+"Complex Cool Dark","YellowPerch","K","0.01_percentile",0.024183889
+"Complex Cool Dark","YellowPerch","t0","0.01_percentile",-3.80281649
+"Complex Riverine","YellowPerch","Linf","0.01_percentile",280.3021975
+"Complex Riverine","YellowPerch","K","0.01_percentile",0.120366549
+"Complex Riverine","YellowPerch","t0","0.01_percentile",-1.746659235
+"Complex Two Story","YellowPerch","Linf","0.01_percentile",211.3637538
+"Complex Two Story","YellowPerch","K","0.01_percentile",0.050384395
+"Complex Two Story","YellowPerch","t0","0.01_percentile",-2.537648301
+"Complex Warm Dark","YellowPerch","Linf","0.01_percentile",356.1777064
+"Complex Warm Dark","YellowPerch","K","0.01_percentile",0.016075162
+"Complex Warm Dark","YellowPerch","t0","0.01_percentile",-3.196883438
+"Complex Cool Clear","Black Crappie","Linf","0.05_percentile",334.244863
+"Complex Cool Clear","Black Crappie","K","0.05_percentile",0.146193222
+"Complex Cool Clear","Black Crappie","t0","0.05_percentile",-0.952682784
+"Complex Cool Dark","Black Crappie","Linf","0.05_percentile",342.3399568
+"Complex Cool Dark","Black Crappie","K","0.05_percentile",0.146525542
+"Complex Cool Dark","Black Crappie","t0","0.05_percentile",-1.212346409
+"Complex Riverine","Black Crappie","Linf","0.05_percentile",323.1913553
+"Complex Riverine","Black Crappie","K","0.05_percentile",0.202236327
+"Complex Riverine","Black Crappie","t0","0.05_percentile",-0.722851734
+"Complex Two Story","Black Crappie","Linf","0.05_percentile",282.4273643
+"Complex Two Story","Black Crappie","K","0.05_percentile",0.111128069
+"Complex Two Story","Black Crappie","t0","0.05_percentile",-1.466701661
+"Complex Warm Clear","Black Crappie","Linf","0.05_percentile",275.6320579
+"Complex Warm Clear","Black Crappie","K","0.05_percentile",0.191472417
+"Complex Warm Clear","Black Crappie","t0","0.05_percentile",-0.89197597
+"Complex Warm Dark","Black Crappie","Linf","0.05_percentile",323.3851832
+"Complex Warm Dark","Black Crappie","K","0.05_percentile",0.168948342
+"Complex Warm Dark","Black Crappie","t0","0.05_percentile",-0.858448571
+"Simple Cool Dark","Black Crappie","Linf","0.05_percentile",302.2787679
+"Simple Cool Dark","Black Crappie","K","0.05_percentile",0.084192691
+"Simple Cool Dark","Black Crappie","t0","0.05_percentile",-1.539367651
+"Simple Riverine","Black Crappie","Linf","0.05_percentile",299.7177777
+"Simple Riverine","Black Crappie","K","0.05_percentile",0.134336165
+"Simple Riverine","Black Crappie","t0","0.05_percentile",-1.114831129
+"Simple Warm Clear","Black Crappie","Linf","0.05_percentile",287.9230558
+"Simple Warm Clear","Black Crappie","K","0.05_percentile",0.066580093
+"Simple Warm Clear","Black Crappie","t0","0.05_percentile",-1.781683298
+"Simple Warm Dark","Black Crappie","Linf","0.05_percentile",257.3265521
+"Simple Warm Dark","Black Crappie","K","0.05_percentile",0.192544639
+"Simple Warm Dark","Black Crappie","t0","0.05_percentile",-0.971526945
+"Complex Cool Clear","Bluegill","Linf","0.05_percentile",308.1832251
+"Complex Cool Clear","Bluegill","K","0.05_percentile",0.027170826
+"Complex Cool Clear","Bluegill","t0","0.05_percentile",-2.568823778
+"Complex Cool Dark","Bluegill","Linf","0.05_percentile",257.375219
+"Complex Cool Dark","Bluegill","K","0.05_percentile",0.093605161
+"Complex Cool Dark","Bluegill","t0","0.05_percentile",-1.721531569
+"Complex Riverine","Bluegill","Linf","0.05_percentile",247.5467891
+"Complex Riverine","Bluegill","K","0.05_percentile",0.147396281
+"Complex Riverine","Bluegill","t0","0.05_percentile",-1.112917521
+"Complex Two Story","Bluegill","Linf","0.05_percentile",289.954024
+"Complex Two Story","Bluegill","K","0.05_percentile",0.040461576
+"Complex Two Story","Bluegill","t0","0.05_percentile",-1.929091382
+"Complex Warm Clear","Bluegill","Linf","0.05_percentile",301.0448967
+"Complex Warm Clear","Bluegill","K","0.05_percentile",0.05471126
+"Complex Warm Clear","Bluegill","t0","0.05_percentile",-1.485528686
+"Complex Warm Dark","Bluegill","Linf","0.05_percentile",276.7908364
+"Complex Warm Dark","Bluegill","K","0.05_percentile",0.092720167
+"Complex Warm Dark","Bluegill","t0","0.05_percentile",-1.700587604
+"Simple Cool Clear","Bluegill","Linf","0.05_percentile",224.4974635
+"Simple Cool Clear","Bluegill","K","0.05_percentile",0.058134189
+"Simple Cool Clear","Bluegill","t0","0.05_percentile",-1.667515607
+"Simple Cool Dark","Bluegill","Linf","0.05_percentile",268.9480419
+"Simple Cool Dark","Bluegill","K","0.05_percentile",0.062769682
+"Simple Cool Dark","Bluegill","t0","0.05_percentile",-2.016132675
+"Simple Riverine","Bluegill","Linf","0.05_percentile",236.1135651
+"Simple Riverine","Bluegill","K","0.05_percentile",0.137739641
+"Simple Riverine","Bluegill","t0","0.05_percentile",-1.100157166
+"Simple Two Story","Bluegill","Linf","0.05_percentile",214.9009125
+"Simple Two Story","Bluegill","K","0.05_percentile",0.025540074
+"Simple Two Story","Bluegill","t0","0.05_percentile",-2.855573142
+"Simple Warm Clear","Bluegill","Linf","0.05_percentile",271.6637712
+"Simple Warm Clear","Bluegill","K","0.05_percentile",0.057457726
+"Simple Warm Clear","Bluegill","t0","0.05_percentile",-2.085320651
+"Simple Warm Dark","Bluegill","Linf","0.05_percentile",248.9324802
+"Simple Warm Dark","Bluegill","K","0.05_percentile",0.099419275
+"Simple Warm Dark","Bluegill","t0","0.05_percentile",-1.295906017
+"Complex Cool Clear","Largemouth Bass","Linf","0.05_percentile",504.2006325
+"Complex Cool Clear","Largemouth Bass","K","0.05_percentile",0.144269354
+"Complex Cool Clear","Largemouth Bass","t0","0.05_percentile",-0.756152561
+"Complex Cool Dark","Largemouth Bass","Linf","0.05_percentile",538.586366
+"Complex Cool Dark","Largemouth Bass","K","0.05_percentile",0.130204409
+"Complex Cool Dark","Largemouth Bass","t0","0.05_percentile",-0.897466945
+"Complex Riverine","Largemouth Bass","Linf","0.05_percentile",535.9302937
+"Complex Riverine","Largemouth Bass","K","0.05_percentile",0.144201148
+"Complex Riverine","Largemouth Bass","t0","0.05_percentile",-0.910938386
+"Complex Two Story","Largemouth Bass","Linf","0.05_percentile",496.815215
+"Complex Two Story","Largemouth Bass","K","0.05_percentile",0.166293725
+"Complex Two Story","Largemouth Bass","t0","0.05_percentile",-0.591073457
+"Complex Warm Clear","Largemouth Bass","Linf","0.05_percentile",513.9553412
+"Complex Warm Clear","Largemouth Bass","K","0.05_percentile",0.136994323
+"Complex Warm Clear","Largemouth Bass","t0","0.05_percentile",-0.710424245
+"Complex Warm Dark","Largemouth Bass","Linf","0.05_percentile",530.6261414
+"Complex Warm Dark","Largemouth Bass","K","0.05_percentile",0.15712763
+"Complex Warm Dark","Largemouth Bass","t0","0.05_percentile",-0.822276358
+"Simple Cool Clear","Largemouth Bass","Linf","0.05_percentile",484.1090905
+"Simple Cool Clear","Largemouth Bass","K","0.05_percentile",0.137087531
+"Simple Cool Clear","Largemouth Bass","t0","0.05_percentile",-0.557600205
+"Simple Cool Dark","Largemouth Bass","Linf","0.05_percentile",513.4465703
+"Simple Cool Dark","Largemouth Bass","K","0.05_percentile",0.129407998
+"Simple Cool Dark","Largemouth Bass","t0","0.05_percentile",-0.800037058
+"Simple Riverine","Largemouth Bass","Linf","0.05_percentile",541.2434156
+"Simple Riverine","Largemouth Bass","K","0.05_percentile",0.133073611
+"Simple Riverine","Largemouth Bass","t0","0.05_percentile",-0.676643438
+"Simple Two Story","Largemouth Bass","Linf","0.05_percentile",462.1116235
+"Simple Two Story","Largemouth Bass","K","0.05_percentile",0.076309688
+"Simple Two Story","Largemouth Bass","t0","0.05_percentile",-1.935682012
+"Simple Warm Clear","Largemouth Bass","Linf","0.05_percentile",520.7780069
+"Simple Warm Clear","Largemouth Bass","K","0.05_percentile",0.135930112
+"Simple Warm Clear","Largemouth Bass","t0","0.05_percentile",-0.778938783
+"Simple Warm Dark","Largemouth Bass","Linf","0.05_percentile",492.0353692
+"Simple Warm Dark","Largemouth Bass","K","0.05_percentile",0.167963784
+"Simple Warm Dark","Largemouth Bass","t0","0.05_percentile",-0.603791437
+"Complex Cool Clear","Muskellunge","Linf","0.05_percentile",1081.623686
+"Complex Cool Clear","Muskellunge","K","0.05_percentile",0.165470369
+"Complex Cool Clear","Muskellunge","t0","0.05_percentile",-0.958180997
+"Complex Cool Dark","Muskellunge","Linf","0.05_percentile",1225.510693
+"Complex Cool Dark","Muskellunge","K","0.05_percentile",0.134889737
+"Complex Cool Dark","Muskellunge","t0","0.05_percentile",-1.171398448
+"Complex Riverine","Muskellunge","Linf","0.05_percentile",1184.453306
+"Complex Riverine","Muskellunge","K","0.05_percentile",0.140188845
+"Complex Riverine","Muskellunge","t0","0.05_percentile",-1.241001957
+"Complex Two Story","Muskellunge","Linf","0.05_percentile",1180.637805
+"Complex Two Story","Muskellunge","K","0.05_percentile",0.160794993
+"Complex Two Story","Muskellunge","t0","0.05_percentile",-0.825793225
+"Complex Warm Dark","Muskellunge","Linf","0.05_percentile",1156.622977
+"Complex Warm Dark","Muskellunge","K","0.05_percentile",0.161680642
+"Complex Warm Dark","Muskellunge","t0","0.05_percentile",-1.712562917
+"Complex Cool Clear","Northern Pike","Linf","0.05_percentile",830.1064519
+"Complex Cool Clear","Northern Pike","K","0.05_percentile",0.07890351
+"Complex Cool Clear","Northern Pike","t0","0.05_percentile",-2.130830745
+"Complex Cool Dark","Northern Pike","Linf","0.05_percentile",1044.405355
+"Complex Cool Dark","Northern Pike","K","0.05_percentile",0.05283592
+"Complex Cool Dark","Northern Pike","t0","0.05_percentile",-3.123553445
+"Complex Riverine","Northern Pike","Linf","0.05_percentile",1443.039957
+"Complex Riverine","Northern Pike","K","0.05_percentile",0.021518819
+"Complex Riverine","Northern Pike","t0","0.05_percentile",-3.352883821
+"Complex Two Story","Northern Pike","Linf","0.05_percentile",1153.596885
+"Complex Two Story","Northern Pike","K","0.05_percentile",0.0391818
+"Complex Two Story","Northern Pike","t0","0.05_percentile",-2.926549361
+"Complex Warm Clear","Northern Pike","Linf","0.05_percentile",1084.925559
+"Complex Warm Clear","Northern Pike","K","0.05_percentile",0.026720622
+"Complex Warm Clear","Northern Pike","t0","0.05_percentile",-3.286141676
+"Complex Warm Dark","Northern Pike","Linf","0.05_percentile",1054.820352
+"Complex Warm Dark","Northern Pike","K","0.05_percentile",0.086895733
+"Complex Warm Dark","Northern Pike","t0","0.05_percentile",-2.197721456
+"Simple Riverine","Northern Pike","Linf","0.05_percentile",991.6396712
+"Simple Riverine","Northern Pike","K","0.05_percentile",0.055846072
+"Simple Riverine","Northern Pike","t0","0.05_percentile",-2.768982142
+"Simple Warm Clear","Northern Pike","Linf","0.05_percentile",802.3273139
+"Simple Warm Clear","Northern Pike","K","0.05_percentile",0.029381827
+"Simple Warm Clear","Northern Pike","t0","0.05_percentile",-3.748434275
+"Simple Warm Dark","Northern Pike","Linf","0.05_percentile",736.370694
+"Simple Warm Dark","Northern Pike","K","0.05_percentile",0.063772521
+"Simple Warm Dark","Northern Pike","t0","0.05_percentile",-3.642659583
+"Complex Cool Dark","Pumpkinseed","Linf","0.05_percentile",203.6106599
+"Complex Cool Dark","Pumpkinseed","K","0.05_percentile",0.126981044
+"Complex Cool Dark","Pumpkinseed","t0","0.05_percentile",-1.433091619
+"Complex Riverine","Pumpkinseed","Linf","0.05_percentile",218.0498193
+"Complex Riverine","Pumpkinseed","K","0.05_percentile",0.06775911
+"Complex Riverine","Pumpkinseed","t0","0.05_percentile",-2.311737303
+"Complex Warm Clear","Pumpkinseed","Linf","0.05_percentile",192.4802397
+"Complex Warm Clear","Pumpkinseed","K","0.05_percentile",0.090179982
+"Complex Warm Clear","Pumpkinseed","t0","0.05_percentile",-1.040987975
+"Complex Warm Dark","Pumpkinseed","Linf","0.05_percentile",214.6237685
+"Complex Warm Dark","Pumpkinseed","K","0.05_percentile",0.060532927
+"Complex Warm Dark","Pumpkinseed","t0","0.05_percentile",-1.793556241
+"Simple Cool Dark","Pumpkinseed","Linf","0.05_percentile",186.8213931
+"Simple Cool Dark","Pumpkinseed","K","0.05_percentile",0.053127073
+"Simple Cool Dark","Pumpkinseed","t0","0.05_percentile",-2.605949024
+"Simple Warm Clear","Pumpkinseed","Linf","0.05_percentile",188.9865724
+"Simple Warm Clear","Pumpkinseed","K","0.05_percentile",0.032464637
+"Simple Warm Clear","Pumpkinseed","t0","0.05_percentile",-2.296910818
+"Complex Cool Dark","Rock Bass","Linf","0.05_percentile",283.3693903
+"Complex Cool Dark","Rock Bass","K","0.05_percentile",0.084803029
+"Complex Cool Dark","Rock Bass","t0","0.05_percentile",-1.527072731
+"Complex Two Story","Rock Bass","Linf","0.05_percentile",191.683719
+"Complex Two Story","Rock Bass","K","0.05_percentile",0.072456864
+"Complex Two Story","Rock Bass","t0","0.05_percentile",-1.100461588
+"Complex Cool Clear","Smallmouth Bass","Linf","0.05_percentile",496.7830748
+"Complex Cool Clear","Smallmouth Bass","K","0.05_percentile",0.147861491
+"Complex Cool Clear","Smallmouth Bass","t0","0.05_percentile",-0.504622221
+"Complex Cool Dark","Smallmouth Bass","Linf","0.05_percentile",511.5390866
+"Complex Cool Dark","Smallmouth Bass","K","0.05_percentile",0.183937892
+"Complex Cool Dark","Smallmouth Bass","t0","0.05_percentile",-0.318968652
+"Complex Riverine","Smallmouth Bass","Linf","0.05_percentile",517.5705365
+"Complex Riverine","Smallmouth Bass","K","0.05_percentile",0.150923278
+"Complex Riverine","Smallmouth Bass","t0","0.05_percentile",-0.904277454
+"Complex Two Story","Smallmouth Bass","Linf","0.05_percentile",515.918359
+"Complex Two Story","Smallmouth Bass","K","0.05_percentile",0.185543867
+"Complex Two Story","Smallmouth Bass","t0","0.05_percentile",-0.441948136
+"Complex Warm Dark","Smallmouth Bass","Linf","0.05_percentile",460.5568598
+"Complex Warm Dark","Smallmouth Bass","K","0.05_percentile",0.139281319
+"Complex Warm Dark","Smallmouth Bass","t0","0.05_percentile",-1.045178722
+"Complex Cool Clear","Walleye","Linf","0.05_percentile",701.0589846
+"Complex Cool Clear","Walleye","K","0.05_percentile",0.113096595
+"Complex Cool Clear","Walleye","t0","0.05_percentile",-1.844750087
+"Complex Cool Dark","Walleye","Linf","0.05_percentile",735.9361497
+"Complex Cool Dark","Walleye","K","0.05_percentile",0.107434458
+"Complex Cool Dark","Walleye","t0","0.05_percentile",-1.786442038
+"Complex Riverine","Walleye","Linf","0.05_percentile",835.8874744
+"Complex Riverine","Walleye","K","0.05_percentile",0.071370989
+"Complex Riverine","Walleye","t0","0.05_percentile",-2.431578904
+"Complex Two Story","Walleye","Linf","0.05_percentile",748.2576137
+"Complex Two Story","Walleye","K","0.05_percentile",0.11004116
+"Complex Two Story","Walleye","t0","0.05_percentile",-1.710582207
+"Complex Warm Clear","Walleye","Linf","0.05_percentile",624.5034044
+"Complex Warm Clear","Walleye","K","0.05_percentile",0.160148285
+"Complex Warm Clear","Walleye","t0","0.05_percentile",-1.61430476
+"Complex Warm Dark","Walleye","Linf","0.05_percentile",674.906668
+"Complex Warm Dark","Walleye","K","0.05_percentile",0.15054972
+"Complex Warm Dark","Walleye","t0","0.05_percentile",-1.583047675
+"Complex Cool Clear","YellowPerch","Linf","0.05_percentile",291.835913
+"Complex Cool Clear","YellowPerch","K","0.05_percentile",0.0318277
+"Complex Cool Clear","YellowPerch","t0","0.05_percentile",-3.080382465
+"Complex Cool Dark","YellowPerch","Linf","0.05_percentile",302.5500401
+"Complex Cool Dark","YellowPerch","K","0.05_percentile",0.036164922
+"Complex Cool Dark","YellowPerch","t0","0.05_percentile",-3.262280835
+"Complex Riverine","YellowPerch","Linf","0.05_percentile",288.352113
+"Complex Riverine","YellowPerch","K","0.05_percentile",0.137744619
+"Complex Riverine","YellowPerch","t0","0.05_percentile",-1.452810135
+"Complex Two Story","YellowPerch","Linf","0.05_percentile",223.265571
+"Complex Two Story","YellowPerch","K","0.05_percentile",0.082409159
+"Complex Two Story","YellowPerch","t0","0.05_percentile",-1.623692158
+"Complex Warm Dark","YellowPerch","Linf","0.05_percentile",379.7806229
+"Complex Warm Dark","YellowPerch","K","0.05_percentile",0.022371525
+"Complex Warm Dark","YellowPerch","t0","0.05_percentile",-2.728166822
+"Complex Cool Clear","Black Crappie","Linf","0.10_percentile",339.8523444
+"Complex Cool Clear","Black Crappie","K","0.10_percentile",0.15885155
+"Complex Cool Clear","Black Crappie","t0","0.10_percentile",-0.848490958
+"Complex Cool Dark","Black Crappie","Linf","0.10_percentile",346.2671792
+"Complex Cool Dark","Black Crappie","K","0.10_percentile",0.153066882
+"Complex Cool Dark","Black Crappie","t0","0.10_percentile",-1.109811684
+"Complex Riverine","Black Crappie","Linf","0.10_percentile",325.8552326
+"Complex Riverine","Black Crappie","K","0.10_percentile",0.208295352
+"Complex Riverine","Black Crappie","t0","0.10_percentile",-0.648316709
+"Complex Two Story","Black Crappie","Linf","0.10_percentile",289.3580802
+"Complex Two Story","Black Crappie","K","0.10_percentile",0.155734333
+"Complex Two Story","Black Crappie","t0","0.10_percentile",-1.034680291
+"Complex Warm Clear","Black Crappie","Linf","0.10_percentile",280.555587
+"Complex Warm Clear","Black Crappie","K","0.10_percentile",0.220241105
+"Complex Warm Clear","Black Crappie","t0","0.10_percentile",-0.6050593
+"Complex Warm Dark","Black Crappie","Linf","0.10_percentile",327.2090876
+"Complex Warm Dark","Black Crappie","K","0.10_percentile",0.177902925
+"Complex Warm Dark","Black Crappie","t0","0.10_percentile",-0.778842228
+"Simple Cool Dark","Black Crappie","Linf","0.10_percentile",309.2733688
+"Simple Cool Dark","Black Crappie","K","0.10_percentile",0.113405506
+"Simple Cool Dark","Black Crappie","t0","0.10_percentile",-1.234097865
+"Simple Riverine","Black Crappie","Linf","0.10_percentile",307.590051
+"Simple Riverine","Black Crappie","K","0.10_percentile",0.150647178
+"Simple Riverine","Black Crappie","t0","0.10_percentile",-0.899672272
+"Simple Warm Clear","Black Crappie","Linf","0.10_percentile",297.4940628
+"Simple Warm Clear","Black Crappie","K","0.10_percentile",0.092374286
+"Simple Warm Clear","Black Crappie","t0","0.10_percentile",-1.422474979
+"Simple Warm Dark","Black Crappie","Linf","0.10_percentile",262.0623114
+"Simple Warm Dark","Black Crappie","K","0.10_percentile",0.224647565
+"Simple Warm Dark","Black Crappie","t0","0.10_percentile",-0.660217965
+"Complex Cool Clear","Bluegill","Linf","0.10_percentile",323.9270766
+"Complex Cool Clear","Bluegill","K","0.10_percentile",0.03495695
+"Complex Cool Clear","Bluegill","t0","0.10_percentile",-2.333879458
+"Complex Cool Dark","Bluegill","Linf","0.10_percentile",261.6172582
+"Complex Cool Dark","Bluegill","K","0.10_percentile",0.10431545
+"Complex Cool Dark","Bluegill","t0","0.10_percentile",-1.53234847
+"Complex Riverine","Bluegill","Linf","0.10_percentile",250.5264971
+"Complex Riverine","Bluegill","K","0.10_percentile",0.154649765
+"Complex Riverine","Bluegill","t0","0.10_percentile",-1.010892267
+"Complex Two Story","Bluegill","Linf","0.10_percentile",304.4271473
+"Complex Two Story","Bluegill","K","0.10_percentile",0.050291076
+"Complex Two Story","Bluegill","t0","0.10_percentile",-1.699692264
+"Complex Warm Clear","Bluegill","Linf","0.10_percentile",311.5373688
+"Complex Warm Clear","Bluegill","K","0.10_percentile",0.060035992
+"Complex Warm Clear","Bluegill","t0","0.10_percentile",-1.34972169
+"Complex Warm Dark","Bluegill","Linf","0.10_percentile",281.250741
+"Complex Warm Dark","Bluegill","K","0.10_percentile",0.099328213
+"Complex Warm Dark","Bluegill","t0","0.10_percentile",-1.629911616
+"Simple Cool Clear","Bluegill","Linf","0.10_percentile",232.0139605
+"Simple Cool Clear","Bluegill","K","0.10_percentile",0.076015425
+"Simple Cool Clear","Bluegill","t0","0.10_percentile",-1.331314063
+"Simple Cool Dark","Bluegill","Linf","0.10_percentile",278.1695665
+"Simple Cool Dark","Bluegill","K","0.10_percentile",0.07569556
+"Simple Cool Dark","Bluegill","t0","0.10_percentile",-1.788363969
+"Simple Riverine","Bluegill","Linf","0.10_percentile",239.7231767
+"Simple Riverine","Bluegill","K","0.10_percentile",0.147281369
+"Simple Riverine","Bluegill","t0","0.10_percentile",-0.990909424
+"Simple Two Story","Bluegill","Linf","0.10_percentile",223.533954
+"Simple Two Story","Bluegill","K","0.10_percentile",0.036099153
+"Simple Two Story","Bluegill","t0","0.10_percentile",-2.490073105
+"Simple Warm Clear","Bluegill","Linf","0.10_percentile",281.4171779
+"Simple Warm Clear","Bluegill","K","0.10_percentile",0.06483122
+"Simple Warm Clear","Bluegill","t0","0.10_percentile",-1.909368328
+"Simple Warm Dark","Bluegill","Linf","0.10_percentile",256.5714526
+"Simple Warm Dark","Bluegill","K","0.10_percentile",0.110009151
+"Simple Warm Dark","Bluegill","t0","0.10_percentile",-1.197027144
+"Complex Cool Clear","Largemouth Bass","Linf","0.10_percentile",509.7088943
+"Complex Cool Clear","Largemouth Bass","K","0.10_percentile",0.148599114
+"Complex Cool Clear","Largemouth Bass","t0","0.10_percentile",-0.694766137
+"Complex Cool Dark","Largemouth Bass","Linf","0.10_percentile",542.5635702
+"Complex Cool Dark","Largemouth Bass","K","0.10_percentile",0.134560817
+"Complex Cool Dark","Largemouth Bass","t0","0.10_percentile",-0.829640865
+"Complex Riverine","Largemouth Bass","Linf","0.10_percentile",541.1449055
+"Complex Riverine","Largemouth Bass","K","0.10_percentile",0.148101182
+"Complex Riverine","Largemouth Bass","t0","0.10_percentile",-0.830158941
+"Complex Two Story","Largemouth Bass","Linf","0.10_percentile",499.9084647
+"Complex Two Story","Largemouth Bass","K","0.10_percentile",0.171572959
+"Complex Two Story","Largemouth Bass","t0","0.10_percentile",-0.535719075
+"Complex Warm Clear","Largemouth Bass","Linf","0.10_percentile",517.4907136
+"Complex Warm Clear","Largemouth Bass","K","0.10_percentile",0.140126704
+"Complex Warm Clear","Largemouth Bass","t0","0.10_percentile",-0.672279664
+"Complex Warm Dark","Largemouth Bass","Linf","0.10_percentile",533.2762342
+"Complex Warm Dark","Largemouth Bass","K","0.10_percentile",0.1599093
+"Complex Warm Dark","Largemouth Bass","t0","0.10_percentile",-0.789192544
+"Simple Cool Clear","Largemouth Bass","Linf","0.10_percentile",492.6425821
+"Simple Cool Clear","Largemouth Bass","K","0.10_percentile",0.145527653
+"Simple Cool Clear","Largemouth Bass","t0","0.10_percentile",-0.464850149
+"Simple Cool Dark","Largemouth Bass","Linf","0.10_percentile",521.6432614
+"Simple Cool Dark","Largemouth Bass","K","0.10_percentile",0.136577186
+"Simple Cool Dark","Largemouth Bass","t0","0.10_percentile",-0.735305456
+"Simple Riverine","Largemouth Bass","Linf","0.10_percentile",549.2626602
+"Simple Riverine","Largemouth Bass","K","0.10_percentile",0.137957367
+"Simple Riverine","Largemouth Bass","t0","0.10_percentile",-0.605118608
+"Simple Two Story","Largemouth Bass","Linf","0.10_percentile",473.8308977
+"Simple Two Story","Largemouth Bass","K","0.10_percentile",0.089694977
+"Simple Two Story","Largemouth Bass","t0","0.10_percentile",-1.650417311
+"Simple Warm Clear","Largemouth Bass","Linf","0.10_percentile",524.5770526
+"Simple Warm Clear","Largemouth Bass","K","0.10_percentile",0.139231704
+"Simple Warm Clear","Largemouth Bass","t0","0.10_percentile",-0.742857171
+"Simple Warm Dark","Largemouth Bass","Linf","0.10_percentile",496.6890607
+"Simple Warm Dark","Largemouth Bass","K","0.10_percentile",0.17289186
+"Simple Warm Dark","Largemouth Bass","t0","0.10_percentile",-0.554177637
+"Complex Cool Clear","Muskellunge","Linf","0.10_percentile",1093.597298
+"Complex Cool Clear","Muskellunge","K","0.10_percentile",0.17169335
+"Complex Cool Clear","Muskellunge","t0","0.10_percentile",-0.874374056
+"Complex Cool Dark","Muskellunge","Linf","0.10_percentile",1231.020212
+"Complex Cool Dark","Muskellunge","K","0.10_percentile",0.13734365
+"Complex Cool Dark","Muskellunge","t0","0.10_percentile",-1.113507351
+"Complex Riverine","Muskellunge","Linf","0.10_percentile",1194.153155
+"Complex Riverine","Muskellunge","K","0.10_percentile",0.144851865
+"Complex Riverine","Muskellunge","t0","0.10_percentile",-1.154737321
+"Complex Two Story","Muskellunge","Linf","0.10_percentile",1185.375342
+"Complex Two Story","Muskellunge","K","0.10_percentile",0.163882053
+"Complex Two Story","Muskellunge","t0","0.10_percentile",-0.781883211
+"Complex Warm Dark","Muskellunge","Linf","0.10_percentile",1163.41043
+"Complex Warm Dark","Muskellunge","K","0.10_percentile",0.169409743
+"Complex Warm Dark","Muskellunge","t0","0.10_percentile",-1.543648389
+"Complex Cool Clear","Northern Pike","Linf","0.10_percentile",850.8640404
+"Complex Cool Clear","Northern Pike","K","0.10_percentile",0.093085598
+"Complex Cool Clear","Northern Pike","t0","0.10_percentile",-1.942170995
+"Complex Cool Dark","Northern Pike","Linf","0.10_percentile",1071.391413
+"Complex Cool Dark","Northern Pike","K","0.10_percentile",0.05950567
+"Complex Cool Dark","Northern Pike","t0","0.10_percentile",-2.924096377
+"Complex Riverine","Northern Pike","Linf","0.10_percentile",1516.310253
+"Complex Riverine","Northern Pike","K","0.10_percentile",0.0265701
+"Complex Riverine","Northern Pike","t0","0.10_percentile",-3.163900979
+"Complex Two Story","Northern Pike","Linf","0.10_percentile",1194.27952
+"Complex Two Story","Northern Pike","K","0.10_percentile",0.046618682
+"Complex Two Story","Northern Pike","t0","0.10_percentile",-2.737236085
+"Complex Warm Clear","Northern Pike","Linf","0.10_percentile",1136.307162
+"Complex Warm Clear","Northern Pike","K","0.10_percentile",0.032848
+"Complex Warm Clear","Northern Pike","t0","0.10_percentile",-3.048401435
+"Complex Warm Dark","Northern Pike","Linf","0.10_percentile",1072.803698
+"Complex Warm Dark","Northern Pike","K","0.10_percentile",0.094054854
+"Complex Warm Dark","Northern Pike","t0","0.10_percentile",-2.069375728
+"Simple Riverine","Northern Pike","Linf","0.10_percentile",1017.360552
+"Simple Riverine","Northern Pike","K","0.10_percentile",0.066435053
+"Simple Riverine","Northern Pike","t0","0.10_percentile",-2.488047674
+"Simple Warm Clear","Northern Pike","Linf","0.10_percentile",837.5314479
+"Simple Warm Clear","Northern Pike","K","0.10_percentile",0.039618343
+"Simple Warm Clear","Northern Pike","t0","0.10_percentile",-3.381009685
+"Simple Warm Dark","Northern Pike","Linf","0.10_percentile",750.8638519
+"Simple Warm Dark","Northern Pike","K","0.10_percentile",0.100183966
+"Simple Warm Dark","Northern Pike","t0","0.10_percentile",-2.695072212
+"Complex Cool Dark","Pumpkinseed","Linf","0.10_percentile",206.8207764
+"Complex Cool Dark","Pumpkinseed","K","0.10_percentile",0.146998544
+"Complex Cool Dark","Pumpkinseed","t0","0.10_percentile",-1.183111408
+"Complex Riverine","Pumpkinseed","Linf","0.10_percentile",223.4993959
+"Complex Riverine","Pumpkinseed","K","0.10_percentile",0.086864391
+"Complex Riverine","Pumpkinseed","t0","0.10_percentile",-1.98994051
+"Complex Warm Clear","Pumpkinseed","Linf","0.10_percentile",196.8451442
+"Complex Warm Clear","Pumpkinseed","K","0.10_percentile",0.121505271
+"Complex Warm Clear","Pumpkinseed","t0","0.10_percentile",-0.668617235
+"Complex Warm Dark","Pumpkinseed","Linf","0.10_percentile",223.7332792
+"Complex Warm Dark","Pumpkinseed","K","0.10_percentile",0.079557924
+"Complex Warm Dark","Pumpkinseed","t0","0.10_percentile",-1.543083119
+"Simple Cool Dark","Pumpkinseed","Linf","0.10_percentile",192.5673378
+"Simple Cool Dark","Pumpkinseed","K","0.10_percentile",0.076367816
+"Simple Cool Dark","Pumpkinseed","t0","0.10_percentile",-2.229495864
+"Simple Warm Clear","Pumpkinseed","Linf","0.10_percentile",201.1211908
+"Simple Warm Clear","Pumpkinseed","K","0.10_percentile",0.044634311
+"Simple Warm Clear","Pumpkinseed","t0","0.10_percentile",-1.893497899
+"Complex Cool Dark","Rock Bass","Linf","0.10_percentile",290.3855337
+"Complex Cool Dark","Rock Bass","K","0.10_percentile",0.098503525
+"Complex Cool Dark","Rock Bass","t0","0.10_percentile",-1.299012042
+"Complex Two Story","Rock Bass","Linf","0.10_percentile",195.1840506
+"Complex Two Story","Rock Bass","K","0.10_percentile",0.10580555
+"Complex Two Story","Rock Bass","t0","0.10_percentile",-0.730429825
+"Complex Cool Clear","Smallmouth Bass","Linf","0.10_percentile",502.7737816
+"Complex Cool Clear","Smallmouth Bass","K","0.10_percentile",0.157074176
+"Complex Cool Clear","Smallmouth Bass","t0","0.10_percentile",-0.422285593
+"Complex Cool Dark","Smallmouth Bass","Linf","0.10_percentile",515.5987608
+"Complex Cool Dark","Smallmouth Bass","K","0.10_percentile",0.189033246
+"Complex Cool Dark","Smallmouth Bass","t0","0.10_percentile",-0.263321804
+"Complex Riverine","Smallmouth Bass","Linf","0.10_percentile",524.6545031
+"Complex Riverine","Smallmouth Bass","K","0.10_percentile",0.155817574
+"Complex Riverine","Smallmouth Bass","t0","0.10_percentile",-0.83113924
+"Complex Two Story","Smallmouth Bass","Linf","0.10_percentile",519.6354741
+"Complex Two Story","Smallmouth Bass","K","0.10_percentile",0.190293421
+"Complex Two Story","Smallmouth Bass","t0","0.10_percentile",-0.384667447
+"Complex Warm Dark","Smallmouth Bass","Linf","0.10_percentile",469.8475079
+"Complex Warm Dark","Smallmouth Bass","K","0.10_percentile",0.161389783
+"Complex Warm Dark","Smallmouth Bass","t0","0.10_percentile",-0.782574919
+"Complex Cool Clear","Walleye","Linf","0.10_percentile",705.0797444
+"Complex Cool Clear","Walleye","K","0.10_percentile",0.115446664
+"Complex Cool Clear","Walleye","t0","0.10_percentile",-1.78698203
+"Complex Cool Dark","Walleye","Linf","0.10_percentile",739.361687
+"Complex Cool Dark","Walleye","K","0.10_percentile",0.109008172
+"Complex Cool Dark","Walleye","t0","0.10_percentile",-1.741010808
+"Complex Riverine","Walleye","Linf","0.10_percentile",848.3527807
+"Complex Riverine","Walleye","K","0.10_percentile",0.074086006
+"Complex Riverine","Walleye","t0","0.10_percentile",-2.351362447
+"Complex Two Story","Walleye","Linf","0.10_percentile",751.9305373
+"Complex Two Story","Walleye","K","0.10_percentile",0.112080149
+"Complex Two Story","Walleye","t0","0.10_percentile",-1.666152554
+"Complex Warm Clear","Walleye","Linf","0.10_percentile",628.2611789
+"Complex Warm Clear","Walleye","K","0.10_percentile",0.163831906
+"Complex Warm Clear","Walleye","t0","0.10_percentile",-1.541215032
+"Complex Warm Dark","Walleye","Linf","0.10_percentile",677.5672884
+"Complex Warm Dark","Walleye","K","0.10_percentile",0.153887166
+"Complex Warm Dark","Walleye","t0","0.10_percentile",-1.532232627
+"Complex Cool Clear","YellowPerch","Linf","0.10_percentile",306.5392542
+"Complex Cool Clear","YellowPerch","K","0.10_percentile",0.040717052
+"Complex Cool Clear","YellowPerch","t0","0.10_percentile",-2.736395451
+"Complex Cool Dark","YellowPerch","Linf","0.10_percentile",319.6676001
+"Complex Cool Dark","YellowPerch","K","0.10_percentile",0.046858952
+"Complex Cool Dark","YellowPerch","t0","0.10_percentile",-2.914472048
+"Complex Riverine","YellowPerch","Linf","0.10_percentile",292.0278456
+"Complex Riverine","YellowPerch","K","0.10_percentile",0.152838179
+"Complex Riverine","YellowPerch","t0","0.10_percentile",-1.300213106
+"Complex Two Story","YellowPerch","Linf","0.10_percentile",228.9381233
+"Complex Two Story","YellowPerch","K","0.10_percentile",0.121647426
+"Complex Two Story","YellowPerch","t0","0.10_percentile",-1.151894478
+"Complex Warm Dark","YellowPerch","Linf","0.10_percentile",403.7588527
+"Complex Warm Dark","YellowPerch","K","0.10_percentile",0.026206445
+"Complex Warm Dark","YellowPerch","t0","0.10_percentile",-2.592184028
+"Complex Cool Clear","Black Crappie","Linf","0.25_percentile",351.6256316
+"Complex Cool Clear","Black Crappie","K","0.25_percentile",0.17817947
+"Complex Cool Clear","Black Crappie","t0","0.25_percentile",-0.704190393
+"Complex Cool Dark","Black Crappie","Linf","0.25_percentile",353.8803944
+"Complex Cool Dark","Black Crappie","K","0.25_percentile",0.167377438
+"Complex Cool Dark","Black Crappie","t0","0.25_percentile",-0.941293687
+"Complex Riverine","Black Crappie","Linf","0.25_percentile",331.3940843
+"Complex Riverine","Black Crappie","K","0.25_percentile",0.22070154
+"Complex Riverine","Black Crappie","t0","0.25_percentile",-0.550002782
+"Complex Two Story","Black Crappie","Linf","0.25_percentile",302.4515684
+"Complex Two Story","Black Crappie","K","0.25_percentile",0.23019189
+"Complex Two Story","Black Crappie","t0","0.25_percentile",-0.411347421
+"Complex Warm Clear","Black Crappie","Linf","0.25_percentile",290.3657487
+"Complex Warm Clear","Black Crappie","K","0.25_percentile",0.269799736
+"Complex Warm Clear","Black Crappie","t0","0.25_percentile",-0.23770336
+"Complex Warm Dark","Black Crappie","Linf","0.25_percentile",335.4295276
+"Complex Warm Dark","Black Crappie","K","0.25_percentile",0.19438805
+"Complex Warm Dark","Black Crappie","t0","0.25_percentile",-0.641176364
+"Simple Cool Dark","Black Crappie","Linf","0.25_percentile",324.1396237
+"Simple Cool Dark","Black Crappie","K","0.25_percentile",0.150996173
+"Simple Cool Dark","Black Crappie","t0","0.25_percentile",-0.7215797
+"Simple Riverine","Black Crappie","Linf","0.25_percentile",320.3306849
+"Simple Riverine","Black Crappie","K","0.25_percentile",0.177186784
+"Simple Riverine","Black Crappie","t0","0.25_percentile",-0.705130881
+"Simple Warm Clear","Black Crappie","Linf","0.25_percentile",316.3155134
+"Simple Warm Clear","Black Crappie","K","0.25_percentile",0.156698801
+"Simple Warm Clear","Black Crappie","t0","0.25_percentile",-0.718585112
+"Simple Warm Dark","Black Crappie","Linf","0.25_percentile",270.5791066
+"Simple Warm Dark","Black Crappie","K","0.25_percentile",0.289136983
+"Simple Warm Dark","Black Crappie","t0","0.25_percentile",-0.237699342
+"Complex Cool Clear","Bluegill","Linf","0.25_percentile",354.8014298
+"Complex Cool Clear","Bluegill","K","0.25_percentile",0.052537187
+"Complex Cool Clear","Bluegill","t0","0.25_percentile",-1.952895694
+"Complex Cool Dark","Bluegill","Linf","0.25_percentile",271.8463701
+"Complex Cool Dark","Bluegill","K","0.25_percentile",0.119814955
+"Complex Cool Dark","Bluegill","t0","0.25_percentile",-1.251475083
+"Complex Riverine","Bluegill","Linf","0.25_percentile",256.8932258
+"Complex Riverine","Bluegill","K","0.25_percentile",0.169287631
+"Complex Riverine","Bluegill","t0","0.25_percentile",-0.847685936
+"Complex Two Story","Bluegill","Linf","0.25_percentile",327.7784126
+"Complex Two Story","Bluegill","K","0.25_percentile",0.068643093
+"Complex Two Story","Bluegill","t0","0.25_percentile",-1.423547255
+"Complex Warm Clear","Bluegill","Linf","0.25_percentile",331.9806675
+"Complex Warm Clear","Bluegill","K","0.25_percentile",0.075097834
+"Complex Warm Clear","Bluegill","t0","0.25_percentile",-1.104573722
+"Complex Warm Dark","Bluegill","Linf","0.25_percentile",290.3897157
+"Complex Warm Dark","Bluegill","K","0.25_percentile",0.111283785
+"Complex Warm Dark","Bluegill","t0","0.25_percentile",-1.457787797
+"Simple Cool Clear","Bluegill","Linf","0.25_percentile",248.8133794
+"Simple Cool Clear","Bluegill","K","0.25_percentile",0.108443576
+"Simple Cool Clear","Bluegill","t0","0.25_percentile",-0.891451069
+"Simple Cool Dark","Bluegill","Linf","0.25_percentile",293.6441614
+"Simple Cool Dark","Bluegill","K","0.25_percentile",0.094683301
+"Simple Cool Dark","Bluegill","t0","0.25_percentile",-1.40201494
+"Simple Riverine","Bluegill","Linf","0.25_percentile",247.0927216
+"Simple Riverine","Bluegill","K","0.25_percentile",0.164545515
+"Simple Riverine","Bluegill","t0","0.25_percentile",-0.829091579
+"Simple Two Story","Bluegill","Linf","0.25_percentile",248.3071474
+"Simple Two Story","Bluegill","K","0.25_percentile",0.071279741
+"Simple Two Story","Bluegill","t0","0.25_percentile",-1.727099888
+"Simple Warm Clear","Bluegill","Linf","0.25_percentile",299.0341977
+"Simple Warm Clear","Bluegill","K","0.25_percentile",0.080402074
+"Simple Warm Clear","Bluegill","t0","0.25_percentile",-1.623271273
+"Simple Warm Dark","Bluegill","Linf","0.25_percentile",269.1584076
+"Simple Warm Dark","Bluegill","K","0.25_percentile",0.128528784
+"Simple Warm Dark","Bluegill","t0","0.25_percentile",-0.964878901
+"Complex Cool Clear","Largemouth Bass","Linf","0.25_percentile",517.2132788
+"Complex Cool Clear","Largemouth Bass","K","0.25_percentile",0.155952529
+"Complex Cool Clear","Largemouth Bass","t0","0.25_percentile",-0.602834514
+"Complex Cool Dark","Largemouth Bass","Linf","0.25_percentile",551.5649375
+"Complex Cool Dark","Largemouth Bass","K","0.25_percentile",0.141130911
+"Complex Cool Dark","Largemouth Bass","t0","0.25_percentile",-0.743814484
+"Complex Riverine","Largemouth Bass","Linf","0.25_percentile",549.2488525
+"Complex Riverine","Largemouth Bass","K","0.25_percentile",0.156699175
+"Complex Riverine","Largemouth Bass","t0","0.25_percentile",-0.736013374
+"Complex Two Story","Largemouth Bass","Linf","0.25_percentile",506.568701
+"Complex Two Story","Largemouth Bass","K","0.25_percentile",0.178584963
+"Complex Two Story","Largemouth Bass","t0","0.25_percentile",-0.45686801
+"Complex Warm Clear","Largemouth Bass","Linf","0.25_percentile",523.9641767
+"Complex Warm Clear","Largemouth Bass","K","0.25_percentile",0.145390008
+"Complex Warm Clear","Largemouth Bass","t0","0.25_percentile",-0.58993969
+"Complex Warm Dark","Largemouth Bass","Linf","0.25_percentile",538.3774652
+"Complex Warm Dark","Largemouth Bass","K","0.25_percentile",0.163941625
+"Complex Warm Dark","Largemouth Bass","t0","0.25_percentile",-0.736936004
+"Simple Cool Clear","Largemouth Bass","Linf","0.25_percentile",507.420332
+"Simple Cool Clear","Largemouth Bass","K","0.25_percentile",0.158956612
+"Simple Cool Clear","Largemouth Bass","t0","0.25_percentile",-0.324265243
+"Simple Cool Dark","Largemouth Bass","Linf","0.25_percentile",534.0673777
+"Simple Cool Dark","Largemouth Bass","K","0.25_percentile",0.148210092
+"Simple Cool Dark","Largemouth Bass","t0","0.25_percentile",-0.606358491
+"Simple Riverine","Largemouth Bass","Linf","0.25_percentile",561.3498306
+"Simple Riverine","Largemouth Bass","K","0.25_percentile",0.146957653
+"Simple Riverine","Largemouth Bass","t0","0.25_percentile",-0.49225969
+"Simple Two Story","Largemouth Bass","Linf","0.25_percentile",500.274091
+"Simple Two Story","Largemouth Bass","K","0.25_percentile",0.109801196
+"Simple Two Story","Largemouth Bass","t0","0.25_percentile",-1.314353686
+"Simple Warm Clear","Largemouth Bass","Linf","0.25_percentile",530.5657876
+"Simple Warm Clear","Largemouth Bass","K","0.25_percentile",0.14445689
+"Simple Warm Clear","Largemouth Bass","t0","0.25_percentile",-0.664270664
+"Simple Warm Dark","Largemouth Bass","Linf","0.25_percentile",505.4341611
+"Simple Warm Dark","Largemouth Bass","K","0.25_percentile",0.1815865
+"Simple Warm Dark","Largemouth Bass","t0","0.25_percentile",-0.465695513
+"Complex Cool Clear","Muskellunge","Linf","0.25_percentile",1112.411479
+"Complex Cool Clear","Muskellunge","K","0.25_percentile",0.182734532
+"Complex Cool Clear","Muskellunge","t0","0.25_percentile",-0.750351047
+"Complex Cool Dark","Muskellunge","Linf","0.25_percentile",1241.172057
+"Complex Cool Dark","Muskellunge","K","0.25_percentile",0.142028093
+"Complex Cool Dark","Muskellunge","t0","0.25_percentile",-1.038405773
+"Complex Riverine","Muskellunge","Linf","0.25_percentile",1213.91349
+"Complex Riverine","Muskellunge","K","0.25_percentile",0.155433657
+"Complex Riverine","Muskellunge","t0","0.25_percentile",-1.007611893
+"Complex Two Story","Muskellunge","Linf","0.25_percentile",1196.004439
+"Complex Two Story","Muskellunge","K","0.25_percentile",0.168667604
+"Complex Two Story","Muskellunge","t0","0.25_percentile",-0.714915519
+"Complex Warm Dark","Muskellunge","Linf","0.25_percentile",1179.415791
+"Complex Warm Dark","Muskellunge","K","0.25_percentile",0.182421959
+"Complex Warm Dark","Muskellunge","t0","0.25_percentile",-1.307992321
+"Complex Cool Clear","Northern Pike","Linf","0.25_percentile",893.288275
+"Complex Cool Clear","Northern Pike","K","0.25_percentile",0.112682233
+"Complex Cool Clear","Northern Pike","t0","0.25_percentile",-1.625894713
+"Complex Cool Dark","Northern Pike","Linf","0.25_percentile",1121.013986
+"Complex Cool Dark","Northern Pike","K","0.25_percentile",0.070437329
+"Complex Cool Dark","Northern Pike","t0","0.25_percentile",-2.643351077
+"Complex Riverine","Northern Pike","Linf","0.25_percentile",1689.678672
+"Complex Riverine","Northern Pike","K","0.25_percentile",0.036694023
+"Complex Riverine","Northern Pike","t0","0.25_percentile",-2.861083267
+"Complex Two Story","Northern Pike","Linf","0.25_percentile",1287.671794
+"Complex Two Story","Northern Pike","K","0.25_percentile",0.05809618
+"Complex Two Story","Northern Pike","t0","0.25_percentile",-2.445163662
+"Complex Warm Clear","Northern Pike","Linf","0.25_percentile",1259.817373
+"Complex Warm Clear","Northern Pike","K","0.25_percentile",0.04657421
+"Complex Warm Clear","Northern Pike","t0","0.25_percentile",-2.653061975
+"Complex Warm Dark","Northern Pike","Linf","0.25_percentile",1107.949111
+"Complex Warm Dark","Northern Pike","K","0.25_percentile",0.102759059
+"Complex Warm Dark","Northern Pike","t0","0.25_percentile",-1.884113796
+"Simple Riverine","Northern Pike","Linf","0.25_percentile",1090.716638
+"Simple Riverine","Northern Pike","K","0.25_percentile",0.086636269
+"Simple Riverine","Northern Pike","t0","0.25_percentile",-2.097948454
+"Simple Warm Clear","Northern Pike","Linf","0.25_percentile",931.9285966
+"Simple Warm Clear","Northern Pike","K","0.25_percentile",0.062644223
+"Simple Warm Clear","Northern Pike","t0","0.25_percentile",-2.805319982
+"Simple Warm Dark","Northern Pike","Linf","0.25_percentile",787.0296548
+"Simple Warm Dark","Northern Pike","K","0.25_percentile",0.162181546
+"Simple Warm Dark","Northern Pike","t0","0.25_percentile",-1.715813855
+"Complex Cool Dark","Pumpkinseed","Linf","0.25_percentile",214.4598494
+"Complex Cool Dark","Pumpkinseed","K","0.25_percentile",0.177654989
+"Complex Cool Dark","Pumpkinseed","t0","0.25_percentile",-0.857123969
+"Complex Riverine","Pumpkinseed","Linf","0.25_percentile",237.4131953
+"Complex Riverine","Pumpkinseed","K","0.25_percentile",0.1199766
+"Complex Riverine","Pumpkinseed","t0","0.25_percentile",-1.401731707
+"Complex Warm Clear","Pumpkinseed","Linf","0.25_percentile",207.2379743
+"Complex Warm Clear","Pumpkinseed","K","0.25_percentile",0.195114381
+"Complex Warm Clear","Pumpkinseed","t0","0.25_percentile",0.038623759
+"Complex Warm Dark","Pumpkinseed","Linf","0.25_percentile",240.5776169
+"Complex Warm Dark","Pumpkinseed","K","0.25_percentile",0.12196657
+"Complex Warm Dark","Pumpkinseed","t0","0.25_percentile",-1.057212062
+"Simple Cool Dark","Pumpkinseed","Linf","0.25_percentile",206.7734257
+"Simple Cool Dark","Pumpkinseed","K","0.25_percentile",0.124306095
+"Simple Cool Dark","Pumpkinseed","t0","0.25_percentile",-1.279746021
+"Simple Warm Clear","Pumpkinseed","Linf","0.25_percentile",224.482417
+"Simple Warm Clear","Pumpkinseed","K","0.25_percentile",0.081774742
+"Simple Warm Clear","Pumpkinseed","t0","0.25_percentile",-1.235040239
+"Complex Cool Dark","Rock Bass","Linf","0.25_percentile",304.6719308
+"Complex Cool Dark","Rock Bass","K","0.25_percentile",0.120620975
+"Complex Cool Dark","Rock Bass","t0","0.25_percentile",-0.976037147
+"Complex Two Story","Rock Bass","Linf","0.25_percentile",205.3557655
+"Complex Two Story","Rock Bass","K","0.25_percentile",0.199464806
+"Complex Two Story","Rock Bass","t0","0.25_percentile",-0.044210898
+"Complex Cool Clear","Smallmouth Bass","Linf","0.25_percentile",517.3050523
+"Complex Cool Clear","Smallmouth Bass","K","0.25_percentile",0.169867817
+"Complex Cool Clear","Smallmouth Bass","t0","0.25_percentile",-0.30680273
+"Complex Cool Dark","Smallmouth Bass","Linf","0.25_percentile",523.2463684
+"Complex Cool Dark","Smallmouth Bass","K","0.25_percentile",0.198850634
+"Complex Cool Dark","Smallmouth Bass","t0","0.25_percentile",-0.159121815
+"Complex Riverine","Smallmouth Bass","Linf","0.25_percentile",534.7634697
+"Complex Riverine","Smallmouth Bass","K","0.25_percentile",0.165087313
+"Complex Riverine","Smallmouth Bass","t0","0.25_percentile",-0.724883573
+"Complex Two Story","Smallmouth Bass","Linf","0.25_percentile",525.5357129
+"Complex Two Story","Smallmouth Bass","K","0.25_percentile",0.198183887
+"Complex Two Story","Smallmouth Bass","t0","0.25_percentile",-0.311137995
+"Complex Warm Dark","Smallmouth Bass","Linf","0.25_percentile",487.8644607
+"Complex Warm Dark","Smallmouth Bass","K","0.25_percentile",0.200751358
+"Complex Warm Dark","Smallmouth Bass","t0","0.25_percentile",-0.433539073
+"Complex Cool Clear","Walleye","Linf","0.25_percentile",713.0253059
+"Complex Cool Clear","Walleye","K","0.25_percentile",0.119073916
+"Complex Cool Clear","Walleye","t0","0.25_percentile",-1.693087478
+"Complex Cool Dark","Walleye","Linf","0.25_percentile",745.8355534
+"Complex Cool Dark","Walleye","K","0.25_percentile",0.111968496
+"Complex Cool Dark","Walleye","t0","0.25_percentile",-1.659364563
+"Complex Riverine","Walleye","Linf","0.25_percentile",866.786195
+"Complex Riverine","Walleye","K","0.25_percentile",0.078819634
+"Complex Riverine","Walleye","t0","0.25_percentile",-2.206310525
+"Complex Two Story","Walleye","Linf","0.25_percentile",758.6111104
+"Complex Two Story","Walleye","K","0.25_percentile",0.115095199
+"Complex Two Story","Walleye","t0","0.25_percentile",-1.58366267
+"Complex Warm Clear","Walleye","Linf","0.25_percentile",635.3815871
+"Complex Warm Clear","Walleye","K","0.25_percentile",0.172617954
+"Complex Warm Clear","Walleye","t0","0.25_percentile",-1.384345178
+"Complex Warm Dark","Walleye","Linf","0.25_percentile",683.5766371
+"Complex Warm Dark","Walleye","K","0.25_percentile",0.158973247
+"Complex Warm Dark","Walleye","t0","0.25_percentile",-1.440089621
+"Complex Cool Clear","YellowPerch","Linf","0.25_percentile",340.7088885
+"Complex Cool Clear","YellowPerch","K","0.25_percentile",0.066387394
+"Complex Cool Clear","YellowPerch","t0","0.25_percentile",-2.249444034
+"Complex Cool Dark","YellowPerch","Linf","0.25_percentile",351.037806
+"Complex Cool Dark","YellowPerch","K","0.25_percentile",0.068444541
+"Complex Cool Dark","YellowPerch","t0","0.25_percentile",-2.41575726
+"Complex Riverine","YellowPerch","Linf","0.25_percentile",300.8015731
+"Complex Riverine","YellowPerch","K","0.25_percentile",0.173089298
+"Complex Riverine","YellowPerch","t0","0.25_percentile",-1.064464505
+"Complex Two Story","YellowPerch","Linf","0.25_percentile",241.1279553
+"Complex Two Story","YellowPerch","K","0.25_percentile",0.195099499
+"Complex Two Story","YellowPerch","t0","0.25_percentile",-0.387066953
+"Complex Warm Dark","YellowPerch","Linf","0.25_percentile",462.1284571
+"Complex Warm Dark","YellowPerch","K","0.25_percentile",0.038882679
+"Complex Warm Dark","YellowPerch","t0","0.25_percentile",-2.356205683
+"Complex Cool Clear","Black Crappie","Linf","0.50_percentile",365.3582001
+"Complex Cool Clear","Black Crappie","K","0.50_percentile",0.200223388
+"Complex Cool Clear","Black Crappie","t0","0.50_percentile",-0.542807012
+"Complex Cool Dark","Black Crappie","Linf","0.50_percentile",364.6067146
+"Complex Cool Dark","Black Crappie","K","0.50_percentile",0.183757186
+"Complex Cool Dark","Black Crappie","t0","0.50_percentile",-0.779099112
+"Complex Riverine","Black Crappie","Linf","0.50_percentile",338.264693
+"Complex Riverine","Black Crappie","K","0.50_percentile",0.235949323
+"Complex Riverine","Black Crappie","t0","0.50_percentile",-0.434016623
+"Complex Two Story","Black Crappie","Linf","0.50_percentile",325.4615032
+"Complex Two Story","Black Crappie","K","0.50_percentile",0.342473998
+"Complex Two Story","Black Crappie","t0","0.50_percentile",0.155541645
+"Complex Warm Clear","Black Crappie","Linf","0.50_percentile",303.7900363
+"Complex Warm Clear","Black Crappie","K","0.50_percentile",0.335092029
+"Complex Warm Clear","Black Crappie","t0","0.50_percentile",0.117359274
+"Complex Warm Dark","Black Crappie","Linf","0.50_percentile",345.6947894
+"Complex Warm Dark","Black Crappie","K","0.50_percentile",0.213478297
+"Complex Warm Dark","Black Crappie","t0","0.50_percentile",-0.510998626
+"Simple Cool Dark","Black Crappie","Linf","0.50_percentile",349.5058513
+"Simple Cool Dark","Black Crappie","K","0.50_percentile",0.190491721
+"Simple Cool Dark","Black Crappie","t0","0.50_percentile",-0.347711604
+"Simple Riverine","Black Crappie","Linf","0.50_percentile",338.4151188
+"Simple Riverine","Black Crappie","K","0.50_percentile",0.20669657
+"Simple Riverine","Black Crappie","t0","0.50_percentile",-0.501622031
+"Simple Warm Clear","Black Crappie","Linf","0.50_percentile",349.4484911
+"Simple Warm Clear","Black Crappie","K","0.50_percentile",0.228400428
+"Simple Warm Clear","Black Crappie","t0","0.50_percentile",-0.1802379
+"Simple Warm Dark","Black Crappie","Linf","0.50_percentile",281.7730708
+"Simple Warm Dark","Black Crappie","K","0.50_percentile",0.368525446
+"Simple Warm Dark","Black Crappie","t0","0.50_percentile",0.131789658
+"Complex Cool Clear","Bluegill","Linf","0.50_percentile",412.1225291
+"Complex Cool Clear","Bluegill","K","0.50_percentile",0.074517769
+"Complex Cool Clear","Bluegill","t0","0.50_percentile",-1.553949457
+"Complex Cool Dark","Bluegill","Linf","0.50_percentile",287.4586859
+"Complex Cool Dark","Bluegill","K","0.50_percentile",0.137474125
+"Complex Cool Dark","Bluegill","t0","0.50_percentile",-1.011886467
+"Complex Riverine","Bluegill","Linf","0.50_percentile",264.5754776
+"Complex Riverine","Bluegill","K","0.50_percentile",0.187507921
+"Complex Riverine","Bluegill","t0","0.50_percentile",-0.692102775
+"Complex Two Story","Bluegill","Linf","0.50_percentile",368.0733318
+"Complex Two Story","Bluegill","K","0.50_percentile",0.087989037
+"Complex Two Story","Bluegill","t0","0.50_percentile",-1.132773255
+"Complex Warm Clear","Bluegill","Linf","0.50_percentile",360.4140252
+"Complex Warm Clear","Bluegill","K","0.50_percentile",0.088509311
+"Complex Warm Clear","Bluegill","t0","0.50_percentile",-0.882717906
+"Complex Warm Dark","Bluegill","Linf","0.50_percentile",304.6197346
+"Complex Warm Dark","Bluegill","K","0.50_percentile",0.123086779
+"Complex Warm Dark","Bluegill","t0","0.50_percentile",-1.318679709
+"Simple Cool Clear","Bluegill","Linf","0.50_percentile",276.6009727
+"Simple Cool Clear","Bluegill","K","0.50_percentile",0.148821619
+"Simple Cool Clear","Bluegill","t0","0.50_percentile",-0.486265627
+"Simple Cool Dark","Bluegill","Linf","0.50_percentile",316.9103199
+"Simple Cool Dark","Bluegill","K","0.50_percentile",0.116102446
+"Simple Cool Dark","Bluegill","t0","0.50_percentile",-1.107192154
+"Simple Riverine","Bluegill","Linf","0.50_percentile",257.0632168
+"Simple Riverine","Bluegill","K","0.50_percentile",0.183464927
+"Simple Riverine","Bluegill","t0","0.50_percentile",-0.658760197
+"Simple Two Story","Bluegill","Linf","0.50_percentile",302.1173584
+"Simple Two Story","Bluegill","K","0.50_percentile",0.125816936
+"Simple Two Story","Bluegill","t0","0.50_percentile",-0.887289509
+"Simple Warm Clear","Bluegill","Linf","0.50_percentile",325.7595735
+"Simple Warm Clear","Bluegill","K","0.50_percentile",0.096724142
+"Simple Warm Clear","Bluegill","t0","0.50_percentile",-1.312580948
+"Simple Warm Dark","Bluegill","Linf","0.50_percentile",285.2133348
+"Simple Warm Dark","Bluegill","K","0.50_percentile",0.151482436
+"Simple Warm Dark","Bluegill","t0","0.50_percentile",-0.754374444
+"Complex Cool Clear","Largemouth Bass","Linf","0.50_percentile",526.5766365
+"Complex Cool Clear","Largemouth Bass","K","0.50_percentile",0.164657121
+"Complex Cool Clear","Largemouth Bass","t0","0.50_percentile",-0.504980901
+"Complex Cool Dark","Largemouth Bass","Linf","0.50_percentile",561.6904234
+"Complex Cool Dark","Largemouth Bass","K","0.50_percentile",0.148057296
+"Complex Cool Dark","Largemouth Bass","t0","0.50_percentile",-0.644333768
+"Complex Riverine","Largemouth Bass","Linf","0.50_percentile",560.640042
+"Complex Riverine","Largemouth Bass","K","0.50_percentile",0.16637754
+"Complex Riverine","Largemouth Bass","t0","0.50_percentile",-0.628815457
+"Complex Two Story","Largemouth Bass","Linf","0.50_percentile",514.9561535
+"Complex Two Story","Largemouth Bass","K","0.50_percentile",0.188249163
+"Complex Two Story","Largemouth Bass","t0","0.50_percentile",-0.36012022
+"Complex Warm Clear","Largemouth Bass","Linf","0.50_percentile",531.3467987
+"Complex Warm Clear","Largemouth Bass","K","0.50_percentile",0.152140349
+"Complex Warm Clear","Largemouth Bass","t0","0.50_percentile",-0.501444197
+"Complex Warm Dark","Largemouth Bass","Linf","0.50_percentile",543.9633056
+"Complex Warm Dark","Largemouth Bass","K","0.50_percentile",0.169226964
+"Complex Warm Dark","Largemouth Bass","t0","0.50_percentile",-0.673307924
+"Simple Cool Clear","Largemouth Bass","Linf","0.50_percentile",525.3711515
+"Simple Cool Clear","Largemouth Bass","K","0.50_percentile",0.17502693
+"Simple Cool Clear","Largemouth Bass","t0","0.50_percentile",-0.177182981
+"Simple Cool Dark","Largemouth Bass","Linf","0.50_percentile",549.668004
+"Simple Cool Dark","Largemouth Bass","K","0.50_percentile",0.160346884
+"Simple Cool Dark","Largemouth Bass","t0","0.50_percentile",-0.469080035
+"Simple Riverine","Largemouth Bass","Linf","0.50_percentile",578.4274523
+"Simple Riverine","Largemouth Bass","K","0.50_percentile",0.157103808
+"Simple Riverine","Largemouth Bass","t0","0.50_percentile",-0.381433875
+"Simple Two Story","Largemouth Bass","Linf","0.50_percentile",532.298072
+"Simple Two Story","Largemouth Bass","K","0.50_percentile",0.133073159
+"Simple Two Story","Largemouth Bass","t0","0.50_percentile",-0.933080866
+"Simple Warm Clear","Largemouth Bass","Linf","0.50_percentile",538.2971179
+"Simple Warm Clear","Largemouth Bass","K","0.50_percentile",0.149695925
+"Simple Warm Clear","Largemouth Bass","t0","0.50_percentile",-0.58797836
+"Simple Warm Dark","Largemouth Bass","Linf","0.50_percentile",515.4019158
+"Simple Warm Dark","Largemouth Bass","K","0.50_percentile",0.192297303
+"Simple Warm Dark","Largemouth Bass","t0","0.50_percentile",-0.375068599
+"Complex Cool Clear","Muskellunge","Linf","0.50_percentile",1134.948424
+"Complex Cool Clear","Muskellunge","K","0.50_percentile",0.195904317
+"Complex Cool Clear","Muskellunge","t0","0.50_percentile",-0.594739372
+"Complex Cool Dark","Muskellunge","Linf","0.50_percentile",1253.261448
+"Complex Cool Dark","Muskellunge","K","0.50_percentile",0.146681773
+"Complex Cool Dark","Muskellunge","t0","0.50_percentile",-0.961196199
+"Complex Riverine","Muskellunge","Linf","0.50_percentile",1237.044449
+"Complex Riverine","Muskellunge","K","0.50_percentile",0.166243203
+"Complex Riverine","Muskellunge","t0","0.50_percentile",-0.869391638
+"Complex Two Story","Muskellunge","Linf","0.50_percentile",1206.878623
+"Complex Two Story","Muskellunge","K","0.50_percentile",0.17364482
+"Complex Two Story","Muskellunge","t0","0.50_percentile",-0.634045776
+"Complex Warm Dark","Muskellunge","Linf","0.50_percentile",1195.184029
+"Complex Warm Dark","Muskellunge","K","0.50_percentile",0.19439612
+"Complex Warm Dark","Muskellunge","t0","0.50_percentile",-1.064901203
+"Complex Cool Clear","Northern Pike","Linf","0.50_percentile",960.1177162
+"Complex Cool Clear","Northern Pike","K","0.50_percentile",0.139309899
+"Complex Cool Clear","Northern Pike","t0","0.50_percentile",-1.307336767
+"Complex Cool Dark","Northern Pike","Linf","0.50_percentile",1197.903497
+"Complex Cool Dark","Northern Pike","K","0.50_percentile",0.081852913
+"Complex Cool Dark","Northern Pike","t0","0.50_percentile",-2.346880486
+"Complex Riverine","Northern Pike","Linf","0.50_percentile",1944.617396
+"Complex Riverine","Northern Pike","K","0.50_percentile",0.047043336
+"Complex Riverine","Northern Pike","t0","0.50_percentile",-2.573444566
+"Complex Two Story","Northern Pike","Linf","0.50_percentile",1417.081175
+"Complex Two Story","Northern Pike","K","0.50_percentile",0.071635811
+"Complex Two Story","Northern Pike","t0","0.50_percentile",-2.160873786
+"Complex Warm Clear","Northern Pike","Linf","0.50_percentile",1459.193643
+"Complex Warm Clear","Northern Pike","K","0.50_percentile",0.068305224
+"Complex Warm Clear","Northern Pike","t0","0.50_percentile",-2.185791611
+"Complex Warm Dark","Northern Pike","Linf","0.50_percentile",1158.288739
+"Complex Warm Dark","Northern Pike","K","0.50_percentile",0.113565092
+"Complex Warm Dark","Northern Pike","t0","0.50_percentile",-1.68365942
+"Simple Riverine","Northern Pike","Linf","0.50_percentile",1196.792159
+"Simple Riverine","Northern Pike","K","0.50_percentile",0.107742578
+"Simple Riverine","Northern Pike","t0","0.50_percentile",-1.733287053
+"Simple Warm Clear","Northern Pike","Linf","0.50_percentile",1104.4598
+"Simple Warm Clear","Northern Pike","K","0.50_percentile",0.09821994
+"Simple Warm Clear","Northern Pike","t0","0.50_percentile",-2.091979574
+"Simple Warm Dark","Northern Pike","Linf","0.50_percentile",845.769067
+"Simple Warm Dark","Northern Pike","K","0.50_percentile",0.233510775
+"Simple Warm Dark","Northern Pike","t0","0.50_percentile",-0.899332273
+"Complex Cool Dark","Pumpkinseed","Linf","0.50_percentile",226.1130617
+"Complex Cool Dark","Pumpkinseed","K","0.50_percentile",0.211548185
+"Complex Cool Dark","Pumpkinseed","t0","0.50_percentile",-0.541915826
+"Complex Riverine","Pumpkinseed","Linf","0.50_percentile",259.055515
+"Complex Riverine","Pumpkinseed","K","0.50_percentile",0.156049358
+"Complex Riverine","Pumpkinseed","t0","0.50_percentile",-0.957087954
+"Complex Warm Clear","Pumpkinseed","Linf","0.50_percentile",225.0090081
+"Complex Warm Clear","Pumpkinseed","K","0.50_percentile",0.283560508
+"Complex Warm Clear","Pumpkinseed","t0","0.50_percentile",0.632936891
+"Complex Warm Dark","Pumpkinseed","Linf","0.50_percentile",269.6697486
+"Complex Warm Dark","Pumpkinseed","K","0.50_percentile",0.172695471
+"Complex Warm Dark","Pumpkinseed","t0","0.50_percentile",-0.645818563
+"Simple Cool Dark","Pumpkinseed","Linf","0.50_percentile",235.6752862
+"Simple Cool Dark","Pumpkinseed","K","0.50_percentile",0.216583116
+"Simple Cool Dark","Pumpkinseed","t0","0.50_percentile",-0.26824154
+"Simple Warm Clear","Pumpkinseed","Linf","0.50_percentile",274.2629934
+"Simple Warm Clear","Pumpkinseed","K","0.50_percentile",0.144738656
+"Simple Warm Clear","Pumpkinseed","t0","0.50_percentile",-0.383924893
+"Complex Cool Dark","Rock Bass","Linf","0.50_percentile",322.6522852
+"Complex Cool Dark","Rock Bass","K","0.50_percentile",0.141709927
+"Complex Cool Dark","Rock Bass","t0","0.50_percentile",-0.674797793
+"Complex Two Story","Rock Bass","Linf","0.50_percentile",231.3498869
+"Complex Two Story","Rock Bass","K","0.50_percentile",0.344653924
+"Complex Two Story","Rock Bass","t0","0.50_percentile",0.743554979
+"Complex Cool Clear","Smallmouth Bass","Linf","0.50_percentile",533.0792806
+"Complex Cool Clear","Smallmouth Bass","K","0.50_percentile",0.186818992
+"Complex Cool Clear","Smallmouth Bass","t0","0.50_percentile",-0.190771773
+"Complex Cool Dark","Smallmouth Bass","Linf","0.50_percentile",532.9536328
+"Complex Cool Dark","Smallmouth Bass","K","0.50_percentile",0.209057492
+"Complex Cool Dark","Smallmouth Bass","t0","0.50_percentile",-0.061879359
+"Complex Riverine","Smallmouth Bass","Linf","0.50_percentile",547.3392439
+"Complex Riverine","Smallmouth Bass","K","0.50_percentile",0.176754235
+"Complex Riverine","Smallmouth Bass","t0","0.50_percentile",-0.602045691
+"Complex Two Story","Smallmouth Bass","Linf","0.50_percentile",533.0679082
+"Complex Two Story","Smallmouth Bass","K","0.50_percentile",0.206609417
+"Complex Two Story","Smallmouth Bass","t0","0.50_percentile",-0.235801319
+"Complex Warm Dark","Smallmouth Bass","Linf","0.50_percentile",512.0488231
+"Complex Warm Dark","Smallmouth Bass","K","0.50_percentile",0.2360482
+"Complex Warm Dark","Smallmouth Bass","t0","0.50_percentile",-0.130316506
+"Complex Cool Clear","Walleye","Linf","0.50_percentile",721.7523304
+"Complex Cool Clear","Walleye","K","0.50_percentile",0.123739605
+"Complex Cool Clear","Walleye","t0","0.50_percentile",-1.599140112
+"Complex Cool Dark","Walleye","Linf","0.50_percentile",753.8662236
+"Complex Cool Dark","Walleye","K","0.50_percentile",0.115373612
+"Complex Cool Dark","Walleye","t0","0.50_percentile",-1.577272003
+"Complex Riverine","Walleye","Linf","0.50_percentile",893.0200569
+"Complex Riverine","Walleye","K","0.50_percentile",0.084126372
+"Complex Riverine","Walleye","t0","0.50_percentile",-2.075755592
+"Complex Two Story","Walleye","Linf","0.50_percentile",765.4621062
+"Complex Two Story","Walleye","K","0.50_percentile",0.118412844
+"Complex Two Story","Walleye","t0","0.50_percentile",-1.503303415
+"Complex Warm Clear","Walleye","Linf","0.50_percentile",643.3911464
+"Complex Warm Clear","Walleye","K","0.50_percentile",0.181866583
+"Complex Warm Clear","Walleye","t0","0.50_percentile",-1.221799593
+"Complex Warm Dark","Walleye","Linf","0.50_percentile",689.8096258
+"Complex Warm Dark","Walleye","K","0.50_percentile",0.164295471
+"Complex Warm Dark","Walleye","t0","0.50_percentile",-1.351596307
+"Complex Cool Clear","YellowPerch","Linf","0.50_percentile",407.4587148
+"Complex Cool Clear","YellowPerch","K","0.50_percentile",0.107187145
+"Complex Cool Clear","YellowPerch","t0","0.50_percentile",-1.630406075
+"Complex Cool Dark","YellowPerch","Linf","0.50_percentile",409.3254331
+"Complex Cool Dark","YellowPerch","K","0.50_percentile",0.097074712
+"Complex Cool Dark","YellowPerch","t0","0.50_percentile",-1.791695566
+"Complex Riverine","YellowPerch","Linf","0.50_percentile",314.0564848
+"Complex Riverine","YellowPerch","K","0.50_percentile",0.198705136
+"Complex Riverine","YellowPerch","t0","0.50_percentile",-0.835040257
+"Complex Two Story","YellowPerch","Linf","0.50_percentile",261.7995211
+"Complex Two Story","YellowPerch","K","0.50_percentile",0.319948967
+"Complex Two Story","YellowPerch","t0","0.50_percentile",0.4163085
+"Complex Warm Dark","YellowPerch","Linf","0.50_percentile",588.7812412
+"Complex Warm Dark","YellowPerch","K","0.50_percentile",0.060912742
+"Complex Warm Dark","YellowPerch","t0","0.50_percentile",-1.991901576
+"Complex Cool Clear","Black Crappie","Linf","0.75_percentile",382.9724878
+"Complex Cool Clear","Black Crappie","K","0.75_percentile",0.221725848
+"Complex Cool Clear","Black Crappie","t0","0.75_percentile",-0.388367129
+"Complex Cool Dark","Black Crappie","Linf","0.75_percentile",377.0268647
+"Complex Cool Dark","Black Crappie","K","0.75_percentile",0.198683819
+"Complex Cool Dark","Black Crappie","t0","0.75_percentile",-0.635906289
+"Complex Riverine","Black Crappie","Linf","0.75_percentile",345.0277905
+"Complex Riverine","Black Crappie","K","0.75_percentile",0.251933022
+"Complex Riverine","Black Crappie","t0","0.75_percentile",-0.325983764
+"Complex Two Story","Black Crappie","Linf","0.75_percentile",368.6673699
+"Complex Two Story","Black Crappie","K","0.75_percentile",0.454353744
+"Complex Two Story","Black Crappie","t0","0.75_percentile",0.488248608
+"Complex Warm Clear","Black Crappie","Linf","0.75_percentile",323.3394096
+"Complex Warm Clear","Black Crappie","K","0.75_percentile",0.409781397
+"Complex Warm Clear","Black Crappie","t0","0.75_percentile",0.442462391
+"Complex Warm Dark","Black Crappie","Linf","0.75_percentile",358.4272515
+"Complex Warm Dark","Black Crappie","K","0.75_percentile",0.231151227
+"Complex Warm Dark","Black Crappie","t0","0.75_percentile",-0.390702666
+"Simple Cool Dark","Black Crappie","Linf","0.75_percentile",383.7049461
+"Simple Cool Dark","Black Crappie","K","0.75_percentile",0.233923059
+"Simple Cool Dark","Black Crappie","t0","0.75_percentile",-0.0334746
+"Simple Riverine","Black Crappie","Linf","0.75_percentile",360.9107745
+"Simple Riverine","Black Crappie","K","0.75_percentile",0.236986541
+"Simple Riverine","Black Crappie","t0","0.75_percentile",-0.308846182
+"Simple Warm Clear","Black Crappie","Linf","0.75_percentile",411.9089102
+"Simple Warm Clear","Black Crappie","K","0.75_percentile",0.306297014
+"Simple Warm Clear","Black Crappie","t0","0.75_percentile",0.245867512
+"Simple Warm Dark","Black Crappie","Linf","0.75_percentile",299.3833459
+"Simple Warm Dark","Black Crappie","K","0.75_percentile",0.439647829
+"Simple Warm Dark","Black Crappie","t0","0.75_percentile",0.422580528
+"Complex Cool Clear","Bluegill","Linf","0.75_percentile",522.3633956
+"Complex Cool Clear","Bluegill","K","0.75_percentile",0.095040319
+"Complex Cool Clear","Bluegill","t0","0.75_percentile",-1.279849314
+"Complex Cool Dark","Bluegill","Linf","0.75_percentile",305.8545366
+"Complex Cool Dark","Bluegill","K","0.75_percentile",0.156496745
+"Complex Cool Dark","Bluegill","t0","0.75_percentile",-0.813170924
+"Complex Riverine","Bluegill","Linf","0.75_percentile",275.192787
+"Complex Riverine","Bluegill","K","0.75_percentile",0.203679152
+"Complex Riverine","Bluegill","t0","0.75_percentile",-0.544242605
+"Complex Two Story","Bluegill","Linf","0.75_percentile",433.4404036
+"Complex Two Story","Bluegill","K","0.75_percentile",0.108411103
+"Complex Two Story","Bluegill","t0","0.75_percentile",-0.904842043
+"Complex Warm Clear","Bluegill","Linf","0.75_percentile",399.5516656
+"Complex Warm Clear","Bluegill","K","0.75_percentile",0.102550924
+"Complex Warm Clear","Bluegill","t0","0.75_percentile",-0.682116433
+"Complex Warm Dark","Bluegill","Linf","0.75_percentile",321.3626767
+"Complex Warm Dark","Bluegill","K","0.75_percentile",0.135186834
+"Complex Warm Dark","Bluegill","t0","0.75_percentile",-1.183471915
+"Simple Cool Clear","Bluegill","Linf","0.75_percentile",323.4794796
+"Simple Cool Clear","Bluegill","K","0.75_percentile",0.1885065
+"Simple Cool Clear","Bluegill","t0","0.75_percentile",-0.118905682
+"Simple Cool Dark","Bluegill","Linf","0.75_percentile",352.7252147
+"Simple Cool Dark","Bluegill","K","0.75_percentile",0.136362812
+"Simple Cool Dark","Bluegill","t0","0.75_percentile",-0.846440261
+"Simple Riverine","Bluegill","Linf","0.75_percentile",268.5113725
+"Simple Riverine","Bluegill","K","0.75_percentile",0.204455828
+"Simple Riverine","Bluegill","t0","0.75_percentile",-0.500963096
+"Simple Two Story","Bluegill","Linf","0.75_percentile",415.9510943
+"Simple Two Story","Bluegill","K","0.75_percentile",0.18988685
+"Simple Two Story","Bluegill","t0","0.75_percentile",-0.259005424
+"Simple Warm Clear","Bluegill","Linf","0.75_percentile",359.1775543
+"Simple Warm Clear","Bluegill","K","0.75_percentile",0.113863137
+"Simple Warm Clear","Bluegill","t0","0.75_percentile",-1.071215936
+"Simple Warm Dark","Bluegill","Linf","0.75_percentile",308.5408604
+"Simple Warm Dark","Bluegill","K","0.75_percentile",0.17215913
+"Simple Warm Dark","Bluegill","t0","0.75_percentile",-0.558286
+"Complex Cool Clear","Largemouth Bass","Linf","0.75_percentile",537.320936
+"Complex Cool Clear","Largemouth Bass","K","0.75_percentile",0.172797849
+"Complex Cool Clear","Largemouth Bass","t0","0.75_percentile",-0.405668956
+"Complex Cool Dark","Largemouth Bass","Linf","0.75_percentile",573.0280435
+"Complex Cool Dark","Largemouth Bass","K","0.75_percentile",0.155242581
+"Complex Cool Dark","Largemouth Bass","t0","0.75_percentile",-0.561386344
+"Complex Riverine","Largemouth Bass","Linf","0.75_percentile",573.3549551
+"Complex Riverine","Largemouth Bass","K","0.75_percentile",0.176339981
+"Complex Riverine","Largemouth Bass","t0","0.75_percentile",-0.514087462
+"Complex Two Story","Largemouth Bass","Linf","0.75_percentile",524.0074614
+"Complex Two Story","Largemouth Bass","K","0.75_percentile",0.197408094
+"Complex Two Story","Largemouth Bass","t0","0.75_percentile",-0.265852167
+"Complex Warm Clear","Largemouth Bass","Linf","0.75_percentile",539.6533769
+"Complex Warm Clear","Largemouth Bass","K","0.75_percentile",0.157842071
+"Complex Warm Clear","Largemouth Bass","t0","0.75_percentile",-0.418823917
+"Complex Warm Dark","Largemouth Bass","Linf","0.75_percentile",550.1382896
+"Complex Warm Dark","Largemouth Bass","K","0.75_percentile",0.174118767
+"Complex Warm Dark","Largemouth Bass","t0","0.75_percentile",-0.61811748
+"Simple Cool Clear","Largemouth Bass","Linf","0.75_percentile",545.0659341
+"Simple Cool Clear","Largemouth Bass","K","0.75_percentile",0.189931508
+"Simple Cool Clear","Largemouth Bass","t0","0.75_percentile",-0.050378116
+"Simple Cool Dark","Largemouth Bass","Linf","0.75_percentile",567.2659485
+"Simple Cool Dark","Largemouth Bass","K","0.75_percentile",0.172704108
+"Simple Cool Dark","Largemouth Bass","t0","0.75_percentile",-0.339392579
+"Simple Riverine","Largemouth Bass","Linf","0.75_percentile",594.721065
+"Simple Riverine","Largemouth Bass","K","0.75_percentile",0.16887106
+"Simple Riverine","Largemouth Bass","t0","0.75_percentile",-0.265101154
+"Simple Two Story","Largemouth Bass","Linf","0.75_percentile",581.8167285
+"Simple Two Story","Largemouth Bass","K","0.75_percentile",0.154724815
+"Simple Two Story","Largemouth Bass","t0","0.75_percentile",-0.653189367
+"Simple Warm Clear","Largemouth Bass","Linf","0.75_percentile",546.2772395
+"Simple Warm Clear","Largemouth Bass","K","0.75_percentile",0.15563267
+"Simple Warm Clear","Largemouth Bass","t0","0.75_percentile",-0.509533372
+"Simple Warm Dark","Largemouth Bass","Linf","0.75_percentile",525.3467741
+"Simple Warm Dark","Largemouth Bass","K","0.75_percentile",0.202228446
+"Simple Warm Dark","Largemouth Bass","t0","0.75_percentile",-0.289407504
+"Complex Cool Clear","Muskellunge","Linf","0.75_percentile",1160.558842
+"Complex Cool Clear","Muskellunge","K","0.75_percentile",0.209700647
+"Complex Cool Clear","Muskellunge","t0","0.75_percentile",-0.459938833
+"Complex Cool Dark","Muskellunge","Linf","0.75_percentile",1267.07042
+"Complex Cool Dark","Muskellunge","K","0.75_percentile",0.150708917
+"Complex Cool Dark","Muskellunge","t0","0.75_percentile",-0.883951111
+"Complex Riverine","Muskellunge","Linf","0.75_percentile",1266.84812
+"Complex Riverine","Muskellunge","K","0.75_percentile",0.175783373
+"Complex Riverine","Muskellunge","t0","0.75_percentile",-0.746074034
+"Complex Two Story","Muskellunge","Linf","0.75_percentile",1218.222493
+"Complex Two Story","Muskellunge","K","0.75_percentile",0.179100859
+"Complex Two Story","Muskellunge","t0","0.75_percentile",-0.562338817
+"Complex Warm Dark","Muskellunge","Linf","0.75_percentile",1212.952485
+"Complex Warm Dark","Muskellunge","K","0.75_percentile",0.207207947
+"Complex Warm Dark","Muskellunge","t0","0.75_percentile",-0.850928787
+"Complex Cool Clear","Northern Pike","Linf","0.75_percentile",1056.949171
+"Complex Cool Clear","Northern Pike","K","0.75_percentile",0.163777375
+"Complex Cool Clear","Northern Pike","t0","0.75_percentile",-1.031195509
+"Complex Cool Dark","Northern Pike","Linf","0.75_percentile",1301.295267
+"Complex Cool Dark","Northern Pike","K","0.75_percentile",0.093206696
+"Complex Cool Dark","Northern Pike","t0","0.75_percentile",-2.095807441
+"Complex Riverine","Northern Pike","Linf","0.75_percentile",2333.311105
+"Complex Riverine","Northern Pike","K","0.75_percentile",0.058617736
+"Complex Riverine","Northern Pike","t0","0.75_percentile",-2.298859835
+"Complex Two Story","Northern Pike","Linf","0.75_percentile",1626.038462
+"Complex Two Story","Northern Pike","K","0.75_percentile",0.084748993
+"Complex Two Story","Northern Pike","t0","0.75_percentile",-1.898423316
+"Complex Warm Clear","Northern Pike","Linf","0.75_percentile",1861.820561
+"Complex Warm Clear","Northern Pike","K","0.75_percentile",0.089117406
+"Complex Warm Clear","Northern Pike","t0","0.75_percentile",-1.81453006
+"Complex Warm Dark","Northern Pike","Linf","0.75_percentile",1211.708319
+"Complex Warm Dark","Northern Pike","K","0.75_percentile",0.125194491
+"Complex Warm Dark","Northern Pike","t0","0.75_percentile",-1.500848922
+"Simple Riverine","Northern Pike","Linf","0.75_percentile",1340.742477
+"Simple Riverine","Northern Pike","K","0.75_percentile",0.13046167
+"Simple Riverine","Northern Pike","t0","0.75_percentile",-1.434634684
+"Simple Warm Clear","Northern Pike","Linf","0.75_percentile",1447.088954
+"Simple Warm Clear","Northern Pike","K","0.75_percentile",0.139953346
+"Simple Warm Clear","Northern Pike","t0","0.75_percentile",-1.521804817
+"Simple Warm Dark","Northern Pike","Linf","0.75_percentile",944.092495
+"Simple Warm Dark","Northern Pike","K","0.75_percentile",0.305788251
+"Simple Warm Dark","Northern Pike","t0","0.75_percentile",-0.340878691
+"Complex Cool Dark","Pumpkinseed","Linf","0.75_percentile",240.9360666
+"Complex Cool Dark","Pumpkinseed","K","0.75_percentile",0.247840016
+"Complex Cool Dark","Pumpkinseed","t0","0.75_percentile",-0.263456035
+"Complex Riverine","Pumpkinseed","Linf","0.75_percentile",291.507506
+"Complex Riverine","Pumpkinseed","K","0.75_percentile",0.194321332
+"Complex Riverine","Pumpkinseed","t0","0.75_percentile",-0.589723215
+"Complex Warm Clear","Pumpkinseed","Linf","0.75_percentile",256.0857293
+"Complex Warm Clear","Pumpkinseed","K","0.75_percentile",0.378661292
+"Complex Warm Clear","Pumpkinseed","t0","0.75_percentile",1.05361772
+"Complex Warm Dark","Pumpkinseed","Linf","0.75_percentile",321.333016
+"Complex Warm Dark","Pumpkinseed","K","0.75_percentile",0.226121912
+"Complex Warm Dark","Pumpkinseed","t0","0.75_percentile",-0.307403572
+"Simple Cool Dark","Pumpkinseed","Linf","0.75_percentile",290.0219532
+"Simple Cool Dark","Pumpkinseed","K","0.75_percentile",0.338288916
+"Simple Cool Dark","Pumpkinseed","t0","0.75_percentile",0.534221493
+"Simple Warm Clear","Pumpkinseed","Linf","0.75_percentile",371.7705057
+"Simple Warm Clear","Pumpkinseed","K","0.75_percentile",0.234383159
+"Simple Warm Clear","Pumpkinseed","t0","0.75_percentile",0.305861688
+"Complex Cool Dark","Rock Bass","Linf","0.75_percentile",346.1461579
+"Complex Cool Dark","Rock Bass","K","0.75_percentile",0.162635072
+"Complex Cool Dark","Rock Bass","t0","0.75_percentile",-0.420165067
+"Complex Two Story","Rock Bass","Linf","0.75_percentile",282.0611909
+"Complex Two Story","Rock Bass","K","0.75_percentile",0.570037679
+"Complex Two Story","Rock Bass","t0","0.75_percentile",1.388377339
+"Complex Cool Clear","Smallmouth Bass","Linf","0.75_percentile",553.1941912
+"Complex Cool Clear","Smallmouth Bass","K","0.75_percentile",0.201213007
+"Complex Cool Clear","Smallmouth Bass","t0","0.75_percentile",-0.061568056
+"Complex Cool Dark","Smallmouth Bass","Linf","0.75_percentile",542.457072
+"Complex Cool Dark","Smallmouth Bass","K","0.75_percentile",0.221252459
+"Complex Cool Dark","Smallmouth Bass","t0","0.75_percentile",0.024827709
+"Complex Riverine","Smallmouth Bass","Linf","0.75_percentile",560.9342115
+"Complex Riverine","Smallmouth Bass","K","0.75_percentile",0.188264248
+"Complex Riverine","Smallmouth Bass","t0","0.75_percentile",-0.496464642
+"Complex Two Story","Smallmouth Bass","Linf","0.75_percentile",540.4145288
+"Complex Two Story","Smallmouth Bass","K","0.75_percentile",0.215811695
+"Complex Two Story","Smallmouth Bass","t0","0.75_percentile",-0.155018677
+"Complex Warm Dark","Smallmouth Bass","Linf","0.75_percentile",543.7974173
+"Complex Warm Dark","Smallmouth Bass","K","0.75_percentile",0.276302631
+"Complex Warm Dark","Smallmouth Bass","t0","0.75_percentile",0.100162442
+"Complex Cool Clear","Walleye","Linf","0.75_percentile",731.4831468
+"Complex Cool Clear","Walleye","K","0.75_percentile",0.128120624
+"Complex Cool Clear","Walleye","t0","0.75_percentile",-1.507863633
+"Complex Cool Dark","Walleye","Linf","0.75_percentile",762.1946415
+"Complex Cool Dark","Walleye","K","0.75_percentile",0.118781625
+"Complex Cool Dark","Walleye","t0","0.75_percentile",-1.506827317
+"Complex Riverine","Walleye","Linf","0.75_percentile",922.5402747
+"Complex Riverine","Walleye","K","0.75_percentile",0.089327935
+"Complex Riverine","Walleye","t0","0.75_percentile",-1.946307749
+"Complex Two Story","Walleye","Linf","0.75_percentile",772.797896
+"Complex Two Story","Walleye","K","0.75_percentile",0.121715402
+"Complex Two Story","Walleye","t0","0.75_percentile",-1.420468597
+"Complex Warm Clear","Walleye","Linf","0.75_percentile",652.7448352
+"Complex Warm Clear","Walleye","K","0.75_percentile",0.192188462
+"Complex Warm Clear","Walleye","t0","0.75_percentile",-1.075530552
+"Complex Warm Dark","Walleye","Linf","0.75_percentile",696.7891179
+"Complex Warm Dark","Walleye","K","0.75_percentile",0.169758516
+"Complex Warm Dark","Walleye","t0","0.75_percentile",-1.267917618
+"Complex Cool Clear","YellowPerch","Linf","0.75_percentile",545.7613977
+"Complex Cool Clear","YellowPerch","K","0.75_percentile",0.154055242
+"Complex Cool Clear","YellowPerch","t0","0.75_percentile",-1.137563707
+"Complex Cool Dark","YellowPerch","Linf","0.75_percentile",497.6363114
+"Complex Cool Dark","YellowPerch","K","0.75_percentile",0.132866833
+"Complex Cool Dark","YellowPerch","t0","0.75_percentile",-1.27594254
+"Complex Riverine","YellowPerch","Linf","0.75_percentile",331.2088939
+"Complex Riverine","YellowPerch","K","0.75_percentile",0.223871639
+"Complex Riverine","YellowPerch","t0","0.75_percentile",-0.638184643
+"Complex Two Story","YellowPerch","Linf","0.75_percentile",309.7209851
+"Complex Two Story","YellowPerch","K","0.75_percentile",0.461092465
+"Complex Two Story","YellowPerch","t0","0.75_percentile",0.971871797
+"Complex Warm Dark","YellowPerch","Linf","0.75_percentile",810.4257958
+"Complex Warm Dark","YellowPerch","K","0.75_percentile",0.088523115
+"Complex Warm Dark","YellowPerch","t0","0.75_percentile",-1.632350119
+"Complex Cool Clear","Black Crappie","Linf","0.90_percentile",404.0007131
+"Complex Cool Clear","Black Crappie","K","0.90_percentile",0.241730084
+"Complex Cool Clear","Black Crappie","t0","0.90_percentile",-0.275484789
+"Complex Cool Dark","Black Crappie","Linf","0.90_percentile",388.8418999
+"Complex Cool Dark","Black Crappie","K","0.90_percentile",0.212779134
+"Complex Cool Dark","Black Crappie","t0","0.90_percentile",-0.527542083
+"Complex Riverine","Black Crappie","Linf","0.90_percentile",352.0128218
+"Complex Riverine","Black Crappie","K","0.90_percentile",0.266460741
+"Complex Riverine","Black Crappie","t0","0.90_percentile",-0.231674318
+"Complex Two Story","Black Crappie","Linf","0.90_percentile",438.7957068
+"Complex Two Story","Black Crappie","K","0.90_percentile",0.558372504
+"Complex Two Story","Black Crappie","t0","0.90_percentile",0.722993764
+"Complex Warm Clear","Black Crappie","Linf","0.90_percentile",346.0702858
+"Complex Warm Clear","Black Crappie","K","0.90_percentile",0.481235101
+"Complex Warm Clear","Black Crappie","t0","0.90_percentile",0.634320851
+"Complex Warm Dark","Black Crappie","Linf","0.90_percentile",370.9925294
+"Complex Warm Dark","Black Crappie","K","0.90_percentile",0.24893907
+"Complex Warm Dark","Black Crappie","t0","0.90_percentile",-0.295056236
+"Simple Cool Dark","Black Crappie","Linf","0.90_percentile",439.2405758
+"Simple Cool Dark","Black Crappie","K","0.90_percentile",0.273112222
+"Simple Cool Dark","Black Crappie","t0","0.90_percentile",0.225766225
+"Simple Riverine","Black Crappie","Linf","0.90_percentile",390.1739058
+"Simple Riverine","Black Crappie","K","0.90_percentile",0.268522684
+"Simple Riverine","Black Crappie","t0","0.90_percentile",-0.147474801
+"Simple Warm Clear","Black Crappie","Linf","0.90_percentile",525.3307028
+"Simple Warm Clear","Black Crappie","K","0.90_percentile",0.379526721
+"Simple Warm Clear","Black Crappie","t0","0.90_percentile",0.54319852
+"Simple Warm Dark","Black Crappie","Linf","0.90_percentile",322.2021788
+"Simple Warm Dark","Black Crappie","K","0.90_percentile",0.511839702
+"Simple Warm Dark","Black Crappie","t0","0.90_percentile",0.616866326
+"Complex Cool Clear","Bluegill","Linf","0.90_percentile",698.4718299
+"Complex Cool Clear","Bluegill","K","0.90_percentile",0.113020661
+"Complex Cool Clear","Bluegill","t0","0.90_percentile",-1.017236043
+"Complex Cool Dark","Bluegill","Linf","0.90_percentile",327.8877169
+"Complex Cool Dark","Bluegill","K","0.90_percentile",0.172176664
+"Complex Cool Dark","Bluegill","t0","0.90_percentile",-0.665237951
+"Complex Riverine","Bluegill","Linf","0.90_percentile",284.6005955
+"Complex Riverine","Bluegill","K","0.90_percentile",0.217373821
+"Complex Riverine","Bluegill","t0","0.90_percentile",-0.438736282
+"Complex Two Story","Bluegill","Linf","0.90_percentile",533.7804133
+"Complex Two Story","Bluegill","K","0.90_percentile",0.124624899
+"Complex Two Story","Bluegill","t0","0.90_percentile",-0.735358571
+"Complex Warm Clear","Bluegill","Linf","0.90_percentile",457.2536914
+"Complex Warm Clear","Bluegill","K","0.90_percentile",0.11496519
+"Complex Warm Clear","Bluegill","t0","0.90_percentile",-0.541522548
+"Complex Warm Dark","Bluegill","Linf","0.90_percentile",340.3164568
+"Complex Warm Dark","Bluegill","K","0.90_percentile",0.145367549
+"Complex Warm Dark","Bluegill","t0","0.90_percentile",-1.083336965
+"Simple Cool Clear","Bluegill","Linf","0.90_percentile",402.7711968
+"Simple Cool Clear","Bluegill","K","0.90_percentile",0.227581445
+"Simple Cool Clear","Bluegill","t0","0.90_percentile",0.12900735
+"Simple Cool Dark","Bluegill","Linf","0.90_percentile",400.8577635
+"Simple Cool Dark","Bluegill","K","0.90_percentile",0.155936306
+"Simple Cool Dark","Bluegill","t0","0.90_percentile",-0.639787532
+"Simple Riverine","Bluegill","Linf","0.90_percentile",282.3703716
+"Simple Riverine","Bluegill","K","0.90_percentile",0.221137343
+"Simple Riverine","Bluegill","t0","0.90_percentile",-0.379468401
+"Simple Two Story","Bluegill","Linf","0.90_percentile",670.9408429
+"Simple Two Story","Bluegill","K","0.90_percentile",0.254494384
+"Simple Two Story","Bluegill","t0","0.90_percentile",0.111720588
+"Simple Warm Clear","Bluegill","Linf","0.90_percentile",410.6025563
+"Simple Warm Clear","Bluegill","K","0.90_percentile",0.128998601
+"Simple Warm Clear","Bluegill","t0","0.90_percentile",-0.862289447
+"Simple Warm Dark","Bluegill","Linf","0.90_percentile",333.7745698
+"Simple Warm Dark","Bluegill","K","0.90_percentile",0.193530908
+"Simple Warm Dark","Bluegill","t0","0.90_percentile",-0.385784319
+"Complex Cool Clear","Largemouth Bass","Linf","0.90_percentile",547.2794986
+"Complex Cool Clear","Largemouth Bass","K","0.90_percentile",0.180564002
+"Complex Cool Clear","Largemouth Bass","t0","0.90_percentile",-0.336269026
+"Complex Cool Dark","Largemouth Bass","Linf","0.90_percentile",584.5105869
+"Complex Cool Dark","Largemouth Bass","K","0.90_percentile",0.162572415
+"Complex Cool Dark","Largemouth Bass","t0","0.90_percentile",-0.478878176
+"Complex Riverine","Largemouth Bass","Linf","0.90_percentile",585.1842217
+"Complex Riverine","Largemouth Bass","K","0.90_percentile",0.183445542
+"Complex Riverine","Largemouth Bass","t0","0.90_percentile",-0.425167788
+"Complex Two Story","Largemouth Bass","Linf","0.90_percentile",532.3473607
+"Complex Two Story","Largemouth Bass","K","0.90_percentile",0.206114062
+"Complex Two Story","Largemouth Bass","t0","0.90_percentile",-0.19072543
+"Complex Warm Clear","Largemouth Bass","Linf","0.90_percentile",548.1093681
+"Complex Warm Clear","Largemouth Bass","K","0.90_percentile",0.16344972
+"Complex Warm Clear","Largemouth Bass","t0","0.90_percentile",-0.351668547
+"Complex Warm Dark","Largemouth Bass","Linf","0.90_percentile",555.3624151
+"Complex Warm Dark","Largemouth Bass","K","0.90_percentile",0.179215912
+"Complex Warm Dark","Largemouth Bass","t0","0.90_percentile",-0.563712252
+"Simple Cool Clear","Largemouth Bass","Linf","0.90_percentile",567.0901762
+"Simple Cool Clear","Largemouth Bass","K","0.90_percentile",0.205336115
+"Simple Cool Clear","Largemouth Bass","t0","0.90_percentile",0.050325091
+"Simple Cool Dark","Largemouth Bass","Linf","0.90_percentile",588.4756548
+"Simple Cool Dark","Largemouth Bass","K","0.90_percentile",0.183464316
+"Simple Cool Dark","Largemouth Bass","t0","0.90_percentile",-0.240142364
+"Simple Riverine","Largemouth Bass","Linf","0.90_percentile",611.5857071
+"Simple Riverine","Largemouth Bass","K","0.90_percentile",0.178684755
+"Simple Riverine","Largemouth Bass","t0","0.90_percentile",-0.167633623
+"Simple Two Story","Largemouth Bass","Linf","0.90_percentile",641.7438277
+"Simple Two Story","Largemouth Bass","K","0.90_percentile",0.178245327
+"Simple Two Story","Largemouth Bass","t0","0.90_percentile",-0.434307219
+"Simple Warm Clear","Largemouth Bass","Linf","0.90_percentile",554.182861
+"Simple Warm Clear","Largemouth Bass","K","0.90_percentile",0.160392561
+"Simple Warm Clear","Largemouth Bass","t0","0.90_percentile",-0.444357114
+"Simple Warm Dark","Largemouth Bass","Linf","0.90_percentile",534.8115028
+"Simple Warm Dark","Largemouth Bass","K","0.90_percentile",0.21248418
+"Simple Warm Dark","Largemouth Bass","t0","0.90_percentile",-0.198689401
+"Complex Cool Clear","Muskellunge","Linf","0.90_percentile",1182.464082
+"Complex Cool Clear","Muskellunge","K","0.90_percentile",0.221123905
+"Complex Cool Clear","Muskellunge","t0","0.90_percentile",-0.346854789
+"Complex Cool Dark","Muskellunge","Linf","0.90_percentile",1280.015485
+"Complex Cool Dark","Muskellunge","K","0.90_percentile",0.154525558
+"Complex Cool Dark","Muskellunge","t0","0.90_percentile",-0.815054564
+"Complex Riverine","Muskellunge","Linf","0.90_percentile",1300.33611
+"Complex Riverine","Muskellunge","K","0.90_percentile",0.184733904
+"Complex Riverine","Muskellunge","t0","0.90_percentile",-0.627634798
+"Complex Two Story","Muskellunge","Linf","0.90_percentile",1228.728957
+"Complex Two Story","Muskellunge","K","0.90_percentile",0.183961633
+"Complex Two Story","Muskellunge","t0","0.90_percentile",-0.502766986
+"Complex Warm Dark","Muskellunge","Linf","0.90_percentile",1232.649645
+"Complex Warm Dark","Muskellunge","K","0.90_percentile",0.219743706
+"Complex Warm Dark","Muskellunge","t0","0.90_percentile",-0.683696663
+"Complex Cool Clear","Northern Pike","Linf","0.90_percentile",1171.541884
+"Complex Cool Clear","Northern Pike","K","0.90_percentile",0.186578811
+"Complex Cool Clear","Northern Pike","t0","0.90_percentile",-0.828312097
+"Complex Cool Dark","Northern Pike","Linf","0.90_percentile",1431.056085
+"Complex Cool Dark","Northern Pike","K","0.90_percentile",0.102140118
+"Complex Cool Dark","Northern Pike","t0","0.90_percentile",-1.920887845
+"Complex Riverine","Northern Pike","Linf","0.90_percentile",2967.801885
+"Complex Riverine","Northern Pike","K","0.90_percentile",0.069161368
+"Complex Riverine","Northern Pike","t0","0.90_percentile",-2.059168669
+"Complex Two Story","Northern Pike","Linf","0.90_percentile",1880.322474
+"Complex Two Story","Northern Pike","K","0.90_percentile",0.097177914
+"Complex Two Story","Northern Pike","t0","0.90_percentile",-1.693628107
+"Complex Warm Clear","Northern Pike","Linf","0.90_percentile",2380.444046
+"Complex Warm Clear","Northern Pike","K","0.90_percentile",0.106186628
+"Complex Warm Clear","Northern Pike","t0","0.90_percentile",-1.486549535
+"Complex Warm Dark","Northern Pike","Linf","0.90_percentile",1270.569369
+"Complex Warm Dark","Northern Pike","K","0.90_percentile",0.135415597
+"Complex Warm Dark","Northern Pike","t0","0.90_percentile",-1.370388158
+"Simple Riverine","Northern Pike","Linf","0.90_percentile",1567.32528
+"Simple Riverine","Northern Pike","K","0.90_percentile",0.152029483
+"Simple Riverine","Northern Pike","t0","0.90_percentile",-1.17350092
+"Simple Warm Clear","Northern Pike","Linf","0.90_percentile",1987.183965
+"Simple Warm Clear","Northern Pike","K","0.90_percentile",0.18127211
+"Simple Warm Clear","Northern Pike","t0","0.90_percentile",-1.113732113
+"Simple Warm Dark","Northern Pike","Linf","0.90_percentile",1146.763253
+"Simple Warm Dark","Northern Pike","K","0.90_percentile",0.383814281
+"Simple Warm Dark","Northern Pike","t0","0.90_percentile",0.089247211
+"Complex Cool Dark","Pumpkinseed","Linf","0.90_percentile",258.4454336
+"Complex Cool Dark","Pumpkinseed","K","0.90_percentile",0.28017799
+"Complex Cool Dark","Pumpkinseed","t0","0.90_percentile",-0.057105277
+"Complex Riverine","Pumpkinseed","Linf","0.90_percentile",342.2944498
+"Complex Riverine","Pumpkinseed","K","0.90_percentile",0.22972533
+"Complex Riverine","Pumpkinseed","t0","0.90_percentile",-0.336542618
+"Complex Warm Clear","Pumpkinseed","Linf","0.90_percentile",320.700768
+"Complex Warm Clear","Pumpkinseed","K","0.90_percentile",0.47508172
+"Complex Warm Clear","Pumpkinseed","t0","0.90_percentile",1.347509838
+"Complex Warm Dark","Pumpkinseed","Linf","0.90_percentile",414.5345552
+"Complex Warm Dark","Pumpkinseed","K","0.90_percentile",0.271121482
+"Complex Warm Dark","Pumpkinseed","t0","0.90_percentile",-0.026061227
+"Simple Cool Dark","Pumpkinseed","Linf","0.90_percentile",371.3037059
+"Simple Cool Dark","Pumpkinseed","K","0.90_percentile",0.447992255
+"Simple Cool Dark","Pumpkinseed","t0","0.90_percentile",1.007137062
+"Simple Warm Clear","Pumpkinseed","Linf","0.90_percentile",587.0763834
+"Simple Warm Clear","Pumpkinseed","K","0.90_percentile",0.338666326
+"Simple Warm Clear","Pumpkinseed","t0","0.90_percentile",0.888196042
+"Complex Cool Dark","Rock Bass","Linf","0.90_percentile",381.700504
+"Complex Cool Dark","Rock Bass","K","0.90_percentile",0.182568853
+"Complex Cool Dark","Rock Bass","t0","0.90_percentile",-0.220192934
+"Complex Two Story","Rock Bass","Linf","0.90_percentile",393.3563158
+"Complex Two Story","Rock Bass","K","0.90_percentile",0.883092234
+"Complex Two Story","Rock Bass","t0","0.90_percentile",1.843102971
+"Complex Cool Clear","Smallmouth Bass","Linf","0.90_percentile",574.9166712
+"Complex Cool Clear","Smallmouth Bass","K","0.90_percentile",0.21669095
+"Complex Cool Clear","Smallmouth Bass","t0","0.90_percentile",0.035915038
+"Complex Cool Dark","Smallmouth Bass","Linf","0.90_percentile",551.1090339
+"Complex Cool Dark","Smallmouth Bass","K","0.90_percentile",0.231840292
+"Complex Cool Dark","Smallmouth Bass","t0","0.90_percentile",0.100135796
+"Complex Riverine","Smallmouth Bass","Linf","0.90_percentile",574.4721362
+"Complex Riverine","Smallmouth Bass","K","0.90_percentile",0.198895264
+"Complex Riverine","Smallmouth Bass","t0","0.90_percentile",-0.415694704
+"Complex Two Story","Smallmouth Bass","Linf","0.90_percentile",548.1065248
+"Complex Two Story","Smallmouth Bass","K","0.90_percentile",0.224649663
+"Complex Two Story","Smallmouth Bass","t0","0.90_percentile",-0.080517701
+"Complex Warm Dark","Smallmouth Bass","Linf","0.90_percentile",589.1633719
+"Complex Warm Dark","Smallmouth Bass","K","0.90_percentile",0.315398324
+"Complex Warm Dark","Smallmouth Bass","t0","0.90_percentile",0.283987137
+"Complex Cool Clear","Walleye","Linf","0.90_percentile",740.7262987
+"Complex Cool Clear","Walleye","K","0.90_percentile",0.132061061
+"Complex Cool Clear","Walleye","t0","0.90_percentile",-1.427500797
+"Complex Cool Dark","Walleye","Linf","0.90_percentile",769.6508387
+"Complex Cool Dark","Walleye","K","0.90_percentile",0.121566504
+"Complex Cool Dark","Walleye","t0","0.90_percentile",-1.43867364
+"Complex Riverine","Walleye","Linf","0.90_percentile",952.9579122
+"Complex Riverine","Walleye","K","0.90_percentile",0.094021522
+"Complex Riverine","Walleye","t0","0.90_percentile",-1.838806639
+"Complex Two Story","Walleye","Linf","0.90_percentile",780.263164
+"Complex Two Story","Walleye","K","0.90_percentile",0.124651851
+"Complex Two Story","Walleye","t0","0.90_percentile",-1.354534927
+"Complex Warm Clear","Walleye","Linf","0.90_percentile",660.4704675
+"Complex Warm Clear","Walleye","K","0.90_percentile",0.200931625
+"Complex Warm Clear","Walleye","t0","0.90_percentile",-0.95319377
+"Complex Warm Dark","Walleye","Linf","0.90_percentile",703.5497941
+"Complex Warm Dark","Walleye","K","0.90_percentile",0.174856272
+"Complex Warm Dark","Walleye","t0","0.90_percentile",-1.183164522
+"Complex Cool Clear","YellowPerch","Linf","0.90_percentile",744.0935971
+"Complex Cool Clear","YellowPerch","K","0.90_percentile",0.196599021
+"Complex Cool Clear","YellowPerch","t0","0.90_percentile",-0.711837687
+"Complex Cool Dark","YellowPerch","Linf","0.90_percentile",638.1034739
+"Complex Cool Dark","YellowPerch","K","0.90_percentile",0.165610535
+"Complex Cool Dark","YellowPerch","t0","0.90_percentile",-0.885347063
+"Complex Riverine","YellowPerch","Linf","0.90_percentile",348.4832942
+"Complex Riverine","YellowPerch","K","0.90_percentile",0.245308456
+"Complex Riverine","YellowPerch","t0","0.90_percentile",-0.505208677
+"Complex Two Story","YellowPerch","Linf","0.90_percentile",388.3936744
+"Complex Two Story","YellowPerch","K","0.90_percentile",0.585652844
+"Complex Two Story","YellowPerch","t0","0.90_percentile",1.321507749
+"Complex Warm Dark","YellowPerch","Linf","0.90_percentile",1129.232384
+"Complex Warm Dark","YellowPerch","K","0.90_percentile",0.111949041
+"Complex Warm Dark","YellowPerch","t0","0.90_percentile",-1.378245901
+"Complex Cool Clear","Black Crappie","Linf","0.95_percentile",422.2458635
+"Complex Cool Clear","Black Crappie","K","0.95_percentile",0.253157445
+"Complex Cool Clear","Black Crappie","t0","0.95_percentile",-0.222559014
+"Complex Cool Dark","Black Crappie","Linf","0.95_percentile",398.7042291
+"Complex Cool Dark","Black Crappie","K","0.95_percentile",0.219640821
+"Complex Cool Dark","Black Crappie","t0","0.95_percentile",-0.443192337
+"Complex Riverine","Black Crappie","Linf","0.95_percentile",355.3230616
+"Complex Riverine","Black Crappie","K","0.95_percentile",0.275268592
+"Complex Riverine","Black Crappie","t0","0.95_percentile",-0.176893793
+"Complex Two Story","Black Crappie","Linf","0.95_percentile",526.1782363
+"Complex Two Story","Black Crappie","K","0.95_percentile",0.617975354
+"Complex Two Story","Black Crappie","t0","0.95_percentile",0.85136614
+"Complex Warm Clear","Black Crappie","Linf","0.95_percentile",366.0048667
+"Complex Warm Clear","Black Crappie","K","0.95_percentile",0.518219618
+"Complex Warm Clear","Black Crappie","t0","0.95_percentile",0.719436178
+"Complex Warm Dark","Black Crappie","Linf","0.95_percentile",380.3960852
+"Complex Warm Dark","Black Crappie","K","0.95_percentile",0.257938823
+"Complex Warm Dark","Black Crappie","t0","0.95_percentile",-0.233650087
+"Simple Cool Dark","Black Crappie","Linf","0.95_percentile",515.9345453
+"Simple Cool Dark","Black Crappie","K","0.95_percentile",0.296037337
+"Simple Cool Dark","Black Crappie","t0","0.95_percentile",0.332521185
+"Simple Riverine","Black Crappie","Linf","0.95_percentile",414.1240819
+"Simple Riverine","Black Crappie","K","0.95_percentile",0.284677643
+"Simple Riverine","Black Crappie","t0","0.95_percentile",-0.058631325
+"Simple Warm Clear","Black Crappie","Linf","0.95_percentile",655.8996253
+"Simple Warm Clear","Black Crappie","K","0.95_percentile",0.418856928
+"Simple Warm Clear","Black Crappie","t0","0.95_percentile",0.677088006
+"Simple Warm Dark","Black Crappie","Linf","0.95_percentile",339.4100816
+"Simple Warm Dark","Black Crappie","K","0.95_percentile",0.570781092
+"Simple Warm Dark","Black Crappie","t0","0.95_percentile",0.715015547
+"Complex Cool Clear","Bluegill","Linf","0.95_percentile",860.8500192
+"Complex Cool Clear","Bluegill","K","0.95_percentile",0.127122347
+"Complex Cool Clear","Bluegill","t0","0.95_percentile",-0.886162493
+"Complex Cool Dark","Bluegill","Linf","0.95_percentile",346.9427457
+"Complex Cool Dark","Bluegill","K","0.95_percentile",0.179471966
+"Complex Cool Dark","Bluegill","t0","0.95_percentile",-0.561360175
+"Complex Riverine","Bluegill","Linf","0.95_percentile",291.3405785
+"Complex Riverine","Bluegill","K","0.95_percentile",0.224676884
+"Complex Riverine","Bluegill","t0","0.95_percentile",-0.371708864
+"Complex Two Story","Bluegill","Linf","0.95_percentile",628.3107474
+"Complex Two Story","Bluegill","K","0.95_percentile",0.136221741
+"Complex Two Story","Bluegill","t0","0.95_percentile",-0.608477365
+"Complex Warm Clear","Bluegill","Linf","0.95_percentile",492.3791438
+"Complex Warm Clear","Bluegill","K","0.95_percentile",0.122925113
+"Complex Warm Clear","Bluegill","t0","0.95_percentile",-0.461553508
+"Complex Warm Dark","Bluegill","Linf","0.95_percentile",352.9376954
+"Complex Warm Dark","Bluegill","K","0.95_percentile",0.151000214
+"Complex Warm Dark","Bluegill","t0","0.95_percentile",-1.019594496
+"Simple Cool Clear","Bluegill","Linf","0.95_percentile",475.9052442
+"Simple Cool Clear","Bluegill","K","0.95_percentile",0.250402196
+"Simple Cool Clear","Bluegill","t0","0.95_percentile",0.251427531
+"Simple Cool Dark","Bluegill","Linf","0.95_percentile",444.884022
+"Simple Cool Dark","Bluegill","K","0.95_percentile",0.167914629
+"Simple Cool Dark","Bluegill","t0","0.95_percentile",-0.526209457
+"Simple Riverine","Bluegill","Linf","0.95_percentile",289.4780737
+"Simple Riverine","Bluegill","K","0.95_percentile",0.231267971
+"Simple Riverine","Bluegill","t0","0.95_percentile",-0.321134724
+"Simple Two Story","Bluegill","Linf","0.95_percentile",871.3484927
+"Simple Two Story","Bluegill","K","0.95_percentile",0.294425089
+"Simple Two Story","Bluegill","t0","0.95_percentile",0.312231032
+"Simple Warm Clear","Bluegill","Linf","0.95_percentile",444.4755088
+"Simple Warm Clear","Bluegill","K","0.95_percentile",0.139698307
+"Simple Warm Clear","Bluegill","t0","0.95_percentile",-0.749246428
+"Simple Warm Dark","Bluegill","Linf","0.95_percentile",354.0751151
+"Simple Warm Dark","Bluegill","K","0.95_percentile",0.207951632
+"Simple Warm Dark","Bluegill","t0","0.95_percentile",-0.289481918
+"Complex Cool Clear","Largemouth Bass","Linf","0.95_percentile",555.1499741
+"Complex Cool Clear","Largemouth Bass","K","0.95_percentile",0.18532737
+"Complex Cool Clear","Largemouth Bass","t0","0.95_percentile",-0.296304302
+"Complex Cool Dark","Largemouth Bass","Linf","0.95_percentile",592.414379
+"Complex Cool Dark","Largemouth Bass","K","0.95_percentile",0.165620201
+"Complex Cool Dark","Largemouth Bass","t0","0.95_percentile",-0.429036858
+"Complex Riverine","Largemouth Bass","Linf","0.95_percentile",593.8218699
+"Complex Riverine","Largemouth Bass","K","0.95_percentile",0.18967048
+"Complex Riverine","Largemouth Bass","t0","0.95_percentile",-0.365700132
+"Complex Two Story","Largemouth Bass","Linf","0.95_percentile",537.1015311
+"Complex Two Story","Largemouth Bass","K","0.95_percentile",0.210858429
+"Complex Two Story","Largemouth Bass","t0","0.95_percentile",-0.148732088
+"Complex Warm Clear","Largemouth Bass","Linf","0.95_percentile",552.471238
+"Complex Warm Clear","Largemouth Bass","K","0.95_percentile",0.166580499
+"Complex Warm Clear","Largemouth Bass","t0","0.95_percentile",-0.309734444
+"Complex Warm Dark","Largemouth Bass","Linf","0.95_percentile",558.5677955
+"Complex Warm Dark","Largemouth Bass","K","0.95_percentile",0.181640865
+"Complex Warm Dark","Largemouth Bass","t0","0.95_percentile",-0.536851722
+"Simple Cool Clear","Largemouth Bass","Linf","0.95_percentile",583.3893343
+"Simple Cool Clear","Largemouth Bass","K","0.95_percentile",0.217158203
+"Simple Cool Clear","Largemouth Bass","t0","0.95_percentile",0.116948138
+"Simple Cool Dark","Largemouth Bass","Linf","0.95_percentile",601.2534952
+"Simple Cool Dark","Largemouth Bass","K","0.95_percentile",0.190242279
+"Simple Cool Dark","Largemouth Bass","t0","0.95_percentile",-0.186131425
+"Simple Riverine","Largemouth Bass","Linf","0.95_percentile",621.297539
+"Simple Riverine","Largemouth Bass","K","0.95_percentile",0.185982932
+"Simple Riverine","Largemouth Bass","t0","0.95_percentile",-0.112722965
+"Simple Two Story","Largemouth Bass","Linf","0.95_percentile",700.5379329
+"Simple Two Story","Largemouth Bass","K","0.95_percentile",0.18943978
+"Simple Two Story","Largemouth Bass","t0","0.95_percentile",-0.294151684
+"Simple Warm Clear","Largemouth Bass","Linf","0.95_percentile",558.662988
+"Simple Warm Clear","Largemouth Bass","K","0.95_percentile",0.1635421
+"Simple Warm Clear","Largemouth Bass","t0","0.95_percentile",-0.399342161
+"Simple Warm Dark","Largemouth Bass","Linf","0.95_percentile",541.9706928
+"Simple Warm Dark","Largemouth Bass","K","0.95_percentile",0.219052905
+"Simple Warm Dark","Largemouth Bass","t0","0.95_percentile",-0.152640054
+"Complex Cool Clear","Muskellunge","Linf","0.95_percentile",1197.174773
+"Complex Cool Clear","Muskellunge","K","0.95_percentile",0.229476486
+"Complex Cool Clear","Muskellunge","t0","0.95_percentile",-0.281401392
+"Complex Cool Dark","Muskellunge","Linf","0.95_percentile",1289.318829
+"Complex Cool Dark","Muskellunge","K","0.95_percentile",0.156889701
+"Complex Cool Dark","Muskellunge","t0","0.95_percentile",-0.772568422
+"Complex Riverine","Muskellunge","Linf","0.95_percentile",1315.395212
+"Complex Riverine","Muskellunge","K","0.95_percentile",0.191540512
+"Complex Riverine","Muskellunge","t0","0.95_percentile",-0.571084928
+"Complex Two Story","Muskellunge","Linf","0.95_percentile",1234.721616
+"Complex Two Story","Muskellunge","K","0.95_percentile",0.187004509
+"Complex Two Story","Muskellunge","t0","0.95_percentile",-0.470026876
+"Complex Warm Dark","Muskellunge","Linf","0.95_percentile",1245.19765
+"Complex Warm Dark","Muskellunge","K","0.95_percentile",0.226778633
+"Complex Warm Dark","Muskellunge","t0","0.95_percentile",-0.59196175
+"Complex Cool Clear","Northern Pike","Linf","0.95_percentile",1283.614449
+"Complex Cool Clear","Northern Pike","K","0.95_percentile",0.198891273
+"Complex Cool Clear","Northern Pike","t0","0.95_percentile",-0.692698775
+"Complex Cool Dark","Northern Pike","Linf","0.95_percentile",1543.591892
+"Complex Cool Dark","Northern Pike","K","0.95_percentile",0.109172268
+"Complex Cool Dark","Northern Pike","t0","0.95_percentile",-1.795562115
+"Complex Riverine","Northern Pike","Linf","0.95_percentile",3547.34387
+"Complex Riverine","Northern Pike","K","0.95_percentile",0.075890627
+"Complex Riverine","Northern Pike","t0","0.95_percentile",-1.950454999
+"Complex Two Story","Northern Pike","Linf","0.95_percentile",2115.601524
+"Complex Two Story","Northern Pike","K","0.95_percentile",0.104205393
+"Complex Two Story","Northern Pike","t0","0.95_percentile",-1.575348309
+"Complex Warm Clear","Northern Pike","Linf","0.95_percentile",2854.304317
+"Complex Warm Clear","Northern Pike","K","0.95_percentile",0.11712915
+"Complex Warm Clear","Northern Pike","t0","0.95_percentile",-1.297120747
+"Complex Warm Dark","Northern Pike","Linf","0.95_percentile",1314.583679
+"Complex Warm Dark","Northern Pike","K","0.95_percentile",0.140285458
+"Complex Warm Dark","Northern Pike","t0","0.95_percentile",-1.288159856
+"Simple Riverine","Northern Pike","Linf","0.95_percentile",1759.65003
+"Simple Riverine","Northern Pike","K","0.95_percentile",0.163203682
+"Simple Riverine","Northern Pike","t0","0.95_percentile",-1.032591742
+"Simple Warm Clear","Northern Pike","Linf","0.95_percentile",2457.590031
+"Simple Warm Clear","Northern Pike","K","0.95_percentile",0.201096581
+"Simple Warm Clear","Northern Pike","t0","0.95_percentile",-0.916013143
+"Simple Warm Dark","Northern Pike","Linf","0.95_percentile",1390.579307
+"Simple Warm Dark","Northern Pike","K","0.95_percentile",0.428046484
+"Simple Warm Dark","Northern Pike","t0","0.95_percentile",0.254701931
+"Complex Cool Dark","Pumpkinseed","Linf","0.95_percentile",277.8061901
+"Complex Cool Dark","Pumpkinseed","K","0.95_percentile",0.299526267
+"Complex Cool Dark","Pumpkinseed","t0","0.95_percentile",0.051724308
+"Complex Riverine","Pumpkinseed","Linf","0.95_percentile",397.2358086
+"Complex Riverine","Pumpkinseed","K","0.95_percentile",0.248199493
+"Complex Riverine","Pumpkinseed","t0","0.95_percentile",-0.15175614
+"Complex Warm Clear","Pumpkinseed","Linf","0.95_percentile",377.4960935
+"Complex Warm Clear","Pumpkinseed","K","0.95_percentile",0.521482106
+"Complex Warm Clear","Pumpkinseed","t0","0.95_percentile",1.499838895
+"Complex Warm Dark","Pumpkinseed","Linf","0.95_percentile",496.8741156
+"Complex Warm Dark","Pumpkinseed","K","0.95_percentile",0.306956727
+"Complex Warm Dark","Pumpkinseed","t0","0.95_percentile",0.092859607
+"Simple Cool Dark","Pumpkinseed","Linf","0.95_percentile",472.0515576
+"Simple Cool Dark","Pumpkinseed","K","0.95_percentile",0.531662395
+"Simple Cool Dark","Pumpkinseed","t0","0.95_percentile",1.257833749
+"Simple Warm Clear","Pumpkinseed","Linf","0.95_percentile",769.1213666
+"Simple Warm Clear","Pumpkinseed","K","0.95_percentile",0.393600081
+"Simple Warm Clear","Pumpkinseed","t0","0.95_percentile",1.095934986
+"Complex Cool Dark","Rock Bass","Linf","0.95_percentile",413.9961704
+"Complex Cool Dark","Rock Bass","K","0.95_percentile",0.197814514
+"Complex Cool Dark","Rock Bass","t0","0.95_percentile",-0.126674422
+"Complex Two Story","Rock Bass","Linf","0.95_percentile",485.2894836
+"Complex Two Story","Rock Bass","K","0.95_percentile",1.132020818
+"Complex Two Story","Rock Bass","t0","0.95_percentile",2.048696289
+"Complex Cool Clear","Smallmouth Bass","Linf","0.95_percentile",588.4729862
+"Complex Cool Clear","Smallmouth Bass","K","0.95_percentile",0.225311486
+"Complex Cool Clear","Smallmouth Bass","t0","0.95_percentile",0.081233931
+"Complex Cool Dark","Smallmouth Bass","Linf","0.95_percentile",556.963548
+"Complex Cool Dark","Smallmouth Bass","K","0.95_percentile",0.237867711
+"Complex Cool Dark","Smallmouth Bass","t0","0.95_percentile",0.14539178
+"Complex Riverine","Smallmouth Bass","Linf","0.95_percentile",583.4229171
+"Complex Riverine","Smallmouth Bass","K","0.95_percentile",0.205757708
+"Complex Riverine","Smallmouth Bass","t0","0.95_percentile",-0.366135373
+"Complex Two Story","Smallmouth Bass","Linf","0.95_percentile",552.2041639
+"Complex Two Story","Smallmouth Bass","K","0.95_percentile",0.229013294
+"Complex Two Story","Smallmouth Bass","t0","0.95_percentile",-0.033570745
+"Complex Warm Dark","Smallmouth Bass","Linf","0.95_percentile",635.5570407
+"Complex Warm Dark","Smallmouth Bass","K","0.95_percentile",0.33547703
+"Complex Warm Dark","Smallmouth Bass","t0","0.95_percentile",0.384249816
+"Complex Cool Clear","Walleye","Linf","0.95_percentile",746.1695948
+"Complex Cool Clear","Walleye","K","0.95_percentile",0.134281602
+"Complex Cool Clear","Walleye","t0","0.95_percentile",-1.380620546
+"Complex Cool Dark","Walleye","Linf","0.95_percentile",773.5688912
+"Complex Cool Dark","Walleye","K","0.95_percentile",0.123632663
+"Complex Cool Dark","Walleye","t0","0.95_percentile",-1.398289806
+"Complex Riverine","Walleye","Linf","0.95_percentile",969.9954452
+"Complex Riverine","Walleye","K","0.95_percentile",0.096982751
+"Complex Riverine","Walleye","t0","0.95_percentile",-1.765126664
+"Complex Two Story","Walleye","Linf","0.95_percentile",785.4119458
+"Complex Two Story","Walleye","K","0.95_percentile",0.126526196
+"Complex Two Story","Walleye","t0","0.95_percentile",-1.321783925
+"Complex Warm Clear","Walleye","Linf","0.95_percentile",665.892592
+"Complex Warm Clear","Walleye","K","0.95_percentile",0.20584335
+"Complex Warm Clear","Walleye","t0","0.95_percentile",-0.885071536
+"Complex Warm Dark","Walleye","Linf","0.95_percentile",707.6381765
+"Complex Warm Dark","Walleye","K","0.95_percentile",0.178593262
+"Complex Warm Dark","Walleye","t0","0.95_percentile",-1.140412918
+"Complex Cool Clear","YellowPerch","Linf","0.95_percentile",935.5984343
+"Complex Cool Clear","YellowPerch","K","0.95_percentile",0.224494637
+"Complex Cool Clear","YellowPerch","t0","0.95_percentile",-0.557842874
+"Complex Cool Dark","YellowPerch","Linf","0.95_percentile",767.8440156
+"Complex Cool Dark","YellowPerch","K","0.95_percentile",0.19046642
+"Complex Cool Dark","YellowPerch","t0","0.95_percentile",-0.671640497
+"Complex Riverine","YellowPerch","Linf","0.95_percentile",363.5570131
+"Complex Riverine","YellowPerch","K","0.95_percentile",0.259130969
+"Complex Riverine","YellowPerch","t0","0.95_percentile",-0.430250101
+"Complex Two Story","YellowPerch","Linf","0.95_percentile",471.3275281
+"Complex Two Story","YellowPerch","K","0.95_percentile",0.68490263
+"Complex Two Story","YellowPerch","t0","0.95_percentile",1.532695525
+"Complex Warm Dark","YellowPerch","Linf","0.95_percentile",1284.075547
+"Complex Warm Dark","YellowPerch","K","0.95_percentile",0.125275194
+"Complex Warm Dark","YellowPerch","t0","0.95_percentile",-1.260424114
+"Complex Cool Clear","Black Crappie","Linf","0.99_percentile",457.9878019
+"Complex Cool Clear","Black Crappie","K","0.99_percentile",0.276103908
+"Complex Cool Clear","Black Crappie","t0","0.99_percentile",-0.086838253
+"Complex Cool Dark","Black Crappie","Linf","0.99_percentile",409.9469159
+"Complex Cool Dark","Black Crappie","K","0.99_percentile",0.238292334
+"Complex Cool Dark","Black Crappie","t0","0.99_percentile",-0.322300839
+"Complex Riverine","Black Crappie","Linf","0.99_percentile",363.4055718
+"Complex Riverine","Black Crappie","K","0.99_percentile",0.289724847
+"Complex Riverine","Black Crappie","t0","0.99_percentile",-0.1083833
+"Complex Two Story","Black Crappie","Linf","0.99_percentile",859.1557699
+"Complex Two Story","Black Crappie","K","0.99_percentile",0.744094865
+"Complex Two Story","Black Crappie","t0","0.99_percentile",1.05099861
+"Complex Warm Clear","Black Crappie","Linf","0.99_percentile",439.9841203
+"Complex Warm Clear","Black Crappie","K","0.99_percentile",0.584935095
+"Complex Warm Clear","Black Crappie","t0","0.99_percentile",0.910089481
+"Complex Warm Dark","Black Crappie","Linf","0.99_percentile",401.6416475
+"Complex Warm Dark","Black Crappie","K","0.99_percentile",0.273077546
+"Complex Warm Dark","Black Crappie","t0","0.99_percentile",-0.154224586
+"Simple Cool Dark","Black Crappie","Linf","0.99_percentile",682.4093161
+"Simple Cool Dark","Black Crappie","K","0.99_percentile",0.335973832
+"Simple Cool Dark","Black Crappie","t0","0.99_percentile",0.518961807
+"Simple Riverine","Black Crappie","Linf","0.99_percentile",503.3101171
+"Simple Riverine","Black Crappie","K","0.99_percentile",0.325469697
+"Simple Riverine","Black Crappie","t0","0.99_percentile",0.098367156
+"Simple Warm Clear","Black Crappie","Linf","0.99_percentile",1027.392113
+"Simple Warm Clear","Black Crappie","K","0.99_percentile",0.515728956
+"Simple Warm Clear","Black Crappie","t0","0.99_percentile",0.850510567
+"Simple Warm Dark","Black Crappie","Linf","0.99_percentile",405.9122576
+"Simple Warm Dark","Black Crappie","K","0.99_percentile",0.64784959
+"Simple Warm Dark","Black Crappie","t0","0.99_percentile",0.869880657
+"Complex Cool Clear","Bluegill","Linf","0.99_percentile",1255.277902
+"Complex Cool Clear","Bluegill","K","0.99_percentile",0.144964947
+"Complex Cool Clear","Bluegill","t0","0.99_percentile",-0.63028109
+"Complex Cool Dark","Bluegill","Linf","0.99_percentile",385.6232835
+"Complex Cool Dark","Bluegill","K","0.99_percentile",0.193600395
+"Complex Cool Dark","Bluegill","t0","0.99_percentile",-0.411819494
+"Complex Riverine","Bluegill","Linf","0.99_percentile",305.0825668
+"Complex Riverine","Bluegill","K","0.99_percentile",0.239936
+"Complex Riverine","Bluegill","t0","0.99_percentile",-0.27971491
+"Complex Two Story","Bluegill","Linf","0.99_percentile",1100.373607
+"Complex Two Story","Bluegill","K","0.99_percentile",0.158662968
+"Complex Two Story","Bluegill","t0","0.99_percentile",-0.422214058
+"Complex Warm Clear","Bluegill","Linf","0.99_percentile",684.3743295
+"Complex Warm Clear","Bluegill","K","0.99_percentile",0.135345239
+"Complex Warm Clear","Bluegill","t0","0.99_percentile",-0.295700814
+"Complex Warm Dark","Bluegill","Linf","0.99_percentile",385.8903374
+"Complex Warm Dark","Bluegill","K","0.99_percentile",0.161905575
+"Complex Warm Dark","Bluegill","t0","0.99_percentile",-0.917383526
+"Simple Cool Clear","Bluegill","Linf","0.99_percentile",768.451545
+"Simple Cool Clear","Bluegill","K","0.99_percentile",0.292373819
+"Simple Cool Clear","Bluegill","t0","0.99_percentile",0.479953198
+"Simple Cool Dark","Bluegill","Linf","0.99_percentile",542.0578209
+"Simple Cool Dark","Bluegill","K","0.99_percentile",0.190040173
+"Simple Cool Dark","Bluegill","t0","0.99_percentile",-0.362077858
+"Simple Riverine","Bluegill","Linf","0.99_percentile",306.3738047
+"Simple Riverine","Bluegill","K","0.99_percentile",0.255033394
+"Simple Riverine","Bluegill","t0","0.99_percentile",-0.173383221
+"Simple Two Story","Bluegill","Linf","0.99_percentile",1424.393385
+"Simple Two Story","Bluegill","K","0.99_percentile",0.379920254
+"Simple Two Story","Bluegill","t0","0.99_percentile",0.658815161
+"Simple Warm Clear","Bluegill","Linf","0.99_percentile",541.6142428
+"Simple Warm Clear","Bluegill","K","0.99_percentile",0.160455321
+"Simple Warm Clear","Bluegill","t0","0.99_percentile",-0.55098486
+"Simple Warm Dark","Bluegill","Linf","0.99_percentile",402.246785
+"Simple Warm Dark","Bluegill","K","0.99_percentile",0.234606386
+"Simple Warm Dark","Bluegill","t0","0.99_percentile",-0.118775882
+"Complex Cool Clear","Largemouth Bass","Linf","0.99_percentile",571.1834084
+"Complex Cool Clear","Largemouth Bass","K","0.99_percentile",0.194443172
+"Complex Cool Clear","Largemouth Bass","t0","0.99_percentile",-0.220754333
+"Complex Cool Dark","Largemouth Bass","Linf","0.99_percentile",603.1724435
+"Complex Cool Dark","Largemouth Bass","K","0.99_percentile",0.171568907
+"Complex Cool Dark","Largemouth Bass","t0","0.99_percentile",-0.351107881
+"Complex Riverine","Largemouth Bass","Linf","0.99_percentile",606.6378573
+"Complex Riverine","Largemouth Bass","K","0.99_percentile",0.200370812
+"Complex Riverine","Largemouth Bass","t0","0.99_percentile",-0.286495614
+"Complex Two Story","Largemouth Bass","Linf","0.99_percentile",546.6325001
+"Complex Two Story","Largemouth Bass","K","0.99_percentile",0.221684025
+"Complex Two Story","Largemouth Bass","t0","0.99_percentile",-0.071031793
+"Complex Warm Clear","Largemouth Bass","Linf","0.99_percentile",562.7725459
+"Complex Warm Clear","Largemouth Bass","K","0.99_percentile",0.174705235
+"Complex Warm Clear","Largemouth Bass","t0","0.99_percentile",-0.253391199
+"Complex Warm Dark","Largemouth Bass","Linf","0.99_percentile",565.4583427
+"Complex Warm Dark","Largemouth Bass","K","0.99_percentile",0.187184587
+"Complex Warm Dark","Largemouth Bass","t0","0.99_percentile",-0.476404386
+"Simple Cool Clear","Largemouth Bass","Linf","0.99_percentile",631.5918579
+"Simple Cool Clear","Largemouth Bass","K","0.99_percentile",0.232219529
+"Simple Cool Clear","Largemouth Bass","t0","0.99_percentile",0.227413589
+"Simple Cool Dark","Largemouth Bass","Linf","0.99_percentile",635.1185865
+"Simple Cool Dark","Largemouth Bass","K","0.99_percentile",0.20244732
+"Simple Cool Dark","Largemouth Bass","t0","0.99_percentile",-0.085004523
+"Simple Riverine","Largemouth Bass","Linf","0.99_percentile",642.9914613
+"Simple Riverine","Largemouth Bass","K","0.99_percentile",0.19781771
+"Simple Riverine","Largemouth Bass","t0","0.99_percentile",-0.032532657
+"Simple Two Story","Largemouth Bass","Linf","0.99_percentile",833.2605952
+"Simple Two Story","Largemouth Bass","K","0.99_percentile",0.222753498
+"Simple Two Story","Largemouth Bass","t0","0.99_percentile",-0.02333313
+"Simple Warm Clear","Largemouth Bass","Linf","0.99_percentile",567.518797
+"Simple Warm Clear","Largemouth Bass","K","0.99_percentile",0.168649598
+"Simple Warm Clear","Largemouth Bass","t0","0.99_percentile",-0.33304184
+"Simple Warm Dark","Largemouth Bass","Linf","0.99_percentile",552.5775903
+"Simple Warm Dark","Largemouth Bass","K","0.99_percentile",0.230992035
+"Simple Warm Dark","Largemouth Bass","t0","0.99_percentile",-0.077017037
+"Complex Cool Clear","Muskellunge","Linf","0.99_percentile",1229.776267
+"Complex Cool Clear","Muskellunge","K","0.99_percentile",0.245479582
+"Complex Cool Clear","Muskellunge","t0","0.99_percentile",-0.164126059
+"Complex Cool Dark","Muskellunge","Linf","0.99_percentile",1308.288743
+"Complex Cool Dark","Muskellunge","K","0.99_percentile",0.162446954
+"Complex Cool Dark","Muskellunge","t0","0.99_percentile",-0.705405957
+"Complex Riverine","Muskellunge","Linf","0.99_percentile",1340.489337
+"Complex Riverine","Muskellunge","K","0.99_percentile",0.199049174
+"Complex Riverine","Muskellunge","t0","0.99_percentile",-0.48546877
+"Complex Two Story","Muskellunge","Linf","0.99_percentile",1248.424168
+"Complex Two Story","Muskellunge","K","0.99_percentile",0.192949007
+"Complex Two Story","Muskellunge","t0","0.99_percentile",-0.405856913
+"Complex Warm Dark","Muskellunge","Linf","0.99_percentile",1272.322733
+"Complex Warm Dark","Muskellunge","K","0.99_percentile",0.241401021
+"Complex Warm Dark","Muskellunge","t0","0.99_percentile",-0.33720339
+"Complex Cool Clear","Northern Pike","Linf","0.99_percentile",1544.306937
+"Complex Cool Clear","Northern Pike","K","0.99_percentile",0.226372011
+"Complex Cool Clear","Northern Pike","t0","0.99_percentile",-0.523243725
+"Complex Cool Dark","Northern Pike","Linf","0.99_percentile",1800.798353
+"Complex Cool Dark","Northern Pike","K","0.99_percentile",0.117902984
+"Complex Cool Dark","Northern Pike","t0","0.99_percentile",-1.624396057
+"Complex Riverine","Northern Pike","Linf","0.99_percentile",4621.604881
+"Complex Riverine","Northern Pike","K","0.99_percentile",0.086177762
+"Complex Riverine","Northern Pike","t0","0.99_percentile",-1.687159118
+"Complex Two Story","Northern Pike","Linf","0.99_percentile",2722.463537
+"Complex Two Story","Northern Pike","K","0.99_percentile",0.117168196
+"Complex Two Story","Northern Pike","t0","0.99_percentile",-1.40425447
+"Complex Warm Clear","Northern Pike","Linf","0.99_percentile",3983.624816
+"Complex Warm Clear","Northern Pike","K","0.99_percentile",0.139764712
+"Complex Warm Clear","Northern Pike","t0","0.99_percentile",-1.087233864
+"Complex Warm Dark","Northern Pike","Linf","0.99_percentile",1410.036866
+"Complex Warm Dark","Northern Pike","K","0.99_percentile",0.149541241
+"Complex Warm Dark","Northern Pike","t0","0.99_percentile",-1.162313105
+"Simple Riverine","Northern Pike","Linf","0.99_percentile",2449.922679
+"Simple Riverine","Northern Pike","K","0.99_percentile",0.184067018
+"Simple Riverine","Northern Pike","t0","0.99_percentile",-0.858406066
+"Simple Warm Clear","Northern Pike","Linf","0.99_percentile",3733.654448
+"Simple Warm Clear","Northern Pike","K","0.99_percentile",0.266494358
+"Simple Warm Clear","Northern Pike","t0","0.99_percentile",-0.599811833
+"Simple Warm Dark","Northern Pike","Linf","0.99_percentile",1981.781571
+"Simple Warm Dark","Northern Pike","K","0.99_percentile",0.504159923
+"Simple Warm Dark","Northern Pike","t0","0.99_percentile",0.534991135
+"Complex Cool Dark","Pumpkinseed","Linf","0.99_percentile",321.4924806
+"Complex Cool Dark","Pumpkinseed","K","0.99_percentile",0.327907346
+"Complex Cool Dark","Pumpkinseed","t0","0.99_percentile",0.161021338
+"Complex Riverine","Pumpkinseed","Linf","0.99_percentile",608.6397793
+"Complex Riverine","Pumpkinseed","K","0.99_percentile",0.298735914
+"Complex Riverine","Pumpkinseed","t0","0.99_percentile",0.089008547
+"Complex Warm Clear","Pumpkinseed","Linf","0.99_percentile",559.480654
+"Complex Warm Clear","Pumpkinseed","K","0.99_percentile",0.625350995
+"Complex Warm Clear","Pumpkinseed","t0","0.99_percentile",1.710439644
+"Complex Warm Dark","Pumpkinseed","Linf","0.99_percentile",706.9654063
+"Complex Warm Dark","Pumpkinseed","K","0.99_percentile",0.36106997
+"Complex Warm Dark","Pumpkinseed","t0","0.99_percentile",0.285368927
+"Simple Cool Dark","Pumpkinseed","Linf","0.99_percentile",778.0210143
+"Simple Cool Dark","Pumpkinseed","K","0.99_percentile",0.703536904
+"Simple Cool Dark","Pumpkinseed","t0","0.99_percentile",1.57072217
+"Simple Warm Clear","Pumpkinseed","Linf","0.99_percentile",1369.608598
+"Simple Warm Clear","Pumpkinseed","K","0.99_percentile",0.52566971
+"Simple Warm Clear","Pumpkinseed","t0","0.99_percentile",1.51712515
+"Complex Cool Dark","Rock Bass","Linf","0.99_percentile",508.2767089
+"Complex Cool Dark","Rock Bass","K","0.99_percentile",0.220158747
+"Complex Cool Dark","Rock Bass","t0","0.99_percentile",0.071999412
+"Complex Two Story","Rock Bass","Linf","0.99_percentile",964.7979621
+"Complex Two Story","Rock Bass","K","0.99_percentile",1.562223706
+"Complex Two Story","Rock Bass","t0","0.99_percentile",2.307847095
+"Complex Cool Clear","Smallmouth Bass","Linf","0.99_percentile",618.0551364
+"Complex Cool Clear","Smallmouth Bass","K","0.99_percentile",0.237790449
+"Complex Cool Clear","Smallmouth Bass","t0","0.99_percentile",0.154850393
+"Complex Cool Dark","Smallmouth Bass","Linf","0.99_percentile",572.3904804
+"Complex Cool Dark","Smallmouth Bass","K","0.99_percentile",0.247897545
+"Complex Cool Dark","Smallmouth Bass","t0","0.99_percentile",0.211951109
+"Complex Riverine","Smallmouth Bass","Linf","0.99_percentile",604.0425667
+"Complex Riverine","Smallmouth Bass","K","0.99_percentile",0.218810742
+"Complex Riverine","Smallmouth Bass","t0","0.99_percentile",-0.228456979
+"Complex Two Story","Smallmouth Bass","Linf","0.99_percentile",559.6085694
+"Complex Two Story","Smallmouth Bass","K","0.99_percentile",0.240545635
+"Complex Two Story","Smallmouth Bass","t0","0.99_percentile",0.055440629
+"Complex Warm Dark","Smallmouth Bass","Linf","0.99_percentile",748.8155036
+"Complex Warm Dark","Smallmouth Bass","K","0.99_percentile",0.378355142
+"Complex Warm Dark","Smallmouth Bass","t0","0.99_percentile",0.553415623
+"Complex Cool Clear","Walleye","Linf","0.99_percentile",756.5984794
+"Complex Cool Clear","Walleye","K","0.99_percentile",0.138848155
+"Complex Cool Clear","Walleye","t0","0.99_percentile",-1.291874405
+"Complex Cool Dark","Walleye","Linf","0.99_percentile",784.0920228
+"Complex Cool Dark","Walleye","K","0.99_percentile",0.126572125
+"Complex Cool Dark","Walleye","t0","0.99_percentile",-1.327985065
+"Complex Riverine","Walleye","Linf","0.99_percentile",1001.754947
+"Complex Riverine","Walleye","K","0.99_percentile",0.101615043
+"Complex Riverine","Walleye","t0","0.99_percentile",-1.674556489
+"Complex Two Story","Walleye","Linf","0.99_percentile",794.3453537
+"Complex Two Story","Walleye","K","0.99_percentile",0.129695616
+"Complex Two Story","Walleye","t0","0.99_percentile",-1.249515919
+"Complex Warm Clear","Walleye","Linf","0.99_percentile",676.4407461
+"Complex Warm Clear","Walleye","K","0.99_percentile",0.217885043
+"Complex Warm Clear","Walleye","t0","0.99_percentile",-0.792165602
+"Complex Warm Dark","Walleye","Linf","0.99_percentile",716.2475192
+"Complex Warm Dark","Walleye","K","0.99_percentile",0.181819363
+"Complex Warm Dark","Walleye","t0","0.99_percentile",-1.080637538
+"Complex Cool Clear","YellowPerch","Linf","0.99_percentile",1361.864689
+"Complex Cool Clear","YellowPerch","K","0.99_percentile",0.279208873
+"Complex Cool Clear","YellowPerch","t0","0.99_percentile",-0.155535027
+"Complex Cool Dark","YellowPerch","Linf","0.99_percentile",1061.725708
+"Complex Cool Dark","YellowPerch","K","0.99_percentile",0.227679513
+"Complex Cool Dark","YellowPerch","t0","0.99_percentile",-0.34847177
+"Complex Riverine","YellowPerch","Linf","0.99_percentile",387.8814039
+"Complex Riverine","YellowPerch","K","0.99_percentile",0.27858547
+"Complex Riverine","YellowPerch","t0","0.99_percentile",-0.289624715
+"Complex Two Story","YellowPerch","Linf","0.99_percentile",641.0909583
+"Complex Two Story","YellowPerch","K","0.99_percentile",0.957140409
+"Complex Two Story","YellowPerch","t0","0.99_percentile",1.8279899
+"Complex Warm Dark","YellowPerch","Linf","0.99_percentile",1653.337429
+"Complex Warm Dark","YellowPerch","K","0.99_percentile",0.143758243
+"Complex Warm Dark","YellowPerch","t0","0.99_percentile",-1.091761739
+"Complex Cool Clear","Black Crappie","Linf","100_percentile",525.1489532
+"Complex Cool Clear","Black Crappie","K","100_percentile",0.287924444
+"Complex Cool Clear","Black Crappie","t0","100_percentile",-0.001499179
+"Complex Cool Dark","Black Crappie","Linf","100_percentile",452.9951248
+"Complex Cool Dark","Black Crappie","K","100_percentile",0.269556494
+"Complex Cool Dark","Black Crappie","t0","100_percentile",-0.05477129
+"Complex Riverine","Black Crappie","Linf","100_percentile",372.3185654
+"Complex Riverine","Black Crappie","K","100_percentile",0.303481181
+"Complex Riverine","Black Crappie","t0","100_percentile",-0.050449702
+"Complex Two Story","Black Crappie","Linf","100_percentile",1438.087047
+"Complex Two Story","Black Crappie","K","100_percentile",0.924523434
+"Complex Two Story","Black Crappie","t0","100_percentile",1.223407313
+"Complex Warm Clear","Black Crappie","Linf","100_percentile",696.0989168
+"Complex Warm Clear","Black Crappie","K","100_percentile",0.697874563
+"Complex Warm Clear","Black Crappie","t0","100_percentile",1.135795717
+"Complex Warm Dark","Black Crappie","Linf","100_percentile",425.272608
+"Complex Warm Dark","Black Crappie","K","100_percentile",0.289616325
+"Complex Warm Dark","Black Crappie","t0","100_percentile",-0.065728013
+"Simple Cool Dark","Black Crappie","Linf","100_percentile",1643.10257
+"Simple Cool Dark","Black Crappie","K","100_percentile",0.378052717
+"Simple Cool Dark","Black Crappie","t0","100_percentile",0.797190887
+"Simple Riverine","Black Crappie","Linf","100_percentile",871.1105614
+"Simple Riverine","Black Crappie","K","100_percentile",0.360655941
+"Simple Riverine","Black Crappie","t0","100_percentile",0.276566671
+"Simple Warm Clear","Black Crappie","Linf","100_percentile",1798.596598
+"Simple Warm Clear","Black Crappie","K","100_percentile",0.662725028
+"Simple Warm Clear","Black Crappie","t0","100_percentile",1.042146289
+"Simple Warm Dark","Black Crappie","Linf","100_percentile",617.3564801
+"Simple Warm Dark","Black Crappie","K","100_percentile",0.72308074
+"Simple Warm Dark","Black Crappie","t0","100_percentile",1.023073839
+"Complex Cool Clear","Bluegill","Linf","100_percentile",1675.245244
+"Complex Cool Clear","Bluegill","K","100_percentile",0.161767387
+"Complex Cool Clear","Bluegill","t0","100_percentile",-0.441682529
+"Complex Cool Dark","Bluegill","Linf","100_percentile",434.520938
+"Complex Cool Dark","Bluegill","K","100_percentile",0.220871254
+"Complex Cool Dark","Bluegill","t0","100_percentile",-0.278795947
+"Complex Riverine","Bluegill","Linf","100_percentile",322.2425732
+"Complex Riverine","Bluegill","K","100_percentile",0.264731578
+"Complex Riverine","Bluegill","t0","100_percentile",-0.071331309
+"Complex Two Story","Bluegill","Linf","100_percentile",1535.539324
+"Complex Two Story","Bluegill","K","100_percentile",0.179514432
+"Complex Two Story","Bluegill","t0","100_percentile",-0.311577134
+"Complex Warm Clear","Bluegill","Linf","100_percentile",1153.672173
+"Complex Warm Clear","Bluegill","K","100_percentile",0.155352892
+"Complex Warm Clear","Bluegill","t0","100_percentile",-0.161158436
+"Complex Warm Dark","Bluegill","Linf","100_percentile",413.8024237
+"Complex Warm Dark","Bluegill","K","100_percentile",0.175270633
+"Complex Warm Dark","Bluegill","t0","100_percentile",-0.744121246
+"Simple Cool Clear","Bluegill","Linf","100_percentile",1303.618749
+"Simple Cool Clear","Bluegill","K","100_percentile",0.351519283
+"Simple Cool Clear","Bluegill","t0","100_percentile",0.669740774
+"Simple Cool Dark","Bluegill","Linf","100_percentile",1343.326936
+"Simple Cool Dark","Bluegill","K","100_percentile",0.222866418
+"Simple Cool Dark","Bluegill","t0","100_percentile",-0.185602106
+"Simple Riverine","Bluegill","Linf","100_percentile",350.0430115
+"Simple Riverine","Bluegill","K","100_percentile",0.281183107
+"Simple Riverine","Bluegill","t0","100_percentile",-0.055453868
+"Simple Two Story","Bluegill","Linf","100_percentile",2135.563645
+"Simple Two Story","Bluegill","K","100_percentile",0.521674414
+"Simple Two Story","Bluegill","t0","100_percentile",1.018552728
+"Simple Warm Clear","Bluegill","Linf","100_percentile",1305.509888
+"Simple Warm Clear","Bluegill","K","100_percentile",0.181385552
+"Simple Warm Clear","Bluegill","t0","100_percentile",-0.317592159
+"Simple Warm Dark","Bluegill","Linf","100_percentile",513.5693731
+"Simple Warm Dark","Bluegill","K","100_percentile",0.257811032
+"Simple Warm Dark","Bluegill","t0","100_percentile",0.015440346
+"Complex Cool Clear","Largemouth Bass","Linf","100_percentile",584.9736956
+"Complex Cool Clear","Largemouth Bass","K","100_percentile",0.200535195
+"Complex Cool Clear","Largemouth Bass","t0","100_percentile",-0.161092068
+"Complex Cool Dark","Largemouth Bass","Linf","100_percentile",627.7366335
+"Complex Cool Dark","Largemouth Bass","K","100_percentile",0.187010078
+"Complex Cool Dark","Largemouth Bass","t0","100_percentile",-0.26824432
+"Complex Riverine","Largemouth Bass","Linf","100_percentile",634.4362144
+"Complex Riverine","Largemouth Bass","K","100_percentile",0.214659803
+"Complex Riverine","Largemouth Bass","t0","100_percentile",-0.236483608
+"Complex Two Story","Largemouth Bass","Linf","100_percentile",563.7386322
+"Complex Two Story","Largemouth Bass","K","100_percentile",0.236429515
+"Complex Two Story","Largemouth Bass","t0","100_percentile",0.071560144
+"Complex Warm Clear","Largemouth Bass","Linf","100_percentile",576.0792904
+"Complex Warm Clear","Largemouth Bass","K","100_percentile",0.180513312
+"Complex Warm Clear","Largemouth Bass","t0","100_percentile",-0.098297166
+"Complex Warm Dark","Largemouth Bass","Linf","100_percentile",572.0817895
+"Complex Warm Dark","Largemouth Bass","K","100_percentile",0.20182935
+"Complex Warm Dark","Largemouth Bass","t0","100_percentile",-0.378265425
+"Simple Cool Clear","Largemouth Bass","Linf","100_percentile",701.9171215
+"Simple Cool Clear","Largemouth Bass","K","100_percentile",0.255719506
+"Simple Cool Clear","Largemouth Bass","t0","100_percentile",0.364157477
+"Simple Cool Dark","Largemouth Bass","Linf","100_percentile",670.6701243
+"Simple Cool Dark","Largemouth Bass","K","100_percentile",0.218143693
+"Simple Cool Dark","Largemouth Bass","t0","100_percentile",0.012048134
+"Simple Riverine","Largemouth Bass","Linf","100_percentile",719.5099462
+"Simple Riverine","Largemouth Bass","K","100_percentile",0.212847138
+"Simple Riverine","Largemouth Bass","t0","100_percentile",0.074854506
+"Simple Two Story","Largemouth Bass","Linf","100_percentile",991.1208692
+"Simple Two Story","Largemouth Bass","K","100_percentile",0.264462874
+"Simple Two Story","Largemouth Bass","t0","100_percentile",0.264330306
+"Simple Warm Clear","Largemouth Bass","Linf","100_percentile",597.2593064
+"Simple Warm Clear","Largemouth Bass","K","100_percentile",0.176944445
+"Simple Warm Clear","Largemouth Bass","t0","100_percentile",-0.252438138
+"Simple Warm Dark","Largemouth Bass","Linf","100_percentile",561.6116443
+"Simple Warm Dark","Largemouth Bass","K","100_percentile",0.249545859
+"Simple Warm Dark","Largemouth Bass","t0","100_percentile",-0.000178138
+"Complex Cool Clear","Muskellunge","Linf","100_percentile",1262.842336
+"Complex Cool Clear","Muskellunge","K","100_percentile",0.271089371
+"Complex Cool Clear","Muskellunge","t0","100_percentile",0.004663423
+"Complex Cool Dark","Muskellunge","Linf","100_percentile",1337.605649
+"Complex Cool Dark","Muskellunge","K","100_percentile",0.170612159
+"Complex Cool Dark","Muskellunge","t0","100_percentile",-0.56520899
+"Complex Riverine","Muskellunge","Linf","100_percentile",1408.793128
+"Complex Riverine","Muskellunge","K","100_percentile",0.228216803
+"Complex Riverine","Muskellunge","t0","100_percentile",-0.31122746
+"Complex Two Story","Muskellunge","Linf","100_percentile",1260.284313
+"Complex Two Story","Muskellunge","K","100_percentile",0.206110847
+"Complex Two Story","Muskellunge","t0","100_percentile",-0.299017319
+"Complex Warm Dark","Muskellunge","Linf","100_percentile",1341.066673
+"Complex Warm Dark","Muskellunge","K","100_percentile",0.267443279
+"Complex Warm Dark","Muskellunge","t0","100_percentile",-0.096510069
+"Complex Cool Clear","Northern Pike","Linf","100_percentile",3055.92489
+"Complex Cool Clear","Northern Pike","K","100_percentile",0.269654201
+"Complex Cool Clear","Northern Pike","t0","100_percentile",-0.184127019
+"Complex Cool Dark","Northern Pike","Linf","100_percentile",4402.225691
+"Complex Cool Dark","Northern Pike","K","100_percentile",0.129447547
+"Complex Cool Dark","Northern Pike","t0","100_percentile",-1.384145795
+"Complex Riverine","Northern Pike","Linf","100_percentile",5506.076123
+"Complex Riverine","Northern Pike","K","100_percentile",0.116782177
+"Complex Riverine","Northern Pike","t0","100_percentile",-1.318129604
+"Complex Two Story","Northern Pike","Linf","100_percentile",4467.778801
+"Complex Two Story","Northern Pike","K","100_percentile",0.134878534
+"Complex Two Story","Northern Pike","t0","100_percentile",-1.165949476
+"Complex Warm Clear","Northern Pike","Linf","100_percentile",5839.55967
+"Complex Warm Clear","Northern Pike","K","100_percentile",0.149824071
+"Complex Warm Clear","Northern Pike","t0","100_percentile",-0.887887934
+"Complex Warm Dark","Northern Pike","Linf","100_percentile",1542.243389
+"Complex Warm Dark","Northern Pike","K","100_percentile",0.161559578
+"Complex Warm Dark","Northern Pike","t0","100_percentile",-1.103114449
+"Simple Riverine","Northern Pike","Linf","100_percentile",4792.183102
+"Simple Riverine","Northern Pike","K","100_percentile",0.220534568
+"Simple Riverine","Northern Pike","t0","100_percentile",-0.581739384
+"Simple Warm Clear","Northern Pike","Linf","100_percentile",5616.370312
+"Simple Warm Clear","Northern Pike","K","100_percentile",0.37247563
+"Simple Warm Clear","Northern Pike","t0","100_percentile",-0.133732192
+"Simple Warm Dark","Northern Pike","Linf","100_percentile",4105.382222
+"Simple Warm Dark","Northern Pike","K","100_percentile",0.712596004
+"Simple Warm Dark","Northern Pike","t0","100_percentile",0.966754599
+"Complex Cool Dark","Pumpkinseed","Linf","100_percentile",490.1265355
+"Complex Cool Dark","Pumpkinseed","K","100_percentile",0.417691402
+"Complex Cool Dark","Pumpkinseed","t0","100_percentile",0.506902405
+"Complex Riverine","Pumpkinseed","Linf","100_percentile",909.8468269
+"Complex Riverine","Pumpkinseed","K","100_percentile",0.330314179
+"Complex Riverine","Pumpkinseed","t0","100_percentile",0.362135101
+"Complex Warm Clear","Pumpkinseed","Linf","100_percentile",875.9838652
+"Complex Warm Clear","Pumpkinseed","K","100_percentile",0.810207053
+"Complex Warm Clear","Pumpkinseed","t0","100_percentile",1.896114981
+"Complex Warm Dark","Pumpkinseed","Linf","100_percentile",897.7156187
+"Complex Warm Dark","Pumpkinseed","K","100_percentile",0.513316287
+"Complex Warm Dark","Pumpkinseed","t0","100_percentile",0.799949095
+"Simple Cool Dark","Pumpkinseed","Linf","100_percentile",1280.324926
+"Simple Cool Dark","Pumpkinseed","K","100_percentile",0.809490392
+"Simple Cool Dark","Pumpkinseed","t0","100_percentile",1.869577298
+"Simple Warm Clear","Pumpkinseed","Linf","100_percentile",1655.662068
+"Simple Warm Clear","Pumpkinseed","K","100_percentile",0.680398132
+"Simple Warm Clear","Pumpkinseed","t0","100_percentile",1.834775472
+"Complex Cool Dark","Rock Bass","Linf","100_percentile",812.6708142
+"Complex Cool Dark","Rock Bass","K","100_percentile",0.258826814
+"Complex Cool Dark","Rock Bass","t0","100_percentile",0.256860826
+"Complex Two Story","Rock Bass","Linf","100_percentile",2032.391589
+"Complex Two Story","Rock Bass","K","100_percentile",2.19413994
+"Complex Two Story","Rock Bass","t0","100_percentile",2.554889584
+"Complex Cool Clear","Smallmouth Bass","Linf","100_percentile",660.2044699
+"Complex Cool Clear","Smallmouth Bass","K","100_percentile",0.284771819
+"Complex Cool Clear","Smallmouth Bass","t0","100_percentile",0.240747557
+"Complex Cool Dark","Smallmouth Bass","Linf","100_percentile",585.3198805
+"Complex Cool Dark","Smallmouth Bass","K","100_percentile",0.278568115
+"Complex Cool Dark","Smallmouth Bass","t0","100_percentile",0.353541508
+"Complex Riverine","Smallmouth Bass","Linf","100_percentile",632.4697794
+"Complex Riverine","Smallmouth Bass","K","100_percentile",0.247081674
+"Complex Riverine","Smallmouth Bass","t0","100_percentile",-0.069756762
+"Complex Two Story","Smallmouth Bass","Linf","100_percentile",574.7798934
+"Complex Two Story","Smallmouth Bass","K","100_percentile",0.263581712
+"Complex Two Story","Smallmouth Bass","t0","100_percentile",0.166360517
+"Complex Warm Dark","Smallmouth Bass","Linf","100_percentile",1099.491421
+"Complex Warm Dark","Smallmouth Bass","K","100_percentile",0.437519746
+"Complex Warm Dark","Smallmouth Bass","t0","100_percentile",0.826179332
+"Complex Cool Clear","Walleye","Linf","100_percentile",778.0139729
+"Complex Cool Clear","Walleye","K","100_percentile",0.143264948
+"Complex Cool Clear","Walleye","t0","100_percentile",-1.156875692
+"Complex Cool Dark","Walleye","Linf","100_percentile",800.6588129
+"Complex Cool Dark","Walleye","K","100_percentile",0.131547844
+"Complex Cool Dark","Walleye","t0","100_percentile",-1.216825798
+"Complex Riverine","Walleye","Linf","100_percentile",1069.123666
+"Complex Riverine","Walleye","K","100_percentile",0.104790379
+"Complex Riverine","Walleye","t0","100_percentile",-1.508404127
+"Complex Two Story","Walleye","Linf","100_percentile",804.2840099
+"Complex Two Story","Walleye","K","100_percentile",0.132866854
+"Complex Two Story","Walleye","t0","100_percentile",-1.141860024
+"Complex Warm Clear","Walleye","Linf","100_percentile",700.0643069
+"Complex Warm Clear","Walleye","K","100_percentile",0.229818862
+"Complex Warm Clear","Walleye","t0","100_percentile",-0.604309177
+"Complex Warm Dark","Walleye","Linf","100_percentile",732.2676691
+"Complex Warm Dark","Walleye","K","100_percentile",0.1893737
+"Complex Warm Dark","Walleye","t0","100_percentile",-0.986815599
+"Complex Cool Clear","YellowPerch","Linf","100_percentile",1733.340719
+"Complex Cool Clear","YellowPerch","K","100_percentile",0.380008952
+"Complex Cool Clear","YellowPerch","t0","100_percentile",0.301629192
+"Complex Cool Dark","YellowPerch","Linf","100_percentile",1600.795011
+"Complex Cool Dark","YellowPerch","K","100_percentile",0.252233417
+"Complex Cool Dark","YellowPerch","t0","100_percentile",-0.055116307
+"Complex Riverine","YellowPerch","Linf","100_percentile",442.6350903
+"Complex Riverine","YellowPerch","K","100_percentile",0.315403308
+"Complex Riverine","YellowPerch","t0","100_percentile",-0.096101358
+"Complex Two Story","YellowPerch","Linf","100_percentile",990.2645568
+"Complex Two Story","YellowPerch","K","100_percentile",1.263139239
+"Complex Two Story","YellowPerch","t0","100_percentile",2.008059979
+"Complex Warm Dark","YellowPerch","Linf","100_percentile",2385.558651
+"Complex Warm Dark","YellowPerch","K","100_percentile",0.183946011
+"Complex Warm Dark","YellowPerch","t0","100_percentile",-0.897212008
