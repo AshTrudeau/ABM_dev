@@ -46,9 +46,9 @@ lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
 
 output<-list(lakeStatus=lakeStatus)
 
-annualExploitation<-initialize.annual.exploitation(parameters, lakeCharacteristics)
+annualOutput<-initialize.annual.output(parameters, lakeCharacteristics)
 
-annualOutput<-list(annualExploitation=annualExploitation)
+#annualOutput<-list(annualExploitation=annualExploitation)
 
 # adding outer year loop--will add natural fish population changes (M, r)
 
@@ -67,6 +67,7 @@ for(t in 1:parameters[["nDays"]]){
   # this is where the fish population will be updated annually with recruitment
   annualOutput<-annual.exploitation(y, parameters, output, annualOutput)
   
+  #annualOutput<-annual.survival(y, parameters, annualOutput)
 }
 
 # add final output and plotting step

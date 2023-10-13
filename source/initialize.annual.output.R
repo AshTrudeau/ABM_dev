@@ -1,4 +1,4 @@
-initialize.annual.exploitation<-function(parameters, lakeCharacteristics){
+initialize.annual.output<-function(parameters, lakeCharacteristics){
   
   nYears=parameters[["nYears"]]
   nLakes=parameters[["nLakes"]]
@@ -13,11 +13,13 @@ initialize.annual.exploitation<-function(parameters, lakeCharacteristics){
   # currently filling in constant M
   M<-rep(M, nYears)
   exploitation<-rep(NA, nYears)
+  survival<-rep(NA, nYears)
   
-  annualExploitation<-cbind.data.frame(lakeID, year, fishPopStart, annualHarvest, annualEffort, M, exploitation)
+  annualOutput<-cbind.data.frame(lakeID, year, fishPopStart, annualHarvest, annualEffort, M, exploitation, survival)
   
+  # in case I need to add other objects, make it a list
+  annualOutput<-list(annualOutput=annualOutput)
   
-  
-  return(annualExploitation)
+  return(annualOutput)
   
 }
