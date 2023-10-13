@@ -46,6 +46,10 @@ lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
 
 output<-list(lakeStatus=lakeStatus)
 
+annualExploitation<-initialize.annual.exploitation(parameters, lakeCharacteristics)
+
+annualOutput<-list(annualExploitation=annualExploitation)
+
 # adding outer year loop--will add natural fish population changes (M, r)
 
 for(y in 1:parameters[["nYears"]]){
@@ -61,11 +65,12 @@ for(t in 1:parameters[["nDays"]]){
   
 }
   # this is where the fish population will be updated annually with recruitment
+  annualOutput<-annual.exploitation(y, parameters, output, annualOutput)
   
 }
 
 # add final output and plotting step
-
+# also need to add storage of table outputs
 
 plots<-plotting.lake.status(output, fishery, parameters, lakeLocation, anglerCharacteristics)
 
