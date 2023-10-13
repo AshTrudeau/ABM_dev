@@ -67,7 +67,6 @@ for(t in 1:parameters[["nDays"]]){
   # this is where the fish population will be updated annually with recruitment
   annualOutput<-annual.exploitation(y, parameters, output, annualOutput)
   
-  #annualOutput<-annual.survival(y, parameters, annualOutput)
 }
 
 # add final output and plotting step
