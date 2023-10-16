@@ -1,10 +1,16 @@
 # this holds the directories of all the functions for the ABM
 # Set working directory, import packages, source functions
+
+setwd(paste0(base.directory, "/source/"))
+
+# packages
 library(tidyverse)
 library(RColorBrewer)
 library(cowplot)
 
-setwd(paste0(base.directory, "/source/"))
+
+# functions
+
 source(paste0(getwd(), "/lake.location.R"))
 source(paste0(getwd(), "/parameters.R"))
 source(paste0(getwd(), "/angler.characteristics.R"))

@@ -9,6 +9,13 @@ base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
 # load all functions
 source(paste0(base.directory, "/source/function.sourcer.R"))
+
+
+# read in some data needed for running population models
+lakeClasses.c.rho.df<-read_csv(here::here(base.directory,"data","walleye.lakeClass.length.weight.lm.csv"))%>%
+  rename("lakeClasses"="LakeClass")
+lakeClasses.length.weight<-read_csv(here::here(base.directory, "data", "walleye.lakeClass.length.weight.csv"))
+
 # show parameters
 data.frame(unlist(parameters))
 
@@ -26,7 +33,7 @@ lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
 
 # important lake characteristics. This is a placeholder until I set up fish population models.
 # Population is drawn from Poisson distribution with lambda=1000, catch is determined by catch equation. Currently no annual reproduction
-lakeCharacteristics<-lake.characteristics(parameters)
+lakeCharacteristics<-lake.characteristics(parameters, lakeClasses.c.rho.df, lakeClasses.length.weight)
 
 # at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
 anglerDecisions<-create.blank.angler.decisions(parameters)
