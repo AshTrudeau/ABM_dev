@@ -42,20 +42,21 @@ anglerDecisions<-create.blank.angler.decisions(parameters)
 
 # working list that will go into the loop. Each iteration it will be updated 
 #with the current fish populations, etc
+
+lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
+
+# list that will hold important output from each daily loop
+
 fishery<-list(lakeLocation=lakeLocation, 
               anglerCharacteristics=anglerCharacteristics, 
               lakeDistance=lakeDistance, 
               lakeCharacteristics=lakeCharacteristics,
-              anglerDecisions=anglerDecisions)
+              anglerDecisions=anglerDecisions,
+              lakeStatus=lakeStatus)
 
-# list that will hold important output from each loop
-lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
-
-output<-list(lakeStatus=lakeStatus)
-
+# df (maybe list later) holding important annual output
 annualOutput<-initialize.annual.output(parameters, lakeCharacteristics)
 
-#annualOutput<-list(annualExploitation=annualExploitation)
 
 # adding outer year loop--will add natural fish population changes (M, r)
 
@@ -63,12 +64,9 @@ for(y in 1:parameters[["nYears"]]){
 
 for(t in 1:parameters[["nDays"]]){
   
-  fishery<-angler.decisions(fishery) # each angler chooses a lake. These decisions are added to the anglerLocation df
+  fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
-  fishery<-fishing(fishery, parameters) # anglers catch fish and lake populations are updated
-  
-
-  output<-output.script(fishery, t, y, output, parameters)
+  fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
   
 }
   # this is where the fish population will be updated annually with recruitment
