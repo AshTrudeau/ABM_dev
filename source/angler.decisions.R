@@ -32,7 +32,7 @@ angler.decisions<-function(fishery, t, y){
       filter(day==nDays & year==y-1)
     
   }
-  if(t!=1 & y!=1){
+  if(t!=1){
   
   lakeStatusPrevious<-lakeStatus%>%
     filter(day==t-1 & year==y )
