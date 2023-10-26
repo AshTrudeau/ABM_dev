@@ -85,10 +85,10 @@ for(t in 1:parameters[["nDays"]]){
 # also need to add storage of table outputs
 
 # next fix plots
-plots<-plotting.lake.status(annualOutput, fishery, parameters, lakeLocation, anglerCharacteristics)
+plots<-plotting.lake.status(annualOutput, fishery, parameters)
 
 plots
-ggsave(paste0(wd, "/output", "/sim.v1.figure.png"))
+ggsave(paste0(wd, "/output", "/sim.v2.figure.png"), height=6, width=8)
 
 
 
