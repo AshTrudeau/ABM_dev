@@ -74,14 +74,18 @@ for(t in 1:parameters[["nDays"]]){
   annualOutput<-annual.exploitation(y, parameters, fishery, annualOutput)
   # recruitment
   annualOutput<-recruitment(y, parameters, fishery, annualOutput)
-  # change in fish N and B for next year. Update fishery status (separate script?)
+  # change in fish N and B for next year. Update fishery status 
+  annualOutput<-update.pop(y, parameters, fishery, annualOutput)
+  
+  fishery<-update.lakes(y, parameters, fishery, annualOutput)
   
 }
 
 # add final output and plotting step
 # also need to add storage of table outputs
 
-plots<-plotting.lake.status(output, fishery, parameters, lakeLocation, anglerCharacteristics)
+# next fix plots
+plots<-plotting.lake.status(annualOutput, fishery, parameters, lakeLocation, anglerCharacteristics)
 
 plots
 ggsave(paste0(wd, "/output", "/sim.v1.figure.png"))
