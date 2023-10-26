@@ -69,8 +69,12 @@ for(t in 1:parameters[["nDays"]]){
   fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
   
 }
-  # this is where the fish population will be updated annually with recruitment
-  annualOutput<-annual.exploitation(y, parameters, output, annualOutput)
+  # this is where the fish population will be updated annually 
+  # exploitation and survival
+  annualOutput<-annual.exploitation(y, parameters, fishery, annualOutput)
+  # recruitment
+  annualOutput<-recruitment(y, parameters, fishery, annualOutput)
+  # change in fish N and B for next year. Update fishery status (separate script?)
   
 }
 

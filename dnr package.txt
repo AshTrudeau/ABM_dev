@@ -1,0 +1,5 @@
+library(wdnr.fmdb)
+surveys <- get_fmdb_surveys(wbic = 805400, year = 2023)
+efforts <- get_fmdb_efforts(wbic = 805400, year = 2023)
+fishraw <- get_fmdb_fishraw(wbic = 805400, year = 2023)
+fish_len_age_wt <- get_fmdb_lenage(year = 2023, spp = "walleye")
