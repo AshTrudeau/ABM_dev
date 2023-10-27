@@ -68,7 +68,10 @@ ah fuck do i need to consider walleye sex? once stocking is added in, probably..
 
 STart again: what is the most basic but still useful thing I can do? 
 
-- Growth: lake or class-specific. So I'll need vectors of VBGF parameters for each lake in the simulation. Use this to make an age-length key for each lake. Store these as nested list within list. (the nested list is a key for each simulated lake) Option to add density-dependent, LMB, GDD effects here later
+- Growth: lake or class-specific. So I'll need vectors of VBGF parameters for each lake in the simulation. (Get this from DNR db or halk?) Use this to make an age-length key for each lake. Store these as nested list within list. (the nested list is a key for each simulated lake) Option to add density-dependent, LMB, GDD effects here later
 - Recruitment: Ricker SR model from Sass et al 2021, option to add LMB CPE and GDD effects here later. SR mods are lake specific for lakes empirically estiamted. Group by lake class and pull from those distributions for unsurveyed lakes? Saved xls workbook Sass paper (accessed through Colin's github)
 - Natural mortality: Use Escanaba relationship. Include negative relationship with fishing mortality. Option to add GDD effect here later. 
 - Fishing mortality: Comes from simulated angler harvest. 
+- Age at maturity (influences density for SR relationship)--Regression from Paul? regress breakpoint vs GDD?
+- Vulnerability to fishing mortality: Knife edge at age reaching 15 inches
+
