@@ -1,0 +1,74 @@
+---
+title: "Lit notes for model"
+output: html_document
+date: "2023-10-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Goals: 
+- Develop age and size structured population models for walleye, and later LMB and bluegill. 
+
+Considerations: 
+
+- Waterbody-specific growth models
+- Density dependent growth
+- Recruitment
+- Natural mortality
+
+And how these may change with increasing water temperatures. 
+
+Lit review to see how I can use DNR and USGS data in these simulations. 
+
+Sass et al 2004, NAJFM
+- Density dependent growth in walleye within lakes, but not among lakes. Density influenced Linf, body condition, and growth rate near t0. 
+- log10 length vs log10 weight regression
+- within lakes, Linf and condition decreased with higher walleye density. But growth rate near t0 was higher at high densities. 
+- takeaway: density dependence is a weak driver of walleye growth in the CT
+
+Pedersen et al 2018 CJFAS
+- long-term growth trends in northern WI walleye
+- shorter time to harvestable size
+- average lengths of older walleye relatively constant
+- juvenile length at age positive correlated with LMB CPUE and surface water tmperatures, negatively correlated with walleye density
+- 1990-2012
+- surface temp GDD above 5 degrees C
+- still saw increasingly fast growth of young fish, but older fish were the same size. (more vulnerability/harvest of faster-growing walleye?)
+
+Hansen et al 2022 NAJFM
+- it's complicated and it depends--review
+
+Hansen M. et al 2011 NAJFM
+- natural mortality in walleye
+- describes gradually decreasing vulnerability to natural mortality as walleye age. 
+- Sharp change in vulnerabilitty to fishing mortality: 0% at age 0, 98% at age 3, 100% age 4
+- good source of specific estimates
+- Natural mortality negatively associated with fishing mortality
+
+Beard et al 2002 TAFS
+- stock recruitment model for walleye. 
+- 'linear version of Ricker' and regression tree analysis for age 0 density
+- hmm no
+
+Sass et al 2021 Fisheries
+- here it is, empirical depensation in walleye populations
+- 82 total populations, 35 were depensatory
+- for these lakes, annual draw from known distribution? Everyone else draws from statewide mean? 
+
+
+One possibility: 
+- Take Escanaba relationship of age with natural mortality + relationship of natural mortality with fishing mortality
+- Take lake-specific (or class-specific) VBGF parameters
+- Ricker SR with depensation (lake specific params? vary depensation q parameter vs LMB?)
+
+ah fuck do i need to consider walleye sex? once stocking is added in, probably.. 
+
+
+STart again: what is the most basic but still useful thing I can do? 
+
+- Growth: lake or class-specific. So I'll need vectors of VBGF parameters for each lake in the simulation. Use this to make an age-length key for each lake. Store these as nested list within list. (the nested list is a key for each simulated lake) Option to add density-dependent, LMB, GDD effects here later
+- Recruitment: Ricker SR model from Sass et al 2021, option to add LMB CPE and GDD effects here later. SR mods are lake specific for lakes empirically estiamted. Group by lake class and pull from those distributions for unsurveyed lakes? Saved xls workbook Sass paper (accessed through Colin's github)
+- Natural mortality: Use Escanaba relationship. Include negative relationship with fishing mortality. Option to add GDD effect here later. 
+- Fishing mortality: Comes from simulated angler harvest. 
