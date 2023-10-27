@@ -72,6 +72,15 @@ STart again: what is the most basic but still useful thing I can do?
 - Recruitment: Ricker SR model from Sass et al 2021, option to add LMB CPE and GDD effects here later. SR mods are lake specific for lakes empirically estiamted. Group by lake class and pull from those distributions for unsurveyed lakes? Saved xls workbook Sass paper (accessed through Colin's github)
 - Natural mortality: Use Escanaba relationship. Include negative relationship with fishing mortality. Option to add GDD effect here later. 
 - Fishing mortality: Comes from simulated angler harvest. 
-- Age at maturity (influences density for SR relationship)--Regression from Paul? regress breakpoint vs GDD?
+- Age at maturity (influences density for SR relationship)--Regression from Paul? regress breakpoint vs GDD? Start with set age (3? check lit)
 - Vulnerability to fishing mortality: Knife edge at age reaching 15 inches
+
+Objects: 
+- Age length key by lake (list in fishery list) [should this include 'baseline' natural mortality from Escanaba that is then modified based on F?]
+- Recruitment parameters by lake (new column in lake characteristics) (intercepts, density dependent survival beta parameter)
+- pre-recruitment density estimator (function)
+- Natural mortality estimator (function)--takes in fishing mortality to estimate natural mortality 
+- Recruitment estimator (function)--takes in vectors of lake-specific parameters (lake characteristics) to estimate annual recruitment
+- Ageing function--move up age classes
+- New population and biomass function
 
