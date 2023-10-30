@@ -14,6 +14,8 @@ library(lubridate)
 # at some point I'll have to add indicator for bluegill, lmb, walleye presence, make those population models. 
 # in multispecies version I'll drop only No Fishery lakes and Trout Ponds
 
+set.seed(8329)
+
 lakeClasses<-read_csv(here::here("data","all.lake.classes.wi.csv"))
 
 # pull lake classes for Vilas county
@@ -52,6 +54,19 @@ sampled.wbic<-vilas.sample$WBIC
 effort.sample<-get_fmdb_efforts(wbic=sampled.wbic)
 
 surveys.sample<-get_fmdb_surveys(wbic=sampled.wbic)
+
+length.age<-get_fmdb_lenage(wbic=sampled.wbic)
+
+# ok, so this is ageing data from w hich I can get VBGF params. let's get the whole county
+
+length.age.vilas<-get_fmdb_lenage(county="vilas")%>%
+  filter(species%in%c("walleye","largemouth_bass","bluegill"))
+
+ggplot(length.age.vilas)+
+  geom_point(aes(x=age, y=length, color=waterbody.name))+
+  facet_grid(.~species)+
+  theme(legend.position="none")
+
   
 surveys.type<-surveys.sample%>%
   mutate(year=year(ymd(survey.begin.date)))%>%
@@ -60,6 +75,7 @@ surveys.type<-surveys.sample%>%
             lakeName=unique(waterbody.name),
             minYear=min(year),
             maxYear=max(year))
+
   
 
 # of the vilas county lakes classified, how many have been surveyed by dnr? 

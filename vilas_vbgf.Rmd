@@ -1,0 +1,187 @@
+---
+title: "Vilas VBGF"
+output: html_document
+date: "2023-10-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(wdnr.fmdb, tidyverse, here, lubridate, broom, FSA)
+```
+
+Producing VBGF parameters for walleye, lmb, bluegill in each sampled lake in Vilas county.
+Fill in other lakes with class-specific VBGF params  from Rypel. 
+
+Pull length age data
+
+```{r}
+length.age.vilas<-get_fmdb_lenage(county="vilas")%>%
+  filter(species%in%c("walleye","largemouth_bass","bluegill"))
+
+test.lake<-filter(length.age.vilas, wbic==1545600 & species=="walleye" & age.structure=="spine" & sex=="f")
+```
+
+
+Going to use least squares to fit VBGF for each lake and species
+
+```{r}
+vbgf<-function(age, Linf, k, t0){
+  length=Linf*(1-exp(-k*(age-t0)))
+}
+
+
+vb.start<-c(Linf=40, k=0.05, t0=-3)
+
+vb.fit<-nls(length~vbgf(age, Linf, k, t0), data=test.lake, start=vb.start)
+
+coef(vb.fit)
+```
+use purrr to apply across all lakes
+
+```{r}
+walleye.df<-filter(length.age.vilas, species=="walleye" & age.structure=="spine" & !is.na(age))
+
+fit.vbgf<-function(.data, .start){
+  nls(length=Linf*(1-exp(-k*(age-t0))), data=.data, start=.start)
+}
+
+# vaguely fine starting values
+vb.start<-c(Linf=40, k=0.05, t0=-3)
+
+# sex check
+
+sex.n<-walleye.df%>%
+  filter(!is.na(sex) & sex!="u")%>%
+  group_by(wbic, sex)%>%
+  summarize(n=n())%>%
+  ungroup()%>%
+  group_by(wbic)%>%
+  summarize(enough=ifelse(sum(n)>20,1,0))%>%
+  filter(enough==1)
+
+sex.n.both<-walleye.df%>%
+  filter(!is.na(sex) &  sex!="u")%>%
+  filter(wbic%in%sex.n$wbic)%>%
+  group_by(wbic, sex)%>%
+  summarize(n=n())%>%
+# I see only 1 lake remaining with not enough sex-specific observations
+  filter(wbic!=	2956700)
+  
+
+possibly.nls<-possibly(.f=nls, otherwise=NA)
+
+walleye.vbgf.sex<-walleye.df%>%
+  filter(wbic%in%sex.n.both$wbic)%>%
+  filter(!is.na(sex) & sex!="u")%>%
+  mutate(start.Linf=40,
+         start.k=0.05,
+         start.t0=-3)%>%
+  group_by(wbic, sex)%>%
+  nest()%>%
+  mutate(fit=map(data, ~possibly.nls(length~Linf*(1-exp(-k*(age-t0))), 
+                            data=.,
+                            start=c(Linf=unique(.$start.Linf),
+                                    k=unique(.$start.k),
+                                    t0=unique(.$start.t0)),
+                            nls.control(maxiter=500))))
+
+vbgf.fits.sex<-walleye.vbgf.sex%>%
+  filter(!is.na(fit))%>%
+  mutate(coef=map(fit, coef))%>%
+  ungroup()
+
+df<-as.data.frame(do.call(rbind, vbgf.fits.sex$coef))  
+
+vbgf.df.sex<-cbind.data.frame(vbgf.fits.sex$wbic, vbgf.fits.sex$sex, df)
+
+# these are our successful sex-specific VBGF fits
+names(vbgf.df.sex)<-c("wbic","sex","Linf","k","t0")
+write.csv(vbgf.df.sex, here::here("data","sex.specific.vilas.vbgf.csv"))
+
+# now for all samples, with sexes lumped together
+
+walleye.vbgf.lump<-walleye.df%>%
+  filter(!is.na(age))%>%
+  mutate(start.Linf=40,
+         start.k=0.05,
+         start.t0=-3)%>%
+  group_by(wbic)%>%
+  nest()%>%
+  mutate(fit=map(data, ~possibly.nls(length~Linf*(1-exp(-k*(age-t0))), 
+                            data=.,
+                            start=c(Linf=unique(.$start.Linf),
+                                    k=unique(.$start.k),
+                                    t0=unique(.$start.t0)),
+                            nls.control(maxiter=500))))
+
+vbgf.fits.lump<-walleye.vbgf.lump%>%
+  filter(!is.na(fit))%>%
+  mutate(coef=map(fit, coef))%>%
+  ungroup()
+
+df<-as.data.frame(do.call(rbind, vbgf.fits.lump$coef))  
+
+vbgf.df.lump<-cbind.data.frame(vbgf.fits.lump$wbic,  df)
+names(vbgf.df.lump)<-c("wbic","Linf","k","t0")
+
+write.csv(vbgf.df.lump, here::here("data","aggregate.vilas.vbgf.csv"))
+
+
+# so which lakes don't have any estimate?
+```
+
+```{r}
+lake.status<-length.age.vilas%>%
+  group_by(wbic)%>%
+  summarize(nYears=length(unique(year)),
+            minYear=min(year),
+            maxYear=max(year))%>%
+  mutate(sexSpecificGrowth=ifelse(wbic%in%vbgf.df.sex$wbic, 1, 0),
+            aggGrowth=ifelse(wbic%in%vbgf.df.lump$wbic, 1, 0))%>%
+  ungroup()
+
+write.csv(lake.status, here::here("data","fmdb.vbgf.status.csv"))
+```
+
+
+```{r}
+
+
+
+for(i in 1:nrow(vbgf.fails.f)){
+  print(ggplot(as.data.frame(vbgf.fails.f[[i,2]]))+
+    geom_point(aes(x=age, y=length, color=sex)))
+  }
+
+# The remaining waterbodies I may be able to fit with adjusted start values
+
+# try one waterbody:
+
+test.lake<-as.data.frame(vbgf.fails.f[[1,2]])
+vb.start<-c(Linf=30, k=3, t0=-8)
+
+test.fit<-nls(length~vbgf(age, Linf, k, t0), data=test.lake, start=vb.start,
+              nls.control(maxiter=500))
+
+# try FSA package for starting values
+
+f.starts <- vbStarts(length~age,data=test.lake, plot=T) 
+
+```
+
+example from earlier
+lengthAgeWeight.lm<-lengthAgeWeight%>%
+  filter(!is.na(medianWeightAge.t1.kg))%>%
+  # use purrr to run repeated linear regressions on weight t1 vs t and store slope and intercept
+  group_by(LakeClass)%>%
+  nest()%>%
+  # regress weight age + 1 vs weight at age to get slope and intercpet
+  mutate(mod=map(data, ~lm(data=., medianWeightAge.t1.kg ~ medianWeightAge.t.kg)),
+         tidied=map(mod, tidy))%>%
+  unnest(tidied)%>%
+  select(LakeClass, term, estimate)%>%
+  pivot_wider(names_from = term,
+              values_from=estimate)%>%
+  rename("c"=`(Intercept)`,
+         "rho"=medianWeightAge.t.kg)%>%
+  left_join(vulnerableWeight, by="LakeClass")

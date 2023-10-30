@@ -84,3 +84,5 @@ Objects:
 - Ageing function--move up age classes
 - New population and biomass function
 
+Update 10/30/23: 
+- I fit VBGF to each of the lakes with sufficient ageing data in the fmdb. Depending on data availability, growth functions are sex-specific, aggregate, both, or neither. lake status is listed in fmdb.vbgf.status.csv in the data folder. This folder also contains sex specific and aggregate growth parameters. I'll generate age-length keys that are 1) sex specific and 2) aggregate. Ill then collect all parameters in one file for each lake. If data is not available, I will pull parameters from the appropriate lake class (in lake class standards folder)
