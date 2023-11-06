@@ -42,24 +42,31 @@ fishing<-function(fishery, parameters, t, y){
   anglerDecisions<-anglerDecisions%>%
     # joining lakeCharacteristics, but without fishN0 (column 3)
     dplyr::left_join(yesterdayFish[,c("lakeID","fishN")], by="lakeID")%>%
-    dplyr::mutate(catch=(q*fishN^beta)*4,
+    dplyr::mutate(catch=round((q*fishN^beta)*4),
                   harvest=catch)
 
   # daily catch, effort, and harvest for each lake. Note that this will skip any lakes that don't have any effort.
   lakeHarvestToday<-anglerDecisions%>%
     dplyr::group_by(lakeID)%>%
     dplyr::summarize(harvestedN=sum(harvest),
+                     # remember to update this if *not* fishing becomes an option
                      nAnglers=n())%>%
-    dplyr::left_join(lakeCharacteristics[,c("lakeID","meanWeight")], by="lakeID")%>%
-    dplyr::mutate(harvestedB=harvestedN*meanWeight)%>%
+    dplyr::left_join(lakeCharacteristics[,c("lakeID"
+                                            #,"meanWeight"
+                                            )], by="lakeID")%>%
+   # dplyr::mutate(harvestedB=harvestedN*meanWeight)%>%
     dplyr::ungroup()%>%
-    dplyr::select(lakeID, harvestedN, harvestedB, nAnglers)
+    dplyr::select(lakeID, harvestedN, 
+                  #harvestedB, 
+                  nAnglers)
   
-  lakeID<-data.frame(lakeID=seq(1:nLakes))
+  lakeID<-data.frame(lakeID=lakeHarvestToday$lakeID)
   
   lakeHarvestTodayZeroes<-lakeID%>%
     left_join(lakeHarvestToday, by="lakeID")%>%
-    dplyr::mutate(across(.cols=c("harvestedN","harvestedB","nAnglers"), ~replace_na(.x, 0)))
+    dplyr::mutate(across(.cols=c("harvestedN",
+                                 #"harvestedB",
+                                 "nAnglers"), ~replace_na(.x, 0)))
   
   # lakeStatusToday fish population and biomass need to be updated, then added into lakeStatus by year nd day.
   # don't forget to write it into the fishery list
@@ -68,9 +75,10 @@ fishing<-function(fishery, parameters, t, y){
     dplyr::filter(day==t & year==y)%>%
     dplyr::mutate(nAnglers=lakeHarvestTodayZeroes$nAnglers,
                   harvestedN=lakeHarvestTodayZeroes$harvestedN,
-                  harvestedB=lakeHarvestTodayZeroes$harvestedB,
-                  fishN=yesterdayFish$fishN-harvestedN,
-                  fishB=yesterdayFish$fishB-harvestedB)
+                  #harvestedB=lakeHarvestTodayZeroes$harvestedB,
+                  fishN=yesterdayFish$fishN-harvestedN
+                  #fishB=yesterdayFish$fishB-harvestedB
+                  )
     
   lakeStatus[lakeStatus$day==t & lakeStatus$year==y,]<-lakeStatusToday
 

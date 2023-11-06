@@ -20,6 +20,12 @@ source(paste0(getwd(),"/create.blank.angler.decisions.R"))
 source(paste0(getwd(),"/angler.decisions.R"))
 source(paste0(getwd(),"/fishing.R"))
 source(paste0(getwd(), "/initialize.output.lakes.R"))
+source(paste0(getwd(), "/initialize.fish.pop.R"))
+source(paste0(getwd(), "/initialize.selectivity.R"))
+source(paste0(getwd(), "/initialize.FmortAge.R"))
+source(paste0(getwd(), "/initialize.NmortAge.R"))
+
+
 source(paste0(getwd(),"/output.script.R"))
 source(paste0(getwd(),"/plotting.lake.status.R"))
 source(paste0(getwd(), "/initialize.annual.output.R"))

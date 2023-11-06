@@ -2,24 +2,39 @@
 # for now, each lake is randomly assigned (from 1:4) a Poisson distribution coefficient
 # from which catch is drawn. 
 
-lake.characteristics<-function(parameters, lakeClasses.c.rho.df, lakeClasses.length.weight){
-  nLakes<-parameters[["nLakes"]]
-  nFish0_min<-parameters[["nFish0_min"]]
-  lakeID<-seq(1:nLakes)
-  
-  fishN0<-rpois(nLakes, 1000)
+lake.characteristics<-function(lakes, parameters){
 
-  lakeClasses<-sample(lakeClasses.c.rho.df$lakeClasses, nLakes, replace=T)
+  # nope, that doesn't work
+  # get ALK for lake
   
-  lakeCharacteristics<-cbind.data.frame(lakeID, lakeClasses, fishN0=fishN0)
+  # get fish age data from fmdb
+# ageLengthData<-get_fmdb_lenage(wbic=lakes$WBIC)%>%
+#     # change this when I start using other species
+#     filter(species%in%c("walleye"))%>%
+#     select(species, county, wbic, year, age, length)%>%
+#     dplyr::rename("spp"=species,
+#                   "waterbody"=wbic)
+
+# this returns a tibble with the species and waterbody specific ALK, as well as the species-specific ALK  
+# look into matching lakes with their HUC 10 for lakes with no age length data
+# later I can add other lake characteristics to this tibble
+#lakeCharacteristics<-make_halk(ageLengthData, levels=c("spp","waterbody"), plus_group=15, min_age=1)
   
-  # add on c and rho and weight vulnerable for fish pop models
+  alpha<-parameters[["alpha"]]
+  beta<-parameters[["beta"]]
+  sigma<-parameters[["sigma"]]
   
-  lakeCharacteristics.c.rho<-lakeCharacteristics%>%
-    left_join(lakeClasses.c.rho.df[,-1], by="lakeClasses")%>%
-    mutate(fishB0=fishN0*meanWeight)
+  lakeCharacteristics<-lakes%>%
+    dplyr::select(WBIC, `Final Lake Class`)%>%
+    dplyr::rename("lakeID"=WBIC,
+           "lakeClass"=`Final Lake Class`)%>%
+    dplyr::mutate(alpha=alpha,
+                  beta=beta,
+                  sigma=sigma)
   
-  return(lakeCharacteristics.c.rho)
+  
+
+  return(lakeCharacteristics)
   
   
 }

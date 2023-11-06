@@ -3,13 +3,17 @@
 
 angler.characteristics<-function(parameters){
   nAnglers<-parameters[["nAnglers"]]
-  edgeLength<-parameters[["edgeLength"]]
+  minLat<-parameters[["minLat"]]
+  minLong<-parameters[["minLong"]]
+  maxLat<-parameters[["maxLat"]]
+  maxLong<-parameters[["maxLong"]]
   
-  x.a<-runif(nAnglers, min=0, max=edgeLength)
-  y.a<-runif(nAnglers, min=0, max=edgeLength)
+  anglerLat<-runif(nAnglers, min=minLat, max=maxLat)
+  anglerLong<-runif(nAnglers, min=minLong, max=maxLong)
+  
   anglerID<-seq(1:nAnglers)
   
-  anglerCharacteristics<-cbind.data.frame(anglerID, x.a, y.a)
+  anglerCharacteristics<-cbind.data.frame(anglerID, anglerLat, anglerLong)
   
 }
 

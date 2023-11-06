@@ -86,3 +86,35 @@ creel_counts<-get_creel_counts(county="vilas", year=c(2010:2023))
 
 # Create an age 0 population for each lake. 
 
+
+#=================================
+
+# back calculating age specific M from Hansen et al 2011 (Escanaba walleye)
+
+logit.prob<-function(b0, b1, x){
+  prob = 1/(1+exp(-b0 + b1*x))
+}
+
+ages<-c(0,3,9.4,17)
+prob<-c(1,0.83,0.5,0.24)
+
+df<-data.frame(ages=ages, prob=prob)
+start<-c(b0=1, b1=0)
+
+nmort<-nls(prob~logit.prob(b0, b1, ages), data=df, start=start)
+coef(nmort)
+
+all.ages<-c(0:15)
+
+nmort.all<-logit.prob(2.3205, 0.223, all.ages)
+
+plot(nmort.all~all.ages)
+
+nmort.log<-lm(log(prob)~ages)
+
+nmort.all.log<-exp(all.ages*-0.084+0.044)
+
+plot(nmort.all.log~all.ages)
+
+nmort.all.log
+
