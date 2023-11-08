@@ -47,6 +47,7 @@ lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
 lakeCharacteristics<-lake.characteristics(lakes, parameters)
 
 # at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
+# in this version, anglerDecisions is backburnered because there is only 1 lake
 anglerDecisions<-create.blank.angler.decisions(parameters)
 
 # make an output object that records how many trips have occurred to each lake annually. Add distribution of travel time? 
@@ -62,6 +63,9 @@ fishPop<-initialize.fish.pop(parameters, lakeCharacteristics)
 
 # make selectivity vector
 selectivity<-initialize.selectivity(parameters)
+
+# make a harvest at age object (need this to estimate age specific F later)
+harvestAge<-initialize.harvestAge(parameters)
 
 # make FmortAge matrix--will hold the number of fish of each age class harvested each year
 # when I have multiple lakes, this will need to be a list of matrices, 1 for each lake
@@ -81,6 +85,7 @@ fishery<-list(lakeLocation=lakeLocation,
               anglerDecisions=anglerDecisions,
               lakeStatus=lakeStatus,
               fishPop=fishPop,
+              harvestAge=harvestAge,
               selectivity=selectivity,
               FmortAge=FmortAge,
               NmortAge=NmortAge)
@@ -93,12 +98,9 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 # adding outer year loop--will add natural fish population changes (M, r)
 
 for(y in 1:parameters[["nYears"]]){
-  # temporary while working on the annual loop
-  y<-1
-  #t<-1
 
 for(t in 1:parameters[["nDays"]]){
-  
+
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
   fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
@@ -117,13 +119,25 @@ for(t in 1:parameters[["nDays"]]){
   
   # once running, add growth and biomass
   
-  annualOutput<-annual.exploitation(y, parameters, fishery, annualOutput)
-  # recruitment
-  annualOutput<-recruitment(y, parameters, fishery, annualOutput)
-  # change in fish N and B for next year. Update fishery status 
-  annualOutput<-update.pop(y, parameters, fishery, annualOutput)
+  # calculate fishing mortality by age
+  fishery<-fishing.mortality(y,  fishery)
   
-  fishery<-update.lakes(y, parameters, fishery, annualOutput)
+  # apply  natural mortality by age
+  fishery<-natural.mortality(y, parameters, fishery)
+  
+  # apply ageing
+  fishery<-ageing(y, fishery, parameters)
+  
+  # apply recruitment
+  fishery<-recruitment(y, fishery, parameters)
+  
+
+  # close loop, store annual output
+  
+  annualOutput<-annual.output(y, fishery, annualOutput)
+  
+  # update lakeStatus object to start next year's loop
+  fishery<-update.lakes(y, fishery, parameters)
   
 }
 

@@ -2,88 +2,72 @@
 fishing<-function(fishery, parameters, t, y){
   
   # this df has the catch coefficients
-  lakeCharacteristics<-fishery[["lakeCharacteristics"]]
+  #lakeCharacteristics<-fishery[["lakeCharacteristics"]]
   
   # and this df has the fish populations as of the previous timestep
   lakeStatus<-fishery[["lakeStatus"]]
+  
+  # number of fish of each age class
+  fishPop<-fishery[["fishPop"]]
+  # harvest of each age class
+  harvestAge<-fishery[["harvestAge"]]
+  # age specific selectivity
+  selectivity<-fishery[["selectivity"]]
   
 
   # this df has the lake choice for each angler
   anglerDecisions<-fishery[["anglerDecisions"]]
   
-  nAnglers<-parameters[["nAnglers"]]
-  nLakes<-parameters[["nLakes"]]
+  #nAnglers<-parameters[["nAnglers"]]
+  #nLakes<-parameters[["nLakes"]]
   
   beta<-parameters[["beta"]]
   q<-parameters[["q"]]
   
-
-  # for the first 'day' of the simulation
+  # pull fish population matrix for this year. Note that years start on year 0. "this year's" column will then be y+1.
+  
+  # need to set conditions for first day of first year
+  
   if(t==1 & y==1){
-    yesterdayFish<-lakeStatus%>%
-      filter(day==0 & year==0)
+    fishPopYear<-fishPop[,1]
+      
+  } else{
+    fishPopYear<-fishPop[,y+1]
   }
-  # for the first day of any but the first year
-  if(t==1 & y!=1){
-    yesterdayFish<-lakeStatus%>%
-      filter(day==nDays & year==y-1)
-  # for every other day  
-  }
-  if(t!=1){
-    
-    yesterdayFish<-lakeStatus%>%
-      filter(day==t-1 & year==y )
-  }
-  
-  
- 
-  # assuming 4 hour fishing trips. Later, draw this from an empirical distribution
-  # drawing catch and harvest for each angler. Add stochasticity later + nuance for harvest decision
-  anglerDecisions<-anglerDecisions%>%
-    # joining lakeCharacteristics, but without fishN0 (column 3)
-    dplyr::left_join(yesterdayFish[,c("lakeID","fishN")], by="lakeID")%>%
-    dplyr::mutate(catch=round((q*fishN^beta)*4),
-                  harvest=catch)
 
-  # daily catch, effort, and harvest for each lake. Note that this will skip any lakes that don't have any effort.
-  lakeHarvestToday<-anglerDecisions%>%
-    dplyr::group_by(lakeID)%>%
-    dplyr::summarize(harvestedN=sum(harvest),
-                     # remember to update this if *not* fishing becomes an option
-                     nAnglers=n())%>%
-    dplyr::left_join(lakeCharacteristics[,c("lakeID"
-                                            #,"meanWeight"
-                                            )], by="lakeID")%>%
-   # dplyr::mutate(harvestedB=harvestedN*meanWeight)%>%
-    dplyr::ungroup()%>%
-    dplyr::select(lakeID, harvestedN, 
-                  #harvestedB, 
-                  nAnglers)
+  startingPop<-sum(fishPopYear)
   
-  lakeID<-data.frame(lakeID=lakeHarvestToday$lakeID)
+  # at some point, I'll need to do this for all lakes at once. will probably need to use purrr
+  catch<-round((q*selectivity*fishPopYear^beta)*4)
   
-  lakeHarvestTodayZeroes<-lakeID%>%
-    left_join(lakeHarvestToday, by="lakeID")%>%
-    dplyr::mutate(across(.cols=c("harvestedN",
-                                 #"harvestedB",
-                                 "nAnglers"), ~replace_na(.x, 0)))
+  # for now the same
+  harvest<-catch
   
-  # lakeStatusToday fish population and biomass need to be updated, then added into lakeStatus by year nd day.
-  # don't forget to write it into the fishery list
+  harvestAge[,y]<-harvestAge[,y]+harvest
   
-  lakeStatusToday<-lakeStatus%>%
-    dplyr::filter(day==t & year==y)%>%
-    dplyr::mutate(nAnglers=lakeHarvestTodayZeroes$nAnglers,
-                  harvestedN=lakeHarvestTodayZeroes$harvestedN,
-                  #harvestedB=lakeHarvestTodayZeroes$harvestedB,
-                  fishN=yesterdayFish$fishN-harvestedN
-                  #fishB=yesterdayFish$fishB-harvestedB
-                  )
-    
-  lakeStatus[lakeStatus$day==t & lakeStatus$year==y,]<-lakeStatusToday
+  
+  totalCatch<-sum(catch)
+  totalHarvest<-sum(harvest)
+  
+  
+  
+  # update lakeStatus
+  lakeStatus[lakeStatus$day==t & lakeStatus$year==y,]$fishN<-startingPop-totalHarvest
+  # update nAnglers when I add multiple lakes. For now it will stay NA
+  lakeStatus[lakeStatus$day==t & lakeStatus$year==y,]$harvestedN<-totalHarvest
 
-  fishery[["anglerDecisions"]]<-anglerDecisions[,c("anglerID","lakeID","catch","harvest")]
+
+  # update fishPop
+  fishPop[,y+1]<-fishPopYear-harvest
+  
+  # note: daily catch/harvest is now tracked in lake status, but this is not age or size specific. If I want to track,
+  # fish sizes, I'll need to add another object to the list. I'll also need to add a biomass calculation later
+  
+
   fishery[["lakeStatus"]]<-lakeStatus
+  fishery[["harvestAge"]]<-harvestAge
+  fishery[["fishPop"]]<-fishPop
+  
   return(fishery)
   
 

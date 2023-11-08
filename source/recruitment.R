@@ -1,26 +1,36 @@
-recruitment<-function(y, parameters, fishery, annualOutput){
-  # no SR relationship yet; random walk with error
-  # deal with year 1
-  thisYear<-annualOutput[annualOutput$year==y,]
+recruitment<-function(y, fishery, parameters){
   
-  if(y==1){
-    R0<-rnorm(nLakes, mean=75, sd=25)
-    
-    thisYear$recruitment<-R0 + rnorm(nLakes, mean=0, sd=25)
-    thisYear$recruitment<-ifelse(thisYear$recruitment<0,0,thisYear$recruitment)
-    
-  }else{
-    lastYear<-annualOutput[annualOutput$year==y-1,]
-    
-    thisYear$recruitment<-lastYear$recruitment + rnorm(nLakes, mean=0, sd=25)
-    thisYear$recruitment<-ifelse(thisYear$recruitment<0,0,thisYear$recruitment)
-    
+  # stop recruitment on the last year of the simulation
+  
+  nYears<-parameters[["nYears"]]
+  
+  if(y<nYears){
+  
+  ageMature<-parameters[["ageMature"]]
+  fishPop<-fishery[["fishPop"]]
+  lakeCharacteristics<-fishery[["lakeCharacteristics"]]
+  # selecting regional alpha and beta from Tsehaye et al 2016
+  
+  alpha<-lakeCharacteristics$alpha
+  beta<-lakeCharacteristics$beta
+  sigma<-lakeCharacteristics$sigma
+  
+  
+  # 'next year's population matrix--filling in recruits at age 0
+  nextYear<-fishPop[,y+2]
+  # stock is fish population where age is above age of maturity
+  stock<-sum(nextYear[1:length(nextYear)>ageMature])
+  # mature walleye per hectare
+  stockDensity<-stock/lakeCharacteristics$areaHa
+  
+  recruitsHa<-alpha*stockDensity*exp(-beta*stockDensity)+rnorm(n=length(stockDensity),mean=0, sd=sigma)
+  recruitsHa<-ifelse(recruitsHa<0, 0, recruitsHa)
+  
+  recruits<-round(recruitsHa*lakeCharacteristics$areaHa)
+  # add age 0 recruits to population matrix
+  fishPop[1,y+2]<-recruits
+  fishery[["fishPop"]]<-fishPop
   }
   
-
-
-  # and put it back in
-  
-  annualOutput[annualOutput$year==y,]<-thisYear
-  return(annualOutput)
+  return(fishery)
 }

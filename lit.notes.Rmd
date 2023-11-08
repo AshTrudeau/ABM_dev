@@ -32,7 +32,7 @@ Pedersen et al 2018 CJFAS
 - long-term growth trends in northern WI walleye
 - shorter time to harvestable size
 - average lengths of older walleye relatively constant
-- juvenile length at age positive correlated with LMB CPUE and surface water tmperatures, negatively correlated with walleye density
+- juvenile length at age positive correlated with LMB CPUE and surface water temperatures, negatively correlated with walleye density
 - 1990-2012
 - surface temp GDD above 5 degrees C
 - still saw increasingly fast growth of young fish, but older fish were the same size. (more vulnerability/harvest of faster-growing walleye?)
@@ -56,6 +56,8 @@ Sass et al 2021 Fisheries
 - here it is, empirical depensation in walleye populations
 - 82 total populations, 35 were depensatory
 - for these lakes, annual draw from known distribution? Everyone else draws from statewide mean? 
+
+Tsehaye 2016
 
 
 One possibility: 
