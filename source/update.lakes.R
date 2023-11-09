@@ -23,11 +23,12 @@ update.lakes<-function(y, fishery, parameters){
     
     fishery[["lakeStatus"]]<-lakeStatus
     
-    # update startPop
+    # update startPop with aged fish
     
-    startPop<-fishPop[,y+2]
+    startPop[,y+1]<-fishPop[,y+2]
     fishery[["startPop"]]<-startPop
     
+
  
   }
    return(fishery)

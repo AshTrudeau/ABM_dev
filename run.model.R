@@ -105,27 +105,15 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 
 for(y in 1:parameters[["nYears"]]){
 
-
+#for(y in 1:3){
 for(t in 1:parameters[["nDays"]]){
-
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
   fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
+  print(t)
   
 }
-  # this is where the fish population will be updated annually 
-  # exploitation and survival
-  
-  # this is where I left off. Work with the fishPop matrix in the fishery list to add: 
-    # harvest of age classes (vulnerability after year x?)
-      # actually, probably need to make a vulnerability matrix; depending on growth rate in the scenario, what is the age of 
-      # vulnerability for that lake's walleye population? 
-    # natural mortality
-    # ageing (move population up one year in age)
-    # recruitment
-  
-  # once running, add growth and biomass
-  
+
   # calculate fishing mortality by age
   fishery<-fishing.mortality(y,  fishery)
   
@@ -155,8 +143,9 @@ for(t in 1:parameters[["nDays"]]){
 # add final output and plotting step
 # also need to add storage of table outputs
 
-# next fix plots
+# next fix plots. These are placeholders for now
 plots<-plotting.lake.status(annualOutput, fishery, parameters)
+plots<-plotting.single.lake.status(annualOutput, fishery, parameters)
 
 plots
 ggsave(paste0(wd, "/output", "/sim.v2.figure.png"), height=6, width=8)

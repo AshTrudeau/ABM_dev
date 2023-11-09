@@ -19,7 +19,7 @@ angler.decisions<-function(fishery, t, y){
   
   nAnglers<-parameters[["nAnglers"]]
   
-  #add current fish population to lakeDistance df
+  #add current fish population to lakeStatus df
   
   # first day of the year is a little different; go back to last day of previous year
   if(t==1 & y==1){

@@ -8,8 +8,9 @@ fishing.mortality<-function(y, fishery){
   FmortAge<-fishery[["FmortAge"]]
 
   yearsHarvest<-harvestAge[,y]
+  yearsStartPop<-startPop[,y]
   
-  FmortAge[,y]<-yearsHarvest/startPop
+  FmortAge[,y]<-yearsHarvest/yearsStartPop
   
   FmortAge[,y]<-ifelse(is.nan(FmortAge[,y]), 0, FmortAge[,y])
   
