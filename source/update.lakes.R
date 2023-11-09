@@ -7,6 +7,10 @@ update.lakes<-function(y, fishery, parameters){
   if(y<nYears){
     
     lakeStatus<-fishery[["lakeStatus"]]
+    fishPop<-fishery[["fishPop"]]
+    startPop<-fishery[["startPop"]]
+    
+    # update lakeStatus
     
     thisYear<-annualOutput[annualOutput$year==y,]
     
@@ -18,6 +22,11 @@ update.lakes<-function(y, fishery, parameters){
     lakeStatus[lakeStatus$year==y+1 & lakeStatus$day==1,]<-nextYear.day1
     
     fishery[["lakeStatus"]]<-lakeStatus
+    
+    # update startPop
+    
+    startPop<-fishPop[,y+2]
+    fishery[["startPop"]]<-startPop
     
  
   }

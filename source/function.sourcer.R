@@ -22,6 +22,7 @@ source(paste0(getwd(),"/fishing.R"))
 # consider consolidating all these initialization scripts
 source(paste0(getwd(), "/initialize.output.lakes.R"))
 source(paste0(getwd(), "/initialize.fish.pop.R"))
+source(paste0(getwd(), "/initialize.start.pop.R"))
 source(paste0(getwd(), "/initialize.selectivity.R"))
 source(paste0(getwd(), "/initialize.harvestAge.R"))
 source(paste0(getwd(), "/initialize.FmortAge.R"))

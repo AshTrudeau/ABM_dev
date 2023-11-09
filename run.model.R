@@ -61,6 +61,8 @@ lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
 # yes, when I have multiple lakes, make this into another list of matrices, 1 for each lake
 fishPop<-initialize.fish.pop(parameters, lakeCharacteristics)
 
+startPop<-initialize.start.pop(parameters)
+
 # make selectivity vector
 selectivity<-initialize.selectivity(parameters)
 
@@ -84,9 +86,13 @@ fishery<-list(lakeLocation=lakeLocation,
               lakeCharacteristics=lakeCharacteristics,
               anglerDecisions=anglerDecisions,
               lakeStatus=lakeStatus,
+              # fishPop will be a nested list, 1 matrix for each lake
               fishPop=fishPop,
+              startPop=startPop,
+              # harvestAge also a nested list
               harvestAge=harvestAge,
               selectivity=selectivity,
+              # FmortAge and NmortAge also nested lists
               FmortAge=FmortAge,
               NmortAge=NmortAge)
 
@@ -98,6 +104,7 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 # adding outer year loop--will add natural fish population changes (M, r)
 
 for(y in 1:parameters[["nYears"]]){
+
 
 for(t in 1:parameters[["nDays"]]){
 
@@ -139,7 +146,11 @@ for(t in 1:parameters[["nDays"]]){
   # update lakeStatus object to start next year's loop
   fishery<-update.lakes(y, fishery, parameters)
   
+  print(y)
+  
 }
+
+# something is wrong with the FmortAge matrix; it only recorded 0 and Inf. harvestAge looks fine
 
 # add final output and plotting step
 # also need to add storage of table outputs
