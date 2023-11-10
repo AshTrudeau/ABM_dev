@@ -12,6 +12,7 @@ natural.mortality<-function(y, parameters, fishery){
   startPopThisYear<-startPop[c(ageVulnerable+1):nrow(startPop),y]
   
   if(harvestedThisYear!=0){
+    # exploitation rate is N harvested over total vulnerable
     exploitation<-harvestedThisYear/sum(startPopThisYear)
     # this relationship is from Hansen et al 2011 NAJFM, Escanaba study
     NmortAge[,y]<-(0.7-0.92*exploitation)*M
@@ -23,8 +24,10 @@ natural.mortality<-function(y, parameters, fishery){
   NmortAge[,y]<-ifelse(NmortAge[,y]<0, 0.01, NmortAge[,y])
   
 
-  # still in current year
-  fishPop[,y+1]<-fishPop[,y+1]-(NmortAge[,y]*fishPop[,y+1])
+  # still in current year--adjusting fishPop numbers by subtracting natural mortality. 
+  # important: natural mortality acts on *starting* population, not population after harvest. 
+  # this messed me up before .
+  fishPop[,y+1]<-fishPop[,y+1]-(NmortAge[,y]*startPop[,y])
   fishPop[,y+1]<-ifelse(fishPop[,y+1]<0, 0, fishPop[,y+1])
   
   fishery[["fishPop"]]<-fishPop
