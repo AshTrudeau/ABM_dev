@@ -4,24 +4,34 @@
 #=======================================================================
 # directory stuff
 rm(list=ls())
-wd<-"C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev"
+setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
+wd<-getwd()
 base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
 # load all functions
 source(paste0(base.directory, "/source/function.sourcer.R"))
 
 
-# read in some data needed for running population models
-# dropping these because they are specific to the delay difference model
-
-# lakeClasses.c.rho.df<-read_csv(here::here(base.directory,"data","walleye.lakeClass.length.weight.lm.csv"))%>%
-#   rename("lakeClasses"="LakeClass")
-# lakeClasses.length.weight<-read_csv(here::here(base.directory, "data", "walleye.lakeClass.length.weight.csv"))
 
 allLakes<-read_csv(here::here("data","all.lake.classes.wi.csv"))
 
+vbgf_all<-read_csv(here::here("data","vbgf_params.csv"))
 
-# show parameters
+# I'm not sure why multiple lake years are present in this 
+
+# try just scale data; maybe all structures were mixed together as separate fits withotu indexing?
+# ask Paul after thanksgiving. For now just take the most recent one
+vbgfWalleye_lakeID<-vbgf_all%>%
+  filter(species=="walleye" & state=="wi" & level=="lake.id")%>%
+  group_by(lake.id)%>%
+  slice(which.max(year))%>%
+  ungroup()
+
+allLakes$vbgf<-ifelse(as.character(allLakes$WBIC)%in%vbgfWalleye_lakeID$lake.id, 1, 0)
+# for now
+allLakes.vbgf<-filter(allLakes, vbgf==1)
+
+
 data.frame(unlist(parameters))
 
 #=======================================================================
@@ -31,8 +41,8 @@ set.seed(73)
 # replace this with a 'lake selection' script later
 # temporary, the one lake I'm looking at for now
 
-lakes<-filter(allLakes, WBIC==1631900)
-
+lakes<-filter(allLakes, WBIC==1545600)
+vbgf<-filter(vbgfWalleye_lakeID, lake.id=="1545600")
 
 # generate lakes randomly placed on a grid.
 lakeLocation<-lake.location(parameters, lakes)
@@ -77,6 +87,9 @@ FmortAge<-initialize.FmortAge(parameters)
 # when I have multiple lakes, this will need to be a list of matrices, 1 for each lake
 NmortAge<-initialize.NmortAge(parameters)
 
+# make this script: use VBGF to predict length at age for each waterbody
+fishSize<-fish.size(parameters, vbgf)
+
 
 # list that will hold important output from each daily loop
 
@@ -88,6 +101,7 @@ fishery<-list(lakeLocation=lakeLocation,
               lakeStatus=lakeStatus,
               # fishPop will be a nested list, 1 matrix for each lake
               fishPop=fishPop,
+              fishSize=fishSize,
               startPop=startPop,
               # harvestAge also a nested list
               harvestAge=harvestAge,
@@ -105,7 +119,8 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 
 for(y in 1:parameters[["nYears"]]){
 
-#for(y in 1:3){
+  y<-10
+
 for(t in 1:parameters[["nDays"]]){
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
@@ -129,7 +144,7 @@ for(t in 1:parameters[["nDays"]]){
 
   # close loop, store annual output
   
-  annualOutput<-annual.output(y, fishery, annualOutput)
+  annualOutput<-annual.output(y, fishery, annualOutput, parameters)
   
   # update lakeStatus object to start next year's loop
   fishery<-update.lakes(y, fishery, parameters)
@@ -138,17 +153,22 @@ for(t in 1:parameters[["nDays"]]){
   
 }
 
+write.csv(annualOutput, "annual.output.csv")
+lakeStatus<-fishery[["lakeStatus"]]
+
+write.csv(lakeStatus, "lake.status.csv")
+
 # something is wrong with the FmortAge matrix; it only recorded 0 and Inf. harvestAge looks fine
 
 # add final output and plotting step
 # also need to add storage of table outputs
 
 # next fix plots. These are placeholders for now
-plots<-plotting.lake.status(annualOutput, fishery, parameters)
-plots<-plotting.single.lake.status(annualOutput, fishery, parameters)
-
-plots
-ggsave(paste0(wd, "/output", "/sim.v2.figure.png"), height=6, width=8)
-
-
-
+# plots<-plotting.lake.status(annualOutput, fishery, parameters)
+# plots<-plotting.single.lake.status(annualOutput, fishery, parameters)
+# 
+# plots
+# ggsave(paste0(wd, "/output", "/sim.v2.figure.png"), height=6, width=8)
+# 
+# 
+# 

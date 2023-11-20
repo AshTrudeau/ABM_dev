@@ -32,6 +32,9 @@ M              <-0.7*exp(-0.114*allAges)# age specific natural mortality. (Escan
 ageVulnerable  <-0      # age vulnerable to fishing mortality (assuming knife edge)
 ageMature      <-0
 
+# quality size fish in cm
+qualitySize     <-38.1
+
 # add parameters to list=========================================================
 parameters[["nLakes"]]        <-nLakes
 #parameters[["edgeLength"]]    <-edgeLength
@@ -55,3 +58,4 @@ parameters[["nAges"]]         <-nAges
 parameters[["allAges"]]      <-allAges
 parameters[["ageVulnerable"]] <-ageVulnerable
 parameters[["ageMature"]]     <-ageMature
+parameters[["qualitySize"]]   <-qualitySize
