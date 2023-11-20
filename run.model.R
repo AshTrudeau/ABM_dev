@@ -153,6 +153,28 @@ for(t in 1:parameters[["nDays"]]){
   
 }
 
+ggplot(annualOutput)+
+  geom_line(aes(x=year, y=fishNEnd))
+
+ggplot(annualOutput)+
+  geom_line(aes(x=year, y=fishBEnd))
+
+ggplot(annualOutput)+
+  geom_line(aes(x=year, y=annualHarvestN))
+
+ggplot(annualOutput)+
+  geom_line(aes(x=year, y=maxSize))
+
+ggplot(annualOutput)+
+  geom_line(aes(x=year, y=PSDQuality))
+
+# what did recruitment look like? 
+
+fishStart<-fishery[["startPop"]]
+
+plot(fishStart[1,])
+
+
 write.csv(annualOutput, "annual.output.csv")
 lakeStatus<-fishery[["lakeStatus"]]
 
