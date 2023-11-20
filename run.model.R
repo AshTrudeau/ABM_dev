@@ -119,7 +119,7 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 
 for(y in 1:parameters[["nYears"]]){
 
-  y<-10
+  #y<-10
 
 for(t in 1:parameters[["nDays"]]){
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
