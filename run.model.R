@@ -10,51 +10,75 @@ base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
 # load all functions
 source(paste0(base.directory, "/source/function.sourcer.R"))
-
-
-
-allLakes<-read_csv(here::here("data","all.lake.classes.wi.csv"))
-
-vbgf_all<-read_csv(here::here("data","vbgf_params.csv"))
-
-# I'm not sure why multiple lake years are present in this 
-
-# try just scale data; maybe all structures were mixed together as separate fits withotu indexing?
-# ask Paul after thanksgiving. For now just take the most recent one
-vbgfWalleye_lakeID<-vbgf_all%>%
-  filter(species=="walleye" & state=="wi" & level=="lake.id")%>%
-  group_by(lake.id)%>%
-  slice(which.max(year))%>%
-  ungroup()
-
-allLakes$vbgf<-ifelse(as.character(allLakes$WBIC)%in%vbgfWalleye_lakeID$lake.id, 1, 0)
-# for now
-allLakes.vbgf<-filter(allLakes, vbgf==1)
-
-
 data.frame(unlist(parameters))
 
-#=======================================================================
-#set.seed(992)
-set.seed(73)
+#----------------------------------------------------------------------
 
-# replace this with a 'lake selection' script later
-# temporary, the one lake I'm looking at for now
+set.seed(382)
 
-lakes<-filter(allLakes, WBIC==1545600)
-vbgf<-filter(vbgfWalleye_lakeID, lake.id=="1545600")
+#drawProp<-read_csv(here::here("data","complex.lake.proportion.csv"))
+drawProp<-read_csv(paste0(base.directory, "/", "data/", "complex.lake.proportion.csv"))
 
-# generate lakes randomly placed on a grid.
-lakeLocation<-lake.location(parameters, lakes)
+# lake specific VBGF params from Paul (all structures). not sure why there are multiple years per lake; i thought they were grouped.
+# ask after thanksgiving. For now I'll just use the latest params
 
-# place anglers on a grid
+vbgf_lakeSpecific<-read_csv(paste0(base.directory, "/", "data/", "vbgf_params.csv"))%>%
+  filter(species=="walleye" & state=="wi" & level=="lake.id")%>%
+  rename("WBIC"=lake.id)%>%
+  # remove some rows with extremely high linf
+  filter(linf<100)%>%
+  group_by(WBIC)%>%
+  slice(which.max(year))%>%
+  ungroup()%>%
+  select(WBIC, linf, k, t0)
+
+
+# note that units for length are mm in this dataset but cm in Paul's lake-specific dataset
+vbgf_lakeClass<-read_csv(paste0(base.directory, "/", "data/", "lake class standards/", "Lake Class Standards Von Bert.csv"))%>%
+  filter(Species=="Walleye" & Percentile=="0.50_percentile")%>%
+  select(LakeClass, vb_param, value)%>%
+  pivot_wider(names_from=vb_param,
+              values_from=value)%>%
+  rename("lakeClass"=LakeClass,
+         "linf"=Linf,
+         "k"=K)%>%
+  # convert to cm
+  mutate(linf=linf/10,
+         t0=t0/10)
+
+allLakes<-read_csv(paste0(base.directory, "/", "data/", "all.lake.classes.wi.csv"))%>%
+  rename("lakeClass"=`Final Lake Class`)%>%
+  # sticking with Vilas county before scaling up
+  filter(County=="Vilas" & grepl("Complex", lakeClass))%>%
+  mutate(lakeClass=str_replace_all(lakeClass, " - ", " "), 
+         WBIC=as.character(WBIC))%>%
+  mutate(lakeSpecificGrowth=ifelse(WBIC%in%vbgf_lakeSpecific$WBIC, 1, 0))
+
+# 35 lakes have their own VBGF
+
+
+#  For now selecting only from [possible] walleye lakes (classified as 'complex')
+
+
+# select lakes
+
+selectLakes<-select.lakes(parameters, allLakes, drawProp)
+
+# attach growth parameters to lake table; specific if we have it, or class if not (later watershed)
+selectLakes<-growth.params(selectLakes, vbgf_lakeClass, vbgf_lakeSpecific)
+
+
+
+
+# grab the lake locations (might be redundant)
+lakeLocation<-lake.location(parameters, selectLakes)
+
+# place anglers on a grid. eventually add other characteristics besides location 
 anglerCharacteristics<-angler.characteristics(parameters)
 
-# find distances between anglers and lakes
+# find straight-line distances between anglers and lakes. Eventually this can use Gmaps API to find actual
+# travel times, but that will cost money.
 lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
-
-# important lake characteristics. This pulls an age length key
-lakeCharacteristics<-lake.characteristics(lakes, parameters)
 
 # at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
 # in this version, anglerDecisions is backburnered because there is only 1 lake
@@ -65,7 +89,7 @@ anglerDecisions<-create.blank.angler.decisions(parameters)
 # working list that will go into the loop. Each iteration it will be updated 
 #with the current fish populations, etc
 
-lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
+lakeStatus<-initialize.output.lakes(parameters, selectLakes)
 
 # fish population matrix. This will eventually need to accommodate multiple lakes; make it a list?
 # yes, when I have multiple lakes, make this into another list of matrices, 1 for each lake

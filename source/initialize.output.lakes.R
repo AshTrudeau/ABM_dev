@@ -1,48 +1,36 @@
 # start output table
-initialize.output.lakes<-function(parameters, lakeCharacteristics){
+initialize.output.lakes<-function(parameters, selectLakes){
   
   nLakes<-parameters[["nLakes"]]
   nDays<-parameters[["nDays"]]
   nYears<-parameters[["nYears"]]
   N0<-parameters[["N0"]]
   
-  lakeID<-lakeCharacteristics$lakeID
+  WBIC<-selectLakes$WBIC
   
   day<-rep(0, nLakes)
   year<-rep(0, nLakes)
   fishN<-N0
-  #fishB<-fishN*lakeCharacteristics$meanWeight
   harvestedN<-rep(0, nLakes)
-  #harvestedB<-rep(0, nLakes)
   nAnglers<-rep(0, nLakes)
   
-  # let's make the assumption for now that biomass = N * mean weight
-  # plan to replace this simplification with an age and size structured model
-  lakeStatus0<-cbind.data.frame(lakeID, day, year, nAnglers, fishN, 
-                                #fishB, 
+  lakeStatus0<-cbind.data.frame(WBIC, day, year, nAnglers, fishN, 
                                 harvestedN
-                                #harvestedB,
                                 )
   
-  # replicate this for 5 years, each with 100 days, each with 10 lakes
-  # adding 10 days for 'zero' starting day in year 1
-  
-  lakeID<-rep(lakeID, nDays*nYears)
+
+  WBIC<-rep(WBIC, nDays*nYears)
   day<-rep(rep(seq(1:nDays), each=nLakes), nYears)
   year<-rep(seq(1:nYears), each=nLakes*nDays)
   
   n<-nDays*nLakes*nYears
   
   fishN<-rep(NA, n)
-  #fishB<-rep(NA, n)
   harvestedN<-rep(NA, n)
-  #harvestedB<-rep(NA, n)
   nAnglers<-rep(NA, n)
   
-  lakeStatusBlank<-cbind.data.frame(lakeID, day, year, nAnglers, fishN, 
-                                    #fishB, 
+  lakeStatusBlank<-cbind.data.frame(WBIC, day, year, nAnglers, fishN, 
                                     harvestedN 
-                                    #harvestedB
                                     )
   
   lakeStatus<-rbind.data.frame(lakeStatus0, lakeStatusBlank)

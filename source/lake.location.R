@@ -1,9 +1,9 @@
 # this function creates the lake landscape. 
 
-lake.location<-function(parameters, lakes){
+lake.location<-function(parameters, selectLakes){
   nLakes<-parameters[["nLakes"]]
   
-  lakeLocation<-lakes%>%
+  lakeLocation<-selectLakes%>%
     dplyr::select(WBIC, County, Latitude, Longitude)%>%
     dplyr::rename("lakeID"=WBIC,
            "county"=County,

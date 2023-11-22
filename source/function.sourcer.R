@@ -11,11 +11,12 @@ library(cowplot)
 
 # functions
 
+source(paste0(getwd(), "/select.lakes.R"))
+source(paste0(getwd(), "/growth.params.R"))
 source(paste0(getwd(), "/lake.location.R"))
 source(paste0(getwd(), "/parameters.R"))
 source(paste0(getwd(), "/angler.characteristics.R"))
 source(paste0(getwd(),"/lake.distance.R"))
-source(paste0(getwd(),"/lake.characteristics.R"))
 source(paste0(getwd(),"/create.blank.angler.decisions.R"))
 source(paste0(getwd(),"/angler.decisions.R"))
 source(paste0(getwd(),"/fishing.R"))
