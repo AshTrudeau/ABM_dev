@@ -30,24 +30,13 @@ fish.size<-function(parameters, selectLakes){
   fishSizeList<-mapply(cbind, fishSizeList, "t0"=growthParams$t0, SIMPLIFY=F)
   
   
-  vbgf<-function(age, linf, k, t0){
-    length<-linf*(1-exp(-1*k*(age-t0)))
-    return(length)
-  }
+# sweet victory, source: https://stackoverflow.com/questions/45317327/apply-function-to-columns-in-a-list-of-data-frames-and-append-results
+  fishSizeList<-lapply(fishSizeList, function(x){
+    x$length<-x$linf*(1-exp(-1*x$k*(x$age-x$t0)))
+    x$weight<-(((x$length/2.54)^3)/2700)*0.454
+    return(x)
+  })  
   
-# I hope this is temporary; there is probably a better way to do this
-  
-for(i in 1:nLakes){
-    fishSizeList[[i]]$length<-vbgf(age=fishSizeList[[i]]$age, 
-                                   linf=fishSizeList[[i]]$linf,
-                                   k=fishSizeList[[i]]$k,
-                                   t0=fishSizeList[[i]]$t0)
-    
-}
-  
-for(i in 1:nLakes){
-  fishSizeList[[i]]$weight<-(((fishSizeList[[i]]$length/2.54)^3)/2700)*0.454
-}
 
 
   # for now making the bonkers assumption that fish don't grow after age 15

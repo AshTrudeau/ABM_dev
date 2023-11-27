@@ -8,7 +8,7 @@ nLakes          <-10 # 10 default lakes
 #edgeLength      <-50 # length of one side of landscape grid. default 50
 nAnglers        <-10 # number of anglers to simulate. Default 50
 nDays           <-365 # number of days (iterations) per year to simulate. Default 365
-nYears          <-15 # Number of years (big loops) to simulate, default 10
+nYears          <-20 # Number of years (big loops) to simulate, default 10
 #nFish0_min      <-5000 # minimum number of fish in a lake in the first time step
 beta            <-0.5 # hyperstability parameter
 q               <-0.1 # catchability coefficient
@@ -29,8 +29,8 @@ allAges       <-c(0:nAges)
 M              <-0.7*exp(-0.114*allAges)# age specific natural mortality. (Escanaba, Hansen et al 2011) (later tie to temperature and fishing mortality)
                         # using log relationship listed in Tsehaye paper. (used only for ages up to 5, but using it now for all ages for simplicity)
                         # not yet reducing natural mortality as fishing mortality increases; add that later
-ageVulnerable  <-2      # age vulnerable to fishing mortality (assuming knife edge)
-ageMature      <-3
+ageVulnerable  <-0      # age vulnerable to fishing mortality (assuming knife edge)
+ageMature      <-0
 
 # quality size fish in cm
 qualitySize     <-38.1
