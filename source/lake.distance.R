@@ -4,11 +4,11 @@
 
 lake.distance<-function(lakeLocation, anglerCharacteristics){
   anglerID<-anglerCharacteristics$anglerID
-  lakeID<-lakeLocation$lakeID
+  WBIC<-lakeLocation$WBIC
   
-  all.combinations<-tidyr::expand_grid(anglerID, lakeID)%>%
+  all.combinations<-tidyr::expand_grid(anglerID, WBIC)%>%
     dplyr::left_join(anglerCharacteristics, by="anglerID")%>%
-    dplyr::left_join(lakeLocation, by="lakeID")%>%
+    dplyr::left_join(lakeLocation, by="WBIC")%>%
     # convert degrees to km
     dplyr::mutate(distance=sqrt((lakeLong-anglerLong)^2+(lakeLat-anglerLat)^2)*111)
   

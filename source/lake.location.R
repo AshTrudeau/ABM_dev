@@ -5,8 +5,7 @@ lake.location<-function(parameters, selectLakes){
   
   lakeLocation<-selectLakes%>%
     dplyr::select(WBIC, County, Latitude, Longitude)%>%
-    dplyr::rename("lakeID"=WBIC,
-           "county"=County,
+    dplyr::rename("county"=County,
            "lakeLat"=Latitude,
            "lakeLong"=Longitude)
   return(lakeLocation)

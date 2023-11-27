@@ -6,7 +6,7 @@ create.blank.angler.decisions<-function(parameters){
   
   blank.angler.decisions<-data.frame(matrix(nrow=nAnglers, ncol=4))
   
-  colnames(blank.angler.decisions)<-c("anglerID","lakeID","catch","harvest")
+  colnames(blank.angler.decisions)<-c("anglerID","WBIC","catch","harvest")
   
   blank.angler.decisions$anglerID<-seq(1:nAnglers)
   

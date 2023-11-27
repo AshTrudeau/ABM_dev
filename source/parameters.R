@@ -8,7 +8,7 @@ nLakes          <-10 # 10 default lakes
 #edgeLength      <-50 # length of one side of landscape grid. default 50
 nAnglers        <-10 # number of anglers to simulate. Default 50
 nDays           <-365 # number of days (iterations) per year to simulate. Default 365
-nYears          <-100 # Number of years (big loops) to simulate, default 10
+nYears          <-15 # Number of years (big loops) to simulate, default 10
 #nFish0_min      <-5000 # minimum number of fish in a lake in the first time step
 beta            <-0.5 # hyperstability parameter
 q               <-0.1 # catchability coefficient

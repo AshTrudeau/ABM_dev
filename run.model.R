@@ -21,6 +21,7 @@ drawProp<-read_csv(paste0(base.directory, "/", "data/", "complex.lake.proportion
 
 # lake specific VBGF params from Paul (all structures). not sure why there are multiple years per lake; i thought they were grouped.
 # ask after thanksgiving. For now I'll just use the latest params
+# keeping this code in 'run.model' temporarily until I replace it with HUC-specific values
 
 vbgf_lakeSpecific<-read_csv(paste0(base.directory, "/", "data/", "vbgf_params.csv"))%>%
   filter(species=="walleye" & state=="wi" & level=="lake.id")%>%
@@ -91,11 +92,13 @@ anglerDecisions<-create.blank.angler.decisions(parameters)
 
 lakeStatus<-initialize.output.lakes(parameters, selectLakes)
 
-# fish population matrix. This will eventually need to accommodate multiple lakes; make it a list?
-# yes, when I have multiple lakes, make this into another list of matrices, 1 for each lake
-fishPop<-initialize.fish.pop(parameters, lakeCharacteristics)
+# fish population matrix. 
+# this is now a nested list with 1 matrix per lake
+fishPops<-initialize.fish.pop(parameters, selectLakes)
 
-startPop<-initialize.start.pop(parameters)
+# make copy to keep track of starting population of each year. in contrast, fishPops is updated each day of each year
+# note change to plural
+startPops<-initialize.start.pop(parameters)
 
 # make selectivity vector
 selectivity<-initialize.selectivity(parameters)
@@ -104,15 +107,15 @@ selectivity<-initialize.selectivity(parameters)
 harvestAge<-initialize.harvestAge(parameters)
 
 # make FmortAge matrix--will hold the number of fish of each age class harvested each year
-# when I have multiple lakes, this will need to be a list of matrices, 1 for each lake
+# now a list of matrices
 FmortAge<-initialize.FmortAge(parameters)
 
 # make NmortAge matrix--will hold the number of fish of each age class that died naturally each year
-# when I have multiple lakes, this will need to be a list of matrices, 1 for each lake
+# now a list of matrices
 NmortAge<-initialize.NmortAge(parameters)
 
 # make this script: use VBGF to predict length at age for each waterbody
-fishSize<-fish.size(parameters, vbgf)
+fishSizes<-fish.size(parameters, selectLakes)
 
 
 # list that will hold important output from each daily loop
@@ -120,13 +123,13 @@ fishSize<-fish.size(parameters, vbgf)
 fishery<-list(lakeLocation=lakeLocation, 
               anglerCharacteristics=anglerCharacteristics, 
               lakeDistance=lakeDistance, 
-              lakeCharacteristics=lakeCharacteristics,
+             # lakeCharacteristics=lakeCharacteristics,
               anglerDecisions=anglerDecisions,
               lakeStatus=lakeStatus,
               # fishPop will be a nested list, 1 matrix for each lake
-              fishPop=fishPop,
-              fishSize=fishSize,
-              startPop=startPop,
+              fishPops=fishPops,
+              fishSizes=fishSizes,
+              startPops=startPops,
               # harvestAge also a nested list
               harvestAge=harvestAge,
               selectivity=selectivity,
@@ -135,7 +138,7 @@ fishery<-list(lakeLocation=lakeLocation,
               NmortAge=NmortAge)
 
 
-# df (maybe list later) holding important annual output
+# df  holding important annual output
 annualOutput<-initialize.annual.output(parameters, fishery)
 
 
