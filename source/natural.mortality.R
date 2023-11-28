@@ -3,34 +3,112 @@ natural.mortality<-function(y, parameters, fishery){
   # multiply age-specific M by annual M predicted by annual u/F to get that year's age specific M
   M<-parameters[["M"]]
   ageVulnerable<-parameters[["ageVulnerable"]]
+  
   NmortAge<-fishery[["NmortAge"]]
-  startPop<-fishery[["startPop"]]
+  startPops<-fishery[["startPops"]]
   harvestAge<-fishery[["harvestAge"]]
-  fishPop<-fishery[["fishPop"]]
+  fishPops<-fishery[["fishPops"]]
   
-  harvestedThisYear<-sum(harvestAge[,y])
-  startPopThisYear<-startPop[c(ageVulnerable+1):nrow(startPop),y]
+  nAges<-parameters[["nAges"]]
+  ages<-c(0:nAges)
+  agesVulnerable<-as.character(ages[ages>=ageVulnerable])
   
-  if(harvestedThisYear!=0){
-    # exploitation rate is N harvested over total vulnerable
-    exploitation<-harvestedThisYear/sum(startPopThisYear)
-    # this relationship is from Hansen et al 2011 NAJFM, Escanaba study
-    NmortAge[,y]<-(0.7-0.92*exploitation)*M
-  } else {
-    NmortAge[,y]<-M
+  # get total number of fish harvested this year by lake and age
+  harvestAgeYear<-lapply(harvestAge, function(x) x[,y])
+ 
+   # get starting population by lake and age
+  startPopsAgeYear<-lapply(startPops, function(x) x[,y])
+  
+  # name the vectors by age to make the next step easier
+  startPopsAgeYear<-lapply(startPopsAgeYear, setNames, as.character(0:15))
+  
+  # set up reverse %in%
+  `%!in%`<-Negate(`%in%`)
+  
+  # set up replacement function
+  
+  replaceAge<-function(startPopsAgeYear, agesVulnerable){
+    startPopsVulnerable<-startPopsAgeYear
+    startPopsVulnerable[names(startPopsVulnerable)%!in%agesVulnerable]<-0
+    return(startPopsVulnerable)
+  }
+
+  if(ageVulnerable==0){
+    startPopsVulnerable<-startPopsAgeYear
+    # replace invulnerable age populations with 0
+  } else{
+    
+    startPopsVulnerable<-lapply(startPopsAgeYear, replaceAge, agesVulnerable)
+    
   }
   
-  # instance of negative natural mortality during a very high exploitation year. Set a floor
-  NmortAge[,y]<-ifelse(NmortAge[,y]<0, 0.01, NmortAge[,y])
-  
 
-  # still in current year--adjusting fishPop numbers by subtracting natural mortality. 
-  # important: natural mortality acts on *starting* population, not population after harvest. 
-  # this messed me up before .
-  fishPop[,y+1]<-fishPop[,y+1]-(NmortAge[,y]*startPop[,y])
-  fishPop[,y+1]<-ifelse(fishPop[,y+1]<0, 0, fishPop[,y+1])
+# if no fish were harvested, only baseline natural mortality applies, otherwise
+# it's a function of natural mortality and exploitation rate
+    # exploitation rate is N harvested over total vulnerable
+  divide<-function(x, y){
+    x/y
+  }
+  # for fishing mortality i used a for loop. see if I can vectorize it instead (and go back if I'm successful)
+  exploitation<-mapply(divide, harvestAgeYear, startPopsVulnerable)
+  # replace NAN (divided by zero) with 0
+  exploitation[is.nan(exploitation)]<-0
+  # make it back into a list
+  exploitation<-as.list(as.data.frame(exploitation))
+
+  # NmortAge is currently blank; need to insert NmortAgeYear once it's calculated
+  # this relationship is from Hansen et al 2011 NAJFM, Escanaba study
+  # Tsehaye et al 2016 gives the specific formula used for <age 5 walleye. Estimated lake-specific M for older walleye
+  # I wonder if I can access that..
+  NmortAgeYear <-lapply(exploitation, function(x) (0.7-0.92*x)*M)
+  # Put floor on natural mortality, otherwise very high exploitation can result in negative M
+  NmortAgeYear<-lapply(NmortAgeYear, function(x) {x[x<0]<-0.01; x})
   
-  fishery[["fishPop"]]<-fishPop
+  # now replace the appropriate columns (y) in NmortAge list
+  # cool! now go back and do that for fishing.mortality
+  wbics<-names(NmortAgeYear)
+  
+  NmortAge<-lapply(seq_along(NmortAge), function(x) {
+    lake_matrix<-NmortAge[[x]]
+    lake_name<-names(NmortAgeYear)[x]
+    lake_vector<-NmortAgeYear[[lake_name]]
+    
+    lake_matrix[,y]<-lake_vector
+    return(lake_matrix)
+
+    })
+  
+  names(NmortAge)<-wbics
+  
+  # still in current year--adjusting fishPops numbers by subtracting natural mortality. 
+  # important: natural mortality acts on *starting* population, not population after harvest. 
+  # this messed me up before.
+  
+  # a is fishPops, b is NmortAge, c is startPops. only fishPops includes year 0
+  fishPopsYear<-mapply(function(a,b,c) a[,y+1]-(b[,y]*c[,y]),
+               a=fishPops,
+               b=NmortAge,
+               c=startPops)
+  fishPopsYear<-as.list(as.data.frame(fishPopsYear))
+  
+  # replace any negative values with zeroes
+  fishPopsYear<-lapply(fishPopsYear, function(x){
+    x[x<0]<-0; x
+  })
+  
+  #  now replace this year's column in fishPops with new values
+  # remember y+1!
+  fishPops<-lapply(seq_along(fishPops), function(x){
+    lake_matrix<-fishPops[[x]]
+    lake_name<-names(fishPopsYear)[x]
+    lake_vector<-fishPopsYear[[lake_name]]
+    
+    lake_matrix[,y+1]<-lake_vector
+    return(lake_matrix)
+  })
+  
+ 
+  fishery[["fishPops"]]<-fishPops
   fishery[["NmortAge"]]<-NmortAge
   return(fishery)
   

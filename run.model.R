@@ -163,6 +163,8 @@ for(t in 1:parameters[["nDays"]]){
   # apply  natural mortality by age
   fishery<-natural.mortality(y, parameters, fishery)
   
+  # this is where I left off 11/28/23: update ageing() next
+  
   # apply ageing
   fishery<-ageing(y, fishery, parameters)
   
