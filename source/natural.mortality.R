@@ -106,7 +106,8 @@ natural.mortality<-function(y, parameters, fishery){
     lake_matrix[,y+1]<-lake_vector
     return(lake_matrix)
   })
-  
+ 
+  names(fishPops)<-wbics 
  
   fishery[["fishPops"]]<-fishPops
   fishery[["NmortAge"]]<-NmortAge

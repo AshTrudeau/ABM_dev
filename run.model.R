@@ -160,7 +160,7 @@ for(t in 1:parameters[["nDays"]]){
   # calculate fishing mortality by age
   fishery<-fishing.mortality(y,  fishery)
   
-  # apply  natural mortality by age
+  # apply  natural mortality by age to fishPops (adjusting for F)
   fishery<-natural.mortality(y, parameters, fishery)
   
   # this is where I left off 11/28/23: update ageing() next
