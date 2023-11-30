@@ -72,6 +72,7 @@ annual.output<-function(y, fishery, annualOutput, parameters){
   }
   
   maxLength<-mapply(max.length.fun, fishSizes, maxAge)
+  maxLength<-as.list(maxLength)
   
    # mean size of fish in the lake at the end of year y, after recruitment
   
@@ -86,6 +87,7 @@ annual.output<-function(y, fishery, annualOutput, parameters){
   }
   
   meanLength<-mapply(mean.length, allFish, fishSizes)
+  meanLength<-as.list(meanLength)
   
   psd.fun<-function(allFish, fishSizes){
     if(sum(allFish)!=0){
@@ -111,7 +113,7 @@ annual.output<-function(y, fishery, annualOutput, parameters){
   
   annualEffort<-as.list(annualEffort$annualEffort)
   
-  annualOutputYear<-data.frame(lakeID=names(fishNStart),
+  annualOutputYear<-data.frame(WBIC=lakeCharacteristics$WBIC,
                              year=rep(y),
                              fishNStart=unlist(fishNStart),
                              fishBStart=unlist(fishBStart),

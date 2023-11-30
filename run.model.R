@@ -152,7 +152,6 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 
 for(y in 1:parameters[["nYears"]]){
 
-  y<-1
 
 for(t in 1:parameters[["nDays"]]){
   #t<-1
@@ -189,37 +188,16 @@ for(t in 1:parameters[["nDays"]]){
   
 }
 
-ggplot(annualOutput)+
-  geom_line(aes(x=year, y=fishNEnd))
 
-ggplot(annualOutput)+
-  geom_line(aes(x=year, y=fishBEnd))
+# visualizing outputs
 
-ggplot(annualOutput)+
-  geom_line(aes(x=year, y=annualHarvestN))
 
-ggplot(annualOutput)+
-  geom_line(aes(x=year, y=maxSize))
-
-ggplot(annualOutput)+
-  geom_line(aes(x=year, y=PSDQuality))
-
-# what did recruitment look like? 
-
-fishStart<-fishery[["startPop"]]
-
-plot(fishStart[1,])
 
 
 write.csv(annualOutput, "annual.output.csv")
 lakeStatus<-fishery[["lakeStatus"]]
 
 write.csv(lakeStatus, "lake.status.csv")
-
-# something is wrong with the FmortAge matrix; it only recorded 0 and Inf. harvestAge looks fine
-
-# add final output and plotting step
-# also need to add storage of table outputs
 
 # next fix plots. These are placeholders for now
 # plots<-plotting.lake.status(annualOutput, fishery, parameters)

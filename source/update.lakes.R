@@ -9,6 +9,7 @@ update.lakes<-function(y, fishery, parameters){
     lakeStatus<-fishery[["lakeStatus"]]
     fishPops<-fishery[["fishPops"]]
     startPops<-fishery[["startPops"]]
+    lakeCharacteristics<-fishery[["lakeCharacteristics"]]
     
     # update lakeStatus for day 1 of the next year
     
@@ -35,6 +36,7 @@ update.lakes<-function(y, fishery, parameters){
       return(lake_matrix)
     })
     
+    names(startPops)<-lakeCharacteristics$WBIC
 
     fishery[["startPops"]]<-startPops
     
