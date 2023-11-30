@@ -5,10 +5,10 @@ initialize.annual.output<-function(parameters, fishery){
   nLakes=parameters[["nLakes"]]
 
   #lakeCharacteristics<-fishery[["lakeCharacteristics"]]
-  lakeLocation<-fishery[["lakeLocation"]]
+  lakeCharacteristics<-fishery[["lakeCharacteristics"]]
   
   # make dataframe to hold lakeID, year, and lake-year summary statistics
-  WBIC<-rep(lakeLocation$WBIC, nYears)
+  WBIC<-rep(lakeCharacteristics$WBIC, nYears)
   year<-rep(seq(1:nYears), each=nLakes)
   
   fishNStart<-rep(NA, nYears*nLakes)

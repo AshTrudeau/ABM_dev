@@ -3,33 +3,67 @@ recruitment<-function(y, fishery, parameters){
   # stop recruitment on the last year of the simulation
   
   nYears<-parameters[["nYears"]]
+  nAges<-parameters[["nAges"]]
   
   if(y<nYears){
   
   ageMature<-parameters[["ageMature"]]
-  fishPop<-fishery[["fishPop"]]
+  fishPops<-fishery[["fishPops"]]
+  # has alpha, beta, sigma regional values (same for each lake, but leave room for lake-specific
+  # values)
   lakeCharacteristics<-fishery[["lakeCharacteristics"]]
   # selecting regional alpha and beta from Tsehaye et al 2016
   
-  alpha<-lakeCharacteristics$alpha
-  beta<-lakeCharacteristics$beta
-  sigma<-lakeCharacteristics$sigma
+
+  nextYear<-lapply(fishPops, function(x) x[,y+2])
   
+  # find fish population above age of maturity
   
-  # 'next year's population matrix--filling in recruits at age 0
-  nextYear<-fishPop[,y+2]
-  # stock is fish population where age is above age of maturity
-  stock<-sum(nextYear[1:length(nextYear)>ageMature])
-  # mature walleye per hectare
-  stockDensity<-stock/lakeCharacteristics$areaHa
+  mature<-lapply(nextYear, function(x) x[1:c(nAges+1)>ageMature])
   
-  recruitsHa<-alpha*stockDensity*exp(-beta*stockDensity)+rnorm(n=length(stockDensity),mean=0, sd=sigma)
-  recruitsHa<-ifelse(recruitsHa<0, 0, recruitsHa)
+  stock<-lapply(mature, function(x) sum(x))
   
-  recruits<-round(recruitsHa*lakeCharacteristics$areaHa)
-  # add age 0 recruits to population matrix
-  fishPop[1,y+2]<-recruits
-  fishery[["fishPop"]]<-fishPop
+  divide<-function(x,y){
+    x/y
+  }
+  
+  # find mature walleye per hectare
+  stockDensity<-mapply(divide, stock, as.list(lakeCharacteristics$areaHa))
+  stockDensity<-as.list(stockDensity)
+  
+  # calculate recruits
+  
+  recruit.fun<-function(stockDensity, recAlpha, recBeta, recSigma){
+    recruitsHa<-(recAlpha*stockDensity*exp(-recBeta*stockDensity))*exp(rnorm(n=length(stockDensity),
+                                                                             mean=0, sd=recSigma^2))
+  }
+  
+  recAlpha<-as.list(lakeCharacteristics$recAlpha)
+  recBeta<-as.list(lakeCharacteristics$recBeta)
+  recSigma<-as.list(lakeCharacteristics$recSigma)
+  
+  recruitsHa<-mapply(recruit.fun, stockDensity, recAlpha, recBeta, recSigma)
+  
+  recruit.lake<-function(recruitsHa, areaHa){
+    round(recruitsHa*areaHa)
+  }
+  
+  recruitsLake<-mapply(recruit.lake, recruitsHa, as.list(lakeCharacteristics$areaHa))
+  recruitsLake<-as.list(recruitsLake)
+  
+  # add age 0 recruits to next year of population matrix
+  
+  fishPops<-lapply(seq_along(fishPops), function(x){
+    lake_matrix<-fishPops[[x]]
+    lake_name<-names(fishPops)[x]
+    lake_vector<-recruitsLake[[lake_name]]
+    
+    lake_matrix[1,y+2]<-lake_vector
+    return(lake_matrix)
+  })
+  names(fishPops)<-lakeCharacteristics$WBIC
+  
+  fishery[["fishPops"]]<-fishPops
   }
   
   return(fishery)

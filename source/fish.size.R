@@ -1,17 +1,17 @@
-fish.size<-function(parameters, selectLakes){
+fish.size<-function(parameters, lakeCharacteristics){
   
   # eventually fishSize will be a nested list with one object per waterbody; meant to match fishPop object
   allAges<-parameters[["allAges"]]
   nLakes<-parameters[["nLakes"]]
   
   # not strictly necessary, but helpful for me. 
-  growthParams<-selectLakes%>%
+  growthParams<-lakeCharacteristics%>%
     dplyr::select(WBIC, linf, k, t0)
     # make into a list; 1 row in each object
   WBIC<-growthParams$WBIC
     
   growthParamsList<-split(growthParams, 1:nrow(growthParams))
-  names(growthParamsList)<-selectLakes$WBIC
+  names(growthParamsList)<-lakeCharacteristics$WBIC
   
   # note that length is in centimeters and weight in kilograms, but DNR conversion assumes inches and pounds. need to convert
   fishSize<-data.frame(age=allAges,

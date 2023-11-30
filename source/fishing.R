@@ -7,13 +7,7 @@ fishing<-function(fishery, parameters, t, y){
   # number of fish of each age class as of the previous timestep
   fishPops<-fishery[["fishPops"]]
   
-  # making a fake fish population matrix so I can test as I go
-  # TEMPORARY
-  # for(i in 1:nLakes){
-  #   for(j in 1:21){
-  #     fishPops[[i]][,j]<-round(runif(n=16, min=500, max=10000))
-  #   }}
-  
+
   # harvest of each age class
   harvestAge<-fishery[["harvestAge"]]
   # age specific selectivity
@@ -33,6 +27,7 @@ fishing<-function(fishery, parameters, t, y){
   # need to set conditions for first day of first year. Find total fish population (sum N) for each lake
   # if it's the very first timestep, the fish population is N0 for each lake
   
+  # come back and vectorize this when I'm less time constrained
   
   if(t==1 & y==1){
     # if it's the first day of the first year, take the 'year zero' fish population
@@ -100,17 +95,24 @@ fishing<-function(fishery, parameters, t, y){
   
   totalPop<-sapply(fishPopYear, sum)
   
-
+  totalEffort<-anglerDecisions%>%
+    # arranges output in correct order (same order as lakeCharacteristics)
+    mutate(WBIC=factor(WBIC, levels=lakeCharacteristics$WBIC))%>%
+    group_by(WBIC, .drop=F)%>%
+    summarize(nAnglers=n())%>%
+    ungroup()
   
   # update lakeStatus
   lakeStatus[lakeStatus$day==t & lakeStatus$year==y,]$fishN<-totalPop
-  # update nAnglers when I add multiple lakes. For now it will stay NA
+
   lakeStatus[lakeStatus$day==t & lakeStatus$year==y,]$harvestedN<-totalHarvest
+  
+  lakeStatus[lakeStatus$day==t & lakeStatus$year==y,]$nAnglers<-totalEffort$nAnglers
 
   # note: daily catch/harvest is now tracked in lake status, but this is not age or size specific. If I want to track,
   # fish sizes, I'll need to add another object to the list. I'll also need to add a biomass calculation later
   
-
+#  note that total harvest and total pop is cumulative through the year, but fishing effort is not. 
   fishery[["lakeStatus"]]<-lakeStatus
   fishery[["harvestAge"]]<-harvestAge
   fishery[["fishPops"]]<-fishPops

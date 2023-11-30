@@ -11,16 +11,16 @@ nDays           <-365 # number of days (iterations) per year to simulate. Defaul
 nYears          <-20 # Number of years (big loops) to simulate, default 10
 #nFish0_min      <-5000 # minimum number of fish in a lake in the first time step
 beta            <-0.5 # hyperstability parameter
-q               <-0.1 # catchability coefficient
+q               <-0.05 # catchability coefficient
 # clunkily set bounding box for angler placement
 maxLat         <-46.221210
 maxLong        <- -88.971443
 minLat         <- 45.923449
 minLong        <- -89.418459
 # regional values from Tsehaye et al 2016
-alpha          <- 9.88
-beta           <- 0.29
-sigma          <- 2.15
+recAlpha          <- 9.88
+recBeta           <- 0.29
+recSigma          <- 2.15
 # starting number of fish
 N0             <-10000
 nAges          <-15
@@ -50,9 +50,9 @@ parameters[["maxLat"]]        <-maxLat
 parameters[["maxLong"]]       <-maxLong
 parameters[["minLat"]]        <-minLat
 parameters[["minLong"]]       <-minLong
-parameters[["alpha"]]         <-alpha
-parameters[["beta"]]          <-beta
-parameters[["sigma"]]         <-sigma
+parameters[["recAlpha"]]         <-recAlpha
+parameters[["recBeta"]]          <-recBeta
+parameters[["recSigma"]]         <-recSigma
 parameters[["N0"]]            <-N0
 parameters[["nAges"]]         <-nAges
 parameters[["allAges"]]      <-allAges

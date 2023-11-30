@@ -66,20 +66,27 @@ allLakes<-read_csv(paste0(base.directory, "/", "data/", "all.lake.classes.wi.csv
 selectLakes<-select.lakes(parameters, allLakes, drawProp)
 
 # attach growth parameters to lake table; specific if we have it, or class if not (later watershed)
-selectLakes<-growth.params(selectLakes, vbgf_lakeClass, vbgf_lakeSpecific)
+# selectLakes has all lake data
 
+# replace lake.location and growth.params scripts with lake.characteristics. 
+# return df with lat long, size, growth params, and recruitment params
+
+#selectLakes<-growth.params(selectLakes, vbgf_lakeClass, vbgf_lakeSpecific)
 
 
 
 # grab the lake locations (might be redundant)
-lakeLocation<-lake.location(parameters, selectLakes)
+#lakeLocation<-lake.location(parameters, selectLakes)
+
+lakeCharacteristics<-lake.characteristics(parameters, selectLakes, vbgf_lakeClass, 
+                                          vbgf_lakeSpecific)
 
 # place anglers on a grid. eventually add other characteristics besides location 
 anglerCharacteristics<-angler.characteristics(parameters)
 
 # find straight-line distances between anglers and lakes. Eventually this can use Gmaps API to find actual
 # travel times, but that will cost money.
-lakeDistance<-lake.distance(lakeLocation, anglerCharacteristics)
+lakeDistance<-lake.distance(lakeCharacteristics, anglerCharacteristics)
 
 # at some point, revise decisions to switch to next-nearest lake when previous catch=0. (setting up flexibility for integrating memory)
 # in this version, anglerDecisions is backburnered because there is only 1 lake
@@ -94,7 +101,7 @@ lakeStatus<-initialize.output.lakes(parameters, selectLakes)
 
 # fish population matrix. 
 # this is now a nested list with 1 matrix per lake
-fishPops<-initialize.fish.pop(parameters, selectLakes)
+fishPops<-initialize.fish.pop(parameters, lakeCharacteristics)
 
 # make copy to keep track of starting population of each year. in contrast, fishPops is updated each day of each year
 # note change to plural
@@ -115,15 +122,14 @@ FmortAge<-initialize.FmortAge(parameters)
 NmortAge<-initialize.NmortAge(parameters)
 
 # make this script: use VBGF to predict length at age for each waterbody
-fishSizes<-fish.size(parameters, selectLakes)
+fishSizes<-fish.size(parameters, lakeCharacteristics)
 
 
 # list that will hold important output from each daily loop
 
-fishery<-list(lakeLocation=lakeLocation, 
-              anglerCharacteristics=anglerCharacteristics, 
+fishery<-list(anglerCharacteristics=anglerCharacteristics, 
               lakeDistance=lakeDistance, 
-             # lakeCharacteristics=lakeCharacteristics,
+              lakeCharacteristics=lakeCharacteristics,
               anglerDecisions=anglerDecisions,
               lakeStatus=lakeStatus,
               # fishPop will be a nested list, 1 matrix for each lake
@@ -163,11 +169,11 @@ for(t in 1:parameters[["nDays"]]){
   # apply  natural mortality by age to fishPops (adjusting for F)
   fishery<-natural.mortality(y, parameters, fishery)
   
-  # this is where I left off 11/28/23: update ageing() next
-  
+
   # apply ageing
   fishery<-ageing(y, fishery, parameters)
   
+  # left off here 11/29/23; update recruitment next
   # apply recruitment
   fishery<-recruitment(y, fishery, parameters)
   
