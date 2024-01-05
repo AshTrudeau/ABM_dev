@@ -9,6 +9,9 @@ angler.decisions<-function(fishery, t, y){
   lakeCharacteristics<-fishery[["lakeCharacteristics"]]
   lakeStatus<-fishery[["lakeStatus"]]
   
+  betaTravel<-parameters[["betaTravel"]]
+  betaFish<-parameters[["betaFish"]]
+  
   nDays<-parameters[["nDays"]]
   
   # remove old outputs. Results of previous loops go into lakeStatus
@@ -45,16 +48,24 @@ angler.decisions<-function(fishery, t, y){
  
   # This will eventually hold other lake characteristics relevant to decisions; catch rates, sizes, etc
    lakeDistancePop<-lakeDistance%>%
-    dplyr::left_join(lakeStatusPrevious[,c("WBIC","fishN")], by="WBIC")
+    dplyr::left_join(lakeStatusPrevious[,c("WBIC","fishN")], by="WBIC")%>%
+     # starting with the same arbitrary coefficient values for everyone
+     mutate(betaTravel=betaTravel,
+            betaFish=betaFish)%>%
+     mutate(expUtility=exp(distance*betaTravel+fishN*betaFish))%>%
+     group_by(anglerID)%>%
+     mutate(sumExpUtility=sum(expUtility))%>%
+     ungroup()%>%
+     mutate(probChoice=expUtility/sumExpUtility)
   
+   # next step is sampling from lakes with probability from logit. Lake selection is not totally deterministic
+   
+   anglerDecisions<-lakeDistancePop%>%
+     group_by(anglerID)%>%
+     slice_sample(n=1, weight_by=probChoice)
+   
 
-   # later replace this with a utility maximization function
-for(i in 1:nAnglers){
-  
-  indiv<-lakeDistancePop[lakeDistancePop$anglerID==i & lakeDistancePop$fishN>0,]
-  # decision rule--of lakes with nonzero fish populations, choose closest
-  anglerDecisions[i,"WBIC"]<-indiv[which.min(indiv$distance),]$WBIC
-}
+
   fishery[["anglerDecisions"]]<-anglerDecisions
   return(fishery)
 

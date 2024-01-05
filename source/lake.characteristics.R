@@ -12,14 +12,16 @@ lake.characteristics<-function(parameters, selectLakes, vbgf_lakeClass,
   `%!in%`<-Negate(`%in%`)
   
   
-  specificGrowth<-selectLakes%>%
-    inner_join(vbgf_lakeSpecific, by="WBIC")
+  lakeGrowth<-selectLakes%>%
+    filter(lakeSpecificGrowth==1)%>%
+    left_join(vbgf_lakeSpecific, by="WBIC")
   
   classGrowth<-selectLakes%>%
-    filter(WBIC%!in%specificGrowth$WBIC)%>%
+    filter(lakeSpecificGrowth==0)%>%
     left_join(vbgf_lakeClass, by="lakeClass")
   
-  selectLakesGrowth<-rbind.data.frame(specificGrowth, classGrowth)
+
+  selectLakesGrowth<-rbind.data.frame(lakeGrowth, classGrowth)
   
   lakeCharacteristics<-selectLakesGrowth%>%
     dplyr::select(WBIC, County, Latitude, Longitude, lakeClass, linf, k, t0, `Area (ha)`)%>%

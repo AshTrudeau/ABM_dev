@@ -13,76 +13,71 @@ source(paste0(base.directory, "/source/function.sourcer.R"))
 data.frame(unlist(parameters))
 
 #----------------------------------------------------------------------
+# the angler box isn't totally overlapping the lake box,  which really messed this up. 
 
 set.seed(382)
 
 #drawProp<-read_csv(here::here("data","complex.lake.proportion.csv"))
 drawProp<-read_csv(paste0(base.directory, "/", "data/", "complex.lake.proportion.csv"))
 
-# lake specific VBGF params from Paul (all structures). not sure why there are multiple years per lake; i thought they were grouped.
-# ask after thanksgiving. For now I'll just use the latest params
-# keeping this code in 'run.model' temporarily until I replace it with HUC-specific values
 
-vbgf_lakeSpecific<-read_csv(paste0(base.directory, "/", "data/", "vbgf_params.csv"))%>%
-  filter(species=="walleye" & state=="wi" & level=="lake.id")%>%
-  rename("WBIC"=lake.id)%>%
-  # remove some rows with extremely high linf
-  filter(linf<100)%>%
-  group_by(WBIC)%>%
-  slice(which.max(year))%>%
+# HALK growth parameters take 2
+ load(paste0(base.directory, "/wi_halk_aged_growth_params.RData"))
+ 
+vbgf_lakeSpecific<-growth_params%>%
+   filter(species=="walleye")%>%
+   filter(!grepl("unk", county))%>%
+   filter(halk.level=="year")%>%
+   # arbitrarily narrowing down to fyke net sampling
+   filter(sampling.method=="fyke_net")%>%
+   # and choose the most recent year
+   group_by(lake.id)%>%
+   slice(which.max(year))%>%
   ungroup()%>%
-  select(WBIC, linf, k, t0)
+  rename("WBIC"=lake.id)%>%
+  dplyr::select(WBIC, linf, k, t0)%>%
+  # some of these linf values are ridiculous
+  filter(linf<80 & t0>-5)
+  
+ # 93 unique lakes with lake and year-specific VBGF.  No longer restricting to Vilas county (can walk it back later)
+ # when unreasonable linf and t0 values are removed, only 23 lakes
 
-
-# note that units for length are mm in this dataset but cm in Paul's lake-specific dataset
-vbgf_lakeClass<-read_csv(paste0(base.directory, "/", "data/", "lake class standards/", "Lake Class Standards Von Bert.csv"))%>%
-  filter(Species=="Walleye" & Percentile=="0.50_percentile")%>%
-  select(LakeClass, vb_param, value)%>%
-  pivot_wider(names_from=vb_param,
-              values_from=value)%>%
-  rename("lakeClass"=LakeClass,
-         "linf"=Linf,
-         "k"=K)%>%
-  # convert to cm
-  mutate(linf=linf/10,
-         t0=t0/10)
-
-allLakes<-read_csv(paste0(base.directory, "/", "data/", "all.lake.classes.wi.csv"))%>%
-  rename("lakeClass"=`Final Lake Class`)%>%
-  # sticking with Vilas county before scaling up
-  filter(County=="Vilas" & grepl("Complex", lakeClass))%>%
-  mutate(lakeClass=str_replace_all(lakeClass, " - ", " "), 
-         WBIC=as.character(WBIC))%>%
-  mutate(lakeSpecificGrowth=ifelse(WBIC%in%vbgf_lakeSpecific$WBIC, 1, 0))
-
-# 35 lakes have their own VBGF
-
-
-#  For now selecting only from [possible] walleye lakes (classified as 'complex')
-
-
-# select lakes
-
+ # for now using lake class for the rest of the growth params
+ 
+ vbgf_lakeClass<-read_csv(paste0(base.directory, "/", "data/", "lake class standards/", "Lake Class Standards Von Bert.csv"))%>%
+   filter(Species=="Walleye" & Percentile=="0.50_percentile")%>%
+   select(LakeClass, vb_param, value)%>%
+   pivot_wider(names_from=vb_param,
+               values_from=value)%>%
+   rename("lakeClass"=LakeClass,
+          "linf"=Linf,
+          "k"=K)%>%
+   # convert to cm
+   mutate(linf=linf/10,
+          t0=t0/10)
+ 
+ allLakes<-read_csv(paste0(base.directory, "/", "data/", "all.lake.classes.wi.csv"))%>%
+   rename("lakeClass"=`Final Lake Class`)%>%
+  # filter(County=="Vilas")%>%
+   filter(grepl("Complex", lakeClass))%>%
+   mutate(lakeClass=str_replace_all(lakeClass, " - ", " "), 
+          WBIC=as.character(WBIC))%>%
+   mutate(lakeSpecificGrowth=ifelse(WBIC%in%vbgf_lakeSpecific$WBIC, 1, 0))
+ 
 selectLakes<-select.lakes(parameters, allLakes, drawProp)
 
-# attach growth parameters to lake table; specific if we have it, or class if not (later watershed)
-# selectLakes has all lake data
 
-# replace lake.location and growth.params scripts with lake.characteristics. 
-# return df with lat long, size, growth params, and recruitment params
-
-#selectLakes<-growth.params(selectLakes, vbgf_lakeClass, vbgf_lakeSpecific)
-
-
-
-# grab the lake locations (might be redundant)
-#lakeLocation<-lake.location(parameters, selectLakes)
 
 lakeCharacteristics<-lake.characteristics(parameters, selectLakes, vbgf_lakeClass, 
                                           vbgf_lakeSpecific)
 
 # place anglers on a grid. eventually add other characteristics besides location 
 anglerCharacteristics<-angler.characteristics(parameters)
+
+# spot check  on locations
+# ggplot()+
+#   geom_point(data=anglerCharacteristics, aes(x=anglerLong, y=anglerLat))+
+#   geom_point(data=lakeCharacteristics, aes(x=lakeLong, lakeLat), color="blue")
 
 # find straight-line distances between anglers and lakes. Eventually this can use Gmaps API to find actual
 # travel times, but that will cost money.
@@ -97,7 +92,7 @@ anglerDecisions<-create.blank.angler.decisions(parameters)
 # working list that will go into the loop. Each iteration it will be updated 
 #with the current fish populations, etc
 
-lakeStatus<-initialize.output.lakes(parameters, selectLakes)
+lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
 
 # fish population matrix. 
 # this is now a nested list with 1 matrix per lake
@@ -151,10 +146,10 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 # adding outer year loop--will add natural fish population changes (M, r)
 
 for(y in 1:parameters[["nYears"]]){
-
+  y<-1
 
 for(t in 1:parameters[["nDays"]]){
-  #t<-1
+  t<-1
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
   fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
@@ -194,17 +189,46 @@ for(t in 1:parameters[["nDays"]]){
 
 
 
-write.csv(annualOutput, "annual.output.csv")
+write.csv(annualOutput, paste0(wd, "/output", "/annual.output.csv"))
 lakeStatus<-fishery[["lakeStatus"]]
 
-write.csv(lakeStatus, "lake.status.csv")
+write.csv(lakeStatus, paste0(wd, "/output", "/lake.status.csv"))
+
+#write.csv(rbind(fishery), paste0(wd, "/output", "/fishery.list.csv"))
 
 # next fix plots. These are placeholders for now
-# plots<-plotting.lake.status(annualOutput, fishery, parameters)
-# plots<-plotting.single.lake.status(annualOutput, fishery, parameters)
-# 
-# plots
-# ggsave(paste0(wd, "/output", "/sim.v2.figure.png"), height=6, width=8)
-# 
-# 
-# 
+
+plots<-plotting.lake.status(annualOutput, fishery, parameters)
+ plots
+ ggsave(paste0(wd, "/output", "/sim.v4.figure.png"), height=6, width=10)
+ 
+# this doesn't exist yet
+size.structure<-plotting.size.structure(annualOutput, fishery, parameters) 
+
+meanSize<-ggplot(annualOutput)+
+  geom_line(aes(x=year, y=meanSize, color=as.factor(WBIC)), linewidth=1.5)+
+  scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
+  xlab("Year of simulation")+
+  ylab("Mean walleye length (cm)")+
+  guides(color="none")+
+  theme_bw()
+
+maxSize<-ggplot(annualOutput)+
+  geom_line(aes(x=year, y=maxSize, color=as.factor(WBIC)), linewidth=1.5)+
+  scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
+  xlab("Year of simulation")+
+  ylab("Max walleye length (cm)")+
+  guides(color="none")+
+  theme_bw()
+
+psd<-ggplot(annualOutput)+
+  geom_line(aes(x=year, y=PSDQuality, color=as.factor(WBIC)), linewidth=1.5)+
+  scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
+  xlab("Year of simulation")+
+  ylab("PSD (Quality size)")+
+  guides(color="none")+
+  theme_bw()
+
+plot_grid(meanSize, maxSize, psd)
+ggsave(paste0(wd, "/output", "/size.structure.png"), height=6, width=10)
+

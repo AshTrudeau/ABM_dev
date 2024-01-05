@@ -1,12 +1,12 @@
 # start output table
-initialize.output.lakes<-function(parameters, selectLakes){
+initialize.output.lakes<-function(parameters, lakeCharacteristics){
   
   nLakes<-parameters[["nLakes"]]
   nDays<-parameters[["nDays"]]
   nYears<-parameters[["nYears"]]
   N0<-parameters[["N0"]]
   
-  WBIC<-selectLakes$WBIC
+  WBIC<-lakeCharacteristics$WBIC
   
   day<-rep(0, nLakes)
   year<-rep(0, nLakes)
