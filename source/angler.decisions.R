@@ -62,7 +62,10 @@ angler.decisions<-function(fishery, t, y){
    
    anglerDecisions<-lakeDistancePop%>%
      group_by(anglerID)%>%
-     slice_sample(n=1, weight_by=probChoice)
+     slice_sample(n=1, weight_by=probChoice)%>%
+     dplyr::select(anglerID, WBIC)%>%
+     mutate(catch=NA,
+            harvest=NA)
    
 
 

@@ -15,6 +15,8 @@ fishing<-function(fishery, parameters, t, y){
 
   # this df has the lake choice for each angler
   anglerDecisions<-fishery[["anglerDecisions"]]
+  anglerDecisions$catch<-rep(NA)
+  anglerDecisions$harvest<-rep(NA)
   
 
   beta<-parameters[["beta"]]
@@ -55,6 +57,7 @@ fishing<-function(fishery, parameters, t, y){
     harvestAgeLake<-harvestAgeYear[[WBIC]]
     # calculate age-specific catch
     catchAgeLake<-round((q*selectivity*popAgeLake^beta)*4)
+    # this is a problem
     # update anglerDecisions df with aggregate catch
     anglerDecisions[n,]$catch<-sum(catchAgeLake)
     # for now harvest is the same as catch

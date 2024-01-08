@@ -144,16 +144,16 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 
 
 # adding outer year loop--will add natural fish population changes (M, r)
-
+# this is still not working, but I"m going to instead get the fish population burned in
 for(y in 1:parameters[["nYears"]]){
-  y<-1
+  #y<-1
 
 for(t in 1:parameters[["nDays"]]){
-  t<-1
+  #t<-1
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
   fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
-  #print(t)
+  print(t)
   
 }
 
