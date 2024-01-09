@@ -38,6 +38,8 @@ source(paste0(getwd(), "/ageing.R"))
 source(paste0(getwd(), "/recruitment.R"))
 source(paste0(getwd(), "/annual.output.R"))
 source(paste0(getwd(),"/update.lakes.R"))
+#  this is the version of update.lakes() for getting fishPops to equilibrium
+source(paste0(getwd(), "/update.fishPops.R"))
 source(paste0(getwd(),"/plotting.lake.status.R"))
 source(paste0(getwd(),"/plotting.single.lake.status.R"))
 

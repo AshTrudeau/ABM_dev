@@ -1,4 +1,4 @@
-natural.mortality<-function(y, parameters, fishery){
+natural.mortality<-function(y, fishery, parameters){
   # M gives 'base' natural mortality that will be adjusted according to annual exploitation
   # multiply age-specific M by annual M predicted by annual u/F to get that year's age specific M
   M<-parameters[["M"]]
@@ -85,7 +85,7 @@ natural.mortality<-function(y, parameters, fishery){
   # this messed me up before.
   
   # a is fishPops, b is NmortAge, c is startPops. only fishPops includes year 0
-  fishPopsYear<-mapply(function(a,b,c) a[,y+1]-(b[,y]*c[,y]),
+  fishPopsYear<-mapply(function(a,b,c) a[,y]-(b[,y]*c[,y]),
                a=fishPops,
                b=NmortAge,
                c=startPops)
@@ -97,13 +97,12 @@ natural.mortality<-function(y, parameters, fishery){
   })
   
   #  now replace this year's column in fishPops with new values
-  # remember y+1!
   fishPops<-lapply(seq_along(fishPops), function(x){
     lake_matrix<-fishPops[[x]]
     lake_name<-names(fishPopsYear)[x]
     lake_vector<-fishPopsYear[[lake_name]]
     
-    lake_matrix[,y+1]<-lake_vector
+    lake_matrix[,y]<-lake_vector
     return(lake_matrix)
   })
  

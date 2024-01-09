@@ -119,7 +119,6 @@ NmortAge<-initialize.NmortAge(parameters)
 # make this script: use VBGF to predict length at age for each waterbody
 fishSizes<-fish.size(parameters, lakeCharacteristics)
 
-
 # list that will hold important output from each daily loop
 
 fishery<-list(anglerCharacteristics=anglerCharacteristics, 
@@ -139,9 +138,32 @@ fishery<-list(anglerCharacteristics=anglerCharacteristics,
               NmortAge=NmortAge)
 
 
+
+
+# burn in fish populations--100 years? Start with 10 for speed
+ # incomplete; natural mort and ageing work, but I found possible issue with year 0. With this
+# burn in period, it's probably no longer necessary, and it's getting in the way. It's going to take
+# some time to go through the original code to remove the year 0 column and index 'current' columns. (
+# i.e. y+1 no longer needed for fishPops. lakeStatus? Not sure if it's useful)
+
+# made age of maturity 0 for troubleshooting
+# natural mortality isn't happening?
+for(y in 1:50){
+  fishery<-natural.mortality(y, fishery, parameters)
+  fishery<-ageing(y, fishery, parameters)
+  fishery<-recruitment(y, fishery, parameters)
+  fishery<-update.fishPops(y, fishery, parameters)
+}
+
+# update lakeStatus with equilibrium fish population in day 0 year 0
+
+# update fishery with equiliibrium fish population 
+
+
+
+
 # df  holding important annual output
 annualOutput<-initialize.annual.output(parameters, fishery)
-
 
 # adding outer year loop--will add natural fish population changes (M, r)
 # this is still not working, but I"m going to instead get the fish population burned in
@@ -161,7 +183,7 @@ for(t in 1:parameters[["nDays"]]){
   fishery<-fishing.mortality(y,  fishery)
   
   # apply  natural mortality by age to fishPops (adjusting for F)
-  fishery<-natural.mortality(y, parameters, fishery)
+  fishery<-natural.mortality(y, fishery, parameters)
   
 
   # apply ageing

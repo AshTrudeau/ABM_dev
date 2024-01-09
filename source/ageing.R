@@ -11,7 +11,7 @@ ageing<-function(y, fishery, parameters){
   # age 0 recruits will be added by the recruitment function
   
   # Take out columns from this year of fishPops
-  thisYear<-lapply(fishPops, function(x) x[,y+1])
+  thisYear<-lapply(fishPops, function(x) x[,y])
   thisYear<-lapply(thisYear, unname)
   
   # add 0 for age 0 class to be filled in by recruitment
@@ -38,7 +38,7 @@ ageing<-function(y, fishery, parameters){
   fishPops<-lapply(seq_along(fishPops), function(x){
     lake_matrix<-fishPops[[x]]
     lake_vector<-nextYear.loop[[x]]
-    lake_matrix[,y+2]<-lake_vector
+    lake_matrix[,y+1]<-lake_vector
     return(lake_matrix)
   })
   

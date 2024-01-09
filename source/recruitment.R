@@ -15,7 +15,7 @@ recruitment<-function(y, fishery, parameters){
   # selecting regional alpha and beta from Tsehaye et al 2016
   
 
-  nextYear<-lapply(fishPops, function(x) x[,y+2])
+  nextYear<-lapply(fishPops, function(x) x[,y+1])
   
   # find fish population above age of maturity
   
@@ -32,17 +32,23 @@ recruitment<-function(y, fishery, parameters){
   stockDensity<-as.list(stockDensity)
   
   # calculate recruits
+  #  removing stochasticity
+  # recruit.fun<-function(stockDensity, recAlpha, recBeta, recSigma){
+  #   recruitsHa<-(recAlpha*stockDensity*exp(-recBeta*stockDensity))*exp(rnorm(n=length(stockDensity),
+  #                                                                            mean=0, sd=recSigma^2))
+  # }
   
-  recruit.fun<-function(stockDensity, recAlpha, recBeta, recSigma){
-    recruitsHa<-(recAlpha*stockDensity*exp(-recBeta*stockDensity))*exp(rnorm(n=length(stockDensity),
-                                                                             mean=0, sd=recSigma^2))
+  recruit.fun<-function(stockDensity, recAlpha, recBeta){
+    recruitsHa<-(recAlpha*stockDensity*exp(-recBeta*stockDensity))
+    
   }
   
   recAlpha<-as.list(lakeCharacteristics$recAlpha)
   recBeta<-as.list(lakeCharacteristics$recBeta)
   recSigma<-as.list(lakeCharacteristics$recSigma)
   
-  recruitsHa<-mapply(recruit.fun, stockDensity, recAlpha, recBeta, recSigma)
+  #recruitsHa<-mapply(recruit.fun, stockDensity, recAlpha, recBeta, recSigma)
+  recruitsHa<-mapply(recruit.fun, stockDensity, recAlpha, recBeta)
   
   recruit.lake<-function(recruitsHa, areaHa){
     round(recruitsHa*areaHa)
@@ -58,7 +64,7 @@ recruitment<-function(y, fishery, parameters){
     lake_name<-names(fishPops)[x]
     lake_vector<-recruitsLake[[lake_name]]
     
-    lake_matrix[1,y+2]<-lake_vector
+    lake_matrix[1,y+1]<-lake_vector
     return(lake_matrix)
   })
   names(fishPops)<-lakeCharacteristics$WBIC
