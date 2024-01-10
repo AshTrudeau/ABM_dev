@@ -1,8 +1,15 @@
-recruitment<-function(y, fishery, parameters){
+recruitment<-function(y, fishery, parameters, burnin){
   
   # stop recruitment on the last year of the simulation
   
-  nYears<-parameters[["nYears"]]
+  nBurnIn<-parameters[["nBurnIn"]]
+  
+  if(burnin==TRUE){
+    nYears<-nBurnIn
+  } else{
+    nYears<-parameters[["nYears"]]
+  }
+  
   nAges<-parameters[["nAges"]]
   
   if(y<nYears){

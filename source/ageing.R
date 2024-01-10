@@ -1,10 +1,19 @@
-ageing<-function(y, fishery, parameters){
+ageing<-function(y, fishery, parameters, burnin){
+  
+  nBurnIn<-parameters[["nBurnIn"]]
+  
+  if(burnin==TRUE){
+    nYears<-nBurnIn
+  } else{
+    nYears<-parameters[["nYears"]]
+  }
   
 
   if(y<nYears){
     
   fishPops<-fishery[["fishPops"]]
-  nYears<-parameters[["nYears"]]
+  
+  
   nAges<-parameters[["nAges"]]
   
   # move all fish up 1 age class in the next year.

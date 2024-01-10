@@ -6,9 +6,9 @@ parameters<-list()
 # Lake landscape
 nLakes          <-25 # 10 default lakes
 #edgeLength      <-50 # length of one side of landscape grid. default 50
-nAnglers        <-5 # number of anglers to simulate. Default 50
-nDays           <-10 # number of days (iterations) per year to simulate. Default 365
-nYears          <-50 # Number of years (big loops) to simulate, default 10
+nAnglers        <-50 # number of anglers to simulate. Default 50
+nDays           <-100 # number of days (iterations) per year to simulate. Default 365
+nYears          <-10 # Number of years (big loops) to simulate, default 10
 nBurnIn         <-50 # years of unexploited fish population dynamics before the simulation. 50 was about
 # right with a starting fish population of 5000
 #nFish0_min      <-5000 # minimum number of fish in a lake in the first time step
@@ -42,7 +42,7 @@ qualitySize     <-38.1
 # travel cost param, utility per km
 betaTravel=-0.01
 # catch utility param, utility per fish in lake
-betaFish=0.001
+betaFish=0.0001
 
 
 # add parameters to list=========================================================

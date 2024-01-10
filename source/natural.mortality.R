@@ -1,10 +1,10 @@
-natural.mortality<-function(y, fishery, parameters){
+natural.mortality<-function(y, fishery, parameters, burnin){
   # M gives 'base' natural mortality that will be adjusted according to annual exploitation
   # multiply age-specific M by annual M predicted by annual u/F to get that year's age specific M
   M<-parameters[["M"]]
   ageVulnerable<-parameters[["ageVulnerable"]]
   
-  NmortAge<-fishery[["NmortAge"]]
+  #NmortAge<-fishery[["NmortAge"]]
   startPops<-fishery[["startPops"]]
   harvestAge<-fishery[["harvestAge"]]
   fishPops<-fishery[["fishPops"]]
@@ -14,13 +14,19 @@ natural.mortality<-function(y, fishery, parameters){
   agesVulnerable<-as.character(ages[ages>=ageVulnerable])
   
   # get total number of fish harvested this year by lake and age
+  # need to switch this off for burn-in. 
+  if(burnin==FALSE){
   harvestAgeYear<-lapply(harvestAge, function(x) x[,y])
+  } else{
+    # fill them with 0s (really just taking first column, which is already full of zeroes)
+    harvestAgeYear<-lapply(harvestAge, function(x) x[,1])
+  }
  
    # get starting population by lake and age
   startPopsAgeYear<-lapply(startPops, function(x) x[,y])
   
   # name the vectors by age to make the next step easier
-  startPopsAgeYear<-lapply(startPopsAgeYear, setNames, as.character(0:15))
+  startPopsAgeYear<-lapply(startPopsAgeYear, setNames, as.character(0:nAges))
   
   # set up reverse %in%
   `%!in%`<-Negate(`%in%`)
@@ -68,6 +74,7 @@ natural.mortality<-function(y, fishery, parameters){
   # cool! now go back and do that for fishing.mortality
   wbics<-names(NmortAgeYear)
   
+  if(burnin==F){
   NmortAge<-lapply(seq_along(NmortAge), function(x) {
     lake_matrix<-NmortAge[[x]]
     lake_name<-names(NmortAgeYear)[x]
@@ -76,7 +83,9 @@ natural.mortality<-function(y, fishery, parameters){
     lake_matrix[,y]<-lake_vector
     return(lake_matrix)
 
-    })
+  })} else{
+      NmortAge<-NmortAgeYear
+    }
   
   names(NmortAge)<-wbics
   
@@ -85,10 +94,19 @@ natural.mortality<-function(y, fishery, parameters){
   # this messed me up before.
   
   # a is fishPops, b is NmortAge, c is startPops. only fishPops includes year 0
+  
+  if(burnin==FALSE){
   fishPopsYear<-mapply(function(a,b,c) a[,y]-(b[,y]*c[,y]),
                a=fishPops,
                b=NmortAge,
                c=startPops)
+  } else{
+    fishPopsYear<-mapply(function(a,b,c) a[,y]-(b*c[,y]),
+                         a=fishPops,
+                         b=NmortAge,
+                         c=startPops)
+    
+  }
   fishPopsYear<-as.list(as.data.frame(fishPopsYear))
   
   # replace any negative values with zeroes

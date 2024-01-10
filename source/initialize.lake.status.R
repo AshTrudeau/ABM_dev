@@ -47,5 +47,5 @@ initialize.lake.status<-function(parameters, lakeCharacteristics, fishery){
   
   fishery[["lakeStatus"]]<-lakeStatus
   
-  return(lakeStatus)
+  return(fishery)
 }

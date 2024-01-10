@@ -138,11 +138,14 @@ fishery<-list(anglerCharacteristics=anglerCharacteristics,
 
 
 # burn in fish populations--50 years worked well for starting age 0 population of 5000 fish
+#for(y in 1:nBurnIn){
 for(y in 1:nBurnIn){
-  fishery<-natural.mortality(y, fishery, parameters)
-  fishery<-ageing(y, fishery, parameters)
-  fishery<-recruitment(y, fishery, parameters)
-  fishery<-update.fishPops(y, fishery, parameters)
+  # burnin=T will skip F mort calculation
+  fishery<-natural.mortality(y, fishery, parameters, burnin=TRUE)
+  fishery<-ageing(y, fishery, parameters, burnin=TRUE)
+  fishery<-recruitment(y, fishery, parameters, burnin=TRUE)
+  fishery<-update.fishPops(y, fishery, parameters, burnin=TRUE)
+  print(y)
 }
 
 # update startPops with equilibrium fish population 
@@ -159,14 +162,14 @@ fishery<-initialize.fish.pop(parameters, lakeCharacteristics, fishery)
 # Each iteration (day year), lakeStatus will be updated with the current fish populations
 # to initialize, add up nFish in each lake for start of simulation (day 0 year 0)
 # this is where I left off to calm down
-lakeStatus<-initialize.lake.status(parameters, lakeCharacteristics, fishery)
+fishery<-initialize.lake.status(parameters, lakeCharacteristics, fishery)
 
 
 # df  holding important annual output
 annualOutput<-initialize.annual.output(parameters, fishery)
 
-# adding outer year loop--will add natural fish population changes (M, r)
-# this is still not working, but I"m going to instead get the fish population burned in
+# simulation now starts with equilibrium fish populations
+# next update this code for different fishPops structure
 for(y in 1:parameters[["nYears"]]){
   y<-1
 
@@ -180,7 +183,7 @@ for(t in 1:parameters[["nDays"]]){
 }
 
   # calculate fishing mortality by age
-  fishery<-fishing.mortality(y,  fishery)
+  fishery<-fishing.mortality(y,  fishery, burnin=FALSE)
   
   # apply  natural mortality by age to fishPops (adjusting for F)
   fishery<-natural.mortality(y, fishery, parameters)
