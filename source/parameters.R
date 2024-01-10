@@ -53,6 +53,7 @@ parameters[["nDays"]]         <-nDays
 #parameters[["nFish0_min"]]    <-nFish0_min
 parameters[["nDays"]]         <-nDays
 parameters[["nYears"]]        <-nYears
+parameters[["nBurnIn"]]       <-nBurnIn
 parameters[["beta"]]          <-beta
 parameters[["q"]]             <-q
 parameters[["M"]]             <-M

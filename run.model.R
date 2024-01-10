@@ -89,18 +89,14 @@ anglerDecisions<-create.blank.angler.decisions(parameters)
 
 # make an output object that records how many trips have occurred to each lake annually. Add distribution of travel time? 
 
-# working list that will go into the loop. Each iteration it will be updated 
-#with the current fish populations, etc
-
-lakeStatus<-initialize.output.lakes(parameters, lakeCharacteristics)
 
 # fish population matrix. 
 # this is now a nested list with 1 matrix per lake
-fishPops<-initialize.fish.pop(parameters, lakeCharacteristics)
+fishPops<-initialize.fish.pop.burnin(parameters, lakeCharacteristics)
 
 # make copy to keep track of starting population of each year. in contrast, fishPops is updated each day of each year
 # note change to plural
-startPops<-initialize.start.pop(parameters)
+startPops<-initialize.start.pop.burnin(parameters)
 
 # make selectivity vector
 selectivity<-initialize.selectivity(parameters)
@@ -125,7 +121,8 @@ fishery<-list(anglerCharacteristics=anglerCharacteristics,
               lakeDistance=lakeDistance, 
               lakeCharacteristics=lakeCharacteristics,
               anglerDecisions=anglerDecisions,
-              lakeStatus=lakeStatus,
+              # moved lakeStatus initialization down; hold place in fishery list
+              lakeStatus=NA,
               # fishPop will be a nested list, 1 matrix for each lake
               fishPops=fishPops,
               fishSizes=fishSizes,
@@ -140,26 +137,29 @@ fishery<-list(anglerCharacteristics=anglerCharacteristics,
 
 
 
-# burn in fish populations--100 years? Start with 10 for speed
- # incomplete; natural mort and ageing work, but I found possible issue with year 0. With this
-# burn in period, it's probably no longer necessary, and it's getting in the way. It's going to take
-# some time to go through the original code to remove the year 0 column and index 'current' columns. (
-# i.e. y+1 no longer needed for fishPops. lakeStatus? Not sure if it's useful)
-
-# made age of maturity 0 for troubleshooting
-# natural mortality isn't happening?
-for(y in 1:50){
+# burn in fish populations--50 years worked well for starting age 0 population of 5000 fish
+for(y in 1:nBurnIn){
   fishery<-natural.mortality(y, fishery, parameters)
   fishery<-ageing(y, fishery, parameters)
   fishery<-recruitment(y, fishery, parameters)
   fishery<-update.fishPops(y, fishery, parameters)
 }
 
-# update lakeStatus with equilibrium fish population in day 0 year 0
+# update startPops with equilibrium fish population 
+# startPops is the *starting* population of the final year of burn-in. 
+# fishPops is ALSO the starting population of the final year of burn-in. 
+# (reason: recruitment does not take place during final year)
+fishery<-initialize.start.pop(parameters, fishery)
 
-# update fishery with equiliibrium fish population 
+fishery<-initialize.fish.pop(parameters, lakeCharacteristics, fishery)
+
+# update fishPops and startPops with equiliibrium fish population 
 
 
+# Each iteration (day year), lakeStatus will be updated with the current fish populations
+# to initialize, add up nFish in each lake for start of simulation (day 0 year 0)
+# this is where I left off to calm down
+lakeStatus<-initialize.lake.status(parameters, lakeCharacteristics, fishery)
 
 
 # df  holding important annual output
@@ -168,10 +168,10 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 # adding outer year loop--will add natural fish population changes (M, r)
 # this is still not working, but I"m going to instead get the fish population burned in
 for(y in 1:parameters[["nYears"]]){
-  #y<-1
+  y<-1
 
 for(t in 1:parameters[["nDays"]]){
-  #t<-1
+  t<-1
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
   fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated

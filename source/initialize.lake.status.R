@@ -1,5 +1,5 @@
 # start output table
-initialize.output.lakes<-function(parameters, lakeCharacteristics){
+initialize.lake.status<-function(parameters, lakeCharacteristics, fishery){
   
   nLakes<-parameters[["nLakes"]]
   nDays<-parameters[["nDays"]]
@@ -8,15 +8,25 @@ initialize.output.lakes<-function(parameters, lakeCharacteristics){
   
   WBIC<-lakeCharacteristics$WBIC
   
+  fishPops<-fishery[["fishPops"]]
+  
+  # for each lake (matrix in fishPops list), add up the total number of fish, and then
+  # put those values in the matching (WBIC) row for day and year 0
+  
+  startingFish<-lapply(fishPops, function(x) x[,1])
+  startingNFish<-lapply(fishPops, sum)
+  startingNFish<-unlist(lapply(startingNFish, round))
+  
   day<-rep(0, nLakes)
   year<-rep(0, nLakes)
-  fishN<-N0
+  fishN<-rep(NA, nLakes)
   harvestedN<-rep(0, nLakes)
   nAnglers<-rep(0, nLakes)
   
   lakeStatus0<-cbind.data.frame(WBIC, day, year, nAnglers, fishN, 
                                 harvestedN
                                 )
+  lakeStatus0$fishN<-unname(startingNFish)
   
 
   WBIC<-rep(WBIC, nDays*nYears)
@@ -34,5 +44,8 @@ initialize.output.lakes<-function(parameters, lakeCharacteristics){
                                     )
   
   lakeStatus<-rbind.data.frame(lakeStatus0, lakeStatusBlank)
+  
+  fishery[["lakeStatus"]]<-lakeStatus
+  
   return(lakeStatus)
 }
