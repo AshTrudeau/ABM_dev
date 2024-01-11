@@ -13,7 +13,7 @@ source(paste0(base.directory, "/source/function.sourcer.R"))
 data.frame(unlist(parameters))
 
 #----------------------------------------------------------------------
-# the angler box isn't totally overlapping the lake box,  which really messed this up. 
+# At some point, see if I can get lake specific random intercepts for walleye population model that DNR uses
 
 set.seed(382)
 
@@ -59,7 +59,7 @@ vbgf_lakeSpecific<-growth_params%>%
  allLakes<-read_csv(paste0(base.directory, "/", "data/", "all.lake.classes.wi.csv"))%>%
    rename("lakeClass"=`Final Lake Class`)%>%
   # filter(County=="Vilas")%>%
-   filter(grepl("Complex", lakeClass))%>%
+   filter(grepl("Complex", lakeClass) & !grepl("Riverine", lakeClass))%>%
    mutate(lakeClass=str_replace_all(lakeClass, " - ", " "), 
           WBIC=as.character(WBIC))%>%
    mutate(lakeSpecificGrowth=ifelse(WBIC%in%vbgf_lakeSpecific$WBIC, 1, 0))
@@ -92,6 +92,7 @@ anglerDecisions<-create.blank.angler.decisions(parameters)
 
 # fish population matrix. 
 # this is now a nested list with 1 matrix per lake
+# number of age 0  fish in first step of burn in is N0*lake area
 fishPops<-initialize.fish.pop.burnin(parameters, lakeCharacteristics)
 
 # make copy to keep track of starting population of each year. in contrast, fishPops is updated each day of each year
@@ -150,7 +151,7 @@ for(y in 1:nBurnIn){
 
 # update startPops with equilibrium fish population 
 # startPops is the *starting* population of the final year of burn-in. 
-# fishPops is ALSO the starting population of the final year of burn-in. 
+# (new) fishPops is ALSO the starting population of the final year of burn-in. 
 # (reason: recruitment does not take place during final year)
 fishery<-initialize.start.pop(parameters, fishery)
 
@@ -171,10 +172,10 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 # simulation now starts with equilibrium fish populations
 # next update this code for different fishPops structure
 for(y in 1:parameters[["nYears"]]){
-  y<-1
+  #y<-1
 
 for(t in 1:parameters[["nDays"]]){
-  t<-1
+  #t<-1
   fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
   
   fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
@@ -183,18 +184,18 @@ for(t in 1:parameters[["nDays"]]){
 }
 
   # calculate fishing mortality by age
-  fishery<-fishing.mortality(y,  fishery, burnin=FALSE)
+  fishery<-fishing.mortality(y,  fishery)
   
   # apply  natural mortality by age to fishPops (adjusting for F)
-  fishery<-natural.mortality(y, fishery, parameters)
+  fishery<-natural.mortality(y, fishery, parameters, burnin=FALSE)
   
 
   # apply ageing
-  fishery<-ageing(y, fishery, parameters)
+  fishery<-ageing(y, fishery, parameters, burnin=FALSE)
   
   # left off here 11/29/23; update recruitment next
   # apply recruitment
-  fishery<-recruitment(y, fishery, parameters)
+  fishery<-recruitment(y, fishery, parameters, burnin=FALSE)
   
 
   # close loop, store annual output
@@ -232,7 +233,7 @@ size.structure<-plotting.size.structure(annualOutput, fishery, parameters)
 
 meanSize<-ggplot(annualOutput)+
   geom_line(aes(x=year, y=meanSize, color=as.factor(WBIC)), linewidth=1.5)+
-  scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
+ # scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
   xlab("Year of simulation")+
   ylab("Mean walleye length (cm)")+
   guides(color="none")+
@@ -240,7 +241,7 @@ meanSize<-ggplot(annualOutput)+
 
 maxSize<-ggplot(annualOutput)+
   geom_line(aes(x=year, y=maxSize, color=as.factor(WBIC)), linewidth=1.5)+
-  scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
+  #scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
   xlab("Year of simulation")+
   ylab("Max walleye length (cm)")+
   guides(color="none")+
@@ -248,7 +249,7 @@ maxSize<-ggplot(annualOutput)+
 
 psd<-ggplot(annualOutput)+
   geom_line(aes(x=year, y=PSDQuality, color=as.factor(WBIC)), linewidth=1.5)+
-  scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
+  #scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
   xlab("Year of simulation")+
   ylab("PSD (Quality size)")+
   guides(color="none")+

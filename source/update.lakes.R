@@ -25,7 +25,7 @@ update.lakes<-function(y, fishery, parameters){
     
     # update startPops with aged fish
     
-    fishPops.to.move<-lapply(fishPops, function(x) x[,y+2])
+    fishPops.to.move<-lapply(fishPops, function(x) x[,y+1])
     
     startPops<-lapply(seq_along(startPops), function(x){
       lake_matrix<-startPops[[x]]

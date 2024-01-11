@@ -24,23 +24,14 @@ fishing<-function(fishery, parameters, t, y){
   nAnglers<-parameters[["nAnglers"]]
   
   
-  # pull fish population matrix for this year. Note that years start on year 0. "this year's" column will then be y+1.
-  
-  # need to set conditions for first day of first year. Find total fish population (sum N) for each lake
-  # if it's the very first timestep, the fish population is N0 for each lake
+  # pull fish population matrix for this year. (y)
   
   # come back and vectorize this when I'm less time constrained
   
-  if(t==1 & y==1){
-    # if it's the first day of the first year, take the 'year zero' fish population
-    fishPopYear<-lapply(fishPops, function(x) x[,y])
-      
-  } else{
-    # take out the appropriate year's column from the fish population matrices
-    fishPopYear<-lapply(fishPops, function(x) x[,y+1])
-
-  }
+  fishPopYear<-lapply(fishPops, function(x) x[,y])
   
+
+    
   # pull harvestAge vector for this year
   harvestAgeYear<-lapply(harvestAge, function(x) x[,y])
 
@@ -79,7 +70,7 @@ fishing<-function(fishery, parameters, t, y){
 
 
   for(i in 1:length(fishPops)){
-  fishPops[[i]][,y+1]<-fishPopYear[[i]]
+  fishPops[[i]][,y]<-fishPopYear[[i]]
   }
   
   # do the same for harvestAge

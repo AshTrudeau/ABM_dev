@@ -7,13 +7,13 @@ parameters<-list()
 nLakes          <-25 # 10 default lakes
 #edgeLength      <-50 # length of one side of landscape grid. default 50
 nAnglers        <-50 # number of anglers to simulate. Default 50
-nDays           <-100 # number of days (iterations) per year to simulate. Default 365
+nDays           <-50 # number of days (iterations) per year to simulate. Default 365
 nYears          <-10 # Number of years (big loops) to simulate, default 10
 nBurnIn         <-50 # years of unexploited fish population dynamics before the simulation. 50 was about
 # right with a starting fish population of 5000
 #nFish0_min      <-5000 # minimum number of fish in a lake in the first time step
 beta            <-0.5 # hyperstability parameter
-q               <-0.05 # catchability coefficient
+q               <-0.01 # catchability coefficient
 # clunkily set bounding box for angler placement
 maxLat         <- 46.99
 maxLong        <- -86.7
@@ -24,8 +24,8 @@ recAlpha          <- 9.88
 recBeta           <- 0.29
 # reducing this from 2.15 because the stochasticity is nuts; huge jumps in recruitment
 recSigma          <- 1
-# starting number of fish
-N0             <-5000
+# starting number of fish per hectare
+N0             <-4
 nAges          <-15
 # natural mort
 allAges       <-c(0:nAges)
@@ -40,7 +40,7 @@ qualitySize     <-38.1
 
 # behavior model
 # travel cost param, utility per km
-betaTravel=-0.01
+betaTravel=-0.05
 # catch utility param, utility per fish in lake
 betaFish=0.0001
 

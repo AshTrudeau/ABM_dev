@@ -15,14 +15,14 @@ annual.output<-function(y, fishery, annualOutput, parameters){
   # fish populations
   
   fishNStart<-lapply(startPops, function(x) sum(x[,y]))
-  fishNEnd<-lapply(fishPops, function(x) sum(x[,y+1]))
+  fishNEnd<-lapply(fishPops, function(x) sum(x[,y]))
   
   biomass.fun<-function(pop, weight){
     pop*weight
   }
   
   startPopsYear<-lapply(startPops, function(x) x[,y])
-  endPopsYear<-lapply(fishPops, function(x) x[,y+1])
+  endPopsYear<-lapply(fishPops, function(x) x[,y])
   
   # if growth responds to population density at some point, implement that here
   weightAge<-lapply(fishSizes, function(x) x$weight)
@@ -46,10 +46,10 @@ annual.output<-function(y, fishery, annualOutput, parameters){
   # max size of fish in the lake by the end of year y after recruitment
   if(y==nYears){
     # on the last year of the simulation, no 'future' column exists, so take the last existing one
-    allFish<-lapply(fishPops, function(x) x[,y+1])
+    allFish<-lapply(fishPops, function(x) x[,y])
   }else{
   
-    allFish<-lapply(fishPops, function(x) x[,y+2])
+    allFish<-lapply(fishPops, function(x) x[,y+1])
   }
   # find maximum age
   max.age.fun<-function(allFish){

@@ -4,14 +4,23 @@ initialize.start.pop.burnin<-function(parameters){
   nBurnIn<-parameters[["nBurnIn"]]
   nLakes<-parameters[["nLakes"]]
   
-  # make matrix that includes age 0
-  startPop<-matrix(data=0, nrow=nAges+1, ncol=nBurnIn)
-  startPop[1,1]<-N0
+  N0Lakes<-round(N0*lakeCharacteristics$areaHa)
+  names(N0Lakes)<-lakeCharacteristics$WBIC
+  N0LakesList<-as.list(N0Lakes)
+  # year zero starts with 1000 age 1 fish
+  startPop<-matrix(data=0, nrow=nAges+1, ncol=nBurnIn, dimnames=list(c(0:nAges), c(1:nBurnIn)))
   
   startPops<-lapply(seq_len(nLakes), function(x) startPop)
   
-  names(startPops)<-selectLakes$WBIC
+  startPops<-lapply(seq_along(startPops), function(x){
+    lake_matrix<-startPops[[x]]
+    lakeN0_name<-names(N0LakesList)[x]
+    lake_vector<-c(N0LakesList[[lakeN0_name]], rep(0, nAges))
+    lake_matrix[,1]<-lake_vector
+    return(lake_matrix)
+  })
   
+  names(startPops)<-selectLakes$WBIC
   
   return(startPops)
 }
