@@ -22,7 +22,7 @@ drawProp<-read_csv(paste0(base.directory, "/", "data/", "complex.lake.proportion
 
 
 # HALK growth parameters take 2
- load(paste0(base.directory, "/wi_halk_aged_growth_params.RData"))
+ load(paste0(base.directory, "data/wi_halk_aged_growth_params.RData"))
  
 vbgf_lakeSpecific<-growth_params%>%
    filter(species=="walleye")%>%
