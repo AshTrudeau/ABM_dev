@@ -19,7 +19,7 @@ preserve_relative_paths = 1
 #  and increasing for the relevant number of jobs.
 executable = run_R.sh
 arguments = $(Process)
-output = abm-model-run_$(Cluster)_$(Process).out, annual.output.csv, lake.status.csv
+output = abm-model-run_$(Cluster)_$(Process).out
 error = abm-model-run_$(Cluster)_$(Process).err
 # Specify that HTCondor should transfer files to and from the
 #  computer where each job runs. The last of these lines *would* be
@@ -31,6 +31,8 @@ transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, \
   packages.tar.gz, \
   run.model.R, \
   data, source, output
+  
+transfer_output_files = annual.output.csv, lake.status.csv
 #
 # Tell HTCondor what amount of compute resources
 #  each job will need on the computer where it runs.
