@@ -1,9 +1,10 @@
 # 10/3/2023
 # this script runs the ABM by sourcing functions from other scripts
+# rewriting file paths to work with CHTC
 
 #=======================================================================
 # directory stuff
-rm(list=ls())
+#rm(list=ls())
 #setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
