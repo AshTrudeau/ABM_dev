@@ -10,7 +10,7 @@
 universe = vanilla
 log = hello-chtc_$(Cluster).log
 initialdir = ABM_dev
-preserve_relative_paths = True
+preserve_relative_paths = 1
 #
 # Specify your executable (single binary or a script that runs several
 #  commands), arguments, and a files for HTCondor to store standard
