@@ -32,7 +32,6 @@ transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, \
   run.model.R, \
   data, source, output
   
-transfer_output_files = annual.output.csv, lake.status.csv
 #
 # Tell HTCondor what amount of compute resources
 #  each job will need on the computer where it runs.
