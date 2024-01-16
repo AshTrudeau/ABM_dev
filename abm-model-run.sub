@@ -26,7 +26,7 @@ error = abm-model-run_$(Cluster)_$(Process).err
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
-transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, packages.tar.gz, run.model.R
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, /home/aatrudeau/packages.tar.gz, run.model.R
 #
 # Tell HTCondor what amount of compute resources
 #  each job will need on the computer where it runs.
