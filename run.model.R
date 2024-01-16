@@ -19,7 +19,7 @@ data.frame(unlist(parameters))
 set.seed(382)
 
 #drawProp<-read_csv(here::here("data","complex.lake.proportion.csv"))
-drawProp<-read_csv(paste0(base.directory, "/", "data/", "complex.lake.proportion.csv"))
+drawProp<-read_csv(paste0(base.directory, "/data/complex.lake.proportion.csv"))
 
 
 # HALK growth parameters take 2
@@ -45,7 +45,7 @@ vbgf_lakeSpecific<-growth_params%>%
 
  # for now using lake class for the rest of the growth params
  
- vbgf_lakeClass<-read_csv(paste0(base.directory, "/", "data/", "lake class standards/", "Lake Class Standards Von Bert.csv"))%>%
+ vbgf_lakeClass<-read_csv(paste0(base.directory, "/", "data/", "LakeClassStandardsVonBert.csv"))%>%
    filter(Species=="Walleye" & Percentile=="0.50_percentile")%>%
    select(LakeClass, vb_param, value)%>%
    pivot_wider(names_from=vb_param,

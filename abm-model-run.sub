@@ -9,6 +9,8 @@
 #  queue number assigned to this set of jobs at the time of submission.
 universe = vanilla
 log = hello-chtc_$(Cluster).log
+initialdir = ABM_dev
+preserve_relative_paths = True
 #
 # Specify your executable (single binary or a script that runs several
 #  commands), arguments, and a files for HTCondor to store standard
@@ -26,7 +28,10 @@ error = abm-model-run_$(Cluster)_$(Process).err
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
-transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, /home/aatrudeau/packages.tar.gz, run.model.R, data/lake_class_standards/LakeClassStandardsVonBert.csv, data/complex.lake.proportion.csv, data/wi_halk_aged_growth_params.RData, data/all.lake.classes.wi.csv, source, output
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, 
+  /home/aatrudeau/packages.tar.gz, 
+  run.model.R, 
+  data, source, output/
 #
 # Tell HTCondor what amount of compute resources
 #  each job will need on the computer where it runs.
