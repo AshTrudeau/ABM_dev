@@ -19,7 +19,7 @@ preserve_relative_paths = 1
 #  and increasing for the relevant number of jobs.
 executable = run_R.sh
 arguments = $(Process)
-output = abm-model-run_$(Cluster)_$(Process).out
+output = abm-model-run_$(Cluster)_$(Process).out, annual.output.csv, lake.status.csv
 error = abm-model-run_$(Cluster)_$(Process).err
 # Specify that HTCondor should transfer files to and from the
 #  computer where each job runs. The last of these lines *would* be
