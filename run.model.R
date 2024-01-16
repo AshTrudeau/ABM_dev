@@ -4,7 +4,7 @@
 #=======================================================================
 # directory stuff
 rm(list=ls())
-setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
+#setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
@@ -215,15 +215,12 @@ for(t in 1:parameters[["nDays"]]){
 # writing out outputs to working directory. I think these should go in the  'output' 
 # created in the job script
 
-write.csv(annualOutput)
-lakeStatus<-fishery[["lakeStatus"]]
-write.csv(lakeStatus)
 
 
-# write.csv(annualOutput, paste0(wd, "/output", "/annual.output.csv"))
-# lakeStatus<-fishery[["lakeStatus"]]
-# 
-# write.csv(lakeStatus, paste0(wd, "/output", "/lake.status.csv"))
+ write.csv(annualOutput, paste0(wd, "/output", "/annual.output.csv"))
+ lakeStatus<-fishery[["lakeStatus"]]
+ 
+ write.csv(lakeStatus, paste0(wd, "/output", "/lake.status.csv"))
 
 #write.csv(rbind(fishery), paste0(wd, "/output", "/fishery.list.csv"))
 
