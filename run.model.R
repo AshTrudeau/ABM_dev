@@ -218,10 +218,10 @@ for(t in 1:parameters[["nDays"]]){
 
 
 
- write.csv(annualOutput, paste0(wd, "/output", "/annual.output.csv"))
+ write.csv(annualOutput, "annual.output.csv")
  lakeStatus<-fishery[["lakeStatus"]]
  
- write.csv(lakeStatus, paste0(wd, "/output", "/lake.status.csv"))
+ write.csv(lakeStatus, "lake.status.csv")
 
 #write.csv(rbind(fishery), paste0(wd, "/output", "/fishery.list.csv"))
 
