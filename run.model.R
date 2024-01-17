@@ -217,6 +217,7 @@ for(t in 1:parameters[["nDays"]]){
 # created in the job script
 
 print(annualOutput)
+print(base.directory)
 
  write.csv(annualOutput, paste0(base.directory,"/output/annual.output.csv"))
  
