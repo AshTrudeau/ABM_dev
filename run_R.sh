@@ -19,3 +19,4 @@ Rscript run.model.R
  # mv lake.status.csv my_output/
  # tar -czf my_job.output.tar.gz my_output/
 # to give executable permissions, run `chmod +x run_R.sh` in submit directory# create output
+ls -lhart

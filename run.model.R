@@ -216,15 +216,16 @@ for(t in 1:parameters[["nDays"]]){
 # writing out outputs to working directory. I think these should go in the  'output' 
 # created in the job script
 
-
+print(annualOutput)
 
  write.csv(annualOutput, "annual.output.csv")
  
  lakeStatus<-fishery[["lakeStatus"]]
  
+ print(lakeStatus)
+ 
  write.csv(lakeStatus, "lake.status.csv")
 
-#write.csv(rbind(fishery), paste0(wd, "/output", "/fishery.list.csv"))
 
 # next fix plots. These are placeholders for now
 
