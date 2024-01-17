@@ -8,7 +8,7 @@
 #  your job. Wherever you see $(Cluster), HTCondor will insert the 
 #  queue number assigned to this set of jobs at the time of submission.
 universe = vanilla
-log = hello-chtc_$(Cluster).log
+log = abm-model-run_$(Cluster).log
 #initialdir = ABM_dev
 preserve_relative_paths = 1
 #
