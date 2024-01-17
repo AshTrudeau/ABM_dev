@@ -30,7 +30,7 @@ when_to_transfer_output = ON_EXIT
 transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, \
   packages.tar.gz, \
   run.model.R, \
-  data, source
+  data, source, output
   
 #
 # Tell HTCondor what amount of compute resources

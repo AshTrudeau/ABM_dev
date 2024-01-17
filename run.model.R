@@ -218,13 +218,13 @@ for(t in 1:parameters[["nDays"]]){
 
 print(annualOutput)
 
- write.csv(annualOutput, "annual.output.csv")
+ write.csv(annualOutput, paste0(base.directory,"/output/annual.output.csv"))
  
  lakeStatus<-fishery[["lakeStatus"]]
  
  print(lakeStatus)
  
- write.csv(lakeStatus, "lake.status.csv")
+ write.csv(lakeStatus, paste0(base.directory,"/output/lake.status.csv"))
 
 
 # next fix plots. These are placeholders for now
