@@ -21,3 +21,5 @@ Rscript run.model.R
 # to give executable permissions, run `chmod +x run_R.sh` in submit directory# create output
 ls -lhart
 ls -lhart ./output
+
+tar -czf output.tar.gz output/
