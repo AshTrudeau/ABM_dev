@@ -15,6 +15,7 @@ export R_LIBS=$PWD/packages
 Rscript run.model.R
 
  mkdir my_output
- mv annual.output.csv lake.status.csv my_output/
+ mv annual.output.csv my_output/
+ mv lake.status.csv my_output/
  tar -czf my_job.output.tar.gz my_output/
 # to give executable permissions, run `chmod +x run_R.sh` in submit directory# create output

@@ -219,6 +219,7 @@ for(t in 1:parameters[["nDays"]]){
 
 
  write.csv(annualOutput, "annual.output.csv")
+ 
  lakeStatus<-fishery[["lakeStatus"]]
  
  write.csv(lakeStatus, "lake.status.csv")
