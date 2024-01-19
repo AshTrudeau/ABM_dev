@@ -62,6 +62,7 @@ trend.surveys.f$lakeName_county<-NULL
 trend.surveys<-rbind.data.frame(trend.surveys.f, metonga.surveys)
 
 trend.wbics<-unique(trend.surveys$wbic)
+write_rds(trend.wbics, "trend.wbics.Rds")
 
 # but I actually want years too..
 
