@@ -12,7 +12,7 @@ export RHOME=$PWD/R
 export R_LIBS=$PWD/packages
 
 # run your script
-Rscript run.model.R
+Rscript run.model.trend.lakes.R
 
  # mkdir my_output
  # mv annual.output.csv my_output/
