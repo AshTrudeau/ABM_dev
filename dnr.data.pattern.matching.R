@@ -20,11 +20,16 @@
 # instantaneous growth for the year = ln(mean mass time t/mean mass time t+1)
 # 4. What size structure metrics can I compare? (see what's available in FMDB)
 
+
+# for now I am using trend lakes because they have the most data available. Later, 
+# once the simulation adopts more spatial coverage, I can use GLMMs to produce 
+# fishing effort estimates for many more lakes
 library(wdnr.fmdb)
 library(tidyverse)
 library(here)
 library(lubridate)
 library(RColorBrewer)
+library(cowplot)
 
 trend.surveys<-get_fmdb_surveys(waterbody_name=c("Balsam Lake","Big Arbor Vitae Lake",
                                                  "Bony Lake","Diamond Lake",
@@ -77,30 +82,57 @@ sum.trend.effort<-sum_monthly_creel_effort(trend.creel.counts)
 annual.trend.effort<-sum.trend.effort%>%
   group_by(wbic, year)%>%
   summarize(annual.effort=sum(total.effort),
-         annual.sd=sqrt(sum(total.effort.sd^2)))%>%
+         annual.sd=sqrt(sum(total.effort.sd^2)),
+         nSamples=sum(n.counts))%>%
   mutate(nYears=length(unique(year)))%>%
   ungroup()%>%
   mutate(wbic=as.factor(wbic))
 
-# i'm not sure I did this right
-mean.sd.effort<-annual.trend.effort%>%
-  group_by(wbic)%>%
-  summarize(mean.annual.effort=mean(annual.effort),
-            sd.annual.effort=sd(annual.effort),
-         sd.sum.effort=sqrt(sum(annual.sd^2)),
-         sd.mean.effort=sqrt((sd.sum.effort/unique(nYears))^2),
-         overall.sd=sqrt(sd.mean.effort^2+sd.annual.effort^2))%>%
-  select(wbic, mean.annual.effort, overall.sd)%>%
-  mutate(upper=mean.annual.effort+2*overall.sd,
-         lower=mean.annual.effort-2*overall.sd)
+# I was overthinking this. DNR calcs just use sum of variance. (sqrt sum sd^2)
+
+# https://stats.stackexchange.com/questions/25848/how-to-sum-a-standard-deviation/442050#442050
+# mean.sd.effort<-annual.trend.effort%>%
+#   group_by(wbic)%>%
+#   mutate(mean.annual.effort=sum(annual.effort*nSamples)/sum(nSamples),
+#          totalSamples=sum(nSamples))%>%
+#   ungroup()%>%
+#   mutate(top=annual.sd^2*(nYears-1)+nYears*(mean.annual.effort-annual.effort)^2,
+#          bottom=totalSamples-1)%>%
+#   group_by(wbic)%>%
+#   summarize(sd.annual.effort=sqrt(sum(top)/unique(bottom)),
+#             mean.annual.effort=unique(mean.annual.effort),
+#             sd.between.years=sd(annual.effort))%>%
+#   mutate(overall.sd=sqrt(sd.annual.effort^2+sd.between.years^2))%>%
+#   select(wbic, mean.annual.effort, overall.sd)%>%
+#   mutate(upper=mean.annual.effort+2*overall.sd,
+#          lower=mean.annual.effort-2*overall.sd)
+
+# I'm not going to overthink it. just do straight mean of estimates, then sqrt sum of
+# variance of within and between estimates
+
+ mean.sd.effort<-annual.trend.effort%>%
+   group_by(wbic)%>%
+   mutate(mean.annual.effort=mean(annual.effort),
+          totalSamples=sum(nSamples))%>%
+   summarize(sd.annual.effort.between=sd(annual.effort),
+             sd.annual.effort.within=sqrt(sum(annual.sd^2)),
+             mean.annual.effort=unique(mean.annual.effort))%>%
+   ungroup()%>%
+   mutate(sd.annual.effort=sqrt(sd.annual.effort.between^2+sd.annual.effort.within^2))%>%
+   select(wbic, mean.annual.effort, sd.annual.effort)%>%
+   mutate(upper.ci=mean.annual.effort+2*sd.annual.effort,
+          lower.ci=mean.annual.effort-2*sd.annual.effort)
+    
+     
+    
 
 # look at effort with sd for each lake across years
 
 ggplot()+
   geom_point(data=annual.trend.effort, aes(x=wbic, y=annual.effort), color="darkgray", size=2)+
   geom_pointrange(data=mean.sd.effort, aes(x=wbic,y=mean.annual.effort, 
-                       ymin=lower, 
-                       ymax=upper, group=wbic, color=wbic),
+                       ymin=lower.ci, 
+                       ymax=upper.ci, group=wbic, color=wbic),
                   linewidth=1,
                   size=0.75)+
   scale_color_manual(values=c(brewer.pal(n=12,  "Paired"), "#000000"))+
@@ -111,9 +143,150 @@ ggplot()+
         legend.position="none")
 ggsave(here::here("figures","trend.lake.mean.fishing.effort.png"), height=4, width=6)
   
-write.csv(mean.sd.effort,  here::here("pattern_matching_data","mean.fishing.effort.trend.lakes.csv"))
+write.csv(mean.sd.effort,  here::here("pattern_matching_data","mean.fishing.effort.trend.lakes.consider.n.csv"))
 write.csv(annual.trend.effort, here::here("pattern_matching_data","annual.effort.trend.lakes.csv"))
 
+# can I get lake surface area? 
+trend.char<-get_fmdb_lakechar(wbic=trend.wbics)%>%
+  # weird, it gave me all of them?
+  filter(wbic%in%trend.wbics)%>%
+  mutate(wbic=as.factor(wbic))
+#  aha, lake area and walleye code (nr, cst, cnr, st)
+
+mean.sd.effort.char<-left_join(mean.sd.effort, 
+                               trend.char[,c("wae.code", "max.depth","lake.area","wbic")], by="wbic")%>%
+    mutate(wbic=factor(wbic, levels=wbic[order(lake.area)], ordered=T))
+
+ggplot(mean.sd.effort.char)+
+  geom_pointrange(aes(x=wbic, y=mean.annual.effort, ymin=lower.ci, ymax=upper.ci, color=wae.code))+
+  scale_color_manual(values=brewer.pal(4, "Set1"))+
+  theme_bw()
+ggsave(here::here("figures","trend.lake.mean.fishing.effort.size.order.png"), height=4, width=6)
 # some lake have quite a lot of variance, others not so much
 
-# Next get population estimates for walleye
+
+creel_int<-get_creel_int_party(wbic=trend.wbics)
+# Next get rec harvest  and walleye PSD. No obvious way to get population estimates yet--just use raw data?
+# 
+
+
+creel_fish<-get_creel_fish_data(wbic=trend.wbics)
+creel_harv_rate<-calc_creel_harvest_rates(creel_fish)
+creel_harv_est<-estimate_harvest(trend.creel.counts, creel_int, creel_fish)
+# this version has species-specific catch rates for different months, which is useful
+write.csv(creel_harv_est, here::here("pattern_matching_data","harvest.estimates.trend.lakes.all.species.csv"))
+
+
+# this is where I left off fixing SDs 1/18
+# aha, this includes species-specific effort estimates!
+annual.walleye.harvest<-creel_harv_est%>%
+  filter(species=="walleye")%>%
+  group_by(wbic, year)%>%
+  summarize(waterbody.name=unique(waterbody.name),
+            annual_catch=sum(spp.catch),
+            annual_harvest=sum(spp.harvest),
+            annual_spp_effort=sum(total.spp.effort),
+            #  now get sd
+            catch_sd=sqrt(sum(catch.var)),
+            harvest_sd=sqrt(sum(harvest.var)),
+            spp.effort=sum(total.spp.effort))%>%
+  mutate(nYears=length(unique(year)))%>%
+  ungroup()
+
+write.csv(annual.walleye.harvest, here::here("pattern_matching_data","annual.walleye.harvest.catch.trend.csv"))
+
+lake.mean.harvest<-annual.walleye.harvest%>%
+  group_by(wbic)%>%
+  summarize(mean.harvest=mean(annual_harvest),
+            mean.catch=mean(annual_catch),
+            harvest.sd.across=sd(annual_harvest),
+            catch.sd.across=sd(annual_catch),
+            harvest.sd.within=sqrt(sum((harvest_sd)^2)),
+            catch.sd.within=sqrt(sum((catch_sd)^2)),
+            mean.spp.effort=mean(spp.effort),
+            sd.spp.effort=sd(spp.effort))%>%
+  ungroup()%>%
+  mutate(harvest.sd=sqrt(harvest.sd.across^2+harvest.sd.within^2),
+         catch.sd=sqrt(catch.sd.across^2+catch.sd.within^2),
+         harvest.upper.ci=mean.harvest+2*harvest.sd,
+         harvest.lower.ci=mean.harvest-2*harvest.sd,
+         catch.upper.ci=mean.catch+2*catch.sd,
+         catch.lower.ci=mean.catch-2*catch.sd,
+         wbic=as.factor(wbic),
+         upper.spp.effort=mean.spp.effort+2*sd.spp.effort,
+         lower.spp.effort=mean.spp.effort-2*sd.spp.effort)%>%
+  select(wbic, mean.harvest, mean.catch, catch.sd, harvest.sd, harvest.upper.ci, 
+         harvest.lower.ci, catch.upper.ci, catch.lower.ci)%>%
+  left_join(trend.char[,c("wbic","lake.area","wae.code")], by="wbic")%>%
+mutate(wbic=factor(wbic, levels=wbic[order(lake.area)], ordered=T))
+
+write.csv(lake.mean.harvest, here::here("pattern_matching_data","mean.catch.harvest.trend.csv"))
+
+# mean harvest
+harvest<-ggplot(lake.mean.harvest)+
+  geom_pointrange(aes(x=wbic, y=mean.harvest, ymin=harvest.upper.ci, 
+                      ymax=harvest.lower.ci, color=wae.code))+
+  scale_color_manual(values=brewer.pal(4, "Set1"))+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+legend<-get_legend(harvest)
+harvest<-ggplot(lake.mean.harvest)+
+  geom_pointrange(aes(x=wbic, y=mean.harvest, ymin=harvest.upper.ci, 
+                      ymax=harvest.lower.ci, color=wae.code))+
+  scale_color_manual(values=brewer.pal(4, "Set1"))+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        legend.position="none")
+
+
+# mean catch
+
+catch<-ggplot(lake.mean.harvest)+
+  geom_pointrange(aes(x=wbic, y=mean.catch, ymin=catch.upper.ci, 
+                      ymax=catch.lower.ci, color=wae.code))+
+  scale_color_manual(values=brewer.pal(4, "Set1"))+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        legend.position="none")
+
+
+effort<-ggplot(lake.mean.harvest)+
+  geom_point(aes(x=wbic, y=mean.catch,  color=wae.code))+
+  scale_color_manual(values=brewer.pal(4, "Set1"))+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        legend.position="none")
+
+plot_grid(effort, catch, harvest, legend, ncol=1)
+ggsave(here::here("figures","wae.effort.catch.harvest.trend.png"), height=12, width=6)  
+
+
+# and size/PSD (quality)
+
+trend.fish<-get_fmdb_fishraw(wbic=trend.wbics)
+
+trend.psd<-calc_psd(trend.fish)
+  
+trend.psd.char<-trend.psd%>%
+  filter(species=="walleye")%>%
+  mutate(wbic=as.factor(wbic))%>%
+  left_join(trend.char[,c("lake.area","wae.code","wbic")])%>%
+  mutate(wbic=factor(wbic, levels=unique(wbic[order(lake.area)]), ordered=T))
+write.csv(trend.psd.char, here::here("pattern_matching_data","walleye.size.trend.csv"))
+
+# huge variation within lakes. interesting that the NR lake PSDs are so small..
+ggplot(trend.psd.char)+
+  geom_point(aes(x=wbic, y=quality, color=wae.code))+
+  theme_bw()
+
+# ohh it's because those lakes have bigger walleye. duh.
+ggplot(trend.psd.char)+
+  geom_point(aes(x=wbic, y=memorable, color=wae.code))+
+  theme_bw()
+
+ggplot(trend.psd.char)+
+  geom_point(aes(x=wbic, y=trophy, color=wae.code))+
+  theme_bw()
+
+
