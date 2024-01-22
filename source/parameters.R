@@ -17,7 +17,7 @@ q               <-0.01 # catchability coefficient
 # clunkily set bounding box for angler placement
 maxLat         <- 46.99
 maxLong        <- -86.7
-minLat         <- 42.5
+minLat         <- 45
 minLong        <- -92.98
 # regional values of recruitment parameters from Tsehaye et al 2016
 recAlpha          <- 9.88

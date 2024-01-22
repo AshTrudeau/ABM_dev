@@ -5,7 +5,7 @@
 #=======================================================================
 # directory stuff
 #rm(list=ls())
-#setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
+setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
@@ -223,6 +223,8 @@ print(annualOutput)
 print(base.directory)
 
 write.csv(annualOutput, paste0(base.directory,"/output/annual.output.csv"))
+# annualOutput<-read_csv(here::here("output","annual.output.csv"))
+# lakeStatus<-read_csv(here::here("output","lake.status.csv"))
 
 lakeStatus<-fishery[["lakeStatus"]]
 
@@ -232,9 +234,9 @@ write.csv(lakeStatus, paste0(base.directory,"/output/lake.status.csv"))
 
 
 # next fix plots. These are placeholders for now
-
-# plots<-plotting.lake.status(annualOutput, fishery, parameters)
-#  plots
+#plots<-plotting.lake.status(annualOutput, lakeStatus, lakeCharacteristics, parameters)
+#plots<-plotting.lake.status(annualOutput, fishery, parameters)
+#plots
 #  ggsave(paste0(wd, "/output", "/sim.v4.figure.png"), height=6, width=10)
 #  
 # # this doesn't exist yet

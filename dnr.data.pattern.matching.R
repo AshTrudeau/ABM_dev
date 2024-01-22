@@ -290,4 +290,52 @@ ggplot(trend.psd.char)+
   geom_point(aes(x=wbic, y=trophy, color=wae.code))+
   theme_bw()
 
+#==============================================================
+# now convert absolute values to proportions for comparison with simulation data
+
+# fishing effort
+# using annual estimates is a problem because not all lakes are surveyed every year. So a year where 
+# where only 2 lakes were surveyed will have a greater proportion of effort on one of those lakes than 
+# an 'identical' year where 4 lakes were surveyed.
+
+# prop.annual.effort<-annual.trend.effort%>%
+#   group_by(year)%>%
+#   mutate(annual.total=sum(annual.effort),
+#          nLakes=length(unique(wbic)))%>%
+#   ungroup()%>%
+#   mutate(prop.annual.effort=annual.effort/annual.total)%>%
+#   left_join(trend.char[,c("wbic","wae.code","lake.area")], by="wbic")%>%
+#   mutate(wbic=factor(wbic, levels=unique(wbic[order(lake.area)])), ordered=T)
+# 
+
+mean.prop.effort<-mean.sd.effort%>%
+  mutate(total.mean=sum(mean.annual.effort),
+         mean.prop=mean.annual.effort/total.mean,
+         upper.mean.prop=mean.prop+2*(sd.annual.effort/total.mean),
+         lower.mean.prop=mean.prop-2*(sd.annual.effort/total.mean))%>%
+  left_join(trend.char[,c("wbic","lake.area","wae.code")], by="wbic")%>%
+  mutate(wbic=factor(wbic, levels=wbic[order(lake.area)]), ordered=T)
+
+write.csv(mean.prop.effort, here::here("pattern_matching_data","mean.prop.fishing.effort.trend.csv"))
+
+ggplot(mean.prop.effort)+
+  geom_pointrange(aes(x=wbic, y=mean.prop, ymin=lower.mean.prop, ymax=upper.mean.prop, color=wae.code))+
+  scale_color_manual(values=brewer.pal(4, "Set1"))+
+  theme_bw()+
+  theme(axis.text.x=element_text(angle = 90, vjust = 0.5, hjust=1))
+
+# what about walleye-specific effort? 
+
+
+
+
+# now do harvest
+mean.prop.harvest<-mean.sd.effort%>%
+  mutate(total.mean=sum(mean.annual.effort),
+         mean.prop=mean.annual.effort/total.mean,
+         upper.mean.prop=mean.prop+2*(sd.annual.effort/total.mean),
+         lower.mean.prop=mean.prop-2*(sd.annual.effort/total.mean))%>%
+  left_join(trend.char[,c("wbic","lake.area","wae.code")], by="wbic")%>%
+  mutate(wbic=factor(wbic, levels=wbic[order(lake.area)]), ordered=T)
+
 
