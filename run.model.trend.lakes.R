@@ -4,7 +4,7 @@
 
 #=======================================================================
 # directory stuff
-#rm(list=ls())
+rm(list=ls())
 setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
@@ -226,6 +226,10 @@ write.csv(annualOutput, paste0(base.directory,"/output/annual.output.csv"))
 # annualOutput<-read_csv(here::here("output","annual.output.csv"))
 # lakeStatus<-read_csv(here::here("output","lake.status.csv"))
 
+# library(RColorBrewer)
+# library(cowplot)
+
+
 lakeStatus<-fishery[["lakeStatus"]]
 
 print(lakeStatus)
@@ -233,8 +237,10 @@ print(lakeStatus)
 write.csv(lakeStatus, paste0(base.directory,"/output/lake.status.csv"))
 
 
-# next fix plots. These are placeholders for now
-#plots<-plotting.lake.status(annualOutput, lakeStatus, lakeCharacteristics, parameters)
+# # next fix plots. These are placeholders for now
+# plots<-plotting.lake.status(annualOutput, lakeStatus, lakeCharacteristics, parameters)
+# plots
+# ggsave(paste0(base.directory, "/figures/", "trend.lake.status.png"), height=8, width=12)
 #plots<-plotting.lake.status(annualOutput, fishery, parameters)
 #plots
 #  ggsave(paste0(wd, "/output", "/sim.v4.figure.png"), height=6, width=10)
@@ -242,30 +248,42 @@ write.csv(lakeStatus, paste0(base.directory,"/output/lake.status.csv"))
 # # this doesn't exist yet
 # size.structure<-plotting.size.structure(annualOutput, fishery, parameters) 
 # 
-# meanSize<-ggplot(annualOutput)+
-#   geom_line(aes(x=year, y=meanSize, color=as.factor(WBIC)), linewidth=1.5)+
-#  # scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
-#   xlab("Year of simulation")+
-#   ylab("Mean walleye length (cm)")+
-#   guides(color="none")+
-#   theme_bw()
+# annualOutput<-filter(annualOutput, year<50)
 # 
-# maxSize<-ggplot(annualOutput)+
-#   geom_line(aes(x=year, y=maxSize, color=as.factor(WBIC)), linewidth=1.5)+
-#   #scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
-#   xlab("Year of simulation")+
-#   ylab("Max walleye length (cm)")+
-#   guides(color="none")+
-#   theme_bw()
+#  meanSize<-ggplot(annualOutput)+
+#    geom_line(aes(x=year, y=meanSize, color=as.factor(WBIC)), linewidth=1.5)+
+#    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+#    xlab("Year of simulation")+
+#    ylab("Mean walleye length (cm)")+
+#    guides(color="none")+
+#    theme_bw()
+#  
+#  maxSize<-ggplot(annualOutput)+
+#    geom_line(aes(x=year, y=maxSize, color=as.factor(WBIC)), linewidth=1.5)+
+#    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+#    xlab("Year of simulation")+
+#    ylab("Max walleye length (cm)")+
+#    guides(color="none")+
+#    theme_bw()
+#  
+#  psd<-ggplot(annualOutput)+
+#    geom_line(aes(x=year, y=PSDQuality, color=as.factor(WBIC)), linewidth=1.5)+
+#    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+#    xlab("Year of simulation")+
+#    ylab("PSD (Quality size)")+
+#    guides(color="none")+
+#    theme_bw()
+#  
+#  legend<-ggplot(annualOutput)+
+#    geom_line(aes(x=year, y=PSDQuality, color=as.factor(WBIC)), linewidth=1.5)+
+#    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+#    xlab("Year of simulation")+
+#    ylab("PSD (Quality size)")+
+#    labs(color="WBIC")+
+#    theme_bw()
+#  
+#  legend<-get_legend(legend)
+#  
+#  plot_grid(meanSize, maxSize, psd, legend)
+#  ggsave(paste0(base.directory, "/figures", "/size.structure.png"), height=8, width=12)
 # 
-# psd<-ggplot(annualOutput)+
-#   geom_line(aes(x=year, y=PSDQuality, color=as.factor(WBIC)), linewidth=1.5)+
-#   #scale_color_manual(values=brewer.pal(n=nLakes, "Paired"))+
-#   xlab("Year of simulation")+
-#   ylab("PSD (Quality size)")+
-#   guides(color="none")+
-#   theme_bw()
-# 
-# plot_grid(meanSize, maxSize, psd)
-# ggsave(paste0(wd, "/output", "/size.structure.png"), height=6, width=10)
-

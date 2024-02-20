@@ -1,0 +1,209 @@
+---
+title: "pattern matching data"
+output: html_document
+date: "2024-02-19"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(tidyverse, here, lubridate)
+```
+
+Identifying patterns that I 'm going to try to match. 
+
+Now have population estimates and YOY survey data
+
+```{r}
+pop.est<-read_csv(here::here("pattern_matching_data","popest2023.csv"))%>%
+  dplyr::select(WBIC:Year)%>%
+  mutate(WBIC=as.factor(WBIC))
+yoy<-read_csv(here::here("pattern_matching_data","YOY.csv"))%>%
+  filter(STATE=="WI")%>%
+  rename("WBIC"=MWBC)%>%
+  mutate(WBIC=as.factor(WBIC))
+```
+
+```{r}
+ggplot(pop.est)+
+  geom_point(aes(x=Year, y=pe, color=WBIC))+
+  theme(legend.position="none")
+
+pe.summary<-pop.est%>%
+  filter(Model%in%c(0,1,2,3,4))%>%
+  group_by(WBIC, Year)%>%
+  summarize(n=n(),
+            n.mod=length(unique(Model)))
+```
+
+```{r}
+wae.pe<-pop.est%>%
+  filter(Model%in%c(0,1,2,3,4))
+
+ggplot(wae.pe)+
+  geom_line(aes(x=Year, y=pe, color=WBIC))+
+  theme(legend.position="none")
+```
+
+```{r}
+yoy.sum<-yoy%>%
+  mutate(nAge0=as.numeric(AGE0WAE),
+         cpue.age0=as.numeric(AGE0CPE))%>%
+  group_by(WBIC, YEAR)%>%
+  summarize(mean.nAge0=mean(nAge0),
+            sd.nAge0=sd(nAge0),
+            n=n(),
+            mean.cpue=mean(cpue.age0),
+            sd.cpue=sd(cpue.age0))
+```
+'successful' recruitment year as cpe of 6.2 age 0 walleye per km shocked. 
+in miles, t his is 9.98 f ish/mile (citing Hansen et al 2015a CJFAS,  2018; Gostiaux et al 2022)
+
+practice seems to be filtering out lakes with less than 70% coverage of shocking (for lakes under 25.75 km/16 miles) and for larger lakes, at least 16.1 km/10 miles sampled
+temps need to be between 10 and 21 degrees C (50 and 70 F), and low clarity or low conductivity is excluded
+
+```{r}
+yoy.f<-yoy%>%
+  mutate(smallLake=ifelse(SHORMILE<16.0003, 1, 0),
+         percentShocked=MILESURV/SHORMILE,
+         drop=ifelse(smallLake==1 & percentShocked<0.7, 1,
+                     ifelse(smallLake==0 & MILESURV<10, 1, 0)))%>%
+  filter(TEMP>50 & TEMP<70)%>%
+  filter(drop==0)%>%
+  mutate(age0.cpe=as.numeric(AGE0CPE))%>%
+  rename("Year"=YEAR)
+  
+ggplot(yoy.f)+
+  geom_point(aes(x=YEAR, y=age0.cpe, color=WBIC))+
+  geom_hline(yintercept=10)+
+  theme(legend.position="none")
+  
+```
+
+```{r}
+yoy.sum<-yoy.f%>%
+  mutate(rec.success=ifelse(age0.cpe>10, 1, 0))%>%
+  group_by(YEAR)%>%
+  summarize(prop.success=sum(rec.success, na.rm=T)/n())
+
+ggplot(yoy.sum)+
+  geom_line(aes(x=YEAR, y=prop.success))
+```
+
+```{r}
+yoy.sum<-yoy.f%>%
+  group_by(WBIC, Year)%>%
+  mutate(nSamplingEvents=n())%>%
+  summarize(age0.cpe=mean(age0.cpe),
+            age0.cpe.sd=sd(age0.cpe),
+            COUNTY=unique(COUNTY),
+            LAKE=unique(LAKE),
+            AREA=unique(AREA),
+            WDNRTYPE=unique(WDNRTYPE),
+            CODE=unique(CODE),
+            CRNTCODE=unique(CRNTCODE))%>%
+  ungroup()
+
+yoy.wbic.year<-yoy.f%>%
+  group_by(WBIC, Year)%>%
+  mutate(nEvents=n())
+
+wae.pe$WBIC_year<-paste(wae.pe$WBIC, wae.pe$Year, sep="_")
+yoy.sum$WBIC_year<-paste(yoy.sum$WBIC, yoy.sum$Year,  sep="_")
+
+yoy.error<-yoy.sum%>%
+  group_by(WBIC_year)%>%
+  mutate(n=n(),
+         id=row_number())%>%
+  # THERE ARE DUPLICATE ROWS UGH
+  mutate(drop=ifelse(n==2 & id==2, 1, 0))%>%
+  filter(drop==0)
+  
+
+data.join<-wae.pe%>%
+  left_join(yoy.sum[,c("WBIC","Year","age0.cpe","COUNTY","LAKE","AREA","WDNRTYPE",
+                     "CODE","CRNTCODE")], by=c("WBIC","Year"))
+
+WBICs<-unique(data.join$WBIC)
+  
+```
+
+411 lakes with walleye YOY survey and PE data. now see if I can get fi shing effort
+
+```{r}
+library(wdnr.fmdb)
+
+creel_counts<-get_creel_counts(wbic=WBICs[1:100])
+
+creel_counts2<-get_creel_counts(wbic=WBICs[101:200])
+
+creel_counts3<-get_creel_counts(wbic=WBICs[201:300])
+
+creel_counts4<-get_creel_counts(wbic=WBICs[301:411])
+
+all_counts<-rbind.data.frame(creel_counts, creel_counts2, creel_counts3, creel_counts4)
+
+
+creel_eff<-sum_monthly_creel_effort(all_counts)
+
+annual_effort<-creel_eff%>%
+  group_by(wbic, year)%>%
+  summarize(annual.fishing.effort=sum(total.effort))%>%
+  ungroup()
+```
+```{r}
+pe.yoy.effort<-data.join%>%
+  rename("year"=Year,
+         "wbic"=WBIC)%>%
+  mutate(wbic=as.numeric(as.character(wbic)))%>%
+  left_join(annual_effort, by=c("wbic","year"))
+
+write.csv(pe.yoy.effort, here::here("pattern_matching_data","pe.yoy.effort.csv"))
+```
+
+
+```{r}
+complete<-pe.yoy.effort%>%
+  filter(!is.na(annual.fishing.effort) & !is.na(pe) & !is.na(age0.cpe))
+
+# 225 lakes with full 'set' of data in at least 1 year
+```
+
+
+So now we have walleye population estimates, age 0 CPEs (recruitment), and annual fishing effort for a bunch of lakes in WI. Looking for some general correlations now: 
+
+```{r}
+pe.yoy.effort.f<-pe.yoy.effort%>%
+  filter(year>1980)
+
+ggplot(pe.yoy.effort)+
+  geom_point(aes(x=pe, y=annual.fishing.effort, color=as.factor(wbic)))+
+  theme(legend.position="none")
+```
+```{r}
+ggplot(pe.yoy.effort)+
+  geom_point(aes(x=pe, y=age0.cpe, color=as.factor(wbic)))+
+  facet_grid(CODE~.)+
+  theme(legend.position="none")
+
+nr<-filter(pe.yoy.effort, CODE=="NR")
+
+ggplot(nr)+
+  geom_point(aes(x=pe, y=age0.cpe, color=as.factor(wbic)))+
+  theme(legend.position="none")
+
+
+```
+```{r}
+ggplot(pe.yoy.effort)+
+  geom_point(aes(x=AREA, y=annual.fishing.effort, color=as.factor(wbic)))+
+  theme(legend.position="none")
+
+```
+
+```{r}
+ggplot(pe.yoy.effort)+
+  geom_point(aes(x=AREA, y=pe, color=as.factor(wbic)))+
+  theme(legend.position="none")
+
+```
+

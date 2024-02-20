@@ -159,12 +159,45 @@ mean.sd.effort.char<-left_join(mean.sd.effort,
     mutate(wbic=factor(wbic, levels=wbic[order(lake.area)], ordered=T))
 
 ggplot(mean.sd.effort.char)+
-  geom_pointrange(aes(x=wbic, y=mean.annual.effort, ymin=lower.ci, ymax=upper.ci, color=wae.code))+
-  scale_color_manual(values=brewer.pal(4, "Set1"))+
-  theme_bw()
+  geom_pointrange(aes(x=wbic, y=mean.annual.effort, ymin=lower.ci, ymax=upper.ci, color=wbic))+
+  scale_color_manual(values=palette.reord)+
+  ylab("Mean annual effort")+
+  xlab("WBIC")+
+  theme_bw()+
+  theme(axis.text.x=element_text(angle=90))
 ggsave(here::here("figures","trend.lake.mean.fishing.effort.size.order.png"), height=4, width=6)
 # some lake have quite a lot of variance, others not so much
 
+palette.org<-c(brewer.pal(12, "Paired"), "#000000")
+palette.reord<-c("#FFFF99", "#1F78B4", "#000000", "#B15928", 
+                 "#CAB2D6","#33A02C", "#6A3D9A", "#B2DF8A",
+                 "#FB9A99", "#A6CEE3", "#FF7F00", "#FDBF6F",
+                 "#E31A1C" )
+
+# manually reordering color palette
+
+
+# now compare to simulated f ishing effort
+
+sim.effort<-read_csv(here::here("output","annual.output.csv"))%>%
+  group_by(WBIC)%>%
+  summarize(mean.annual.effort=mean(annualEffort),
+            sd.annual.effort=sd(annualEffort))%>%
+  ungroup()%>%
+  mutate(wbic=as.factor(WBIC))%>%
+  left_join(trend.char[,c("wbic","lake.area")])%>%
+  mutate(wbic=factor(wbic, levels=unique(wbic[order(lake.area)]), ordered=T))%>%
+  mutate(ci.upper=mean.annual.effort+2*sd.annual.effort,
+         ci.lower=mean.annual.effort-2*sd.annual.effort)
+
+ggplot(sim.effort)+
+  geom_pointrange(aes(x=wbic, y=mean.annual.effort, ymin=ci.lower, ymax=ci.upper, color=wbic))+
+  scale_color_manual(values=palette.reord)+
+  ylab("Mean annual effort")+
+  xlab("WBIC")+
+  theme_bw()+
+  theme(axis.text.x=element_text(angle=90))
+ggsave(here::here("figures","trend.lake.sim.fishing.effort.png"), height=4, width=6)
 
 creel_int<-get_creel_int_party(wbic=trend.wbics)
 # Next get rec harvest  and walleye PSD. No obvious way to get population estimates yet--just use raw data?
