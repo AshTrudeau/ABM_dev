@@ -11,7 +11,7 @@ plotting.lake.status<-function(annualOutput, lakeStatus, lakeCharacteristics, pa
 
   effort<-ggplot(annualOutput)+
     geom_line(aes(x=year, y=annualEffort, color=WBIC), linewidth=1.5)+
-    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+    #scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
     xlab("Year of simulation")+
     ylab("Fishing effort (angler visits per year)")+
     guides(color="none")+
@@ -19,7 +19,7 @@ plotting.lake.status<-function(annualOutput, lakeStatus, lakeCharacteristics, pa
   
   harvest<-ggplot(annualOutput)+
     geom_line(aes(x=year, y=annualHarvestN, color=WBIC), linewidth=1.5)+
-    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+   # scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
     xlab("Year of simulation")+
     ylab("Annual harvest (N)")+
     guides(color=guide_legend(title="WBIC"))+
@@ -27,7 +27,7 @@ plotting.lake.status<-function(annualOutput, lakeStatus, lakeCharacteristics, pa
   
   fishPop<-ggplot(annualOutput)+
     geom_line(aes(x=year, y=fishNEnd, color=WBIC), linewidth=1.5)+
-    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+    #scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
     xlab("Year of simulation")+
     ylab("End of year population (N)")+
     guides(color="none")+
@@ -45,7 +45,7 @@ plotting.lake.status<-function(annualOutput, lakeStatus, lakeCharacteristics, pa
   hotspots<-ggplot()+
     geom_point(data=lakeOutput, aes(x=lakeLong, y=lakeLat, color=WBIC, size=effort))+
     geom_point(data=anglerCharacteristics, aes(x=anglerLong, y=anglerLat), shape=4)+
-    scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
+    #scale_color_manual(values=c(brewer.pal(n=12, "Paired"), "#000000"))+
     guides(color="none",
            size=guide_legend(title="Fishing\neffort"))+
     xlab("X coord")+

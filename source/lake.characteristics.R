@@ -1,8 +1,7 @@
 # selecting and appending relevant lake characteristics:
 # area (ha), class, VBGF params, recruitment params
 
-lake.characteristics<-function(parameters, selectLakes, vbgf_lakeClass, 
-                                vbgf_lakeSpecific){
+lake.characteristics<-function(parameters, selectLakes, vbgf_lakeClass){
   
   nLakes<-parameters[["nLakes"]]
   recAlpha<-parameters[["recAlpha"]]
@@ -12,16 +11,18 @@ lake.characteristics<-function(parameters, selectLakes, vbgf_lakeClass,
   `%!in%`<-Negate(`%in%`)
   
   
-  lakeGrowth<-selectLakes%>%
-    filter(lakeSpecificGrowth==1)%>%
-    left_join(vbgf_lakeSpecific, by="WBIC")
+  # lakeGrowth<-selectLakes%>%
+  #   filter(lakeSpecificGrowth==1)%>%
+  #   left_join(vbgf_lakeSpecific, by="WBIC")
   
-  classGrowth<-selectLakes%>%
-    filter(lakeSpecificGrowth==0)%>%
-    left_join(vbgf_lakeClass, by="lakeClass")
+  classGrowth<-selectLakes
+   # filter(lakeSpecificGrowth==0)%>%
+    #left_join(vbgf_lakeClass, by="lakeClass")
   
 
-  selectLakesGrowth<-rbind.data.frame(lakeGrowth, classGrowth)
+ # selectLakesGrowth<-rbind.data.frame(lakeGrowth, classGrowth)
+  
+  selectLakesGrowth<-classGrowth
   
   lakeCharacteristics<-selectLakesGrowth%>%
     dplyr::select(WBIC, County, Latitude, Longitude, lakeClass, linf, k, t0, `Area (ha)`)%>%
