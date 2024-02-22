@@ -29,15 +29,15 @@ when_to_transfer_output = ON_EXIT
 
 transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, \
   packages.tar.gz, \
-  run.model.trend.lakes.R, \
+  run.model.walleye.pop.R, \
   data, source, output
   
 #
 # Tell HTCondor what amount of compute resources
 #  each job will need on the computer where it runs.
 request_cpus = 1
-request_memory = 1GB
-request_disk = 1GB
+request_memory = 5GB
+request_disk = 5GB
 #
 # Tell HTCondor to run however many instances of our job:
 queue 1
