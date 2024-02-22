@@ -4,7 +4,7 @@
 #=======================================================================
 # directory stuff
 rm(list=ls())
-setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
+#setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
