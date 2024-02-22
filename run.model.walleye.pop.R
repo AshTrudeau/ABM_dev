@@ -20,7 +20,7 @@ set.seed(9282)
 # read in the DNR population estimates (also includes age 0 cpe and fishign effort), select
 # only naturally recruiting (NR) populations
 
-pop.est<-read_csv(paste0(base.directory, "/pattern_matching_data/","pe.yoy.effort.csv"))%>%
+pop.est<-read_csv(paste0(base.directory, "/data/","pe.yoy.effort.csv"))%>%
   filter(CODE=="NR")
 
 wbics<-unique(pop.est$wbic)
