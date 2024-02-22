@@ -4,7 +4,7 @@
 #=======================================================================
 # directory stuff
 rm(list=ls())
-#setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
+setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
@@ -93,12 +93,15 @@ harvestAge<-initialize.harvestAge(parameters)
 # now a list of matrices
 FmortAge<-initialize.FmortAge(parameters)
 
-# make NmortAge matrix--will hold the number of fish of each age class that died naturally each year
-# now a list of matrices
-NmortAge<-initialize.NmortAge(parameters)
-
+# moved ahead of Nmort because Charnov specification requires length at age
 # make this script: use VBGF to predict length at age for each waterbody
 fishSizes<-fish.size(parameters, lakeCharacteristics)
+
+
+# make NmortAge matrix--will hold the number of fish of each age class that died naturally each year
+# now a list of matrices
+NmortAge<-initialize.NmortAge.charnov(parameters, fishSizes, selectLakes)
+
 
 # list that will hold important output from each daily loop
 
@@ -126,7 +129,7 @@ fishery<-list(anglerCharacteristics=anglerCharacteristics,
 #for(y in 1:nBurnIn){
 for(y in 1:nBurnIn){
   # burnin=T will skip F mort calculation
-  fishery<-natural.mortality(y, fishery, parameters, burnin=TRUE)
+  fishery<-natural.mortality.charnov(y, fishery, parameters, burnin=TRUE)
   fishery<-ageing(y, fishery, parameters, burnin=TRUE)
   fishery<-recruitment(y, fishery, parameters, burnin=TRUE)
   fishery<-update.fishPops(y, fishery, parameters, burnin=TRUE)

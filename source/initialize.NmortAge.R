@@ -7,6 +7,8 @@ initialize.NmortAge<-function(parameters){
   
   NmortAge<-lapply(seq_len(nLakes), function(x) NmortAge)
   
+
+  
   names(NmortAge)<-selectLakes$WBIC
   
   return(NmortAge)

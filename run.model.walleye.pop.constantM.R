@@ -4,7 +4,7 @@
 #=======================================================================
 # directory stuff
 rm(list=ls())
-#setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
+setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
@@ -93,12 +93,15 @@ harvestAge<-initialize.harvestAge(parameters)
 # now a list of matrices
 FmortAge<-initialize.FmortAge(parameters)
 
-# make NmortAge matrix--will hold the number of fish of each age class that died naturally each year
-# now a list of matrices
-NmortAge<-initialize.NmortAge(parameters)
-
+# moved ahead of Nmort because Charnov specification requires length at age
 # make this script: use VBGF to predict length at age for each waterbody
 fishSizes<-fish.size(parameters, lakeCharacteristics)
+
+
+# make NmortAge matrix--will hold the number of fish of each age class that died naturally each year
+# now a list of matrices
+NmortAge<-initialize.Nmort.constant(parameters, fishSizes, selectLakes)
+
 
 # list that will hold important output from each daily loop
 
@@ -126,7 +129,9 @@ fishery<-list(anglerCharacteristics=anglerCharacteristics,
 #for(y in 1:nBurnIn){
 for(y in 1:nBurnIn){
   # burnin=T will skip F mort calculation
-  fishery<-natural.mortality(y, fishery, parameters, burnin=TRUE)
+  
+
+  fishery<-natural.mortality.constant(y, fishery, parameters)
   fishery<-ageing(y, fishery, parameters, burnin=TRUE)
   fishery<-recruitment(y, fishery, parameters, burnin=TRUE)
   fishery<-update.fishPops(y, fishery, parameters, burnin=TRUE)
@@ -135,39 +140,42 @@ for(y in 1:nBurnIn){
 
 # compare these starting populations with PEs--I would expect these to be a lot higher
 # add up n of all age classes in the final year for each lake
-# test.start<-lapply(fishery[["fishPops"]], function(x) sum(x[,30]))
-# test.start.df<-data.frame(wbic=names(test.start), population=unlist(test.start))
-# 
-# # get minimum year from pop.est
-# 
-# pop.est.early<-pop.est%>%
-#   mutate(wbic=as.character(wbic))%>%
-#   group_by(wbic)%>%
-#   slice(which.min(year))%>%
-#   ungroup()%>%
-#   select(wbic, year, pe, AREA)%>%
-#   rename("pe.real"=pe)%>%
-#   left_join(test.start.df, by="wbic")%>%
-#   rename("pop.sim"=population)
-# 
-# ggplot(pop.est.early)+
-#   geom_point(aes(x=pe.real, y=pop.sim))+
-#   geom_abline(slope=1, intercept=0)+
-#   theme_bw()
-# 
-# pop.est.pivot<-pop.est.early%>%
-#   pivot_longer(cols=c("pe.real","pop.sim"), names_to="pe.type", values_to="pe")
-# 
-# ggplot(pop.est.pivot)+
-#   geom_point(aes(x=AREA, y=pe))+
-#   facet_grid(pe.type~.)
-# 
-# cor(pop.est.early$pe.real, pop.est.early$pop.sim, use="complete.obs")
-# mod<-lm(pe.real~pop.sim, data=pop.est.early)
-# summary(mod)
+#  test.start<-lapply(fishery[["fishPops"]], function(x) sum(x[,30]))
+#  test.start.df<-data.frame(wbic=names(test.start), population=unlist(test.start))
+# # 
+# # # get minimum year from pop.est
+# # 
+#  pop.est.early<-pop.est%>%
+#    mutate(wbic=as.character(wbic))%>%
+#    group_by(wbic)%>%
+#    slice(which.min(year))%>%
+#    ungroup()%>%
+#    select(wbic, year, pe, AREA)%>%
+#    rename("pe.real"=pe)%>%
+#    left_join(test.start.df, by="wbic")%>%
+#    rename("pop.sim"=population)
+#  
+#  ggplot(pop.est.early)+
+#    geom_point(aes(x=pe.real, y=pop.sim))+
+#    geom_abline(slope=1, intercept=0)+
+#    theme_bw()
+#  
+#  pop.est.pivot<-pop.est.early%>%
+#    pivot_longer(cols=c("pe.real","pop.sim"), names_to="pe.type", values_to="pe")
+#  
+#  ggplot(pop.est.pivot)+
+#    geom_point(aes(x=AREA, y=pe))+
+#    facet_grid(pe.type~.)
+#  
+#  cor(pop.est.early$pe.real, pop.est.early$pop.sim, use="complete.obs")
+#  mod<-lm(pe.real~pop.sim, data=pop.est.early)
+#  summary(mod)
 # r2 of 0.89, correlation of 0.94. lake size alone does an okay job, but there's room for improvement. 
 # leave it for now, but it's a place to adjust later. 
 
+ # some of the larger lakes have closer simulated estimates with constant M, but there may be more scattering at the smaller
+ # lakes. 
+ 
 # update startPops with equilibrium fish population 
 # startPops is the *starting* population of the final year of burn-in. 
 # (new) fishPops is ALSO the starting population of the final year of burn-in. 
@@ -206,7 +214,7 @@ for(y in 1:parameters[["nYears"]]){
   fishery<-fishing.mortality(y,  fishery)
   
   # apply  natural mortality by age to fishPops (adjusting for F)
-  fishery<-natural.mortality(y, fishery, parameters, burnin=FALSE)
+  fishery<-natural.mortality.constant(y, fishery, parameters)
   
   
   # apply ageing
@@ -239,7 +247,7 @@ print(base.directory)
 
 
 
-write.csv(annualOutput, paste0(base.directory,"/output/annual.output.csv"))
+write.csv(annualOutput, paste0(base.directory,"/output/annual.output.constantM.csv"))
 # annualOutput<-read_csv(here::here("output","annual.output.csv"))
 # lakeStatus<-read_csv(here::here("output","lake.status.csv"))
 
@@ -249,5 +257,5 @@ lakeStatus<-fishery[["lakeStatus"]]
 
 print(lakeStatus)
 
-write.csv(lakeStatus, paste0(base.directory,"/output/lake.status.csv"))
+write.csv(lakeStatus, paste0(base.directory,"/output/lake.status.constantM.csv"))
 
