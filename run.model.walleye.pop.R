@@ -4,7 +4,7 @@
 #=======================================================================
 # directory stuff
 rm(list=ls())
-#setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
+setwd("C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/")
 wd<-getwd()
 base.directory<-wd
 outdir<-paste0(base.directory, "/output/")
@@ -135,37 +135,38 @@ for(y in 1:nBurnIn){
 
 # compare these starting populations with PEs--I would expect these to be a lot higher
 # add up n of all age classes in the final year for each lake
-# test.start<-lapply(fishery[["fishPops"]], function(x) sum(x[,30]))
-# test.start.df<-data.frame(wbic=names(test.start), population=unlist(test.start))
+ test.start<-lapply(fishery[["fishPops"]], function(x) sum(x[,30]))
+ test.start.df<-data.frame(wbic=names(test.start), population=unlist(test.start))
 # 
 # # get minimum year from pop.est
 # 
-# pop.est.early<-pop.est%>%
-#   mutate(wbic=as.character(wbic))%>%
-#   group_by(wbic)%>%
-#   slice(which.min(year))%>%
-#   ungroup()%>%
-#   select(wbic, year, pe, AREA)%>%
-#   rename("pe.real"=pe)%>%
-#   left_join(test.start.df, by="wbic")%>%
-#   rename("pop.sim"=population)
-# 
-# ggplot(pop.est.early)+
-#   geom_point(aes(x=pe.real, y=pop.sim))+
-#   geom_abline(slope=1, intercept=0)+
-#   theme_bw()
-# 
-# pop.est.pivot<-pop.est.early%>%
-#   pivot_longer(cols=c("pe.real","pop.sim"), names_to="pe.type", values_to="pe")
-# 
-# ggplot(pop.est.pivot)+
-#   geom_point(aes(x=AREA, y=pe))+
-#   facet_grid(pe.type~.)
-# 
-# cor(pop.est.early$pe.real, pop.est.early$pop.sim, use="complete.obs")
-# mod<-lm(pe.real~pop.sim, data=pop.est.early)
-# summary(mod)
-# r2 of 0.89, correlation of 0.94. lake size alone does an okay job, but there's room for improvement. 
+ pop.est.early<-pop.est%>%
+   mutate(wbic=as.character(wbic))%>%
+   group_by(wbic)%>%
+   slice(which.min(year))%>%
+   ungroup()%>%
+   select(wbic, year, pe, AREA)%>%
+   rename("pe.real"=pe)%>%
+   left_join(test.start.df, by="wbic")%>%
+   rename("pop.sim"=population)
+ 
+ ggplot(pop.est.early)+
+   geom_point(aes(x=pe.real, y=pop.sim))+
+   geom_abline(slope=1, intercept=0, linetype="dashed")+
+   theme_bw()
+ ggsave(here::here("figures","no.fishing.observed.predicted.pop.age.m.png"), height=4, width=6)
+ 
+ pop.est.pivot<-pop.est.early%>%
+   pivot_longer(cols=c("pe.real","pop.sim"), names_to="pe.type", values_to="pe")
+ 
+ ggplot(pop.est.pivot)+
+   geom_point(aes(x=AREA, y=pe))+
+   facet_grid(pe.type~.)
+ 
+ cor(pop.est.early$pe.real, pop.est.early$pop.sim, use="complete.obs")
+ mod<-lm(pe.real~pop.sim, data=pop.est.early)
+ summary(mod)
+ #r2 of 0.89, correlation of 0.94. lake size alone does an okay job, but there's room for improvement. 
 # leave it for now, but it's a place to adjust later. 
 
 # update startPops with equilibrium fish population 

@@ -13,6 +13,17 @@ source(paste0(base.directory, "/source/function.sourcer.R"))
 data.frame(unlist(parameters))
 
 #----------------------------------------------------------------------
+# pre-model run, exploring placement options. 
+
+library(maps)
+
+states<-map_data("state")
+wi<-filter(states, region=="wisconsin")
+# at some point will need to distinguish great lakes bordering counties (participation model)
+counties<-map_data("county")%>%
+  filter(region=="wisconsin")
+cities<-map.cities(us.cities, country="WI")
+
 # At some point, see if I can get lake specific random intercepts for walleye population model that DNR uses
 
 set.seed(9282)
@@ -51,7 +62,7 @@ allLakes<-read_csv(paste0(base.directory, "/", "data/", "all.lake.classes.wi.csv
   filter(has.pe==1)%>%
   left_join(vbgf_lakeClass, by="lakeClass")
 
-  
+
 selectLakes<-allLakes
 
 lakeCharacteristics<-lake.characteristics(parameters, selectLakes, vbgf_lakeClass)
@@ -123,14 +134,14 @@ fishery<-list(anglerCharacteristics=anglerCharacteristics,
               NmortAge=NmortAge)
 
 
-# NEED TO FIX: natural.mortality.constant needs option for burnin=T, using nBurnIn instead of nYears
+
 
 # burn in fish populations--50 years worked well for starting age 0 population of 5000 fish
 #for(y in 1:nBurnIn){
 for(y in 1:nBurnIn){
   # burnin=T will skip F mort calculation
   
-
+  
   fishery<-natural.mortality.constant(y, fishery, parameters)
   fishery<-ageing(y, fishery, parameters, burnin=TRUE)
   fishery<-recruitment(y, fishery, parameters, burnin=TRUE)
@@ -140,8 +151,8 @@ for(y in 1:nBurnIn){
 
 # compare these starting populations with PEs--I would expect these to be a lot higher
 # add up n of all age classes in the final year for each lake
-  #test.start<-lapply(fishery[["fishPops"]], function(x) sum(x[,30]))
-  #test.start.df<-data.frame(wbic=names(test.start), population=unlist(test.start))
+test.start<-lapply(fishery[["fishPops"]], function(x) sum(x[,30]))
+test.start.df<-data.frame(wbic=names(test.start), population=unlist(test.start))
 # # 
 # # # get minimum year from pop.est
 # # 
@@ -174,9 +185,9 @@ for(y in 1:nBurnIn){
 # r2 of 0.89, correlation of 0.94. lake size alone does an okay job, but there's room for improvement. 
 # leave it for now, but it's a place to adjust later. 
 
- # some of the larger lakes have closer simulated estimates with constant M, but there may be more scattering at the smaller
- # lakes. 
- 
+# some of the larger lakes have closer simulated estimates with constant M, but there may be more scattering at the smaller
+# lakes. 
+
 # update startPops with equilibrium fish population 
 # startPops is the *starting* population of the final year of burn-in. 
 # (new) fishPops is ALSO the starting population of the final year of burn-in. 
@@ -214,18 +225,17 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 # simulation now starts with equilibrium fish populations
 # next update this code for different fishPops structure
 for(y in 1:parameters[["nYears"]]){
-  y<-1
+  #y<-1
   
   for(t in 1:parameters[["nDays"]]){
-    t<-1
+    #t<-1
     fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
-
-     fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
+    
+    fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
     print(t)
     
   }
-  print(end-start)
-
+  
   # calculate fishing mortality by age
   fishery<-fishing.mortality(y,  fishery)
   
@@ -239,14 +249,15 @@ for(y in 1:parameters[["nYears"]]){
   # left off here 11/29/23; update recruitment next
   # apply recruitment
   fishery<-recruitment(y, fishery, parameters, burnin=FALSE)
-
+  
+  
   # close loop, store annual output
-
+  
   annualOutput<-annual.output(y, fishery, annualOutput, parameters)
   
   # update lakeStatus object to start next year's loop
   fishery<-update.lakes(y, fishery, parameters)
-
+  
   print(y)
   
 }

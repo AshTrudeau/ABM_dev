@@ -71,14 +71,10 @@ fishing<-function(fishery, parameters, t, y){
 
   for(i in 1:length(fishPops)){
   fishPops[[i]][,y]<-fishPopYear[[i]]
+  harvestAge[[i]][,y]<-harvestAgeYear[[i]]
   }
   
-  # do the same for harvestAge
-  
-  for(i in 1:length(harvestAge)){
-    harvestAge[[i]][,y]<-harvestAgeYear[[i]]
-  }
-  
+
   
   # now update lakeStatus
   # I don't have an object to track total catch; I may need to add one later if 
