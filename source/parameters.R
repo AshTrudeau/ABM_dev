@@ -13,7 +13,7 @@ nBurnIn         <-30 # years of unexploited fish population dynamics before the 
 # right with a starting fish population of 5000
 #nFish0_min      <-5000 # minimum number of fish in a lake in the first time step
 beta            <-0.5 # hyperstability parameter
-q               <-0.01 # catchability coefficient
+q               <-0.0015 # catchability coefficient
 # clunkily set bounding box for angler placement
 maxLat         <- 46.99
 maxLong        <- -86.7
