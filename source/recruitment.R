@@ -25,6 +25,7 @@ recruitment<-function(y, fishery, parameters, burnin){
   nextYear<-lapply(fishPops, function(x) x[,y+1])
   
   # find fish population above age of maturity
+  #this line is broken
   
   mature<-lapply(nextYear, function(x) x[1:c(nAges+1)>ageMature])
   

@@ -40,14 +40,24 @@ fishing<-function(fishery, parameters, t, y){
   }
 
   # this is a list where every element is the fishPopYear entry for the lake chosen by that angler.
-  # fishPopYearChoices is length1000
-  fishPopYearChoices<-pluck_multiple(fishPopYear, anglerDecisions$WBIC)
+  #in otherwords, this is a list of 1000 vectors, one for each angler, with the current fish populations 
+  # (at each age) that the anglers selected 
+
+    fishPopYearChoices<-pluck_multiple(fishPopYear, anglerDecisions$WBIC)
   
   # now applying catch equation where each list entry is 1 angler at 1 lake. 
   q.select<-q*selectivity
+  # raise fish populations to the linearity term in teh catch equation C=EqN^beta
   fishPop.beta<-lapply(fishPopYearChoices, `^`, beta)
+  # Multiply by q to get catch in 1 hour
   catchAgeLake.1hr<-lapply(fishPop.beta, `*`, q.select)
+  # multiply by 4 for catch in 4 hours
   catchAgeLake.4hr<-lapply(catchAgeLake.1hr, `*`, 4)
+  # round it to an integer. Maybe this can be replaced with a draw from a negative binomial
+  # distribution. The paper about this is in prep, and the estimated parameters could be useful here
+  # (goal was to partition variance in catch between population density, angler skill, daily conditions, and blind luck)
+  # currently this catch is totally deterministic
+
   catchAgeLake.round<-lapply(catchAgeLake.4hr, round)
   
   #  add up total number caught and harvested, add to anglerDecisions matrix
@@ -81,32 +91,45 @@ fishing<-function(fishery, parameters, t, y){
   # for the rest of the lakes that were unvisited, I'm making blank list elements to append to splitCatchAgeLake
   missingLakes<-setdiff(names(fishPopYear), names(splitCatchAgeLake))
   missingLakesList<-vector("list", length(missingLakes))
+  
   for(i in 1:length(missingLakes)){
-    missingLakesList[[i]]<-rep(0, nAges+1)
-  }
+    if(length(missingLakes)==0){
+      break
+    }
+        missingLakesList[[i]]<-rep(0, nAges+1)
+      }
+
   names(missingLakesList)<-missingLakes
   
   catchAgeLakeAppend<-append(splitCatchAgeLake, missingLakesList)
   # now reorder to match fishPopYear
   
-  harvestAgeYear<-catchAgeLakeAppend[names(fishPopYear)]
+  harvestAgeToday<-catchAgeLakeAppend[names(fishPopYear)]
    #  now I can subtract harvestAgeYear from fishPopYear to get new fish populations
   
-  newFishPopYear<-mapply(`-`, fishPopYear, harvestAgeYear, SIMPLIFY=F)
+  newFishPopYear<-mapply(`-`, fishPopYear, harvestAgeToday, SIMPLIFY=F)
   
+  # also add today's harvestAgeYear to yesterdays' harvest
+  
+  harvestAgeYesterday=lapply(harvestAge, function(x) x[,y])
+  
+  harvestAgeCumulative = mapply(`+`, harvestAgeYesterday, harvestAgeToday, SIMPLIFY=F)
+  
+  for(i in 1:length(fishPops)){
+    harvestAge[[i]][,y]=harvestAgeCumulative[[i]]
+  }
 
   for(i in 1:length(fishPops)){
   fishPops[[i]][,y]<-newFishPopYear[[i]]
-  harvestAge[[i]][,y]<-harvestAgeYear[[i]]
   }
-  
+
 
   
   # now update lakeStatus
   # I don't have an object to track total individual catch; I may need to add one later if 
   # individual catch rates (separate from harvest) are important for angler decisions.
   
-  totalHarvest<-sapply(harvestAgeYear, sum)
+  totalHarvest<-sapply(harvestAgeToday, sum)
   totalCatch<-totalHarvest
   
   totalPop<-sapply(fishPopYear, sum)

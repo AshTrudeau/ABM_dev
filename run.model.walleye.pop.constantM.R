@@ -131,7 +131,7 @@ for(y in 1:nBurnIn){
   # burnin=T will skip F mort calculation
   
 
-  fishery<-natural.mortality.constant(y, fishery, parameters)
+  fishery<-natural.mortality.constant(y, fishery, parameters, burnin=TRUE)
   fishery<-ageing(y, fishery, parameters, burnin=TRUE)
   fishery<-recruitment(y, fishery, parameters, burnin=TRUE)
   fishery<-update.fishPops(y, fishery, parameters, burnin=TRUE)
@@ -145,34 +145,48 @@ for(y in 1:nBurnIn){
 # # 
 # # # get minimum year from pop.est
 # # 
-#   pop.est.early<-pop.est%>%
-#     mutate(wbic=as.character(wbic))%>%
-#     group_by(wbic)%>%
-#     slice(which.min(year))%>%
-#     ungroup()%>%
-#     select(wbic, year, pe, AREA)%>%
-#     rename("pe.real"=pe)%>%
-#     left_join(test.start.df, by="wbic")%>%
-#     rename("pop.sim"=population)
-#   
-#   ggplot(pop.est.early)+
-#     geom_point(aes(x=pe.real, y=pop.sim))+
-#     geom_abline(slope=1, intercept=0, linetype="dashed")+
-#     theme_bw()
-#   ggsave(here::here("figures","no.fishing.observed.predicted.pop.png"), height=4, width=6)
-#   
-#   pop.est.pivot<-pop.est.early%>%
-#     pivot_longer(cols=c("pe.real","pop.sim"), names_to="pe.type", values_to="pe")
-#   
-#   ggplot(pop.est.pivot)+
-#     geom_point(aes(x=AREA, y=pe))+
-#     facet_grid(pe.type~.)
-# #  
-#   cor(pop.est.early$pe.real, pop.est.early$pop.sim, use="complete.obs")
-#   mod<-lm(pe.real~pop.sim, data=pop.est.early)
-#   summary(mod)
-# r2 of 0.89, correlation of 0.94. lake size alone does an okay job, but there's room for improvement. 
-# leave it for now, but it's a place to adjust later. 
+
+pop.est<-read_csv(paste0(base.directory, "/data/","pe.yoy.effort.csv"))%>%
+  filter(CODE=="NR")
+# compare these starting populations with PEs--I would expect these to be a lot higher
+# add up n of all age classes in the final year for each lake
+test.start<-lapply(fishery[["fishPops"]], function(x) sum(x[,30]))
+test.start.df<-data.frame(wbic=names(test.start), population=unlist(test.start))
+
+   pop.est.early<-pop.est%>%
+     mutate(wbic=as.character(wbic))%>%
+     group_by(wbic)%>%
+     slice(which.min(year))%>%
+     ungroup()%>%
+     select(wbic, year, pe, AREA)%>%
+     rename("pe.real"=pe)%>%
+     left_join(test.start.df, by="wbic")%>%
+     rename("pop.sim"=population)%>%
+     mutate(ln.pe.real=log(pe.real),
+            ln.pop.sim=log(pop.sim))
+   
+   ggplot(pop.est.early)+
+     geom_point(aes(x=ln.pe.real, y=ln.pop.sim))+
+     geom_abline(slope=1, intercept=0, linetype="dashed")+
+     xlab("ln(Population estimate)")+
+     ylab("ln(Simulated population abundance)")+
+     theme_bw()+
+     theme(axis.title=element_text(size=12),
+           axis.text=element_text(size=12))
+   ggsave(here::here("figures","no.fishing.log.observed.predicted.pop.png"), height=4, width=6)
+   
+   pop.est.pivot<-pop.est.early%>%
+     pivot_longer(cols=c("pe.real","pop.sim"), names_to="pe.type", values_to="pe")
+   
+   ggplot(pop.est.pivot)+
+     geom_point(aes(x=AREA, y=pe))+
+     facet_grid(pe.type~.)
+   
+   cor(pop.est.early$pe.real, pop.est.early$pop.sim, use="complete.obs")
+   mod<-lm(pe.real~pop.sim, data=pop.est.early)
+   summary(mod)
+ r2 of 0.89, correlation of 0.94. lake size alone does an okay job, but there's room for improvement. 
+ leave it for now, but it's a place to adjust later. 
 
  # some of the larger lakes have closer simulated estimates with constant M, but there may be more scattering at the smaller
  # lakes. 
@@ -214,17 +228,16 @@ annualOutput<-initialize.annual.output(parameters, fishery)
 # simulation now starts with equilibrium fish populations
 # next update this code for different fishPops structure
 for(y in 1:parameters[["nYears"]]){
-  y<-1
+ # y<-1
   
   for(t in 1:parameters[["nDays"]]){
-    t<-1
+    #t<-1
     fishery<-angler.decisions(fishery, t, y) # each angler chooses a lake. These decisions are added to the anglerDecisions
 
      fishery<-fishing(fishery, parameters, t, y) # anglers catch fish and lake populations are updated
     print(t)
     
   }
-  print(end-start)
 
   # calculate fishing mortality by age
   fishery<-fishing.mortality(y,  fishery)
@@ -260,7 +273,7 @@ for(y in 1:parameters[["nYears"]]){
 print(annualOutput)
 print(base.directory)
 
-
+# 3/1/24: annual harvest (N and B) is not being updated in annual output
 
 write.csv(annualOutput, paste0(base.directory,"/output/annual.output.constantM.csv"))
 # annualOutput<-read_csv(here::here("output","annual.output.csv"))
@@ -274,3 +287,20 @@ print(lakeStatus)
 
 write.csv(lakeStatus, paste0(base.directory,"/output/lake.status.constantM.csv"))
 
+
+
+# making figures
+
+# annualHarvest columns didn't populate, but I can do it here: 
+
+
+# only two lakes had any harvest 
+
+annualHarvestEffort<-lakeStatus%>%
+  filter(year<31)%>%
+  group_by(WBIC, year)%>%
+  summarize(annualEffort=sum(nAnglers),
+            annualHarvestN=sum(harvestedN))%>%
+  ungroup()
+
+View(filter(annualOutput, WBIC%in%c("2294900", "2399700")))

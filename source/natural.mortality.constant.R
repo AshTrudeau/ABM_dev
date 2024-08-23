@@ -5,6 +5,8 @@ natural.mortality.constant<-function(y, fishery, parameters, burnin){
   startPops<-fishery[["startPops"]]
   fishPops<-fishery[["fishPops"]]
   NmortAge<-fishery[["NmortAge"]]
+  nBurnIn<-fishery[["nBurnIn"]]
+  nYears<-fishery[["nYears"]]
   
   wbics<-names(fishPops)
   

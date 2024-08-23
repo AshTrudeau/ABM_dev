@@ -15,9 +15,9 @@ lake.characteristics<-function(parameters, selectLakes, vbgf_lakeClass){
   #   filter(lakeSpecificGrowth==1)%>%
   #   left_join(vbgf_lakeSpecific, by="WBIC")
   
-  classGrowth<-selectLakes
-   # filter(lakeSpecificGrowth==0)%>%
-    #left_join(vbgf_lakeClass, by="lakeClass")
+  classGrowth<-selectLakes%>%
+    #filter(lakeSpecificGrowth==0)%>%
+    left_join(vbgf_lakeClass, by="lakeClass")
   
 
  # selectLakesGrowth<-rbind.data.frame(lakeGrowth, classGrowth)

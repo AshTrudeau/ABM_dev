@@ -1,0 +1,64 @@
+---
+title: "lake maps"
+output: html_document
+date: "2024-02-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pacman::p_load(tidyverse, arcpullr, wdnr.gis)
+```
+
+check that it works with code from Paul
+```{r}
+wdnr_server <-"https://dnrmaps.wi.gov/arcgis/rest/services/"
+counties <- "DW_Map_Dynamic/EN_Basic_Basemap_WTM_Ext_Dynamic_L16/MapServer/3"
+wi_counties_url <- paste(wdnr_server,counties,sep ="/")
+wi_counties <- get_spatial_layer(wi_counties_url)
+
+ggplot2::ggplot() +
+  ggplot2::geom_sf(data = wi_counties)
+```
+
+neat.
+
+Pull PE data to get relevant WBICs
+to see intro vignette, vignette("wdnr.gis-intro")
+
+```{r}
+lakeData<-read_csv(here::here("pattern_matching_data", "pe.yoy.effort.csv"))%>%
+  rename("WATERBODY_WBIC"=wbic)%>%
+  group_by(WATERBODY_WBIC)%>%
+  slice(which.max(year))%>%
+  ungroup()%>%
+  mutate(pop.density=pe/AREA)
+
+lakeData<-lakeData[,-1]
+
+wbics<-unique(lakeData$WATERBODY_WBIC)
+
+```
+
+get map data
+
+```{r}
+states<-map_data("state")
+wisconsin<-states[states$region=="wisconsin",]
+
+lakes<-get_hydro_layer(wbic=wbics)
+
+lakes.wae<-lakes%>%
+  left_join(lakeData, by="WATERBODY_WBIC")
+
+plot_layer.sf(lakes)
+
+ggplot()+
+  geom_sf(data=lakes.wae, aes(fill=pop.density))+
+  scale_fill_gradient2()+
+  ylim(min=45.7, max=46.2)+
+  xlim(min=-89.8, max=-89.0)+
+  theme_bw()+
+  theme(legend.position="none")
+ggsave(here::here("figures","lake.map.demo.png"), height=4, width=6)
+```
+

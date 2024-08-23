@@ -38,7 +38,6 @@ fish.size<-function(parameters, lakeCharacteristics){
   })  
   
 
-
   # for now making the bonkers assumption that fish don't grow after age 15
   
   # weight conversion from here https://dnr.wisconsin.gov/topic/Fishing/questions/estfishweight.html 

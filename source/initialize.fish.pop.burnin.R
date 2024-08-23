@@ -10,17 +10,24 @@ initialize.fish.pop.burnin<-function(parameters, lakeCharacteristics){
   # year zero starts with 1000 age 1 fish
   fishPop<-matrix(data=0, nrow=nAges+1, ncol=nBurnIn, dimnames=list(c(0:nAges), c(1:nBurnIn)))
   
+  # turn fishPop matrix into a nested list of matrices for each of N lakes
   fishPops<-lapply(seq_len(nLakes), function(x) fishPop)
   
   fishPops<-lapply(seq_along(fishPops), function(x){
     lake_matrix<-fishPops[[x]]
+    #names are WBICs
     lakeN0_name<-names(N0LakesList)[x]
+    # lake_vector is the first column of each lake_matrix
     lake_vector<-c(N0LakesList[[lakeN0_name]], rep(0, nAges))
     lake_matrix[,1]<-lake_vector
     return(lake_matrix)
   })
   
+  
+  
   names(fishPops)<-selectLakes$WBIC
   
   return(fishPops)
 }
+
+

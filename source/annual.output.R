@@ -9,11 +9,7 @@ annual.output<-function(y, fishery, annualOutput, parameters){
   qualitySize<-parameters[["qualitySize"]]
   nYears<-parameters[["nYears"]]
   
-  # don't use lakeStatus for end of year fish population! It hasn't been updated with natural mortality yet!
-  
-  # i'll need to set this up for multiple lakes. Take in list of fishPop matrices, put out vector of end of year
-  # fish populations
-  
+
   fishNStart<-lapply(startPops, function(x) sum(x[,y]))
   fishNEnd<-lapply(fishPops, function(x) sum(x[,y]))
   
@@ -44,13 +40,9 @@ annual.output<-function(y, fishery, annualOutput, parameters){
 
 
   # max size of fish in the lake by the end of year y after recruitment
-  if(y==nYears){
-    # on the last year of the simulation, no 'future' column exists, so take the last existing one
-    allFish<-lapply(fishPops, function(x) x[,y])
-  }else{
   
-    allFish<-lapply(fishPops, function(x) x[,y+1])
-  }
+  allFish<-lapply(fishPops, function(x) x[,y])
+  
   # find maximum age
   max.age.fun<-function(allFish){
     # add logic for lakes with 0 fish population
@@ -76,8 +68,7 @@ annual.output<-function(y, fishery, annualOutput, parameters){
   
    # mean size of fish in the lake at the end of year y, after recruitment
   
-  # this is where I left off before lunch
-  
+
   mean.length<-function(allFish, fishSizes){
     if(sum(allFish)!=0){
     sum(allFish*fishSizes$length)/sum(allFish)

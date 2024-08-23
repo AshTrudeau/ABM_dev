@@ -209,6 +209,7 @@ for(y in 1:parameters[["nYears"]]){
   # update lakeStatus object to start next year's loop
   fishery<-update.lakes(y, fishery, parameters)
   
+  
   print(y)
   
 }
