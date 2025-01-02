@@ -132,9 +132,7 @@ harvestAge<-initialize.harvestAge(parameters)
 # FmortAge matrix will hold the age specific fishing mortality of each age class in each lake each year
 FmortAge<-initialize.FmortAge(parameters)
 
-# this will hold the natural mortality of each age class in each lake and year. Different versions of this 
-# script are saved in "source" to initialize for constant natural mortality or Charnov natural mortality 
-# defined by growth params
+# this will hold the natural mortality of each age class in each lake and year. 
 NmortAge<-initialize.NmortAge(parameters)
 
 # this list of data frames holds length at age for each lake
