@@ -24,7 +24,21 @@ How the model runs:
 
 2. Burning in the fish populations--This runs an age structured population model xnBurnin, meant to get the fish populations to equilibrium. This runs the functions natural.mortality(), ageing(), recruitment(), and update.fishPops()
 
-3. 
+3. more initializing: initialize.start.pop(), initialize.fish.pop(), initialize.lake.status(), and initialize.annual.output() finish setting up the 'fishery' list and an annualOutput object that tracks annual changes during the simulation. annualOutput is good for visualization after the model run. 
+
+4. The actual simulation has two nested loops. The big loop is years (set the number of years through nYears in parameters.R), the small loop is days. 
+Each day: 
+  * angler.decisions() --every angler chooses a lake. This is currently based on two parameters: betaTravel (a cost) and betaFish (benefit) based on distance to the lake and the number of fish in the lake, respectively. This script uses a random utility model to probablistically assign anglers based on maximum utility. At some point I wanted angler choice to instead be partly based on their catch history. 
+  * fishing() --catch is currently deterministic based on N fish, effort (4 hours), selectivity/catchability, and a hyperstability parameter. I have been working on an analysis of angler catch distributions that can help with improving this function by adding angler skill coefficients, daily effects (i.e. changes in fishing conditions), and stochasticity.
+After nDays, the simulation moves to the annual loop
+* fishing.mortality() calculates age-specific mortality from fishing for each lake
+* natural.mortality() applies age-specific natural mortality to each lake. M is negatively related to F
+* ageing() moves the fish populations up a year, leaving a blank column for age 1
+* recruitment() makes age 1 fish, which responds to stock density (based on population and surface area) and the alpha and beta parameters set in parameters.R. This does not currently have stochasticity. 
+* annual.output() stores end-of-year stats in the annualOutput object
+* update.lakes() updates the lakeStatus object
+Then the year ends, the simulation moves back to the daily loop in year y+1
+
 
 Scripts with different model runs:
 - run.model.template.R
