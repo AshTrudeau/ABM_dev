@@ -45,6 +45,7 @@ Then the year ends, the simulation moves back to the daily loop in year y+1
 Scripts with different model runs:
 - run.model.template.R (most up to date)
 These may not run:
+- run.model.R
 - run.model.trend.lakes.R
 - run.model.walleye.pop.charnov.R
 run.model.walleye.pop.R
