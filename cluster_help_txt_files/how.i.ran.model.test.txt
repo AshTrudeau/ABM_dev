@@ -1,0 +1,68 @@
+quit()
+# compress installation into a tarball
+
+tar -czf packages.tar.gz packages/
+
+# compress data and source folders into a tarball
+
+tar -czf data.tar.gz data/
+tar -czf source.tar.gz source/
+
+# exit interactive build job
+exit
+
+# create executable named run.model.sh-------------------------------------
+
+#!/bin/bash
+
+# untar your R installation. Make sure you are using the right version!
+tar -xzf R413.tar.gz
+# (optional) if you have a set of packages (created in Part 1), untar them also
+tar -xzf packages.tar.gz
+
+# this is new; I forgot that I would need to untar my other folders
+
+#tar -xzf source.tar.gz
+#tar -xzf data.tar.gz
+
+# make sure the script will use your R installation, 
+# and the working directory as its home location
+export PATH=$PWD/R/bin:$PATH
+export RHOME=$PWD/R
+export R_LIBS=$PWD/packages
+
+# run your script
+Rscript run.model.R
+
+# create output tar archive
+mkdir my_output
+mv annualOutput.csv lakeStatus.csv my_output/
+tar -czf my_job.output.tar.gz my_output/
+
+
+
+# give it executable permissions-------------------------------------
+
+chmod +x run.model.sh
+
+# create submit script named run.model.sub---------------------------
+
+universe = vanilla
+log = job_$(Cluster).log
+error = job_$(Cluster)_$(Process).err
+output = job_$(Cluster)_$(Process).out
+
+executable = run.model.sh
+arguments = 
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/el8/R413.tar.gz, packages.tar.gz, data.tar.gz, source.tar.gz, run.model.R
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue 1
+
+# packages.tar.gz is larger than 100 MB, so requesting space on squid. 

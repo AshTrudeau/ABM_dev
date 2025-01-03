@@ -2,8 +2,10 @@
 Agent based model of recreational anglers
 
 ABM scripts are in the "source" folder and can be run from "run.model.template.R"
-This script also demonstrates visualization of the simulation outputs. For long runs,
-it would be good to use a computing cluster; this thing is slow. 
+
+run.model.template.R sources function.sourcer.R, which sources each of the functions. So, if you make a new function, make sure to add it to function.sourcer.R
+
+For long runs, it would be good to use a computing cluster; this thing is slow. 
 
 This run of the model uses WDNR trend lakes. They are grouped into lake classes (based on Rypel et al 2019, Fisheries), and assigned VBGF parameters based on mean values for those classes. This is currently the only difference among lakes other than distance to anglers. In the future, differences among lakes could include natural mortality (from temperature) and more specific growth parameters. 
 
@@ -41,5 +43,8 @@ Then the year ends, the simulation moves back to the daily loop in year y+1
 
 
 Scripts with different model runs:
-- run.model.template.R
-  Growth parameters: These come from Paul Frater's age length keys (data/wi_halk_aged_growth_params.RData). I only used lake- and year-specific growth parameters from this key. 
+- run.model.template.R (most up to date)
+These may not run:
+- run.model.trend.lakes.R
+- run.model.walleye.pop.charnov.R
+run.model.walleye.pop.R

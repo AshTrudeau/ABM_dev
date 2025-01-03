@@ -1,0 +1,38 @@
+# how to submit abm model run job
+
+# sign on to VPN
+#  log in: ssh aatrudeau@submit2.chtc.wisc.edu
+# 	use wisc password
+
+
+# make any updates to run_R.sh Rscript name  AND abm-model-run.sub input files
+# git push
+
+# git pull (hard reset if it won't: git reset --hard)
+
+
+# Give executable permissions
+# 	chmod +x run_R.sh
+
+# submit job
+#	condor_submit abm-model-run.sub
+
+# open tarball with results
+# tar -xzf output.tar.gz
+
+
+retrieving output files
+
+outside ssh (open new bash terminal)
+
+scp aatrudeau@submit2.chtc.wisc.edu:/home/aatrudeau/ABM_dev/output/annual.output.csv "C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/output_long_run"
+
+scp aatrudeau@submit2.chtc.wisc.edu:/home/aatrudeau/ABM_dev/output/lake.status.csv "C:/Users/ashle/Dropbox/bluegill management postdoc/lakeSelectTool/ABM_dev/output_long_run"
+
+alternatively, sending file from my computer to chtc
+
+if it's a folder, tarball it
+
+tar -czf chtc_packet.tar.gz chtc_packet/
+
+scp "C:/Users/ashle/Dropbox/bluegill management postdoc/anglerDiaryChoice/anglerDiaryChoice/chtc_packet.tar.gz" aatrudeau@submit2.chtc.wisc.edu:/home/aatrudeau
